@@ -19,14 +19,14 @@ namespace PBL3
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
-            if (textBoxTenDangNhap.Text == "admin" && textBoxMatKhau.Text == "admin")
+            if (textBoxTenDangNhap.Text == "qtv" && textBoxMatKhau.Text == "qtv")
             {
-                FormAdmin formAdmin = new FormAdmin(textBoxTenDangNhap.Text);
+                FormQuanTriVien formAdmin = new FormQuanTriVien(textBoxTenDangNhap.Text);
                 this.Hide();
                 formAdmin.ShowDialog();
                 this.Show();
             }
-            else if (textBoxTenDangNhap.Text == "nhanvien" && textBoxMatKhau.Text == "nhanvien")
+            else if (textBoxTenDangNhap.Text == "nv" && textBoxMatKhau.Text == "nv")
             {
                 FormNhanVien formNhanVien = new FormNhanVien(textBoxTenDangNhap.Text);
                 this.Hide();

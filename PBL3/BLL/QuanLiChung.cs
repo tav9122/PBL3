@@ -24,8 +24,24 @@ namespace PBL3
                 return instance;
             }
         }
-        private IconButton currentButton;
-        private Form activeForm;
+        private IconButton currentButton { get; set; }
+
+        public bool alreadyOpenFormBaoHanh { get; set; }
+        public bool alreadyOpenFormLichSuHoaDon { get; set; }
+        public bool alreadyOpenFormSanPham { get; set; }
+        public bool alreadyOpenFormQuanLiNhanVien { get; set; }
+        public bool alreadyOpenFormQuanLiSanPham { get; set; }
+        public bool alreadyOpenFormThongKe { get; set; }
+
+        public Form formBaoHanh { get; set; }
+        public Form formLichSuHoaDon { get; set; }
+        public Form formSanPham { get; set; }
+        public Form formQuanLiNhanVien { get; set; }
+        public Form formQuanLiSanPham { get; set; }
+        public Form formThongKe { get; set; }
+        
+        private string tempText { get; set; }
+        
         private void ActivateButton(object buttonSender)
         {
             if (buttonSender != null)
@@ -35,43 +51,52 @@ namespace PBL3
                     DisableButton();
                     currentButton = (IconButton)buttonSender;
                     currentButton.BackColor = Color.FromArgb(125, 125, 161);
-                    currentButton.ForeColor = Color.WhiteSmoke;
-                    currentButton.TextImageRelation = TextImageRelation.TextBeforeImage;
-                    currentButton.ImageAlign = ContentAlignment.MiddleRight;
-                    currentButton.TextAlign = ContentAlignment.MiddleCenter;
+                    tempText = currentButton.Text;
+                    currentButton.Text = "";
+                    currentButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    currentButton.IconSize = 32;
                     currentButton.IconColor = Color.WhiteSmoke;
                 }
             }
         }
-        
-        private void DisableButton()
+
+        public void DisableButton()
         {
             if (currentButton != null)
             {
-                currentButton.BackColor = Color.FromArgb(51, 51, 76);
+                currentButton.BackColor = Color.FromArgb(39, 39, 58);
                 currentButton.ForeColor = Color.Gainsboro;
                 currentButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentButton.Text = tempText;
+                currentButton.IconSize = 30;
                 currentButton.ImageAlign = ContentAlignment.MiddleLeft;
                 currentButton.TextAlign = ContentAlignment.MiddleLeft;
                 currentButton.IconColor = Color.Gainsboro;
             }
         }
-
+        
         public void OpenChildForm(Form childForm, object buttonSender, Panel panelDesktopPane)
         {
-            if (activeForm != null)
+            string boolCheck = "alreadyOpen" + childForm.Name;
+            string formName = char.ToLower(childForm.Name[0]) + childForm.Name.Substring(1);
+            if ((bool)this.GetType().GetProperty(boolCheck).GetValue(this) == true)
             {
-                activeForm.Close();
+                ActivateButton(buttonSender);
+                ((Form)this.GetType().GetProperty(formName).GetValue(this)).BringToFront();
             }
-            ActivateButton(buttonSender);
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktopPane.Controls.Add(childForm);
-            panelDesktopPane.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            else
+            {
+                this.GetType().GetProperty(boolCheck).SetValue(this, true);
+                ActivateButton(buttonSender);
+                this.GetType().GetProperty(formName).SetValue(this, childForm);
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panelDesktopPane.Controls.Add(childForm);
+                panelDesktopPane.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }
         }
     }
 }

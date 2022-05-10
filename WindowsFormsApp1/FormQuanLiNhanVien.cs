@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3
+namespace WindowsFormsApp1
 {
-    public partial class FormQuanLiSanPham : Form
+    public partial class FormQuanLiNhanVien : Form
     {
-        public FormQuanLiSanPham()
+        public FormQuanLiNhanVien()
         {
             InitializeComponent();
         }

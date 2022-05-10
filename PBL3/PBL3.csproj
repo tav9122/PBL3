@@ -60,28 +60,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\QuanLiChung.cs" />
-    <Compile Include="GUI\Admin\FormAdmin.cs">
+    <Compile Include="GUI\QuanTriVien\FormQuanTriVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Admin\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <Compile Include="GUI\QuanTriVien\FormQuanTriVien.Designer.cs">
+      <DependentUpon>FormQuanTriVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Admin\FormQuanLiNhanVien.cs">
+    <Compile Include="GUI\QuanTriVien\FormQuanLiNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Admin\FormQuanLiNhanVien.Designer.cs">
+    <Compile Include="GUI\QuanTriVien\FormQuanLiNhanVien.Designer.cs">
       <DependentUpon>FormQuanLiNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Admin\FormQuanLiSanPham.cs">
+    <Compile Include="GUI\QuanTriVien\FormQuanLiSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Admin\FormQuanLiSanPham.Designer.cs">
+    <Compile Include="GUI\QuanTriVien\FormQuanLiSanPham.Designer.cs">
       <DependentUpon>FormQuanLiSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Admin\FormThongKe.cs">
+    <Compile Include="GUI\QuanTriVien\FormThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Admin\FormThongKe.Designer.cs">
+    <Compile Include="GUI\QuanTriVien\FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormDangNhap.cs">
@@ -89,6 +89,12 @@
     </Compile>
     <Compile Include="GUI\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormManHinhChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormManHinhChinh.Designer.cs">
+      <DependentUpon>FormManHinhChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhanVien\FormBaoHanh.cs">
       <SubType>Form</SubType>
@@ -116,20 +122,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\Admin\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QuanTriVien\FormQuanTriVien.resx">
+      <DependentUpon>FormQuanTriVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Admin\FormQuanLiNhanVien.resx">
+    <EmbeddedResource Include="GUI\QuanTriVien\FormQuanLiNhanVien.resx">
       <DependentUpon>FormQuanLiNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Admin\FormQuanLiSanPham.resx">
+    <EmbeddedResource Include="GUI\QuanTriVien\FormQuanLiSanPham.resx">
       <DependentUpon>FormQuanLiSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Admin\FormThongKe.resx">
+    <EmbeddedResource Include="GUI\QuanTriVien\FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormManHinhChinh.resx">
+      <DependentUpon>FormManHinhChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanVien\FormBaoHanh.resx">
       <DependentUpon>FormBaoHanh.cs</DependentUpon>
