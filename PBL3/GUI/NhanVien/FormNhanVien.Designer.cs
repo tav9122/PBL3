@@ -106,7 +106,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
-            this.panel1.Location = new System.Drawing.Point(25, 114);
+            this.panel1.Location = new System.Drawing.Point(24, 114);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 1);
             this.panel1.TabIndex = 0;
@@ -228,7 +228,7 @@
             this.đăngXuấtToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 48);
             // 
             // thôngTinNhânViênToolStripMenuItem
             // 
