@@ -143,7 +143,6 @@
             this.Controls.Add(this.textBoxTimKiem);
             this.Controls.Add(this.comboBoxSapXep);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "FormQuanLiSanPham";
             this.Text = "FormQuanLiSanPham";

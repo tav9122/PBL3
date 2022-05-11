@@ -275,7 +275,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelMenu);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "FormQuanTriVien";
