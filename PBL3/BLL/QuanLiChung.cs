@@ -54,7 +54,7 @@ namespace PBL3
                     tempText = currentButton.Text;
                     currentButton.Text = "";
                     currentButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    currentButton.IconSize = 32;
+                    currentButton.IconSize = 38;
                     currentButton.IconColor = Color.WhiteSmoke;
                 }
             }

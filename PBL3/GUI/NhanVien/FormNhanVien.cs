@@ -105,12 +105,12 @@ namespace PBL3
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            pictureBox1.Size = new Size(pictureBox1.Size.Width - 1, pictureBox1.Size.Height - 1);
+            pictureBox1.Size = new Size(pictureBox1.Size.Width - 3, pictureBox1.Size.Height - 3);
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            pictureBox1.Size = new Size(pictureBox1.Size.Width + 1, pictureBox1.Size.Height + 1);
+            pictureBox1.Size = new Size(pictureBox1.Size.Width + 3, pictureBox1.Size.Height + 3);
         }
     }
 }
