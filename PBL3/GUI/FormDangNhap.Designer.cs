@@ -121,7 +121,7 @@
             this.linkLabelQuenMatKhau.Location = new System.Drawing.Point(203, 232);
             this.linkLabelQuenMatKhau.Name = "linkLabelQuenMatKhau";
             this.linkLabelQuenMatKhau.Size = new System.Drawing.Size(86, 13);
-            this.linkLabelQuenMatKhau.TabIndex = 3;
+            this.linkLabelQuenMatKhau.TabIndex = 4;
             this.linkLabelQuenMatKhau.TabStop = true;
             this.linkLabelQuenMatKhau.Text = "Quên mật khẩu?";
             this.linkLabelQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelQuenMatKhau_LinkClicked);
@@ -170,7 +170,7 @@
             this.iconButtonAnHienMatKhau.Location = new System.Drawing.Point(300, 198);
             this.iconButtonAnHienMatKhau.Name = "iconButtonAnHienMatKhau";
             this.iconButtonAnHienMatKhau.Size = new System.Drawing.Size(26, 23);
-            this.iconButtonAnHienMatKhau.TabIndex = 0;
+            this.iconButtonAnHienMatKhau.TabIndex = 3;
             this.iconButtonAnHienMatKhau.UseVisualStyleBackColor = true;
             this.iconButtonAnHienMatKhau.Click += new System.EventHandler(this.iconButtonAnHienMatKhau_Click);
             // 
@@ -200,7 +200,7 @@
             this.textBoxTenDangNhap.Multiline = true;
             this.textBoxTenDangNhap.Name = "textBoxTenDangNhap";
             this.textBoxTenDangNhap.Size = new System.Drawing.Size(257, 18);
-            this.textBoxTenDangNhap.TabIndex = 1;
+            this.textBoxTenDangNhap.TabIndex = 0;
             this.textBoxTenDangNhap.UseSystemPasswordChar = true;
             this.textBoxTenDangNhap.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.textBoxTenDangNhap.Enter += new System.EventHandler(this.textBoxTenDangNhap_Enter);

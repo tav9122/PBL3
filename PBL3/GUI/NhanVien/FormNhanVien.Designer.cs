@@ -55,10 +55,10 @@
             // panelDesktopPane
             // 
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.Location = new System.Drawing.Point(200, 0);
+            this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(800, 545);
+            this.panelDesktopPane.Size = new System.Drawing.Size(800, 527);
             this.panelDesktopPane.TabIndex = 6;
             // 
             // buttonMaximize
@@ -270,8 +270,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 545);
             this.ControlBox = false;
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelDesktopPane);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
