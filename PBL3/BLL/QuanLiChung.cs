@@ -31,6 +31,7 @@ namespace PBL3
         public bool alreadyOpenFormSanPham { get; set; }
         public bool alreadyOpenFormQuanLiNhanVien { get; set; }
         public bool alreadyOpenFormQuanLiSanPham { get; set; }
+        public bool alreadyOpenFormQuanLiLichLamViec { get; set; }
         public bool alreadyOpenFormThongKe { get; set; }
 
         public Form formBaoHanh { get; set; }
@@ -38,6 +39,7 @@ namespace PBL3
         public Form formSanPham { get; set; }
         public Form formQuanLiNhanVien { get; set; }
         public Form formQuanLiSanPham { get; set; }
+        public Form formQuanLiLichLamViec { get; set; }
         public Form formThongKe { get; set; }
         
         private string tempText { get; set; }

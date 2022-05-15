@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanTriVien));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.iconButtonQuanLiLichLamViec = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButtonThongKe = new FontAwesome.Sharp.IconButton();
             this.iconButtonQuanLiNhanVien = new FontAwesome.Sharp.IconButton();
@@ -55,6 +56,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.iconButtonQuanLiLichLamViec);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.iconButtonThongKe);
             this.panelMenu.Controls.Add(this.iconButtonQuanLiNhanVien);
@@ -66,6 +68,28 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 545);
             this.panelMenu.TabIndex = 3;
+            // 
+            // iconButtonQuanLiLichLamViec
+            // 
+            this.iconButtonQuanLiLichLamViec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.iconButtonQuanLiLichLamViec.FlatAppearance.BorderSize = 0;
+            this.iconButtonQuanLiLichLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonQuanLiLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.iconButtonQuanLiLichLamViec.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonQuanLiLichLamViec.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
+            this.iconButtonQuanLiLichLamViec.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonQuanLiLichLamViec.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonQuanLiLichLamViec.IconSize = 30;
+            this.iconButtonQuanLiLichLamViec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonQuanLiLichLamViec.Location = new System.Drawing.Point(0, 269);
+            this.iconButtonQuanLiLichLamViec.Name = "iconButtonQuanLiLichLamViec";
+            this.iconButtonQuanLiLichLamViec.Size = new System.Drawing.Size(200, 74);
+            this.iconButtonQuanLiLichLamViec.TabIndex = 8;
+            this.iconButtonQuanLiLichLamViec.Text = "Quản lí lịch làm việc";
+            this.iconButtonQuanLiLichLamViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonQuanLiLichLamViec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonQuanLiLichLamViec.UseVisualStyleBackColor = false;
+            this.iconButtonQuanLiLichLamViec.Click += new System.EventHandler(this.iconButtonQuanLiLichLamViec_Click);
             // 
             // panel1
             // 
@@ -87,7 +111,7 @@
             this.iconButtonThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonThongKe.IconSize = 30;
             this.iconButtonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonThongKe.Location = new System.Drawing.Point(0, 269);
+            this.iconButtonThongKe.Location = new System.Drawing.Point(0, 343);
             this.iconButtonThongKe.Name = "iconButtonThongKe";
             this.iconButtonThongKe.Size = new System.Drawing.Size(200, 74);
             this.iconButtonThongKe.TabIndex = 8;
@@ -219,10 +243,11 @@
             // 
             // panelDesktopPane
             // 
-            this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
+            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPane.Location = new System.Drawing.Point(200, 0);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(800, 527);
+            this.panelDesktopPane.Size = new System.Drawing.Size(800, 545);
             this.panelDesktopPane.TabIndex = 4;
             // 
             // buttonMaximize
@@ -255,10 +280,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.buttonMaximize);
             this.panel2.Controls.Add(this.buttonMinimize);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 18);
@@ -305,5 +329,6 @@
         private System.Windows.Forms.Button buttonMaximize;
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButtonQuanLiLichLamViec;
     }
 }

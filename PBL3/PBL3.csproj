@@ -120,8 +120,17 @@
     <Compile Include="GUI\NhanVien\FormSanPham.Designer.cs">
       <DependentUpon>FormSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuanTriVien\FormQuanLiLichLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormQuanLiLichLamViec.Designer.cs">
+      <DependentUpon>FormQuanLiLichLamViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\QuanTriVien\FormQuanLiLichLamViec.resx">
+      <DependentUpon>FormQuanLiLichLamViec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormQuanTriVien.resx">
       <DependentUpon>FormQuanTriVien.cs</DependentUpon>
     </EmbeddedResource>

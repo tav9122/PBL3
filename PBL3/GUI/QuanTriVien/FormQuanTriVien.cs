@@ -43,6 +43,11 @@ namespace PBL3
         {
             QuanLiChung.Instance.OpenChildForm(new FormQuanLiNhanVien(), sender, panelDesktopPane);
         }
+        private void iconButtonQuanLiLichLamViec_Click(object sender, EventArgs e)
+        {
+            QuanLiChung.Instance.OpenChildForm(new FormQuanLiLichLamViec(), sender, panelDesktopPane);
+
+        }
 
         private void iconbuttonThongKe_Click(object sender, EventArgs e)
         {

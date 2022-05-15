@@ -41,3 +41,4 @@ D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.exe
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.pdb
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanTriVien.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormManHinhChinh.resources
+D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanLiLichLamViec.resources

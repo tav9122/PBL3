@@ -54,10 +54,11 @@
             // 
             // panelDesktopPane
             // 
-            this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
+            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPane.Location = new System.Drawing.Point(200, 0);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(800, 527);
+            this.panelDesktopPane.Size = new System.Drawing.Size(800, 545);
             this.panelDesktopPane.TabIndex = 6;
             // 
             // buttonMaximize
@@ -253,10 +254,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.buttonMaximize);
             this.panel2.Controls.Add(this.buttonMinimize);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 18);

@@ -21,13 +21,11 @@ namespace PBL3
         {
             timer1.Start();
         }
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labelGioPhut.Text = DateTime.Now.ToString("HH:m");
-            labelGiay.Text = DateTime.Now.ToString("ss");
-            labelNgayThangNam.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            labelThu.Text = DateTime.Now.ToString("dddd");
+            labelGioPhutGiay.Text = DateTime.Now.ToString("HH:mm:ss");
+            labelNgayThangNam.Text = DateTime.Now.ToString("dddd") + ", Ngày " + DateTime.Now.ToString("dd") + " Tháng " + DateTime.Now.ToString("MM") + " Năm " + DateTime.Now.ToString("yyyy");
         }
     }
 }
