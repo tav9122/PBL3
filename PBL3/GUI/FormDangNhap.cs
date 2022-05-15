@@ -21,6 +21,8 @@ namespace PBL3
         {
             if (textBoxTenDangNhap.Text == "" || textBoxMatKhau.Text == "")
             {
+                if (textBoxTenDangNhap.Text == "") textBoxTenDangNhap.Focus();
+                else textBoxMatKhau.Focus();
                 textBoxCanhBao.Text = "Không được để trống các trường";
             }
             else
@@ -43,6 +45,7 @@ namespace PBL3
 
                 textBoxTenDangNhap.Clear();
                 textBoxMatKhau.Clear();
+                textBoxTenDangNhap.Focus();
             }
         }
 
