@@ -31,25 +31,25 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.panelDesktopPane = new System.Windows.Forms.Panel();
-            this.buttonMaximize = new System.Windows.Forms.Button();
-            this.buttonMinimize = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButtonLichSuHoaDon = new FontAwesome.Sharp.IconButton();
-            this.iconButtonBaoHanh = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.linkLabelTenNhanVien = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.iconButtonSanPham = new FontAwesome.Sharp.IconButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thôngTinNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonMaximize = new System.Windows.Forms.Button();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonBaoHanh = new System.Windows.Forms.Button();
+            this.buttonLichSuHoaDon = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonSanPham = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDesktopPane
@@ -58,50 +58,22 @@
             this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(800, 527);
+            this.panelDesktopPane.Size = new System.Drawing.Size(848, 567);
             this.panelDesktopPane.TabIndex = 6;
-            // 
-            // buttonMaximize
-            // 
-            this.buttonMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMaximize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.BackgroundImage")));
-            this.buttonMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMaximize.FlatAppearance.BorderSize = 0;
-            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMaximize.Location = new System.Drawing.Point(772, 0);
-            this.buttonMaximize.Name = "buttonMaximize";
-            this.buttonMaximize.Size = new System.Drawing.Size(21, 18);
-            this.buttonMaximize.TabIndex = 1;
-            this.buttonMaximize.UseVisualStyleBackColor = true;
-            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
-            // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.BackgroundImage")));
-            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(747, 0);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.Size = new System.Drawing.Size(21, 18);
-            this.buttonMinimize.TabIndex = 0;
-            this.buttonMinimize.UseVisualStyleBackColor = true;
-            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.buttonBaoHanh);
             this.panelMenu.Controls.Add(this.panel1);
-            this.panelMenu.Controls.Add(this.iconButtonLichSuHoaDon);
-            this.panelMenu.Controls.Add(this.iconButtonBaoHanh);
+            this.panelMenu.Controls.Add(this.buttonLichSuHoaDon);
             this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Controls.Add(this.iconButtonSanPham);
+            this.panelMenu.Controls.Add(this.buttonSanPham);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 545);
+            this.panelMenu.Size = new System.Drawing.Size(200, 585);
             this.panelMenu.TabIndex = 5;
             // 
             // panel1
@@ -111,50 +83,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 1);
             this.panel1.TabIndex = 0;
-            // 
-            // iconButtonLichSuHoaDon
-            // 
-            this.iconButtonLichSuHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.iconButtonLichSuHoaDon.FlatAppearance.BorderSize = 0;
-            this.iconButtonLichSuHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonLichSuHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.iconButtonLichSuHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonLichSuHoaDon.IconChar = FontAwesome.Sharp.IconChar.Clock;
-            this.iconButtonLichSuHoaDon.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonLichSuHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLichSuHoaDon.IconSize = 30;
-            this.iconButtonLichSuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonLichSuHoaDon.Location = new System.Drawing.Point(0, 269);
-            this.iconButtonLichSuHoaDon.Name = "iconButtonLichSuHoaDon";
-            this.iconButtonLichSuHoaDon.Size = new System.Drawing.Size(200, 74);
-            this.iconButtonLichSuHoaDon.TabIndex = 8;
-            this.iconButtonLichSuHoaDon.Text = "Lịch sử hoá đơn";
-            this.iconButtonLichSuHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonLichSuHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonLichSuHoaDon.UseVisualStyleBackColor = false;
-            this.iconButtonLichSuHoaDon.Click += new System.EventHandler(this.iconButtonLichSuHoaDon_Click);
-            // 
-            // iconButtonBaoHanh
-            // 
-            this.iconButtonBaoHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.iconButtonBaoHanh.FlatAppearance.BorderSize = 0;
-            this.iconButtonBaoHanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.iconButtonBaoHanh.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonBaoHanh.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
-            this.iconButtonBaoHanh.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonBaoHanh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonBaoHanh.IconSize = 30;
-            this.iconButtonBaoHanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonBaoHanh.Location = new System.Drawing.Point(0, 195);
-            this.iconButtonBaoHanh.Name = "iconButtonBaoHanh";
-            this.iconButtonBaoHanh.Size = new System.Drawing.Size(200, 74);
-            this.iconButtonBaoHanh.TabIndex = 7;
-            this.iconButtonBaoHanh.Text = "Bảo hành";
-            this.iconButtonBaoHanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonBaoHanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonBaoHanh.UseVisualStyleBackColor = false;
-            this.iconButtonBaoHanh.Click += new System.EventHandler(this.iconButtonBaoHanh_Click);
             // 
             // panelLogo
             // 
@@ -182,42 +110,6 @@
             this.linkLabelTenNhanVien.Text = "TÊN NHÂN VIÊN";
             this.linkLabelTenNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelTenNhanVien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTenNhanVien_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // iconButtonSanPham
-            // 
-            this.iconButtonSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.iconButtonSanPham.FlatAppearance.BorderSize = 0;
-            this.iconButtonSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.iconButtonSanPham.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonSanPham.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.iconButtonSanPham.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSanPham.IconSize = 30;
-            this.iconButtonSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSanPham.Location = new System.Drawing.Point(0, 121);
-            this.iconButtonSanPham.Name = "iconButtonSanPham";
-            this.iconButtonSanPham.Size = new System.Drawing.Size(200, 74);
-            this.iconButtonSanPham.TabIndex = 6;
-            this.iconButtonSanPham.Text = "Sản phẩm";
-            this.iconButtonSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonSanPham.UseVisualStyleBackColor = false;
-            this.iconButtonSanPham.Click += new System.EventHandler(this.iconButtonSanPham_Click);
             // 
             // contextMenuStrip1
             // 
@@ -259,16 +151,115 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 18);
+            this.panel2.Size = new System.Drawing.Size(848, 18);
             this.panel2.TabIndex = 7;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
+            // 
+            // buttonMaximize
+            // 
+            this.buttonMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMaximize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.BackgroundImage")));
+            this.buttonMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMaximize.FlatAppearance.BorderSize = 0;
+            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaximize.Location = new System.Drawing.Point(820, 0);
+            this.buttonMaximize.Name = "buttonMaximize";
+            this.buttonMaximize.Size = new System.Drawing.Size(21, 18);
+            this.buttonMaximize.TabIndex = 1;
+            this.buttonMaximize.UseVisualStyleBackColor = true;
+            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
+            // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.BackgroundImage")));
+            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Location = new System.Drawing.Point(795, 0);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(21, 18);
+            this.buttonMinimize.TabIndex = 0;
+            this.buttonMinimize.UseVisualStyleBackColor = true;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
+            // buttonBaoHanh
+            // 
+            this.buttonBaoHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonBaoHanh.FlatAppearance.BorderSize = 0;
+            this.buttonBaoHanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonBaoHanh.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonBaoHanh.Image = global::PBL3.Properties.Resources.baohanh26;
+            this.buttonBaoHanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBaoHanh.Location = new System.Drawing.Point(0, 195);
+            this.buttonBaoHanh.Name = "buttonBaoHanh";
+            this.buttonBaoHanh.Size = new System.Drawing.Size(200, 74);
+            this.buttonBaoHanh.TabIndex = 3;
+            this.buttonBaoHanh.Text = " Bảo hành";
+            this.buttonBaoHanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBaoHanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonBaoHanh.UseVisualStyleBackColor = false;
+            this.buttonBaoHanh.Click += new System.EventHandler(this.buttonBaoHanh_Click);
+            // 
+            // buttonLichSuHoaDon
+            // 
+            this.buttonLichSuHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonLichSuHoaDon.FlatAppearance.BorderSize = 0;
+            this.buttonLichSuHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLichSuHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonLichSuHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonLichSuHoaDon.Image = global::PBL3.Properties.Resources.lichsuhoadon26;
+            this.buttonLichSuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLichSuHoaDon.Location = new System.Drawing.Point(0, 269);
+            this.buttonLichSuHoaDon.Name = "buttonLichSuHoaDon";
+            this.buttonLichSuHoaDon.Size = new System.Drawing.Size(200, 74);
+            this.buttonLichSuHoaDon.TabIndex = 2;
+            this.buttonLichSuHoaDon.Text = " Lịch sử hoá đơn";
+            this.buttonLichSuHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLichSuHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonLichSuHoaDon.UseVisualStyleBackColor = false;
+            this.buttonLichSuHoaDon.Click += new System.EventHandler(this.buttonLichSuHoaDon_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // buttonSanPham
+            // 
+            this.buttonSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonSanPham.FlatAppearance.BorderSize = 0;
+            this.buttonSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonSanPham.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonSanPham.Image = global::PBL3.Properties.Resources.sanpham26;
+            this.buttonSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSanPham.Location = new System.Drawing.Point(0, 121);
+            this.buttonSanPham.Name = "buttonSanPham";
+            this.buttonSanPham.Size = new System.Drawing.Size(200, 74);
+            this.buttonSanPham.TabIndex = 1;
+            this.buttonSanPham.Text = " Sản phẩm";
+            this.buttonSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSanPham.UseVisualStyleBackColor = false;
+            this.buttonSanPham.Click += new System.EventHandler(this.buttonSanPham_Click);
             // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1000, 545);
+            this.ClientSize = new System.Drawing.Size(1048, 585);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panel2);
@@ -280,9 +271,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,12 +282,9 @@
 
         private System.Windows.Forms.Panel panelDesktopPane;
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton iconButtonLichSuHoaDon;
-        private FontAwesome.Sharp.IconButton iconButtonBaoHanh;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.LinkLabel linkLabelTenNhanVien;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton iconButtonSanPham;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem thôngTinNhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
@@ -304,5 +292,8 @@
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.Button buttonMaximize;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonBaoHanh;
+        private System.Windows.Forms.Button buttonLichSuHoaDon;
+        private System.Windows.Forms.Button buttonSanPham;
     }
 }

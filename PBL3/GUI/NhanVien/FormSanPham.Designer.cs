@@ -57,7 +57,7 @@
             this.buttonThanhToan.Location = new System.Drawing.Point(18, 64);
             this.buttonThanhToan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonThanhToan.Name = "buttonThanhToan";
-            this.buttonThanhToan.Size = new System.Drawing.Size(102, 28);
+            this.buttonThanhToan.Size = new System.Drawing.Size(98, 28);
             this.buttonThanhToan.TabIndex = 33;
             this.buttonThanhToan.Text = "Thanh Toán";
             this.buttonThanhToan.UseVisualStyleBackColor = true;

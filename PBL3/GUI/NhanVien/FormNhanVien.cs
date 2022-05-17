@@ -34,17 +34,17 @@ namespace PBL3
             formManHinhChinh.Show();
         }
 
-        private void iconButtonSanPham_Click(object sender, EventArgs e)
+        private void buttonSanPham_Click(object sender, EventArgs e)
         {
             QuanLiChung.Instance.OpenChildForm(new FormSanPham(), sender, panelDesktopPane);
         }
 
-        private void iconButtonBaoHanh_Click(object sender, EventArgs e)
+        private void buttonBaoHanh_Click(object sender, EventArgs e)
         {
             QuanLiChung.Instance.OpenChildForm(new FormBaoHanh(), sender, panelDesktopPane);
         }
 
-        private void iconButtonLichSuHoaDon_Click(object sender, EventArgs e)
+        private void buttonLichSuHoaDon_Click(object sender, EventArgs e)
         {
             QuanLiChung.Instance.OpenChildForm(new FormLichSuHoaDon(), sender, panelDesktopPane);
         }

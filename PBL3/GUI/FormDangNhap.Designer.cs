@@ -38,9 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.iconButtonAnHienMatKhau = new FontAwesome.Sharp.IconButton();
             this.textBoxCanhBao = new System.Windows.Forms.TextBox();
             this.textBoxTenDangNhap = new System.Windows.Forms.TextBox();
+            this.buttonAnHienMatKhau = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -156,24 +156,6 @@
             this.panel3.Size = new System.Drawing.Size(257, 1);
             this.panel3.TabIndex = 8;
             // 
-            // iconButtonAnHienMatKhau
-            // 
-            this.iconButtonAnHienMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButtonAnHienMatKhau.FlatAppearance.BorderSize = 0;
-            this.iconButtonAnHienMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.iconButtonAnHienMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.iconButtonAnHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonAnHienMatKhau.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.iconButtonAnHienMatKhau.IconColor = System.Drawing.Color.Black;
-            this.iconButtonAnHienMatKhau.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.iconButtonAnHienMatKhau.IconSize = 27;
-            this.iconButtonAnHienMatKhau.Location = new System.Drawing.Point(300, 198);
-            this.iconButtonAnHienMatKhau.Name = "iconButtonAnHienMatKhau";
-            this.iconButtonAnHienMatKhau.Size = new System.Drawing.Size(26, 23);
-            this.iconButtonAnHienMatKhau.TabIndex = 3;
-            this.iconButtonAnHienMatKhau.UseVisualStyleBackColor = true;
-            this.iconButtonAnHienMatKhau.Click += new System.EventHandler(this.iconButtonAnHienMatKhau_Click);
-            // 
             // textBoxCanhBao
             // 
             this.textBoxCanhBao.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -207,15 +189,29 @@
             this.textBoxTenDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormDangNhap_KeyDown);
             this.textBoxTenDangNhap.Leave += new System.EventHandler(this.textBoxTenDangNhap_Leave);
             // 
+            // buttonAnHienMatKhau
+            // 
+            this.buttonAnHienMatKhau.FlatAppearance.BorderSize = 0;
+            this.buttonAnHienMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAnHienMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonAnHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnHienMatKhau.Image = global::PBL3.Properties.Resources.openedeye20;
+            this.buttonAnHienMatKhau.Location = new System.Drawing.Point(301, 201);
+            this.buttonAnHienMatKhau.Name = "buttonAnHienMatKhau";
+            this.buttonAnHienMatKhau.Size = new System.Drawing.Size(20, 20);
+            this.buttonAnHienMatKhau.TabIndex = 3;
+            this.buttonAnHienMatKhau.UseVisualStyleBackColor = true;
+            this.buttonAnHienMatKhau.Click += new System.EventHandler(this.buttonAnHienMatKhau_Click);
+            // 
             // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(378, 363);
+            this.Controls.Add(this.buttonAnHienMatKhau);
             this.Controls.Add(this.textBoxTenDangNhap);
             this.Controls.Add(this.textBoxCanhBao);
-            this.Controls.Add(this.iconButtonAnHienMatKhau);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
@@ -246,8 +242,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private FontAwesome.Sharp.IconButton iconButtonAnHienMatKhau;
         private System.Windows.Forms.TextBox textBoxCanhBao;
         private System.Windows.Forms.TextBox textBoxTenDangNhap;
+        private System.Windows.Forms.Button buttonAnHienMatKhau;
     }
 }

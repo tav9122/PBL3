@@ -39,9 +39,6 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net48\FontAwesome.Sharp.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -130,6 +127,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\QuanTriVien\FormQuanLiLichLamViec.resx">
       <DependentUpon>FormQuanLiLichLamViec.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormQuanTriVien.resx">
       <DependentUpon>FormQuanTriVien.cs</DependentUpon>
@@ -145,18 +143,23 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormManHinhChinh.resx">
       <DependentUpon>FormManHinhChinh.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanVien\FormBaoHanh.resx">
       <DependentUpon>FormBaoHanh.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanVien\FormLichSuHoaDon.resx">
       <DependentUpon>FormLichSuHoaDon.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanVien\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanVien\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
@@ -169,8 +172,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,6 +189,54 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lichsuhoadon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lichsuhoadon26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlisanpham32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlisanpham26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlinhanvien32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlinhanvien26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlilichlamviec26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlilichlamviec32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongke26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongke32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sanpham26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sanpham32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baohanh26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baohanh32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closedeye20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openedeye20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

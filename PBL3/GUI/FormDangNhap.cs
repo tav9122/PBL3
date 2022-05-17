@@ -54,27 +54,6 @@ namespace PBL3
             MessageBox.Show("Quên thì chịu chứ sao h :<");
         }
 
-        private void iconButtonAnHienMatKhau_Click(object sender, EventArgs e)
-        {
-            if (iconButtonAnHienMatKhau.IconChar == FontAwesome.Sharp.IconChar.Eye)
-            {
-                iconButtonAnHienMatKhau.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
-                iconButtonAnHienMatKhau.IconFont = FontAwesome.Sharp.IconFont.Regular;
-                iconButtonAnHienMatKhau.IconSize = 30;
-                textBoxMatKhau.UseSystemPasswordChar = false;
-                textBoxMatKhau.Multiline = true;
-            }
-            else
-            {
-                iconButtonAnHienMatKhau.IconChar = FontAwesome.Sharp.IconChar.Eye;
-                iconButtonAnHienMatKhau.IconFont = FontAwesome.Sharp.IconFont.Regular;
-                iconButtonAnHienMatKhau.IconSize = 27;
-                textBoxMatKhau.UseSystemPasswordChar = true;
-                textBoxMatKhau.Multiline = false;
-            }
-        }
-
-
         private void textBoxMatKhau_Enter(object sender, EventArgs e)
         {
             panel3.BackColor = Color.FromArgb(125, 125, 200);
@@ -109,6 +88,22 @@ namespace PBL3
             if (((TextBox)sender).Text != "")
             {
                 textBoxCanhBao.Text = "";
+            }
+        }
+
+        int count = 0;
+        private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
+        {
+            count++;
+            if (count % 2 == 0)
+            {
+                textBoxMatKhau.Multiline = false;
+                buttonAnHienMatKhau.Image = Properties.Resources.openedeye20;
+            }
+            else
+            {
+                textBoxMatKhau.Multiline = true;
+                buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
             }
         }
     }

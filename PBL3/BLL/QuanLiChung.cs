@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
 
 namespace PBL3
 {
@@ -24,7 +25,7 @@ namespace PBL3
                 return instance;
             }
         }
-        private IconButton currentButton { get; set; }
+        private Button currentButton { get; set; }
 
         public bool alreadyOpenFormBaoHanh { get; set; }
         public bool alreadyOpenFormLichSuHoaDon { get; set; }
@@ -41,24 +42,23 @@ namespace PBL3
         public Form formQuanLiSanPham { get; set; }
         public Form formQuanLiLichLamViec { get; set; }
         public Form formThongKe { get; set; }
-        
+
         private string tempText { get; set; }
-        
+
         private void ActivateButton(object buttonSender)
         {
             if (buttonSender != null)
             {
-                if (currentButton != (IconButton)buttonSender)
-                {
-                    DisableButton();
-                    currentButton = (IconButton)buttonSender;
-                    currentButton.BackColor = Color.FromArgb(125, 125, 161);
-                    tempText = currentButton.Text;
-                    currentButton.Text = "";
-                    currentButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    currentButton.IconSize = 38;
-                    currentButton.IconColor = Color.WhiteSmoke;
-                }
+                DisableButton();
+                currentButton = (Button)buttonSender;
+                Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+                string temp = currentButton.Text.Normalize(NormalizationForm.FormD);
+                temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToLower().Replace(" ", "") + "32";
+                currentButton.Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
+                currentButton.BackColor = Color.FromArgb(125, 125, 161);
+                tempText = currentButton.Text;
+                currentButton.Text = "";
+                currentButton.ImageAlign = ContentAlignment.MiddleCenter;
             }
         }
 
@@ -66,17 +66,16 @@ namespace PBL3
         {
             if (currentButton != null)
             {
+                Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+                string temp = tempText.Normalize(NormalizationForm.FormD);
+                temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToLower().Replace(" ", "") + "26";
+                currentButton.Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
                 currentButton.BackColor = Color.FromArgb(39, 39, 58);
-                currentButton.ForeColor = Color.Gainsboro;
-                currentButton.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentButton.Text = tempText;
-                currentButton.IconSize = 30;
                 currentButton.ImageAlign = ContentAlignment.MiddleLeft;
-                currentButton.TextAlign = ContentAlignment.MiddleLeft;
-                currentButton.IconColor = Color.Gainsboro;
             }
         }
-        
+
         public void OpenChildForm(Form childForm, object buttonSender, Panel panelDesktopPane)
         {
             string boolCheck = "alreadyOpen" + childForm.Name;

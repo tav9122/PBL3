@@ -22,7 +22,6 @@ D:\OneDrive - tav9122\ANH VU\source\respo\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyCo
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\bin\Debug\PBL3.exe.config
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\bin\Debug\PBL3.exe
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\bin\Debug\PBL3.pdb
-D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\bin\Debug\FontAwesome.Sharp.dll
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.csproj.SuggestedBindingRedirects.cache
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanLiNhanVien.resources
@@ -36,7 +35,6 @@ D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormSa
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.Properties.Resources.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
-D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.exe
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.pdb
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanTriVien.resources
