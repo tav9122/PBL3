@@ -73,8 +73,9 @@ namespace PBL3
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            QuanLiChung.Instance.ResetProperties();
         }
-        
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]

@@ -42,6 +42,24 @@ namespace PBL3
         public Form formQuanLiSanPham { get; set; }
         public Form formQuanLiLichLamViec { get; set; }
         public Form formThongKe { get; set; }
+        
+        public void ResetProperties()
+        {
+            alreadyOpenFormBaoHanh = false;
+            alreadyOpenFormLichSuHoaDon = false;
+            alreadyOpenFormSanPham = false;
+            alreadyOpenFormQuanLiNhanVien = false;
+            alreadyOpenFormQuanLiSanPham = false;
+            alreadyOpenFormQuanLiLichLamViec = false;
+            alreadyOpenFormThongKe = false;
+            formBaoHanh = null;
+            formLichSuHoaDon = null;
+            formSanPham = null;
+            formQuanLiNhanVien = null;
+            formQuanLiSanPham = null;
+            formQuanLiLichLamViec = null;
+            formThongKe = null;
+        }
 
         private string tempText { get; set; }
 

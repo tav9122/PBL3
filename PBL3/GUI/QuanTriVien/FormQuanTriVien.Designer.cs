@@ -31,9 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanTriVien));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonQuanLiLichLamViec = new System.Windows.Forms.Button();
+            this.buttonThongKe = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.linkLabelTenQuanTriVien = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonQuanLiNhanVien = new System.Windows.Forms.Button();
+            this.buttonQuanLiSanPham = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thôngTinQuảnTrịViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,16 +46,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMaximize = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonQuanLiLichLamViec = new System.Windows.Forms.Button();
-            this.buttonThongKe = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonQuanLiNhanVien = new System.Windows.Forms.Button();
-            this.buttonQuanLiSanPham = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -68,6 +68,44 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 585);
             this.panelMenu.TabIndex = 3;
+            // 
+            // buttonQuanLiLichLamViec
+            // 
+            this.buttonQuanLiLichLamViec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonQuanLiLichLamViec.FlatAppearance.BorderSize = 0;
+            this.buttonQuanLiLichLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuanLiLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonQuanLiLichLamViec.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonQuanLiLichLamViec.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuanLiLichLamViec.Image")));
+            this.buttonQuanLiLichLamViec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiLichLamViec.Location = new System.Drawing.Point(0, 269);
+            this.buttonQuanLiLichLamViec.Name = "buttonQuanLiLichLamViec";
+            this.buttonQuanLiLichLamViec.Size = new System.Drawing.Size(200, 74);
+            this.buttonQuanLiLichLamViec.TabIndex = 8;
+            this.buttonQuanLiLichLamViec.Text = " Quản lí lịch làm việc";
+            this.buttonQuanLiLichLamViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiLichLamViec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonQuanLiLichLamViec.UseVisualStyleBackColor = false;
+            this.buttonQuanLiLichLamViec.Click += new System.EventHandler(this.buttonQuanLiLichLamViec_Click);
+            // 
+            // buttonThongKe
+            // 
+            this.buttonThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonThongKe.FlatAppearance.BorderSize = 0;
+            this.buttonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonThongKe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonThongKe.Image = global::PBL3.Properties.Resources.thongke26;
+            this.buttonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKe.Location = new System.Drawing.Point(0, 343);
+            this.buttonThongKe.Name = "buttonThongKe";
+            this.buttonThongKe.Size = new System.Drawing.Size(200, 74);
+            this.buttonThongKe.TabIndex = 9;
+            this.buttonThongKe.Text = " Thống kê";
+            this.buttonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonThongKe.UseVisualStyleBackColor = false;
+            this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
             // 
             // panel1
             // 
@@ -103,6 +141,60 @@
             this.linkLabelTenQuanTriVien.Text = "TÊN QUẢN TRỊ VIÊN";
             this.linkLabelTenQuanTriVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelTenQuanTriVien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTenQuanTriVien_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // buttonQuanLiNhanVien
+            // 
+            this.buttonQuanLiNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonQuanLiNhanVien.FlatAppearance.BorderSize = 0;
+            this.buttonQuanLiNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuanLiNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonQuanLiNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonQuanLiNhanVien.Image = global::PBL3.Properties.Resources.quanlinhanvien26;
+            this.buttonQuanLiNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiNhanVien.Location = new System.Drawing.Point(0, 195);
+            this.buttonQuanLiNhanVien.Name = "buttonQuanLiNhanVien";
+            this.buttonQuanLiNhanVien.Size = new System.Drawing.Size(200, 74);
+            this.buttonQuanLiNhanVien.TabIndex = 7;
+            this.buttonQuanLiNhanVien.Text = " Quản lí nhân viên";
+            this.buttonQuanLiNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonQuanLiNhanVien.UseVisualStyleBackColor = false;
+            this.buttonQuanLiNhanVien.Click += new System.EventHandler(this.buttonQuanLiNhanVien_Click);
+            // 
+            // buttonQuanLiSanPham
+            // 
+            this.buttonQuanLiSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonQuanLiSanPham.FlatAppearance.BorderSize = 0;
+            this.buttonQuanLiSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuanLiSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonQuanLiSanPham.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonQuanLiSanPham.Image = global::PBL3.Properties.Resources.quanlisanpham26;
+            this.buttonQuanLiSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiSanPham.Location = new System.Drawing.Point(0, 121);
+            this.buttonQuanLiSanPham.Name = "buttonQuanLiSanPham";
+            this.buttonQuanLiSanPham.Size = new System.Drawing.Size(200, 74);
+            this.buttonQuanLiSanPham.TabIndex = 0;
+            this.buttonQuanLiSanPham.Text = " Quản lí sản phẩm";
+            this.buttonQuanLiSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonQuanLiSanPham.UseVisualStyleBackColor = false;
+            this.buttonQuanLiSanPham.Click += new System.EventHandler(this.buttonQuanLiSanPham_Click);
             // 
             // contextMenuStrip1
             // 
@@ -185,98 +277,6 @@
             this.buttonMinimize.UseVisualStyleBackColor = true;
             this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
-            // buttonQuanLiLichLamViec
-            // 
-            this.buttonQuanLiLichLamViec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonQuanLiLichLamViec.FlatAppearance.BorderSize = 0;
-            this.buttonQuanLiLichLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuanLiLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonQuanLiLichLamViec.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonQuanLiLichLamViec.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuanLiLichLamViec.Image")));
-            this.buttonQuanLiLichLamViec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiLichLamViec.Location = new System.Drawing.Point(0, 269);
-            this.buttonQuanLiLichLamViec.Name = "buttonQuanLiLichLamViec";
-            this.buttonQuanLiLichLamViec.Size = new System.Drawing.Size(200, 74);
-            this.buttonQuanLiLichLamViec.TabIndex = 8;
-            this.buttonQuanLiLichLamViec.Text = " Quản lí lịch làm việc";
-            this.buttonQuanLiLichLamViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiLichLamViec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonQuanLiLichLamViec.UseVisualStyleBackColor = false;
-            this.buttonQuanLiLichLamViec.Click += new System.EventHandler(this.buttonQuanLiLichLamViec_Click);
-            // 
-            // buttonThongKe
-            // 
-            this.buttonThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThongKe.FlatAppearance.BorderSize = 0;
-            this.buttonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonThongKe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonThongKe.Image = ((System.Drawing.Image)(resources.GetObject("buttonThongKe.Image")));
-            this.buttonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonThongKe.Location = new System.Drawing.Point(0, 343);
-            this.buttonThongKe.Name = "buttonThongKe";
-            this.buttonThongKe.Size = new System.Drawing.Size(200, 74);
-            this.buttonThongKe.TabIndex = 9;
-            this.buttonThongKe.Text = " Thống kê";
-            this.buttonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonThongKe.UseVisualStyleBackColor = false;
-            this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // buttonQuanLiNhanVien
-            // 
-            this.buttonQuanLiNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonQuanLiNhanVien.FlatAppearance.BorderSize = 0;
-            this.buttonQuanLiNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuanLiNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonQuanLiNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonQuanLiNhanVien.Image = global::PBL3.Properties.Resources.quanlinhanvien26;
-            this.buttonQuanLiNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiNhanVien.Location = new System.Drawing.Point(0, 195);
-            this.buttonQuanLiNhanVien.Name = "buttonQuanLiNhanVien";
-            this.buttonQuanLiNhanVien.Size = new System.Drawing.Size(200, 74);
-            this.buttonQuanLiNhanVien.TabIndex = 7;
-            this.buttonQuanLiNhanVien.Text = " Quản lí nhân viên";
-            this.buttonQuanLiNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonQuanLiNhanVien.UseVisualStyleBackColor = false;
-            this.buttonQuanLiNhanVien.Click += new System.EventHandler(this.buttonQuanLiNhanVien_Click);
-            // 
-            // buttonQuanLiSanPham
-            // 
-            this.buttonQuanLiSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonQuanLiSanPham.FlatAppearance.BorderSize = 0;
-            this.buttonQuanLiSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuanLiSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonQuanLiSanPham.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonQuanLiSanPham.Image = global::PBL3.Properties.Resources.quanlisanpham26;
-            this.buttonQuanLiSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiSanPham.Location = new System.Drawing.Point(0, 121);
-            this.buttonQuanLiSanPham.Name = "buttonQuanLiSanPham";
-            this.buttonQuanLiSanPham.Size = new System.Drawing.Size(200, 74);
-            this.buttonQuanLiSanPham.TabIndex = 0;
-            this.buttonQuanLiSanPham.Text = " Quản lí sản phẩm";
-            this.buttonQuanLiSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonQuanLiSanPham.UseVisualStyleBackColor = false;
-            this.buttonQuanLiSanPham.Click += new System.EventHandler(this.buttonQuanLiSanPham_Click);
-            // 
             // FormQuanTriVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,9 +294,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

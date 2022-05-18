@@ -33,6 +33,8 @@ namespace PBL3
                     this.Hide();
                     formAdmin.ShowDialog();
                     this.Show();
+                    count = 1;
+                    buttonAnHienMatKhau.PerformClick();
                 }
                 else if (textBoxTenDangNhap.Text == "nv" && textBoxMatKhau.Text == "nv")
                 {
@@ -40,6 +42,8 @@ namespace PBL3
                     this.Hide();
                     formNhanVien.ShowDialog();
                     this.Show();
+                    count = 1;
+                    buttonAnHienMatKhau.PerformClick();                    
                 }
                 else textBoxCanhBao.Text = "Tên đăng nhập hoặc mật khẩu không đúng";
 

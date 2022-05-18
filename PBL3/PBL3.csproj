@@ -197,16 +197,22 @@
     <None Include="Resources\lichsuhoadon26.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\quanlisanpham32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\quanlisanpham26.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\quanlinhanvien32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quanlinhanvien26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baohanh26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baohanh32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closedeye20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openedeye20.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quanlilichlamviec26.png" />
@@ -221,22 +227,16 @@
     <None Include="Resources\thongke32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sanpham26.png" />
+    <None Include="Resources\quanlisanpham26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlisanpham32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sanpham32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\baohanh26.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\baohanh32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\closedeye20.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\openedeye20.png" />
+    <None Include="Resources\sanpham26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
