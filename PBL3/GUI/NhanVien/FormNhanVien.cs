@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace PBL3
 {
@@ -49,6 +43,11 @@ namespace PBL3
             QuanLiChung.Instance.OpenChildForm(new FormLichSuHoaDon(), sender, panelDesktopPane);
         }
 
+        private void buttonQuanLiKhachHang_Click(object sender, EventArgs e)
+        {
+            QuanLiChung.Instance.OpenChildForm(new FormQuanLiKhachHang(), sender, panelDesktopPane);
+        }
+
         private void linkLabelTenNhanVien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Point position = new Point(166, -5);
@@ -70,7 +69,7 @@ namespace PBL3
             this.Close();
             QuanLiChung.Instance.ResetProperties();
         }
-        
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
@@ -112,6 +111,12 @@ namespace PBL3
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             pictureBox1.Size = new Size(pictureBox1.Size.Width + 3, pictureBox1.Size.Height + 3);
+        }
+
+        private void thôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThongTinCaNhan f = new FormThongTinCaNhan();
+            f.ShowDialog();
         }
     }
 }

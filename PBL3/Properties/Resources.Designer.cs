@@ -123,6 +123,26 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap quanlikhachhang26 {
+            get {
+                object obj = ResourceManager.GetObject("quanlikhachhang26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quanlikhachhang32 {
+            get {
+                object obj = ResourceManager.GetObject("quanlikhachhang32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap quanlilichlamviec26 {
             get {
                 object obj = ResourceManager.GetObject("quanlilichlamviec26", resourceCulture);

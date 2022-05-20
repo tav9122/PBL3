@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PBL3
@@ -117,6 +111,12 @@ namespace PBL3
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             pictureBox1.Size = new Size(pictureBox1.Size.Width + 3, pictureBox1.Size.Height + 3);
+        }
+
+        private void thôngTinQuảnTrịViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThongTinCaNhan f = new FormThongTinCaNhan();
+            f.ShowDialog();
         }
     }
 }

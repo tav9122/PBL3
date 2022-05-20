@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Globalization;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PBL3
@@ -34,6 +30,7 @@ namespace PBL3
         public bool alreadyOpenFormQuanLiSanPham { get; set; }
         public bool alreadyOpenFormQuanLiLichLamViec { get; set; }
         public bool alreadyOpenFormThongKe { get; set; }
+        public bool alreadyOpenFormQuanLiKhachHang { get; set; }
 
         public Form formBaoHanh { get; set; }
         public Form formLichSuHoaDon { get; set; }
@@ -42,7 +39,8 @@ namespace PBL3
         public Form formQuanLiSanPham { get; set; }
         public Form formQuanLiLichLamViec { get; set; }
         public Form formThongKe { get; set; }
-        
+        public Form formQuanLiKhachHang { get; set; }
+
         public void ResetProperties()
         {
             alreadyOpenFormBaoHanh = false;
@@ -52,6 +50,7 @@ namespace PBL3
             alreadyOpenFormQuanLiSanPham = false;
             alreadyOpenFormQuanLiLichLamViec = false;
             alreadyOpenFormThongKe = false;
+            alreadyOpenFormQuanLiKhachHang = false;
             formBaoHanh = null;
             formLichSuHoaDon = null;
             formSanPham = null;
@@ -59,6 +58,7 @@ namespace PBL3
             formQuanLiSanPham = null;
             formQuanLiLichLamViec = null;
             formThongKe = null;
+            formQuanLiKhachHang = null;
         }
 
         private string tempText { get; set; }
