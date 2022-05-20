@@ -32,25 +32,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonQuanLiKhachHang = new System.Windows.Forms.Button();
+            this.buttonBaoHanh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonLichSuHoaDon = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.linkLabelTenNhanVien = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonSanPham = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thôngTinNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMaximize = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonQuanLiKhachHang = new System.Windows.Forms.Button();
-            this.buttonBaoHanh = new System.Windows.Forms.Button();
-            this.buttonLichSuHoaDon = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonSanPham = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDesktopPane
@@ -78,6 +78,44 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 585);
             this.panelMenu.TabIndex = 5;
             // 
+            // buttonQuanLiKhachHang
+            // 
+            this.buttonQuanLiKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonQuanLiKhachHang.FlatAppearance.BorderSize = 0;
+            this.buttonQuanLiKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuanLiKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonQuanLiKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonQuanLiKhachHang.Image = global::PBL3.Properties.Resources.quanlikhachhang26;
+            this.buttonQuanLiKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiKhachHang.Location = new System.Drawing.Point(0, 343);
+            this.buttonQuanLiKhachHang.Name = "buttonQuanLiKhachHang";
+            this.buttonQuanLiKhachHang.Size = new System.Drawing.Size(200, 74);
+            this.buttonQuanLiKhachHang.TabIndex = 4;
+            this.buttonQuanLiKhachHang.Text = " Quản lí khách hàng";
+            this.buttonQuanLiKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLiKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonQuanLiKhachHang.UseVisualStyleBackColor = false;
+            this.buttonQuanLiKhachHang.Click += new System.EventHandler(this.buttonQuanLiKhachHang_Click);
+            // 
+            // buttonBaoHanh
+            // 
+            this.buttonBaoHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonBaoHanh.FlatAppearance.BorderSize = 0;
+            this.buttonBaoHanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonBaoHanh.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonBaoHanh.Image = global::PBL3.Properties.Resources.baohanh26;
+            this.buttonBaoHanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBaoHanh.Location = new System.Drawing.Point(0, 195);
+            this.buttonBaoHanh.Name = "buttonBaoHanh";
+            this.buttonBaoHanh.Size = new System.Drawing.Size(200, 74);
+            this.buttonBaoHanh.TabIndex = 3;
+            this.buttonBaoHanh.Text = " Bảo hành";
+            this.buttonBaoHanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBaoHanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonBaoHanh.UseVisualStyleBackColor = false;
+            this.buttonBaoHanh.Click += new System.EventHandler(this.buttonBaoHanh_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
@@ -85,6 +123,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 1);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonLichSuHoaDon
+            // 
+            this.buttonLichSuHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonLichSuHoaDon.FlatAppearance.BorderSize = 0;
+            this.buttonLichSuHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLichSuHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonLichSuHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonLichSuHoaDon.Image = global::PBL3.Properties.Resources.lichsuhoadon26;
+            this.buttonLichSuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLichSuHoaDon.Location = new System.Drawing.Point(0, 269);
+            this.buttonLichSuHoaDon.Name = "buttonLichSuHoaDon";
+            this.buttonLichSuHoaDon.Size = new System.Drawing.Size(200, 74);
+            this.buttonLichSuHoaDon.TabIndex = 2;
+            this.buttonLichSuHoaDon.Text = " Lịch sử hoá đơn";
+            this.buttonLichSuHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLichSuHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonLichSuHoaDon.UseVisualStyleBackColor = false;
+            this.buttonLichSuHoaDon.Click += new System.EventHandler(this.buttonLichSuHoaDon_Click);
             // 
             // panelLogo
             // 
@@ -112,6 +169,39 @@
             this.linkLabelTenNhanVien.Text = "TÊN NHÂN VIÊN";
             this.linkLabelTenNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelTenNhanVien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTenNhanVien_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // buttonSanPham
+            // 
+            this.buttonSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonSanPham.FlatAppearance.BorderSize = 0;
+            this.buttonSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonSanPham.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonSanPham.Image = global::PBL3.Properties.Resources.sanpham26;
+            this.buttonSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSanPham.Location = new System.Drawing.Point(0, 121);
+            this.buttonSanPham.Name = "buttonSanPham";
+            this.buttonSanPham.Size = new System.Drawing.Size(200, 74);
+            this.buttonSanPham.TabIndex = 1;
+            this.buttonSanPham.Text = " Sản phẩm";
+            this.buttonSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSanPham.UseVisualStyleBackColor = false;
+            this.buttonSanPham.Click += new System.EventHandler(this.buttonSanPham_Click);
             // 
             // contextMenuStrip1
             // 
@@ -186,96 +276,6 @@
             this.buttonMinimize.UseVisualStyleBackColor = true;
             this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
-            // buttonQuanLiKhachHang
-            // 
-            this.buttonQuanLiKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonQuanLiKhachHang.FlatAppearance.BorderSize = 0;
-            this.buttonQuanLiKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuanLiKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonQuanLiKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonQuanLiKhachHang.Image = global::PBL3.Properties.Resources.quanlikhachhang26;
-            this.buttonQuanLiKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiKhachHang.Location = new System.Drawing.Point(0, 343);
-            this.buttonQuanLiKhachHang.Name = "buttonQuanLiKhachHang";
-            this.buttonQuanLiKhachHang.Size = new System.Drawing.Size(200, 74);
-            this.buttonQuanLiKhachHang.TabIndex = 4;
-            this.buttonQuanLiKhachHang.Text = " Quản lí khách hàng";
-            this.buttonQuanLiKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuanLiKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonQuanLiKhachHang.UseVisualStyleBackColor = false;
-            this.buttonQuanLiKhachHang.Click += new System.EventHandler(this.buttonQuanLiKhachHang_Click);
-            // 
-            // buttonBaoHanh
-            // 
-            this.buttonBaoHanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonBaoHanh.FlatAppearance.BorderSize = 0;
-            this.buttonBaoHanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonBaoHanh.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonBaoHanh.Image = global::PBL3.Properties.Resources.baohanh26;
-            this.buttonBaoHanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBaoHanh.Location = new System.Drawing.Point(0, 195);
-            this.buttonBaoHanh.Name = "buttonBaoHanh";
-            this.buttonBaoHanh.Size = new System.Drawing.Size(200, 74);
-            this.buttonBaoHanh.TabIndex = 3;
-            this.buttonBaoHanh.Text = " Bảo hành";
-            this.buttonBaoHanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBaoHanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonBaoHanh.UseVisualStyleBackColor = false;
-            this.buttonBaoHanh.Click += new System.EventHandler(this.buttonBaoHanh_Click);
-            // 
-            // buttonLichSuHoaDon
-            // 
-            this.buttonLichSuHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonLichSuHoaDon.FlatAppearance.BorderSize = 0;
-            this.buttonLichSuHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLichSuHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonLichSuHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonLichSuHoaDon.Image = global::PBL3.Properties.Resources.lichsuhoadon26;
-            this.buttonLichSuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLichSuHoaDon.Location = new System.Drawing.Point(0, 269);
-            this.buttonLichSuHoaDon.Name = "buttonLichSuHoaDon";
-            this.buttonLichSuHoaDon.Size = new System.Drawing.Size(200, 74);
-            this.buttonLichSuHoaDon.TabIndex = 2;
-            this.buttonLichSuHoaDon.Text = " Lịch sử hoá đơn";
-            this.buttonLichSuHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLichSuHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonLichSuHoaDon.UseVisualStyleBackColor = false;
-            this.buttonLichSuHoaDon.Click += new System.EventHandler(this.buttonLichSuHoaDon_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // buttonSanPham
-            // 
-            this.buttonSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonSanPham.FlatAppearance.BorderSize = 0;
-            this.buttonSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonSanPham.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonSanPham.Image = global::PBL3.Properties.Resources.sanpham26;
-            this.buttonSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSanPham.Location = new System.Drawing.Point(0, 121);
-            this.buttonSanPham.Name = "buttonSanPham";
-            this.buttonSanPham.Size = new System.Drawing.Size(200, 74);
-            this.buttonSanPham.TabIndex = 1;
-            this.buttonSanPham.Text = " Sản phẩm";
-            this.buttonSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonSanPham.UseVisualStyleBackColor = false;
-            this.buttonSanPham.Click += new System.EventHandler(this.buttonSanPham_Click);
-            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,16 +286,16 @@
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "FormNhanVien";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

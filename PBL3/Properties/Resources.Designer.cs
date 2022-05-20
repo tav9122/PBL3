@@ -113,6 +113,56 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nhanvien {
+            get {
+                object obj = ResourceManager.GetObject("nhanvien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nutphongtomauden32 {
+            get {
+                object obj = ResourceManager.GetObject("nutphongtomauden32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nutphongtomautrang32 {
+            get {
+                object obj = ResourceManager.GetObject("nutphongtomautrang32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nutthunhomauden32 {
+            get {
+                object obj = ResourceManager.GetObject("nutthunhomauden32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nutthunhomautrang32 {
+            get {
+                object obj = ResourceManager.GetObject("nutthunhomautrang32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap openedeye20 {
             get {
                 object obj = ResourceManager.GetObject("openedeye20", resourceCulture);
@@ -196,6 +246,16 @@ namespace PBL3.Properties {
         internal static System.Drawing.Bitmap quanlisanpham32 {
             get {
                 object obj = ResourceManager.GetObject("quanlisanpham32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quantrivien {
+            get {
+                object obj = ResourceManager.GetObject("quantrivien", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

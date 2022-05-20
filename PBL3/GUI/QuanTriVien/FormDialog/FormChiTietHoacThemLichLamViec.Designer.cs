@@ -1,5 +1,5 @@
-﻿namespace PBL3.GUI.QuanTriVien.FormDialog
-{
+﻿namespace PBL3
+{ 
     partial class FormChiTietHoacThemLichLamViec
     {
         /// <summary>
@@ -32,6 +32,7 @@
             this.buttonXacNhan = new System.Windows.Forms.Button();
             this.buttonHuyBo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBoxThoiGianBatDau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textboxMaLichLamViec = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonThem = new System.Windows.Forms.Button();
             this.buttonXoa = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -91,12 +91,26 @@
             this.panel1.TabIndex = 119;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(739, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(15, 18);
+            this.button1.TabIndex = 26;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
             // textBoxThoiGianBatDau
             // 
             this.textBoxThoiGianBatDau.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxThoiGianBatDau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThoiGianBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxThoiGianBatDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxThoiGianBatDau.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxThoiGianBatDau.Location = new System.Drawing.Point(163, 126);
             this.textBoxThoiGianBatDau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxThoiGianBatDau.Name = "textBoxThoiGianBatDau";
@@ -119,7 +133,7 @@
             this.textboxMaLichLamViec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textboxMaLichLamViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textboxMaLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxMaLichLamViec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textboxMaLichLamViec.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textboxMaLichLamViec.Location = new System.Drawing.Point(163, 86);
             this.textboxMaLichLamViec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textboxMaLichLamViec.Name = "textboxMaLichLamViec";
@@ -166,7 +180,7 @@
             this.textBoxNgayLamViecTrongTuan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNgayLamViecTrongTuan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxNgayLamViecTrongTuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNgayLamViecTrongTuan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxNgayLamViecTrongTuan.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxNgayLamViecTrongTuan.Location = new System.Drawing.Point(201, 208);
             this.textBoxNgayLamViecTrongTuan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNgayLamViecTrongTuan.Name = "textBoxNgayLamViecTrongTuan";
@@ -189,7 +203,7 @@
             this.textBoxThoiGianKetThuc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxThoiGianKetThuc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThoiGianKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxThoiGianKetThuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxThoiGianKetThuc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxThoiGianKetThuc.Location = new System.Drawing.Point(163, 166);
             this.textBoxThoiGianKetThuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxThoiGianKetThuc.Name = "textBoxThoiGianKetThuc";
@@ -258,20 +272,6 @@
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(739, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 18);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
-            // 
             // FormChiTietHoacThemLichLamViec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +297,7 @@
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.labelTieuDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormChiTietHoacThemLichLamViec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);

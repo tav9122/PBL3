@@ -1,4 +1,4 @@
-﻿namespace PBL3.GUI.QuanTriVien.FormDialog
+﻿namespace PBL3
 {
     partial class FormChiTietHoacThemSanPham
     {
@@ -59,7 +59,7 @@
             this.textBoxMucLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxMucLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMucLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMucLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxMucLuong.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxMucLuong.Location = new System.Drawing.Point(553, 86);
             this.textBoxMucLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMucLuong.Name = "textBoxMucLuong";
@@ -83,7 +83,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(273, 309);
+            this.buttonXacNhan.Location = new System.Drawing.Point(271, 309);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -97,7 +97,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(400, 309);
+            this.buttonHuyBo.Location = new System.Drawing.Point(398, 309);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -136,7 +136,7 @@
             this.textBoxSoDienThoai.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxSoDienThoai.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxSoDienThoai.Location = new System.Drawing.Point(136, 216);
             this.textBoxSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoDienThoai.Name = "textBoxSoDienThoai";
@@ -170,7 +170,7 @@
             this.textBoxDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxDiaChi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxDiaChi.Location = new System.Drawing.Point(136, 130);
             this.textBoxDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxDiaChi.Name = "textBoxDiaChi";
@@ -193,7 +193,7 @@
             this.textBoxTenNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxTenNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTenNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxTenNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxTenNhanVien.Location = new System.Drawing.Point(136, 172);
             this.textBoxTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenNhanVien.Name = "textBoxTenNhanVien";
@@ -216,7 +216,7 @@
             this.textBoxMaNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxMaNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMaNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxMaNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxMaNhanVien.Location = new System.Drawing.Point(136, 86);
             this.textBoxMaNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMaNhanVien.Name = "textBoxMaNhanVien";
@@ -252,7 +252,7 @@
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox1.Location = new System.Drawing.Point(553, 216);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
@@ -275,7 +275,7 @@
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox2.Location = new System.Drawing.Point(553, 130);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
@@ -298,7 +298,7 @@
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox3.Location = new System.Drawing.Point(553, 172);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
@@ -345,6 +345,7 @@
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.labelTieuDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormChiTietHoacThemSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);

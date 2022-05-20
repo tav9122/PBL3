@@ -103,6 +103,8 @@
             this.textBoxTimKiem.Size = new System.Drawing.Size(246, 24);
             this.textBoxTimKiem.TabIndex = 30;
             this.textBoxTimKiem.Text = "Nhập để tìm kiếm...";
+            this.textBoxTimKiem.Enter += new System.EventHandler(this.textBoxTimKiem_Enter);
+            this.textBoxTimKiem.Leave += new System.EventHandler(this.textBoxTimKiem_Leave);
             // 
             // comboBoxSapXep
             // 

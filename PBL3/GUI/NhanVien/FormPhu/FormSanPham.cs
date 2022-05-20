@@ -51,7 +51,7 @@ namespace PBL3
             if (textBoxTuiHang.Text.Contains("Các sản phẩm trong túi hàng hiện tại:..."))
             {
                 textBoxTuiHang.Text.Replace("Các sản phẩm trong túi hàng hiện tại:...", "");
-                textBoxTimKiem.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
+                textBoxTuiHang.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
             }
         }
     }

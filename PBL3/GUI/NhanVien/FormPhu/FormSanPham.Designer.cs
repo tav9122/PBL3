@@ -56,7 +56,7 @@
             this.buttonThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThanhToan.Location = new System.Drawing.Point(12, 64);
+            this.buttonThanhToan.Location = new System.Drawing.Point(18, 64);
             this.buttonThanhToan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonThanhToan.Name = "buttonThanhToan";
             this.buttonThanhToan.Size = new System.Drawing.Size(108, 28);
@@ -121,15 +121,16 @@
             // 
             // textBoxTuiHang
             // 
-            this.textBoxTuiHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTuiHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTuiHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTuiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTuiHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBoxTuiHang.Location = new System.Drawing.Point(12, 100);
+            this.textBoxTuiHang.Location = new System.Drawing.Point(18, 100);
             this.textBoxTuiHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTuiHang.Multiline = true;
             this.textBoxTuiHang.Name = "textBoxTuiHang";
-            this.textBoxTuiHang.Size = new System.Drawing.Size(692, 38);
+            this.textBoxTuiHang.Size = new System.Drawing.Size(686, 38);
             this.textBoxTuiHang.TabIndex = 35;
             this.textBoxTuiHang.Text = "Các sản phẩm trong túi hàng hiện tại:...";
             this.textBoxTuiHang.TextChanged += new System.EventHandler(this.textBoxTuiHang_TextChanged);

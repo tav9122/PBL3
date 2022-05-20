@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxHoVaTen = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBoxDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,14 +48,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxNhapLaiMatKhauMoi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.buttonAnHienMatKhau = new System.Windows.Forms.Button();
             this.textBoxMatKhau = new System.Windows.Forms.TextBox();
             this.textBoxTenDangNhap = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxLichLamViec = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.buttonAnHienMatKhau = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,7 +88,7 @@
             this.textBoxHoVaTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxHoVaTen.Enabled = false;
             this.textBoxHoVaTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBoxHoVaTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxHoVaTen.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxHoVaTen.Location = new System.Drawing.Point(106, 87);
             this.textBoxHoVaTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxHoVaTen.Name = "textBoxHoVaTen";
@@ -105,12 +105,26 @@
             this.panel1.TabIndex = 25;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(593, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(15, 18);
+            this.button1.TabIndex = 26;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
             // textBoxDiaChi
             // 
             this.textBoxDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBoxDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxDiaChi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxDiaChi.Location = new System.Drawing.Point(88, 194);
             this.textBoxDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxDiaChi.Name = "textBoxDiaChi";
@@ -144,7 +158,7 @@
             this.textBoxSoDienThoai.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBoxSoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxSoDienThoai.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxSoDienThoai.Location = new System.Drawing.Point(125, 140);
             this.textBoxSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoDienThoai.Name = "textBoxSoDienThoai";
@@ -256,7 +270,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(324, 87);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(269, 203);
+            this.groupBox2.Size = new System.Drawing.Size(269, 184);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tài khoản cá nhân";
@@ -265,7 +279,7 @@
             // 
             this.textBoxNhapLaiMatKhauMoi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxNhapLaiMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNhapLaiMatKhauMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxNhapLaiMatKhauMoi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxNhapLaiMatKhauMoi.Location = new System.Drawing.Point(85, 149);
             this.textBoxNhapLaiMatKhauMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNhapLaiMatKhauMoi.Name = "textBoxNhapLaiMatKhauMoi";
@@ -285,11 +299,25 @@
             this.label8.Text = "Nhập lại mật khẩu mới:";
             this.label8.Visible = false;
             // 
+            // buttonAnHienMatKhau
+            // 
+            this.buttonAnHienMatKhau.FlatAppearance.BorderSize = 0;
+            this.buttonAnHienMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAnHienMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonAnHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnHienMatKhau.Image = global::PBL3.Properties.Resources.openedeye20;
+            this.buttonAnHienMatKhau.Location = new System.Drawing.Point(240, 106);
+            this.buttonAnHienMatKhau.Name = "buttonAnHienMatKhau";
+            this.buttonAnHienMatKhau.Size = new System.Drawing.Size(20, 20);
+            this.buttonAnHienMatKhau.TabIndex = 35;
+            this.buttonAnHienMatKhau.UseVisualStyleBackColor = true;
+            this.buttonAnHienMatKhau.Click += new System.EventHandler(this.buttonAnHienMatKhau_Click);
+            // 
             // textBoxMatKhau
             // 
             this.textBoxMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxMatKhau.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxMatKhau.Location = new System.Drawing.Point(85, 77);
             this.textBoxMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMatKhau.Name = "textBoxMatKhau";
@@ -302,7 +330,7 @@
             this.textBoxTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTenDangNhap.Enabled = false;
             this.textBoxTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxTenDangNhap.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxTenDangNhap.Location = new System.Drawing.Point(121, 31);
             this.textBoxTenDangNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenDangNhap.Name = "textBoxTenDangNhap";
@@ -335,7 +363,7 @@
             this.textBoxLichLamViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxLichLamViec.Enabled = false;
             this.textBoxLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBoxLichLamViec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.textBoxLichLamViec.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxLichLamViec.Location = new System.Drawing.Point(126, 375);
             this.textBoxLichLamViec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxLichLamViec.Multiline = true;
@@ -353,34 +381,6 @@
             this.label9.Size = new System.Drawing.Size(97, 18);
             this.label9.TabIndex = 37;
             this.label9.Text = "Lịch làm việc:";
-            // 
-            // buttonAnHienMatKhau
-            // 
-            this.buttonAnHienMatKhau.FlatAppearance.BorderSize = 0;
-            this.buttonAnHienMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buttonAnHienMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.buttonAnHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnHienMatKhau.Image = global::PBL3.Properties.Resources.openedeye20;
-            this.buttonAnHienMatKhau.Location = new System.Drawing.Point(240, 106);
-            this.buttonAnHienMatKhau.Name = "buttonAnHienMatKhau";
-            this.buttonAnHienMatKhau.Size = new System.Drawing.Size(20, 20);
-            this.buttonAnHienMatKhau.TabIndex = 35;
-            this.buttonAnHienMatKhau.UseVisualStyleBackColor = true;
-            this.buttonAnHienMatKhau.Click += new System.EventHandler(this.buttonAnHienMatKhau_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(593, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 18);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
             // FormThongTinCaNhan
             // 

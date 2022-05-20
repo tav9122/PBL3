@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace PBL3.GUI.QuanTriVien.FormDialog
+namespace PBL3
 {
     public partial class FormChiTietHoacThemSanPham : Form
     {

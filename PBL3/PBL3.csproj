@@ -105,6 +105,12 @@
     <Compile Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemSanPham.Designer.cs">
       <DependentUpon>FormChiTietHoacThemSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuanTriVien\FormDialog\FormThemLichLamViecVaoNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormDialog\FormThemLichLamViecVaoNhanVien.Designer.cs">
+      <DependentUpon>FormThemLichLamViecVaoNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuanTriVien\FormDialog\FormThemNhanVienVaoLichLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemSanPham.resx">
       <DependentUpon>FormChiTietHoacThemSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanTriVien\FormDialog\FormThemLichLamViecVaoNhanVien.resx">
+      <DependentUpon>FormThemLichLamViecVaoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormDialog\FormThemNhanVienVaoLichLamViec.resx">
       <DependentUpon>FormThemNhanVienVaoLichLamViec.cs</DependentUpon>
@@ -333,6 +342,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quanlikhachhang32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nutphongtomautrang32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nutthunhomautrang32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nutthunhomauden32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nutphongtomauden32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quantrivien.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

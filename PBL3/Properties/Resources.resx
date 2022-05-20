@@ -133,6 +133,21 @@
   <data name="lichsuhoadon32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lichsuhoadon32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="nhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nutphongtomauden32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nutphongtomauden32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nutphongtomautrang32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nutphongtomautrang32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nutthunhomauden32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nutthunhomauden32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nutthunhomautrang32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nutthunhomautrang32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="openedeye20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openedeye20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +174,9 @@
   </data>
   <data name="quanlisanpham32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quanlisanpham32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quantrivien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quantrivien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sanpham26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sanpham26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
