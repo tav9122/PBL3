@@ -33,7 +33,7 @@ namespace PBL3
 
         private void buttonVaiTroNhanVien_Click(object sender, EventArgs e)
         {
-            FormQuanTriVien f = new FormQuanTriVien(userName);
+            FormNhanVien f = new FormNhanVien(userName);
             this.Hide();
             f.ShowDialog();
             this.Close();

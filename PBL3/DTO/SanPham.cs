@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PBL3
 {
+    [Table("Sản phẩm")]
     public class SanPham
-    {//tell the program to create table SanPham before VatPham
-        
+    {
         [Key]
         [Required]
         [Column("Mã sản phẩm")]
@@ -39,6 +39,7 @@ namespace PBL3
 
         [Column("Thời gian bảo hành")]
         public string ThoiGianBaoHanh { get; set; }
+        
         public virtual ICollection<VatPham> VatPhams { get; set; }
     }
 }

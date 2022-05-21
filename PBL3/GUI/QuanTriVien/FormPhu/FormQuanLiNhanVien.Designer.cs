@@ -35,6 +35,7 @@
             this.comboBoxSapXep = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.buttonXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXoa.Location = new System.Drawing.Point(94, 64);
+            this.buttonXoa.Location = new System.Drawing.Point(170, 64);
             this.buttonXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXoa.Name = "buttonXoa";
             this.buttonXoa.Size = new System.Drawing.Size(70, 28);
@@ -132,12 +133,26 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Quản lí nhân viên";
             // 
+            // buttonSua
+            // 
+            this.buttonSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonSua.Location = new System.Drawing.Point(94, 64);
+            this.buttonSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSua.Name = "buttonSua";
+            this.buttonSua.Size = new System.Drawing.Size(70, 28);
+            this.buttonSua.TabIndex = 28;
+            this.buttonSua.Text = "Sửa";
+            this.buttonSua.UseVisualStyleBackColor = true;
+            // 
             // FormQuanLiNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(716, 419);
+            this.Controls.Add(this.buttonSua);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonThem);
             this.Controls.Add(this.buttonXoa);
@@ -163,5 +178,6 @@
         private System.Windows.Forms.ComboBox comboBoxSapXep;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonSua;
     }
 }

@@ -24,7 +24,6 @@ namespace PBL3
 
         [Column("Thời gian tạo phiếu bảo hành")]
         public DateTime ThoiGianTaoPhieuBaoHanh { get; set; }
-        
 
         [ForeignKey("SoSeri")]
         public virtual VatPham VatPham { get; set; }

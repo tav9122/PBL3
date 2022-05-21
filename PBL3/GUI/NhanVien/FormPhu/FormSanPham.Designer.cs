@@ -133,7 +133,6 @@
             this.textBoxTuiHang.Size = new System.Drawing.Size(686, 38);
             this.textBoxTuiHang.TabIndex = 35;
             this.textBoxTuiHang.Text = "Các sản phẩm trong túi hàng hiện tại:...";
-            this.textBoxTuiHang.TextChanged += new System.EventHandler(this.textBoxTuiHang_TextChanged);
             this.textBoxTuiHang.Enter += new System.EventHandler(this.textBoxTuiHang_Enter);
             this.textBoxTuiHang.Leave += new System.EventHandler(this.textBoxTuiHang_Leave);
             // 

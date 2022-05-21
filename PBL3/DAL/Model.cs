@@ -28,7 +28,7 @@ namespace PBL3
         public Model()
             : base("name=Model")
         {
-            Database.SetInitializer<Model>(new InitializeDatabase());
+            Database.SetInitializer<Model>(new KhoiTaoDatabase());
         }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }

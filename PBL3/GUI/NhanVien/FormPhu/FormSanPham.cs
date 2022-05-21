@@ -45,14 +45,5 @@ namespace PBL3
                 textBoxTuiHang.Text = "Các sản phẩm trong túi hàng hiện tại:...";
             }
         }
-
-        private void textBoxTuiHang_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxTuiHang.Text.Contains("Các sản phẩm trong túi hàng hiện tại:..."))
-            {
-                textBoxTuiHang.Text.Replace("Các sản phẩm trong túi hàng hiện tại:...", "");
-                textBoxTuiHang.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
-            }
-        }
     }
 }

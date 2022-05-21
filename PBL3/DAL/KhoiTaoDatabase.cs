@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace PBL3
 {
-    public class InitializeDatabase : CreateDatabaseIfNotExists<Model>
+    public class KhoiTaoDatabase : CreateDatabaseIfNotExists<Model>
     {
-        public int tongsoluongsanpham = 0;
         protected override void Seed(Model context)
         {
 
@@ -69,9 +68,10 @@ namespace PBL3
             context.SaveChanges();
 
             //Tạo vật phẩm dựa trên số lượng nhập của sản phẩm
+            int tongsoluongsanpham = 0;
             foreach (var i in context.SanPhams)
             {
-                for (int j = tongsoluongsanpham; j < i.SoLuongNhap; j++)
+                for (int j = tongsoluongsanpham; j < i.SoLuongNhap + tongsoluongsanpham; j++)
                 {
                     context.VatPhams.Add(new VatPham { SoSeri = j, MaSanPham = i.MaSanPham });
                 }
