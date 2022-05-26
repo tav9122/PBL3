@@ -40,7 +40,7 @@
             this.buttonQuanLiNhanVien = new System.Windows.Forms.Button();
             this.buttonQuanLiSanPham = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.thôngTinQuảnTrịViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -123,7 +123,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 100);
+            this.panelLogo.Size = new System.Drawing.Size(200, 113);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -131,11 +131,12 @@
             // 
             this.linkLabelTenQuanTriVien.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
             this.linkLabelTenQuanTriVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelTenQuanTriVien.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelTenQuanTriVien.LinkColor = System.Drawing.Color.White;
             this.linkLabelTenQuanTriVien.Location = new System.Drawing.Point(18, 82);
             this.linkLabelTenQuanTriVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelTenQuanTriVien.Name = "linkLabelTenQuanTriVien";
-            this.linkLabelTenQuanTriVien.Size = new System.Drawing.Size(164, 18);
+            this.linkLabelTenQuanTriVien.Size = new System.Drawing.Size(164, 26);
             this.linkLabelTenQuanTriVien.TabIndex = 7;
             this.linkLabelTenQuanTriVien.TabStop = true;
             this.linkLabelTenQuanTriVien.Text = "TÊN QUẢN TRỊ VIÊN";
@@ -202,29 +203,29 @@
             this.contextMenuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(0, 0);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinQuảnTrịViênToolStripMenuItem,
+            this.đổiMậtKhẩuToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 48);
             // 
-            // thôngTinQuảnTrịViênToolStripMenuItem
+            // đổiMậtKhẩuToolStripMenuItem
             // 
-            this.thôngTinQuảnTrịViênToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thôngTinQuảnTrịViênToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
-            this.thôngTinQuảnTrịViênToolStripMenuItem.Name = "thôngTinQuảnTrịViênToolStripMenuItem";
-            this.thôngTinQuảnTrịViênToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.thôngTinQuảnTrịViênToolStripMenuItem.Text = "Thông tin quản trị viên";
-            this.thôngTinQuảnTrịViênToolStripMenuItem.Click += new System.EventHandler(this.thôngTinQuảnTrịViênToolStripMenuItem_Click);
-            this.thôngTinQuảnTrịViênToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
-            this.thôngTinQuảnTrịViênToolStripMenuItem.MouseLeave += new System.EventHandler(this.ToolStripMenuItem_MouseLeave);
+            this.đổiMậtKhẩuToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.đổiMậtKhẩuToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
+            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+            this.đổiMậtKhẩuToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
+            this.đổiMậtKhẩuToolStripMenuItem.MouseLeave += new System.EventHandler(this.ToolStripMenuItem_MouseLeave);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             this.đăngXuấtToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
@@ -308,7 +309,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabelTenQuanTriVien;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinQuảnTrịViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelDesktopPane;

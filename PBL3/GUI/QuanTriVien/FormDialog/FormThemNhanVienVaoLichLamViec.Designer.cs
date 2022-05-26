@@ -36,15 +36,14 @@
             this.labelTieuDe = new System.Windows.Forms.Label();
             this.buttonHuyBo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonKiemTra = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonXacNhan
             // 
-            this.buttonXacNhan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -58,7 +57,6 @@
             // 
             // textBoxTenNhanVien
             // 
-            this.textBoxTenNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxTenNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTenNhanVien.Enabled = false;
             this.textBoxTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -71,7 +69,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(39, 129);
@@ -82,7 +79,6 @@
             // 
             // textBoxMaNhanVien
             // 
-            this.textBoxMaNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxMaNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMaNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -94,7 +90,6 @@
             // 
             // labelTieuDe
             // 
-            this.labelTieuDe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.labelTieuDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.labelTieuDe.Location = new System.Drawing.Point(23, 42);
@@ -105,7 +100,6 @@
             // 
             // buttonHuyBo
             // 
-            this.buttonHuyBo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -129,31 +123,6 @@
             this.panel1.TabIndex = 136;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 18);
-            this.label2.TabIndex = 134;
-            this.label2.Text = "Mã nhân viên:";
-            // 
-            // buttonKiemTra
-            // 
-            this.buttonKiemTra.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonKiemTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKiemTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKiemTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonKiemTra.Location = new System.Drawing.Point(333, 87);
-            this.buttonKiemTra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonKiemTra.Name = "buttonKiemTra";
-            this.buttonKiemTra.Size = new System.Drawing.Size(88, 28);
-            this.buttonKiemTra.TabIndex = 142;
-            this.buttonKiemTra.Text = "Kiểm tra";
-            this.buttonKiemTra.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -167,6 +136,29 @@
             this.button1.TabIndex = 26;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(39, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 18);
+            this.label2.TabIndex = 134;
+            this.label2.Text = "Mã nhân viên:";
+            // 
+            // buttonKiemTra
+            // 
+            this.buttonKiemTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKiemTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKiemTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonKiemTra.Location = new System.Drawing.Point(333, 87);
+            this.buttonKiemTra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonKiemTra.Name = "buttonKiemTra";
+            this.buttonKiemTra.Size = new System.Drawing.Size(88, 28);
+            this.buttonKiemTra.TabIndex = 142;
+            this.buttonKiemTra.Text = "Kiểm tra";
+            this.buttonKiemTra.UseVisualStyleBackColor = true;
             // 
             // FormThemNhanVienVaoLichLamViec
             // 

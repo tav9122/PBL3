@@ -44,7 +44,6 @@
             // 
             // buttonKiemTra
             // 
-            this.buttonKiemTra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonKiemTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKiemTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKiemTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -58,7 +57,6 @@
             // 
             // buttonXacNhan
             // 
-            this.buttonXacNhan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -72,7 +70,6 @@
             // 
             // textBoxThoiGianLamViec
             // 
-            this.textBoxThoiGianLamViec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxThoiGianLamViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThoiGianLamViec.Enabled = false;
             this.textBoxThoiGianLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,7 +82,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(39, 129);
@@ -96,7 +92,6 @@
             // 
             // textboxMaLichLamViec
             // 
-            this.textboxMaLichLamViec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textboxMaLichLamViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textboxMaLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxMaLichLamViec.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -108,7 +103,6 @@
             // 
             // labelTieuDe
             // 
-            this.labelTieuDe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.labelTieuDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.labelTieuDe.Location = new System.Drawing.Point(23, 42);
@@ -119,7 +113,6 @@
             // 
             // buttonHuyBo
             // 
-            this.buttonHuyBo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -156,7 +149,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(39, 89);

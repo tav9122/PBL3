@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PBL3
 {
@@ -47,22 +43,22 @@ namespace PBL3
 
 
             //Tạo tài khoản
-            context.TaiKhoans.Add(new TaiKhoan { TenTaiKhoan = "nhanvien1", MatKhau = "123", MaNhanVien = "NV1" });
-            context.TaiKhoans.Add(new TaiKhoan { TenTaiKhoan = "nhanvien2", MatKhau = "123", MaNhanVien = "NV2" });
-            context.TaiKhoans.Add(new TaiKhoan { TenTaiKhoan = "nhanvien3", MatKhau = "123", MaNhanVien = "NV3" });
-            context.TaiKhoans.Add(new TaiKhoan { TenTaiKhoan = "admin", MatKhau = "123" });
+            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nv", MatKhau = "nv", MaNhanVien = "NV1" });
+            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien2", MatKhau = "123", MaNhanVien = "NV2" });
+            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien3", MatKhau = "123", MaNhanVien = "NV3" });
+            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv"});
 
             //Tạo sản phẩm
             context.SanPhams.AddRange(new SanPham[]
             {
-                new SanPham {MaSanPham = "TN1", TenSanPham = "Tai nghe Airpod 2", TenHang = "Apple", GiaBan = 3300000, GiaMua = 3000000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 100, SoLuongHienTai = 50, ThoiGianBaoHanh = "1 năm"},
-                new SanPham {MaSanPham = "TN2", TenSanPham = "Tai nghe Airpod Pro", TenHang = "Apple", GiaBan = 5400000, GiaMua = 5000000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 100, SoLuongHienTai = 52, ThoiGianBaoHanh = "1 năm"},
-                new SanPham {MaSanPham = "TN3", TenSanPham = "Tai nghe Airpod 3", TenHang = "Apple", GiaBan = 4500000, GiaMua = 4100000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 100, SoLuongHienTai = 45, ThoiGianBaoHanh = "1 năm"},
-                new SanPham {MaSanPham = "TN4", TenSanPham = "Tai nghe Galaxy Bus Pro", TenHang = "Samsung", GiaBan = 2500000, GiaMua = 2200000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 100, SoLuongHienTai = 78, ThoiGianBaoHanh = "1 năm"},
-                new SanPham {MaSanPham = "DT1", TenSanPham = "Samsung Galaxy A03", TenHang = "Samsung", GiaBan = 3000000, GiaMua = 2700000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 100, SoLuongHienTai = 20, ThoiGianBaoHanh = "1 năm"},
-                new SanPham {MaSanPham = "DT2", TenSanPham = "Samsung Galaxy S22 Ultra", TenHang = "Samsung", GiaBan = 30000000, GiaMua = 29000000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 100, SoLuongHienTai = 42, ThoiGianBaoHanh = "1 năm"},
-                new SanPham {MaSanPham = "DT3", TenSanPham = "Iphone 12 Pro Max", TenHang = "Apple", GiaBan = 30000000, GiaMua = 29500000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 100, SoLuongHienTai = 15, ThoiGianBaoHanh = "1 năm"},
-                new SanPham {MaSanPham = "DT4", TenSanPham = "Oppo Reno 6", TenHang = "Oppo", GiaBan = 10000000, GiaMua = 9300000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 100, SoLuongHienTai = 78, ThoiGianBaoHanh = "1 năm"}
+                new SanPham {MaSanPham = "TN1", TenSanPham = "Tai nghe Airpod 2", TenHang = "Apple", GiaBan = 3300000, GiaMua = 3000000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 15, SoLuongHienTai = 13, ThoiGianBaoHanh = "1 năm"},
+                new SanPham {MaSanPham = "TN2", TenSanPham = "Tai nghe Airpod Pro", TenHang = "Apple", GiaBan = 5400000, GiaMua = 5000000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 20, SoLuongHienTai = 10, ThoiGianBaoHanh = "2 năm"},
+                new SanPham {MaSanPham = "TN3", TenSanPham = "Tai nghe Airpod 3", TenHang = "Apple", GiaBan = 4500000, GiaMua = 4100000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 15, SoLuongHienTai = 10, ThoiGianBaoHanh = "1 năm"},
+                new SanPham {MaSanPham = "TN4", TenSanPham = "Tai nghe Galaxy Bus Pro", TenHang = "Samsung", GiaBan = 2500000, GiaMua = 2200000, LoaiSanPham = "Tai nghe",  SoLuongNhap = 20, SoLuongHienTai = 5, ThoiGianBaoHanh = "1 năm"},
+                new SanPham {MaSanPham = "DT1", TenSanPham = "Samsung Galaxy A03", TenHang = "Samsung", GiaBan = 3000000, GiaMua = 2700000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 15, SoLuongHienTai = 12, ThoiGianBaoHanh = "2 năm"},
+                new SanPham {MaSanPham = "DT2", TenSanPham = "Samsung Galaxy S22 Ultra", TenHang = "Samsung", GiaBan = 30000000, GiaMua = 29000000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 20, SoLuongHienTai = 7, ThoiGianBaoHanh = "1 năm"},
+                new SanPham {MaSanPham = "DT3", TenSanPham = "Iphone 12 Pro Max", TenHang = "Apple", GiaBan = 30000000, GiaMua = 29500000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 15, SoLuongHienTai = 8, ThoiGianBaoHanh = "1 năm"},
+                new SanPham {MaSanPham = "DT4", TenSanPham = "Oppo Reno 6", TenHang = "Oppo", GiaBan = 10000000, GiaMua = 9300000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 20, SoLuongHienTai = 2, ThoiGianBaoHanh = "1 năm"}
 
             });
             context.SaveChanges();
@@ -85,7 +81,7 @@ namespace PBL3
             context.NhanVienLichLamViecs.Add(new NhanVienLichLamViec { MaNhanVien_LichLamViec = 5, MaLichLamViec = "LLV3", MaNhanVien = "NV3" });
             context.NhanVienLichLamViecs.Add(new NhanVienLichLamViec { MaNhanVien_LichLamViec = 6, MaLichLamViec = "LLV3", MaNhanVien = "NV1" });
             context.SaveChanges();
-            
+
             //Tạo hoá đơn
             context.HoaDons.Add(new HoaDon { MaHoaDon = "HD1", MaNhanVien = "NV1", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 20, 18, 50, 0) });
             context.HoaDons.Add(new HoaDon { MaHoaDon = "HD2", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 22, 10, 0) });

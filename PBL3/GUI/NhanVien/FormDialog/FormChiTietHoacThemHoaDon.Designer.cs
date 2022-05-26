@@ -59,7 +59,6 @@
             // 
             // buttonThoat
             // 
-            this.buttonThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -74,7 +73,6 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(27, 167);
@@ -85,7 +83,6 @@
             // 
             // textBoxTongTienKhachTra
             // 
-            this.textBoxTongTienKhachTra.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxTongTienKhachTra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTongTienKhachTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBoxTongTienKhachTra.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -97,7 +94,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(27, 211);
@@ -108,7 +104,6 @@
             // 
             // dateTimePickerThoiGianGiaoDich
             // 
-            this.dateTimePickerThoiGianGiaoDich.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePickerThoiGianGiaoDich.CustomFormat = "dd/MM/yyyy hh:mm";
             this.dateTimePickerThoiGianGiaoDich.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dateTimePickerThoiGianGiaoDich.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -159,7 +154,6 @@
             // 
             // textBoxMaHoaDon
             // 
-            this.textBoxMaHoaDon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxMaHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMaHoaDon.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -171,7 +165,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(27, 86);
@@ -182,7 +175,6 @@
             // 
             // labelTieuDe
             // 
-            this.labelTieuDe.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.labelTieuDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.labelTieuDe.Location = new System.Drawing.Point(23, 42);
@@ -193,7 +185,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.textBoxDiaChi);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textBoxTenKhachHang);
@@ -297,9 +288,6 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -311,7 +299,6 @@
             // 
             // textBoxMaNhanVien
             // 
-            this.textBoxMaNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxMaNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBoxMaNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -323,7 +310,6 @@
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(27, 127);

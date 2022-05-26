@@ -53,7 +53,6 @@
             // 
             // buttonXacNhan
             // 
-            this.buttonXacNhan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -67,7 +66,6 @@
             // 
             // buttonHuyBo
             // 
-            this.buttonHuyBo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -107,7 +105,6 @@
             // 
             // textBoxThoiGianBatDau
             // 
-            this.textBoxThoiGianBatDau.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxThoiGianBatDau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThoiGianBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxThoiGianBatDau.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -119,7 +116,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 126);
@@ -130,7 +126,6 @@
             // 
             // textboxMaLichLamViec
             // 
-            this.textboxMaLichLamViec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textboxMaLichLamViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textboxMaLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxMaLichLamViec.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -142,7 +137,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(21, 86);
@@ -166,7 +160,6 @@
             // 
             // labelTieuDe
             // 
-            this.labelTieuDe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.labelTieuDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.labelTieuDe.Location = new System.Drawing.Point(23, 42);
@@ -177,7 +170,6 @@
             // 
             // textBoxNgayLamViecTrongTuan
             // 
-            this.textBoxNgayLamViecTrongTuan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNgayLamViecTrongTuan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxNgayLamViecTrongTuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNgayLamViecTrongTuan.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -189,7 +181,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(21, 208);
@@ -200,7 +191,6 @@
             // 
             // textBoxThoiGianKetThuc
             // 
-            this.textBoxThoiGianKetThuc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxThoiGianKetThuc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThoiGianKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxThoiGianKetThuc.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -212,7 +202,6 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(21, 166);
@@ -223,7 +212,6 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(356, 86);
@@ -234,7 +222,6 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -246,7 +233,6 @@
             // 
             // buttonThem
             // 
-            this.buttonThem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -260,7 +246,6 @@
             // 
             // buttonXoa
             // 
-            this.buttonXoa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));

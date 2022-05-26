@@ -105,9 +105,9 @@
             this.buttonVaiTroNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.buttonVaiTroNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonVaiTroNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVaiTroNhanVien.Location = new System.Drawing.Point(209, 100);
+            this.buttonVaiTroNhanVien.Location = new System.Drawing.Point(214, 103);
             this.buttonVaiTroNhanVien.Name = "buttonVaiTroNhanVien";
-            this.buttonVaiTroNhanVien.Size = new System.Drawing.Size(71, 59);
+            this.buttonVaiTroNhanVien.Size = new System.Drawing.Size(65, 56);
             this.buttonVaiTroNhanVien.TabIndex = 19;
             this.buttonVaiTroNhanVien.UseVisualStyleBackColor = true;
             this.buttonVaiTroNhanVien.Click += new System.EventHandler(this.buttonVaiTroNhanVien_Click);

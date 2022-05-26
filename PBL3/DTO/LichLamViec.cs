@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PBL3
 {
@@ -18,10 +14,10 @@ namespace PBL3
 
         [Column("Thời gian bắt đầu")]
         public string ThoiGianBatDau { get; set; }
-        
+
         [Column("Thời gian kết thúc")]
         public string ThoiGianKetThuc { get; set; }
-        
+
         [Column("Ngày làm việc")]
         public string NgayLamViec { get; set; }
 

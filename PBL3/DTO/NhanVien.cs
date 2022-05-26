@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PBL3
 {
@@ -15,10 +13,10 @@ namespace PBL3
         [Required]
         [Column("Mã nhân viên")]
         public string MaNhanVien { get; set; }
-        
+
         [Column("Họ và tên")]
         public string HoVaTen { get; set; }
-        
+
         [Column("Số điện thoại")]
         public string SoDienThoai { get; set; }
 
@@ -35,5 +33,9 @@ namespace PBL3
         public double MucLuong { get; set; }
 
         public virtual ICollection<NhanVienLichLamViec> NhanVienLichLamViecs { get; set; }
+
+        [DefaultValue("false")]
+        [Column("Đã xoá")]
+        public bool DaXoa { get; set; }
     }
 }

@@ -65,7 +65,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\QuanLiChung.cs" />
+    <Compile Include="BLL\BLLQuanLiChung.cs" />
+    <Compile Include="BLL\BLLQuanLiNhanVien.cs" />
+    <Compile Include="BLL\BLLQuanLiSanPham.cs" />
     <Compile Include="DAL\KhoiTaoDatabase.cs" />
     <Compile Include="DAL\Model.cs" />
     <Compile Include="DTO\BaoHanh.cs" />
@@ -77,6 +79,8 @@
     <Compile Include="DTO\SanPham.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="DTO\VatPham.cs" />
+    <Compile Include="DTO\Views\ViewLichLamViec_NhanVien.cs" />
+    <Compile Include="DTO\Views\ViewSanPham_QuanTriVien.cs" />
     <Compile Include="GUI\FormDungChung\FormDialog\FormThongTinCaNhan.cs">
       <SubType>Form</SubType>
     </Compile>

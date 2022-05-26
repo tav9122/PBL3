@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PBL3
 {
@@ -16,7 +12,7 @@ namespace PBL3
         public int SoSeri { get; set; }
         [Column("Mã sản phẩm")]
         public string MaSanPham { get; set; }
-        
+
         [ForeignKey("MaSanPham")]
         public virtual SanPham SanPham { get; set; }
 
@@ -24,5 +20,9 @@ namespace PBL3
         public string MaHoaDon { get; set; }
         [ForeignKey("MaHoaDon")]
         public virtual HoaDon HoaDon { get; set; }
+
+        [DefaultValue("false")]
+        [Column("Đã xoá")]
+        public bool DaXoa { get; set; }
     }
 }

@@ -1,22 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PBL3
 {
-    internal class QuanLiChung
+    internal class BLLQuanLiChung
     {
-        private static QuanLiChung instance;
-        private QuanLiChung() { }
-        public static QuanLiChung Instance
+        private static BLLQuanLiChung instance;
+        public static BLLQuanLiChung Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new QuanLiChung();
+                    instance = new BLLQuanLiChung();
                 }
                 return instance;
             }
@@ -116,6 +117,49 @@ namespace PBL3
                 childForm.BringToFront();
                 childForm.Show();
             }
+        }
+
+        public string GetNextPrimaryKey(List<string> currentPrimaryKeys)
+        {
+            return currentPrimaryKeys[0].Substring(0, 2) + (Convert.ToInt32(currentPrimaryKeys.Count) + 1).ToString();
+        }
+
+        public string GetNextPrimaryKey(List<string> currentPrimaryKeys, string s)
+        {
+            string twoFirstCharacter = "";
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToUpper();
+            foreach (string i in temp.Split(' '))
+            {
+                twoFirstCharacter += i[0];
+            }
+            return twoFirstCharacter + (Model.Instance.SanPhams.Where(sp => sp.MaSanPham.Substring(0, 2) == twoFirstCharacter).Count() + 1).ToString();
+        }
+
+        public string LoginChecker(string tenDangNhap, string matKhau)
+        {
+            if (Model.Instance.TaiKhoans.Where(tk => tk.TenDangNhap == tenDangNhap && tk.MatKhau == matKhau).Count() > 0)
+            {
+                if (tenDangNhap == "qtv")
+                {
+                    return "QUẢN TRỊ VIÊN";
+                }
+                else
+                    return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == tenDangNhap).MaNhanVien;
+            }
+            return null;
+        }
+        
+        public string GetMatKhauQuanTriVien()
+        {
+            return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == "qtv").MatKhau;
+        }
+        
+        public void UpdateMatKhauQuanTriVien(string matKhau)
+        {
+            Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == "qtv").MatKhau = matKhau;
+            Model.Instance.SaveChanges();
         }
     }
 }

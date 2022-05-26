@@ -68,7 +68,6 @@
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(23, 118);
@@ -104,7 +103,6 @@
             // 
             // textBoxMaBaoHanh
             // 
-            this.textBoxMaBaoHanh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxMaBaoHanh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMaBaoHanh.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -116,7 +114,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 82);
@@ -141,7 +138,6 @@
             // 
             // labelTieuDe
             // 
-            this.labelTieuDe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.labelTieuDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.labelTieuDe.Location = new System.Drawing.Point(23, 42);
@@ -152,7 +148,6 @@
             // 
             // dateTimePickerThoiGianGiaoTaoPhieuBaoHanh
             // 
-            this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.CustomFormat = "dd/MM/yyyy hh:mm";
             this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -163,7 +158,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.radioButtonHoanThanh);
             this.groupBox1.Controls.Add(this.radioButtonChuaHoanThanh);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -201,7 +195,6 @@
             // 
             // textBoxThongTinBaoHanh
             // 
-            this.textBoxThongTinBaoHanh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxThongTinBaoHanh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThongTinBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxThongTinBaoHanh.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -214,7 +207,6 @@
             // 
             // buttonXacNhan
             // 
-            this.buttonXacNhan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -228,7 +220,6 @@
             // 
             // buttonHuyBo
             // 
-            this.buttonHuyBo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -243,7 +234,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.textBoxTenSanPham);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBoxSoSeriVatPham);
@@ -301,7 +291,6 @@
             // 
             // textBoxChiPhiKhachCanPhaiTra
             // 
-            this.textBoxChiPhiKhachCanPhaiTra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxChiPhiKhachCanPhaiTra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxChiPhiKhachCanPhaiTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxChiPhiKhachCanPhaiTra.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -313,7 +302,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 152);
@@ -324,7 +312,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.textBoxDiaChi);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBoxTenKhachHang);
@@ -428,7 +415,6 @@
             // 
             // label11
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(25, 186);

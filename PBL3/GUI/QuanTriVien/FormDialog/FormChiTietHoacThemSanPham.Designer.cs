@@ -29,49 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietHoacThemSanPham));
-            this.textBoxMucLuong = new System.Windows.Forms.TextBox();
+            this.textBoxGiaBan = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.buttonXacNhan = new System.Windows.Forms.Button();
             this.buttonHuyBo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBoxSoDienThoai = new System.Windows.Forms.TextBox();
+            this.textBoxTenHang = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxDiaChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxTenNhanVien = new System.Windows.Forms.TextBox();
+            this.textBoxTenSanPham = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxMaNhanVien = new System.Windows.Forms.TextBox();
+            this.textBoxMaSanPham = new System.Windows.Forms.TextBox();
             this.buttonThoat = new System.Windows.Forms.Button();
             this.labelTieuDe = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxSoLuongHienTai = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxGiaMua = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxSoLuongNhap = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBoxThoiGianBaoHanh = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxLoaiSanPham = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxMucLuong
+            // textBoxGiaBan
             // 
-            this.textBoxMucLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxMucLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxMucLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMucLuong.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxMucLuong.Location = new System.Drawing.Point(553, 86);
-            this.textBoxMucLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxMucLuong.Name = "textBoxMucLuong";
-            this.textBoxMucLuong.Size = new System.Drawing.Size(159, 22);
-            this.textBoxMucLuong.TabIndex = 133;
+            this.textBoxGiaBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGiaBan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxGiaBan.Location = new System.Drawing.Point(570, 86);
+            this.textBoxGiaBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxGiaBan.Name = "textBoxGiaBan";
+            this.textBoxGiaBan.Size = new System.Drawing.Size(143, 22);
+            this.textBoxGiaBan.TabIndex = 4;
             // 
             // label11
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(426, 86);
+            this.label11.Location = new System.Drawing.Point(427, 86);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 18);
             this.label11.TabIndex = 132;
@@ -79,38 +79,37 @@
             // 
             // buttonXacNhan
             // 
-            this.buttonXacNhan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(271, 309);
+            this.buttonXacNhan.Location = new System.Drawing.Point(266, 327);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
-            this.buttonXacNhan.TabIndex = 122;
+            this.buttonXacNhan.TabIndex = 9;
             this.buttonXacNhan.Text = "Xác nhận";
             this.buttonXacNhan.UseVisualStyleBackColor = true;
+            this.buttonXacNhan.Click += new System.EventHandler(this.buttonXacNhan_Click);
             // 
             // buttonHuyBo
             // 
-            this.buttonHuyBo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(398, 309);
+            this.buttonHuyBo.Location = new System.Drawing.Point(393, 327);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
-            this.buttonHuyBo.TabIndex = 121;
+            this.buttonHuyBo.TabIndex = 10;
             this.buttonHuyBo.Text = "Huỷ bỏ";
             this.buttonHuyBo.UseVisualStyleBackColor = true;
             this.buttonHuyBo.Click += new System.EventHandler(this.buttonHuyBo_Click);
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(747, 29);
@@ -119,7 +118,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -131,21 +130,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
-            // textBoxSoDienThoai
+            // textBoxTenHang
             // 
-            this.textBoxSoDienThoai.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSoDienThoai.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxSoDienThoai.Location = new System.Drawing.Point(136, 216);
-            this.textBoxSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxSoDienThoai.Name = "textBoxSoDienThoai";
-            this.textBoxSoDienThoai.Size = new System.Drawing.Size(159, 22);
-            this.textBoxSoDienThoai.TabIndex = 128;
+            this.textBoxTenHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTenHang.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxTenHang.Location = new System.Drawing.Point(136, 216);
+            this.textBoxTenHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxTenHang.Name = "textBoxTenHang";
+            this.textBoxTenHang.Size = new System.Drawing.Size(159, 22);
+            this.textBoxTenHang.TabIndex = 3;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(21, 216);
@@ -156,7 +153,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(21, 86);
@@ -165,21 +161,8 @@
             this.label2.TabIndex = 117;
             this.label2.Text = "Mã sản phẩm:";
             // 
-            // textBoxDiaChi
-            // 
-            this.textBoxDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiaChi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxDiaChi.Location = new System.Drawing.Point(136, 130);
-            this.textBoxDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxDiaChi.Name = "textBoxDiaChi";
-            this.textBoxDiaChi.Size = new System.Drawing.Size(159, 22);
-            this.textBoxDiaChi.TabIndex = 126;
-            // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(21, 130);
@@ -188,21 +171,19 @@
             this.label4.TabIndex = 125;
             this.label4.Text = "Loại sản phẩm:";
             // 
-            // textBoxTenNhanVien
+            // textBoxTenSanPham
             // 
-            this.textBoxTenNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTenNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTenNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxTenNhanVien.Location = new System.Drawing.Point(136, 172);
-            this.textBoxTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxTenNhanVien.Name = "textBoxTenNhanVien";
-            this.textBoxTenNhanVien.Size = new System.Drawing.Size(159, 22);
-            this.textBoxTenNhanVien.TabIndex = 124;
+            this.textBoxTenSanPham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTenSanPham.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxTenSanPham.Location = new System.Drawing.Point(136, 172);
+            this.textBoxTenSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxTenSanPham.Name = "textBoxTenSanPham";
+            this.textBoxTenSanPham.Size = new System.Drawing.Size(159, 22);
+            this.textBoxTenSanPham.TabIndex = 2;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 172);
@@ -211,20 +192,21 @@
             this.label3.TabIndex = 123;
             this.label3.Text = "Tên sản phẩm:";
             // 
-            // textBoxMaNhanVien
+            // textBoxMaSanPham
             // 
-            this.textBoxMaNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxMaNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMaNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxMaNhanVien.Location = new System.Drawing.Point(136, 86);
-            this.textBoxMaNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxMaNhanVien.Name = "textBoxMaNhanVien";
-            this.textBoxMaNhanVien.Size = new System.Drawing.Size(159, 22);
-            this.textBoxMaNhanVien.TabIndex = 118;
+            this.textBoxMaSanPham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMaSanPham.Enabled = false;
+            this.textBoxMaSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaSanPham.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxMaSanPham.Location = new System.Drawing.Point(136, 86);
+            this.textBoxMaSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxMaSanPham.Name = "textBoxMaSanPham";
+            this.textBoxMaSanPham.Size = new System.Drawing.Size(159, 22);
+            this.textBoxMaSanPham.TabIndex = 100;
             // 
             // buttonThoat
             // 
+            this.buttonThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -238,7 +220,6 @@
             // 
             // labelTieuDe
             // 
-            this.labelTieuDe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.labelTieuDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.labelTieuDe.Location = new System.Drawing.Point(23, 42);
@@ -247,101 +228,131 @@
             this.labelTieuDe.TabIndex = 116;
             this.labelTieuDe.Text = "Chi tiết hoặc thêm sản phẩm:";
             // 
-            // textBox1
+            // textBoxSoLuongHienTai
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox1.Location = new System.Drawing.Point(553, 216);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
-            this.textBox1.TabIndex = 139;
+            this.textBoxSoLuongHienTai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSoLuongHienTai.Enabled = false;
+            this.textBoxSoLuongHienTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSoLuongHienTai.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxSoLuongHienTai.Location = new System.Drawing.Point(570, 216);
+            this.textBoxSoLuongHienTai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxSoLuongHienTai.Name = "textBoxSoLuongHienTai";
+            this.textBoxSoLuongHienTai.Size = new System.Drawing.Size(143, 22);
+            this.textBoxSoLuongHienTai.TabIndex = 7;
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(426, 216);
+            this.label6.Location = new System.Drawing.Point(427, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 18);
             this.label6.TabIndex = 138;
             this.label6.Text = "Số lượng hiện tại:";
             // 
-            // textBox2
+            // textBoxGiaMua
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox2.Location = new System.Drawing.Point(553, 130);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 22);
-            this.textBox2.TabIndex = 137;
+            this.textBoxGiaMua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxGiaMua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGiaMua.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxGiaMua.Location = new System.Drawing.Point(570, 130);
+            this.textBoxGiaMua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxGiaMua.Name = "textBoxGiaMua";
+            this.textBoxGiaMua.Size = new System.Drawing.Size(143, 22);
+            this.textBoxGiaMua.TabIndex = 5;
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(426, 130);
+            this.label7.Location = new System.Drawing.Point(427, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 18);
             this.label7.TabIndex = 136;
             this.label7.Text = "Giá mua:";
             // 
-            // textBox3
+            // textBoxSoLuongNhap
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox3.Location = new System.Drawing.Point(553, 172);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 22);
-            this.textBox3.TabIndex = 135;
+            this.textBoxSoLuongNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSoLuongNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSoLuongNhap.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxSoLuongNhap.Location = new System.Drawing.Point(570, 172);
+            this.textBoxSoLuongNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxSoLuongNhap.Name = "textBoxSoLuongNhap";
+            this.textBoxSoLuongNhap.Size = new System.Drawing.Size(143, 22);
+            this.textBoxSoLuongNhap.TabIndex = 6;
+            this.textBoxSoLuongNhap.Leave += new System.EventHandler(this.textBoxSoLuongNhap_Leave);
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(426, 172);
+            this.label12.Location = new System.Drawing.Point(427, 172);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 18);
             this.label12.TabIndex = 134;
             this.label12.Text = "Số lượng nhập:";
+            // 
+            // textBoxThoiGianBaoHanh
+            // 
+            this.textBoxThoiGianBaoHanh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxThoiGianBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxThoiGianBaoHanh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxThoiGianBaoHanh.Location = new System.Drawing.Point(570, 260);
+            this.textBoxThoiGianBaoHanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxThoiGianBaoHanh.Name = "textBoxThoiGianBaoHanh";
+            this.textBoxThoiGianBaoHanh.Size = new System.Drawing.Size(143, 22);
+            this.textBoxThoiGianBaoHanh.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(427, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 18);
+            this.label1.TabIndex = 140;
+            this.label1.Text = "Thời gian bảo hành:";
+            // 
+            // comboBoxLoaiSanPham
+            // 
+            this.comboBoxLoaiSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxLoaiSanPham.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.comboBoxLoaiSanPham.FormattingEnabled = true;
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(136, 130);
+            this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(159, 24);
+            this.comboBoxLoaiSanPham.TabIndex = 1;
+            this.comboBoxLoaiSanPham.TextChanged += new System.EventHandler(this.comboBoxLoaiSanPham_TextChanged);
             // 
             // FormChiTietHoacThemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(747, 350);
+            this.ClientSize = new System.Drawing.Size(747, 368);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxLoaiSanPham);
+            this.Controls.Add(this.textBoxThoiGianBaoHanh);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxSoLuongHienTai);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxGiaMua);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxSoLuongNhap);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBoxMucLuong);
+            this.Controls.Add(this.textBoxGiaBan);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.buttonXacNhan);
             this.Controls.Add(this.buttonHuyBo);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBoxSoDienThoai);
+            this.Controls.Add(this.textBoxTenHang);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxDiaChi);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxTenNhanVien);
+            this.Controls.Add(this.textBoxTenSanPham);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxMaNhanVien);
+            this.Controls.Add(this.textBoxMaSanPham);
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.labelTieuDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -355,27 +366,29 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBoxMucLuong;
+        private System.Windows.Forms.TextBox textBoxGiaBan;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonXacNhan;
         private System.Windows.Forms.Button buttonHuyBo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBoxSoDienThoai;
+        private System.Windows.Forms.TextBox textBoxTenHang;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxDiaChi;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxTenNhanVien;
+        private System.Windows.Forms.TextBox textBoxTenSanPham;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxMaNhanVien;
+        private System.Windows.Forms.TextBox textBoxMaSanPham;
         private System.Windows.Forms.Button buttonThoat;
         private System.Windows.Forms.Label labelTieuDe;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSoLuongHienTai;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxGiaMua;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxSoLuongNhap;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxThoiGianBaoHanh;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxLoaiSanPham;
     }
 }

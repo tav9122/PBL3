@@ -151,7 +151,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 100);
+            this.panelLogo.Size = new System.Drawing.Size(200, 113);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -159,11 +159,12 @@
             // 
             this.linkLabelTenNhanVien.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
             this.linkLabelTenNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelTenNhanVien.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelTenNhanVien.LinkColor = System.Drawing.Color.White;
             this.linkLabelTenNhanVien.Location = new System.Drawing.Point(33, 82);
             this.linkLabelTenNhanVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelTenNhanVien.Name = "linkLabelTenNhanVien";
-            this.linkLabelTenNhanVien.Size = new System.Drawing.Size(136, 18);
+            this.linkLabelTenNhanVien.Size = new System.Drawing.Size(136, 26);
             this.linkLabelTenNhanVien.TabIndex = 7;
             this.linkLabelTenNhanVien.TabStop = true;
             this.linkLabelTenNhanVien.Text = "TÊN NHÂN VIÊN";
@@ -174,9 +175,9 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(64, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 69);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
