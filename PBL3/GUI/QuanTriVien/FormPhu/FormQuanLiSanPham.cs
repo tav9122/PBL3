@@ -9,21 +9,20 @@ namespace PBL3
         public FormQuanLiSanPham()
         {
             InitializeComponent();
-            
+
             comboBoxKieuSapXep.SelectedIndex = 0;
-            foreach (var i in typeof(SanPham).GetProperties())
+            foreach (var i in typeof(ViewSanPham_QuanTriVien).GetProperties())
             {
                 comboBoxKieuSapXep.Items.Add(i.Name);
             }
-            
             ReloadDataGridView(null, null);
         }
-        
+
         private void ReloadDataGridView(object sender, EventArgs e)
         {
             dataGridView1.DataSource = BLLQuanLiSanPham.Instance.GetSanPhams(comboBoxKieuSapXep.Text, textBoxTimKiem.Text);
         }
-        
+
         #region Các hàm chức năng cơ bản, hạn chế sửa
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
@@ -51,7 +50,7 @@ namespace PBL3
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 maSanPham = row.Cells[0].Value.ToString();
-                BLLQuanLiSanPham.Instance.Delete(maSanPham);
+                BLLQuanLiSanPham.Instance.DeleteSanPham(maSanPham);
             }
             ReloadDataGridView(null, null);
         }

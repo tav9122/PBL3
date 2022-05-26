@@ -161,10 +161,10 @@
             this.linkLabelTenNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelTenNhanVien.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelTenNhanVien.LinkColor = System.Drawing.Color.White;
-            this.linkLabelTenNhanVien.Location = new System.Drawing.Point(33, 82);
+            this.linkLabelTenNhanVien.Location = new System.Drawing.Point(0, 82);
             this.linkLabelTenNhanVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelTenNhanVien.Name = "linkLabelTenNhanVien";
-            this.linkLabelTenNhanVien.Size = new System.Drawing.Size(136, 26);
+            this.linkLabelTenNhanVien.Size = new System.Drawing.Size(200, 26);
             this.linkLabelTenNhanVien.TabIndex = 7;
             this.linkLabelTenNhanVien.TabStop = true;
             this.linkLabelTenNhanVien.Text = "TÊN NHÂN VIÊN";

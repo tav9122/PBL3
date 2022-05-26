@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -8,9 +7,9 @@ namespace PBL3
     public partial class FormThongTinCaNhan : Form
     {
         bool typeQuanTriVien = false;
-        
+
         string currentMatKhau;
-        
+
         public FormThongTinCaNhan()
         {
             InitializeComponent();
@@ -20,7 +19,7 @@ namespace PBL3
             textBoxTenDangNhap.Text = "qtv";
             currentMatKhau = BLLQuanLiChung.Instance.GetMatKhauQuanTriVien();
             textBoxMatKhau.Text = BLLQuanLiChung.Instance.GetMatKhauQuanTriVien();
-            
+
             groupBox2.Location = new System.Drawing.Point(175, 105);
             this.Size = new System.Drawing.Size(617, 387);
             buttonXacNhan.Location = new System.Drawing.Point(197, 344);
@@ -50,14 +49,14 @@ namespace PBL3
             textBoxHoVaTen.Text = nhanVien.HoVaTen;
             textBoxDiaChi.Text = nhanVien.DiaChi;
             textBoxSoDienThoai.Text = nhanVien.SoDienThoai;
-            textBoxTenDangNhap.Text = BLLQuanLiNhanVien.Instance.GetTenDangNhap(maNhanVien);
+            textBoxTenDangNhap.Text = BLLQuanLiNhanVien.Instance.GetTenDangNhapNhanVien(maNhanVien);
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
-            dataGridView1.DataSource = BLLQuanLiNhanVien.Instance.GetLichLamViec(maNhanVien);
-            currentMatKhau = BLLQuanLiNhanVien.Instance.GetMatKhau(maNhanVien);
-            textBoxMatKhau.Text = BLLQuanLiNhanVien.Instance.GetMatKhau(maNhanVien);
+            dataGridView1.DataSource = BLLQuanLiNhanVien.Instance.GetLichLamViecNhanVien(maNhanVien);
+            currentMatKhau = BLLQuanLiNhanVien.Instance.GetMatKhauNhanVien(maNhanVien);
+            textBoxMatKhau.Text = BLLQuanLiNhanVien.Instance.GetMatKhauNhanVien(maNhanVien);
         }
-        
+
         #region Các hàm chức năng cơ bản, hạn chế sửa
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
@@ -133,7 +132,7 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            if (textBoxDiaChi.Text == "" ||textBoxSoDienThoai.Text == "")
+            if (textBoxDiaChi.Text == "" || textBoxSoDienThoai.Text == "")
             {
                 MessageBox.Show("Không được để trống các trường!");
             }
@@ -152,7 +151,7 @@ namespace PBL3
                     }
                     else
                     {
-                        BLLQuanLiNhanVien.Instance.Update(textBoxMaNhanVien.Text, textBoxMatKhau.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text);
+                        BLLQuanLiNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxMatKhau.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text);
                         this.Close();
                     }
                 }

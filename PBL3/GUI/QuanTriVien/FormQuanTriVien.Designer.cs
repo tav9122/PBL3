@@ -133,10 +133,10 @@
             this.linkLabelTenQuanTriVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelTenQuanTriVien.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelTenQuanTriVien.LinkColor = System.Drawing.Color.White;
-            this.linkLabelTenQuanTriVien.Location = new System.Drawing.Point(18, 82);
+            this.linkLabelTenQuanTriVien.Location = new System.Drawing.Point(0, 82);
             this.linkLabelTenQuanTriVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelTenQuanTriVien.Name = "linkLabelTenQuanTriVien";
-            this.linkLabelTenQuanTriVien.Size = new System.Drawing.Size(164, 26);
+            this.linkLabelTenQuanTriVien.Size = new System.Drawing.Size(200, 26);
             this.linkLabelTenQuanTriVien.TabIndex = 7;
             this.linkLabelTenQuanTriVien.TabStop = true;
             this.linkLabelTenQuanTriVien.Text = "TÊN QUẢN TRỊ VIÊN";

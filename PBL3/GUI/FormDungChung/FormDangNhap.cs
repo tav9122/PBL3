@@ -9,7 +9,7 @@ namespace PBL3
         public FormDangNhap()
         {
             InitializeComponent();
-            
+
             //Bốn câu lệnh ở dưới chỉ có mục đích khởi tạo Model
             textBoxTenDangNhap.Text = "khoitao";
             textBoxMatKhau.Text = "khoitao";
@@ -71,8 +71,8 @@ namespace PBL3
                 buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
             }
         }
-        #endregion        
-        
+        #endregion
+
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
             if (textBoxTenDangNhap.Text == "" || textBoxMatKhau.Text == "")

@@ -46,7 +46,7 @@ namespace PBL3
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nv", MatKhau = "nv", MaNhanVien = "NV1" });
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien2", MatKhau = "123", MaNhanVien = "NV2" });
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien3", MatKhau = "123", MaNhanVien = "NV3" });
-            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv"});
+            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv" });
 
             //Tạo sản phẩm
             context.SanPhams.AddRange(new SanPham[]

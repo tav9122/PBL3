@@ -13,7 +13,7 @@ namespace PBL3
         {
             InitializeComponent();
             linkLabelTenQuanTriVien.Text = "QUẢN TRỊ VIÊN";
-            
+
             //Khởi tạo form màn hình chính
             formManHinhChinh.TopLevel = false;
             formManHinhChinh.FormBorderStyle = FormBorderStyle.None;

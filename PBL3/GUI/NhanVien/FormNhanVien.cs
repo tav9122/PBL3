@@ -21,12 +21,11 @@ namespace PBL3
             }
             else
             {
-                linkLabelTenNhanVien.Text = BLLQuanLiNhanVien.Instance.GetTen(maNhanVien);
+                linkLabelTenNhanVien.Text = BLLQuanLiNhanVien.Instance.GetTenNhanVien(maNhanVien);
             }
             this.maNhanVien = maNhanVien;
 
             //Khởi tạo form màn hình chính
-            pictureBox1_Click(null, null);
             formManHinhChinh.TopLevel = false;
             formManHinhChinh.FormBorderStyle = FormBorderStyle.None;
             formManHinhChinh.Dock = DockStyle.Fill;
@@ -128,7 +127,7 @@ namespace PBL3
             {
                 FormThongTinCaNhan formThongTinCaNhan = new FormThongTinCaNhan();
                 formThongTinCaNhan.ShowDialog();
-            }  
+            }
             else
             {
                 FormThongTinCaNhan formThongTinCaNhan = new FormThongTinCaNhan(maNhanVien);

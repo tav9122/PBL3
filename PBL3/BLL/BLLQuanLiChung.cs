@@ -150,12 +150,12 @@ namespace PBL3
             }
             return null;
         }
-        
+
         public string GetMatKhauQuanTriVien()
         {
             return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == "qtv").MatKhau;
         }
-        
+
         public void UpdateMatKhauQuanTriVien(string matKhau)
         {
             Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == "qtv").MatKhau = matKhau;
