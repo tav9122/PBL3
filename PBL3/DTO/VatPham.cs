@@ -9,7 +9,7 @@ namespace PBL3
     {
         [Key]
         [Column("Số seri")]
-        public int SoSeri { get; set; }
+        public string SoSeri { get; set; }
         [Column("Mã sản phẩm")]
         public string MaSanPham { get; set; }
 

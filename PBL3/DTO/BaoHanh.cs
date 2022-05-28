@@ -11,19 +11,25 @@ namespace PBL3
         [Column("Số seri")]
         [Key]
         [Required]
-        public int SoSeri { get; set; }
+        public string SoSeri { get; set; }
 
         [Column("Trạng thái")]
-        public string TrangThai { get; set; }
+        public bool TrangThai { get; set; }
 
         [Column("Ghi chú")]
         public string GhiChu { get; set; }
 
         [Column("Thời gian tạo phiếu bảo hành")]
         public DateTime ThoiGianTaoPhieuBaoHanh { get; set; }
+        
+        [Column("Chủ sở hữu")]
+        public string MaKhachHang { get; set; }
 
         [ForeignKey("SoSeri")]
         public virtual VatPham VatPham { get; set; }
+        
+        [ForeignKey("MaKhachHang")]
+        public virtual KhachHang KhachHang { get; set; } 
 
         [DefaultValue("false")]
         [Column("Đã xoá")]

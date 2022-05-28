@@ -161,5 +161,9 @@ namespace PBL3
             Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == "qtv").MatKhau = matKhau;
             Model.Instance.SaveChanges();
         }
+        public KhachHang GetKhachHangviaID(string ID)
+        {
+            return Model.Instance.KhachHangs.FirstOrDefault(p => p.MaKhachHang == ID);
+        }
     }
 }

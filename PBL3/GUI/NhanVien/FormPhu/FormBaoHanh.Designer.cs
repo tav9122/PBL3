@@ -45,9 +45,10 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label2.Location = new System.Drawing.Point(12, 13);
+            this.label2.Location = new System.Drawing.Point(16, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 32);
+            this.label2.Size = new System.Drawing.Size(171, 39);
             this.label2.TabIndex = 34;
             this.label2.Text = "Bảo hành";
             // 
@@ -59,11 +60,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 112);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 138);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(692, 302);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(923, 372);
             this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // textBoxTimKiem
             // 
@@ -71,10 +75,10 @@
             this.textBoxTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBoxTimKiem.Location = new System.Drawing.Point(458, 69);
-            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxTimKiem.Location = new System.Drawing.Point(611, 85);
+            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxTimKiem.Name = "textBoxTimKiem";
-            this.textBoxTimKiem.Size = new System.Drawing.Size(246, 24);
+            this.textBoxTimKiem.Size = new System.Drawing.Size(327, 29);
             this.textBoxTimKiem.TabIndex = 30;
             this.textBoxTimKiem.Text = "Nhập để tìm kiếm...";
             this.textBoxTimKiem.Enter += new System.EventHandler(this.textBoxTimKiem_Enter);
@@ -88,10 +92,10 @@
             this.comboBoxSapXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSapXep.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBoxSapXep.FormattingEnabled = true;
-            this.comboBoxSapXep.Location = new System.Drawing.Point(552, 20);
-            this.comboBoxSapXep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxSapXep.Location = new System.Drawing.Point(736, 25);
+            this.comboBoxSapXep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxSapXep.Name = "comboBoxSapXep";
-            this.comboBoxSapXep.Size = new System.Drawing.Size(152, 26);
+            this.comboBoxSapXep.Size = new System.Drawing.Size(201, 32);
             this.comboBoxSapXep.TabIndex = 29;
             // 
             // label1
@@ -100,9 +104,10 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(455, 23);
+            this.label1.Location = new System.Drawing.Point(607, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 18);
+            this.label1.Size = new System.Drawing.Size(122, 24);
             this.label1.TabIndex = 28;
             this.label1.Text = "Sắp xếp theo";
             // 
@@ -111,33 +116,35 @@
             this.buttonThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThem.Location = new System.Drawing.Point(18, 64);
-            this.buttonThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonThem.Location = new System.Drawing.Point(24, 79);
+            this.buttonThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonThem.Name = "buttonThem";
-            this.buttonThem.Size = new System.Drawing.Size(70, 28);
+            this.buttonThem.Size = new System.Drawing.Size(93, 34);
             this.buttonThem.TabIndex = 36;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // buttonSua
             // 
             this.buttonSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonSua.Location = new System.Drawing.Point(94, 64);
-            this.buttonSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSua.Location = new System.Drawing.Point(125, 79);
+            this.buttonSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSua.Name = "buttonSua";
-            this.buttonSua.Size = new System.Drawing.Size(70, 28);
+            this.buttonSua.Size = new System.Drawing.Size(93, 34);
             this.buttonSua.TabIndex = 35;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // FormBaoHanh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(716, 419);
+            this.ClientSize = new System.Drawing.Size(955, 516);
             this.Controls.Add(this.buttonThem);
             this.Controls.Add(this.buttonSua);
             this.Controls.Add(this.label2);
@@ -145,7 +152,7 @@
             this.Controls.Add(this.textBoxTimKiem);
             this.Controls.Add(this.comboBoxSapXep);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.Name = "FormBaoHanh";
             this.Text = "FormBaoHanh";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

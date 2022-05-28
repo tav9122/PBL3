@@ -90,9 +90,21 @@ namespace PBL3
         {
             for (int i = Model.Instance.VatPhams.Count() + 1; i < soLuongNhap + Model.Instance.VatPhams.Count(); i++)
             {
-                Model.Instance.VatPhams.Add(new VatPham { SoSeri = i, MaSanPham = maSanPham });
+                Model.Instance.VatPhams.Add(new VatPham { SoSeri = maSanPham + "-" + i.ToString().PadLeft(4, '0'), MaSanPham = maSanPham });
             }
             Model.Instance.SaveChanges();
+        }
+        public dynamic GetAllBaoHanh()
+        {
+            return Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham,p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu}).ToList();
+        }
+        public BaoHanh GetBaoHanhviaSerial(string serial)
+        {
+            return Model.Instance.BaoHanhs.FirstOrDefault(p => p.SoSeri == serial);
+        }
+        public VatPham GetVatPhamviSerial(string serial)
+        {
+            return Model.Instance.VatPhams.FirstOrDefault(p => p.SoSeri == serial);
         }
     }
 }

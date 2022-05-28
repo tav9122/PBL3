@@ -59,21 +59,33 @@ namespace PBL3
                 new SanPham {MaSanPham = "DT2", TenSanPham = "Samsung Galaxy S22 Ultra", TenHang = "Samsung", GiaBan = 30000000, GiaMua = 29000000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 20, SoLuongHienTai = 7, ThoiGianBaoHanh = "1 năm"},
                 new SanPham {MaSanPham = "DT3", TenSanPham = "Iphone 12 Pro Max", TenHang = "Apple", GiaBan = 30000000, GiaMua = 29500000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 15, SoLuongHienTai = 8, ThoiGianBaoHanh = "1 năm"},
                 new SanPham {MaSanPham = "DT4", TenSanPham = "Oppo Reno 6", TenHang = "Oppo", GiaBan = 10000000, GiaMua = 9300000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 20, SoLuongHienTai = 2, ThoiGianBaoHanh = "1 năm"}
-
             });
             context.SaveChanges();
 
-            //Tạo vật phẩm dựa trên số lượng nhập của sản phẩm
-            int tongsoluongsanpham = 0;
-            foreach (var i in context.SanPhams)
-            {
-                for (int j = tongsoluongsanpham; j < i.SoLuongNhap + tongsoluongsanpham; j++)
-                {
-                    context.VatPhams.Add(new VatPham { SoSeri = j, MaSanPham = i.MaSanPham });
-                }
-                tongsoluongsanpham += i.SoLuongNhap;
-            }
 
+            //int tongsoluongsanpham = 0;
+            //foreach (var i in context.SanPhams)
+            //{
+            //    for (int j = tongsoluongsanpham; j < i.SoLuongNhap + tongsoluongsanpham; j++)
+            //    {
+            //        context.VatPhams.Add(new VatPham { SoSeri = j, MaSanPham = i.MaSanPham });
+            //    }
+            //    tongsoluongsanpham += i.SoLuongNhap;
+            //}
+
+            //Tạo vật phẩm dựa trên số lượng nhập của sản phẩm
+            foreach (SanPham i in context.SanPhams)
+            {
+                for(int j  = 0; j < i.SoLuongNhap;j++)
+                {
+                    context.VatPhams.Add(new VatPham
+                    {
+                        SoSeri = i.MaSanPham + "-" + j.ToString().PadLeft(4, '0'),
+                        MaSanPham = i.MaSanPham
+                    }) ;
+                }
+    
+            }
 
             //Tạo nhân viên - lịch làm việc theo mối quan hệ nhiều nhiều
             context.NhanVienLichLamViecs.Add(new NhanVienLichLamViec { MaNhanVien_LichLamViec = 3, MaLichLamViec = "LLV2", MaNhanVien = "NV3" });
@@ -89,9 +101,11 @@ namespace PBL3
             context.HoaDons.Add(new HoaDon { MaHoaDon = "HD4", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 4, 12, 18, 30, 0) });
             context.HoaDons.Add(new HoaDon { MaHoaDon = "HD5", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 07, 08, 30, 0) });
             context.HoaDons.Add(new HoaDon { MaHoaDon = "HD6", MaNhanVien = "NV3", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 15, 14, 20, 0) });
-
+            context.SaveChanges();
             //Tạo bảo hành
-            context.BaoHanhs.Add(new BaoHanh { SoSeri = 1, TrangThai = "Hỏng", GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
+            context.BaoHanhs.Add(new BaoHanh { SoSeri = "DT1-0001", MaKhachHang = "KH1", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
+            context.BaoHanhs.Add(new BaoHanh { SoSeri = "TN1-0002", MaKhachHang = "KH1", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
+            context.SaveChanges();
         }
     }
 }
