@@ -51,15 +51,19 @@ namespace PBL3
             return Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham);
         }
 
+        public List<string> GetMaSanPhams()
+        {
+            if (Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList() == null)
+                return new List<string> { "SP0" };
+            else
+                return Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList();
+        }
+
         public List<string> GetLoaiSanPhams()
         {
             return Model.Instance.SanPhams.Select(sp => sp.LoaiSanPham).Distinct().ToList();
         }
 
-        public List<string> GetMaSanPhams()
-        {
-            return Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList();
-        }
         public void DeleteSanPham(string maSanPham)
         {
             Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).DaXoa = true;

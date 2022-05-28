@@ -44,6 +44,7 @@ namespace PBL3
 
         public void ResetProperties()
         {
+            BLLSanPham.Instance.ResetSoLuongTrongTuiHang();
             alreadyOpenFormBaoHanh = false;
             alreadyOpenFormLichSuHoaDon = false;
             alreadyOpenFormSanPham = false;
@@ -141,25 +142,9 @@ namespace PBL3
         {
             if (Model.Instance.TaiKhoans.Where(tk => tk.TenDangNhap == tenDangNhap && tk.MatKhau == matKhau).Count() > 0)
             {
-                if (tenDangNhap == "qtv")
-                {
-                    return "QUẢN TRỊ VIÊN";
-                }
-                else
-                    return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == tenDangNhap).MaNhanVien;
+                return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == tenDangNhap).MaNhanVien;
             }
             return null;
-        }
-
-        public string GetMatKhauQuanTriVien()
-        {
-            return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == "qtv").MatKhau;
-        }
-
-        public void UpdateMatKhauQuanTriVien(string matKhau)
-        {
-            Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == "qtv").MatKhau = matKhau;
-            Model.Instance.SaveChanges();
         }
     }
 }

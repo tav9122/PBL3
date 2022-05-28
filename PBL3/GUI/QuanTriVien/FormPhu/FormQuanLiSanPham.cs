@@ -42,6 +42,14 @@ namespace PBL3
                 textBoxTimKiem.Text = "Nhập để tìm kiếm...";
             }
         }
+
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["GiaMua"].DefaultCellStyle.Format = "C0";
+        }
+
         #endregion
 
         private void buttonXoa_Click(object sender, EventArgs e)

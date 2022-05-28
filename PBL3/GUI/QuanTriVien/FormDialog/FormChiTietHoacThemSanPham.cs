@@ -19,9 +19,14 @@ namespace PBL3
         {
             InitializeComponent();
             InitializeComboBoxLoaiSanPhamItems();
+            InitializeSanPhamInformations(maSanPham);
             typeUpdate = true;
             labelTieuDe.Text = "Chi tiết sản phẩm:";
             comboBoxLoaiSanPham.Enabled = false;
+        }
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+        public void InitializeSanPhamInformations(string maSanPham)
+        {
             var sanPham = BLLQuanLiSanPham.Instance.GetSanPham(maSanPham);
             textBoxMaSanPham.Text = sanPham.MaSanPham;
             textBoxTenSanPham.Text = sanPham.TenSanPham;
@@ -33,7 +38,6 @@ namespace PBL3
             textBoxTenHang.Text = sanPham.TenHang;
             textBoxThoiGianBaoHanh.Text = sanPham.ThoiGianBaoHanh;
         }
-
         public void InitializeComboBoxLoaiSanPhamItems()
         {
             foreach (string i in BLLQuanLiSanPham.Instance.GetLoaiSanPhams())
@@ -63,6 +67,39 @@ namespace PBL3
             this.Close();
         }
 
+        private void comboBoxLoaiSanPham_TextChanged(object sender, EventArgs e)
+        {
+            if (!typeUpdate)
+                try
+                {
+                    textBoxMaSanPham.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiSanPham.Instance.GetLoaiSanPhams(), comboBoxLoaiSanPham.Text);
+                }
+                catch
+                {
+                }
+        }
+        private void textBoxSoLuongNhap_Leave(object sender, EventArgs e)
+        {
+            if (!typeUpdate)
+                textBoxSoLuongHienTai.Text = textBoxSoLuongNhap.Text;
+            else
+            {
+                try
+                {
+                    if (Convert.ToInt32(textBoxSoLuongNhap.Text) < BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap)
+                    {
+                        textBoxSoLuongNhap.Text = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap.ToString();
+                    }
+                    textBoxSoLuongHienTai.Text = (BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongHienTai + (Convert.ToInt32(textBoxSoLuongNhap.Text) - BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap)).ToString();
+                }
+                catch
+                {
+                    textBoxSoLuongNhap.Text = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap.ToString();
+                }
+            }
+        }
+        #endregion
+
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
             if (textBoxTenSanPham.Text == "" || textBoxGiaBan.Text == "" || textBoxSoLuongNhap.Text == "" || textBoxSoLuongHienTai.Text == "" || textBoxGiaMua.Text == "" || textBoxTenHang.Text == "" || textBoxThoiGianBaoHanh.Text == "" || comboBoxLoaiSanPham.Text == "")
@@ -83,39 +120,6 @@ namespace PBL3
                     BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text), textBoxMaSanPham.Text);
                 }
                 this.Close();
-            }
-        }
-
-        private void comboBoxLoaiSanPham_TextChanged(object sender, EventArgs e)
-        {
-            if (!typeUpdate)
-                try
-                {
-                    textBoxMaSanPham.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiSanPham.Instance.GetLoaiSanPhams(), comboBoxLoaiSanPham.Text);
-                }
-                catch
-                {
-                }
-        }
-
-        private void textBoxSoLuongNhap_Leave(object sender, EventArgs e)
-        {
-            if (!typeUpdate)
-                textBoxSoLuongHienTai.Text = textBoxSoLuongNhap.Text;
-            else
-            {
-                try
-                {
-                    if (Convert.ToInt32(textBoxSoLuongNhap.Text) < BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap)
-                    {
-                        textBoxSoLuongNhap.Text = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap.ToString();
-                    }
-                    textBoxSoLuongHienTai.Text = (BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongHienTai + (Convert.ToInt32(textBoxSoLuongNhap.Text) - BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap)).ToString();
-                }
-                catch
-                {
-                    textBoxSoLuongNhap.Text = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap.ToString();
-                }
             }
         }
     }

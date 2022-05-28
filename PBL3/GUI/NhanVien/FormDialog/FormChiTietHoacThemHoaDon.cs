@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -6,12 +7,48 @@ namespace PBL3
 {
     public partial class FormChiTietHoacThemHoaDon : Form
     {
-        public FormChiTietHoacThemHoaDon()
+        public FormChiTietHoacThemHoaDon(string ma)
         {
             InitializeComponent();
+            if (BLLQuanLiNhanVien.Instance.GetNhanVien(ma) != null)
+            {
+                InitializeNewHoaDonInformations(ma);
+            }
+            else InitializeHoaDonInformations(ma);
+        }
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+
+        public void InitializeNewHoaDonInformations(string maNhanVien)
+        {
+            labelTieuDe.Text = "Thêm hóa đơn";
+            textBoxMaHoaDon.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLLichSuHoaDon.Instance.GetMaHoaDons());
+            textBoxMaNhanVien.Text = maNhanVien;
+            dateTimePickerThoiGianGiaoDich.Value = DateTime.Now;
+            textBoxThanhTien.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C0}", BLLLichSuHoaDon.Instance.GetTongSoTien());
+            textBoxMaKhachHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiKhachHang.Instance.GetMaKhachHangs());
+            dataGridView1.DataSource = BLLSanPham.Instance.GetTuiHang();
         }
 
-        private void buttonThoat_Click(object sender, EventArgs e)
+        public void InitializeHoaDonInformations(string maHoaDon)
+        {
+            labelTieuDe.Text = "Chi tiết hoá đơn:";
+            var hoaDon = BLLLichSuHoaDon.Instance.GetHoaDon(maHoaDon);
+            textBoxMaHoaDon.Text = hoaDon.MaHoaDon;
+            textBoxMaKhachHang.Text = hoaDon.MaKhachHang;
+            textBoxMaNhanVien.Text = hoaDon.MaNhanVien;
+            dateTimePickerThoiGianGiaoDich.Value = hoaDon.ThoiGianGiaoDich;
+            textBoxThanhTien.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C0}", hoaDon.ThanhTien);
+            textBoxSoDienThoai.Text = hoaDon.KhachHang.SoDienThoai;
+            textBoxDiaChi.Text = hoaDon.KhachHang.DiaChi;
+            textBoxTenKhachHang.Text = hoaDon.KhachHang.TenKhachHang;
+            dataGridView1.DataSource = BLLLichSuHoaDon.Instance.GetVatPhamsByMaHoaDon(hoaDon.MaHoaDon);
+            textBoxTenKhachHang.Enabled = false;
+            textBoxDiaChi.Enabled = false;
+            textBoxSoDienThoai.Enabled = false;
+            buttonXacNhan.Visible = false;
+        }
+
+        private void buttonHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -40,6 +77,59 @@ namespace PBL3
             else
             {
                 this.WindowState = FormWindowState.Maximized;
+            }
+        }
+        private void textBoxSoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+            if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) != null)
+            {
+                textBoxTenKhachHang.Enabled = false;
+                textBoxDiaChi.Enabled = false;
+                textBoxTenKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).TenKhachHang;
+                textBoxDiaChi.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).DiaChi;
+                textBoxMaKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).MaKhachHang;
+            }
+            else
+            {
+                textBoxTenKhachHang.Enabled = true;
+                textBoxDiaChi.Enabled = true;
+                textBoxTenKhachHang.Text = "";
+                textBoxDiaChi.Text = "";
+                textBoxMaKhachHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiKhachHang.Instance.GetMaKhachHangs());
+            }
+        }
+
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        }
+
+        #endregion
+
+
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            if (textBoxDiaChi.Text == "" || textBoxMaKhachHang.Text == "" || textBoxSoDienThoai.Text == "" || textBoxTenKhachHang.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng");
+                return;
+            }
+            else
+            {
+                if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) == null)
+                {
+                    BLLQuanLiKhachHang.Instance.AddKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, "");
+                }
+                BLLLichSuHoaDon.Instance.AddHoaDon(textBoxMaHoaDon.Text, textBoxMaNhanVien.Text, textBoxMaKhachHang.Text, dateTimePickerThoiGianGiaoDich.Value, BLLLichSuHoaDon.Instance.GetTongSoTien());
+                foreach (ViewSanPham_NhanVien i in BLLSanPham.Instance.GetTuiHang().Distinct())
+                {
+                    BLLSanPham.Instance.AssignMaHoaDonToVatPhams(textBoxMaHoaDon.Text, i.MaSanPham, i.SoLuongTrongTuiHang);
+                }
+                BLLSanPham.Instance.ResetSoLuongTrongTuiHang();
+                BLLQuanLiChung.Instance.alreadyOpenFormLichSuHoaDon = false;
+                BLLQuanLiChung.Instance.formLichSuHoaDon = null;
+                this.Close();
             }
         }
     }

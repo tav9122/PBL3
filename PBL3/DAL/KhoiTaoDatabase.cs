@@ -38,7 +38,8 @@ namespace PBL3
                 {
                     new NhanVien {MaNhanVien = "NV1", HoVaTen = "Trần Ngọc Tín", SoDienThoai = "0999888777", DiaChi = "Quảng Nam", NgaySinh = new DateTime(2002, 6, 21), GioiTinh = true, MucLuong = 1200000 },
                     new NhanVien {MaNhanVien = "NV2", HoVaTen = "Nguyễn Hoàng Anh", SoDienThoai = "0888777666", DiaChi = "Đà Nẵng", NgaySinh = new DateTime(2002, 7, 10), GioiTinh = true, MucLuong = 1200000 },
-                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, MucLuong = 1000000 }
+                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, MucLuong = 1000000 },
+                    new NhanVien {MaNhanVien = "QTV", HoVaTen = "QUẢN TRỊ VIÊN", SoDienThoai = "", DiaChi = "", NgaySinh = new DateTime(2022, 02, 22), GioiTinh = true, MucLuong = 0},
                 });
 
 
@@ -46,7 +47,7 @@ namespace PBL3
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nv", MatKhau = "nv", MaNhanVien = "NV1" });
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien2", MatKhau = "123", MaNhanVien = "NV2" });
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien3", MatKhau = "123", MaNhanVien = "NV3" });
-            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv" });
+            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv", MaNhanVien = "QTV" });
 
             //Tạo sản phẩm
             context.SanPhams.AddRange(new SanPham[]
@@ -83,12 +84,12 @@ namespace PBL3
             context.SaveChanges();
 
             //Tạo hoá đơn
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD1", MaNhanVien = "NV1", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 20, 18, 50, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD2", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 22, 10, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD3", MaNhanVien = "NV3", MaKhachHang = "KH3", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 18, 40, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD4", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 4, 12, 18, 30, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD5", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 07, 08, 30, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD6", MaNhanVien = "NV3", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 15, 14, 20, 0) });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD1", MaNhanVien = "NV1", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 20, 18, 50, 0), ThanhTien = 10000000 });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD2", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 22, 10, 0), ThanhTien = 10000000 });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD3", MaNhanVien = "NV3", MaKhachHang = "KH3", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 18, 40, 0), ThanhTien = 10000000 });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD4", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 4, 12, 18, 30, 0), ThanhTien = 10000000 });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD5", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 07, 08, 30, 0), ThanhTien = 10000000 });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD6", MaNhanVien = "NV3", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 15, 14, 20, 0), ThanhTien = 10000000 });
 
             //Tạo bảo hành
             context.BaoHanhs.Add(new BaoHanh { SoSeri = 1, TrangThai = "Hỏng", GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });

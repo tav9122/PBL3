@@ -81,7 +81,7 @@
             this.buttonQuanLiLichLamViec.Location = new System.Drawing.Point(0, 269);
             this.buttonQuanLiLichLamViec.Name = "buttonQuanLiLichLamViec";
             this.buttonQuanLiLichLamViec.Size = new System.Drawing.Size(200, 74);
-            this.buttonQuanLiLichLamViec.TabIndex = 8;
+            this.buttonQuanLiLichLamViec.TabIndex = 3;
             this.buttonQuanLiLichLamViec.Text = " Quản lí lịch làm việc";
             this.buttonQuanLiLichLamViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonQuanLiLichLamViec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -100,7 +100,7 @@
             this.buttonThongKe.Location = new System.Drawing.Point(0, 343);
             this.buttonThongKe.Name = "buttonThongKe";
             this.buttonThongKe.Size = new System.Drawing.Size(200, 74);
-            this.buttonThongKe.TabIndex = 9;
+            this.buttonThongKe.TabIndex = 4;
             this.buttonThongKe.Text = " Thống kê";
             this.buttonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -137,7 +137,7 @@
             this.linkLabelTenQuanTriVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelTenQuanTriVien.Name = "linkLabelTenQuanTriVien";
             this.linkLabelTenQuanTriVien.Size = new System.Drawing.Size(200, 26);
-            this.linkLabelTenQuanTriVien.TabIndex = 7;
+            this.linkLabelTenQuanTriVien.TabIndex = 0;
             this.linkLabelTenQuanTriVien.TabStop = true;
             this.linkLabelTenQuanTriVien.Text = "TÊN QUẢN TRỊ VIÊN";
             this.linkLabelTenQuanTriVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,7 +171,7 @@
             this.buttonQuanLiNhanVien.Location = new System.Drawing.Point(0, 195);
             this.buttonQuanLiNhanVien.Name = "buttonQuanLiNhanVien";
             this.buttonQuanLiNhanVien.Size = new System.Drawing.Size(200, 74);
-            this.buttonQuanLiNhanVien.TabIndex = 7;
+            this.buttonQuanLiNhanVien.TabIndex = 2;
             this.buttonQuanLiNhanVien.Text = " Quản lí nhân viên";
             this.buttonQuanLiNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonQuanLiNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -190,7 +190,7 @@
             this.buttonQuanLiSanPham.Location = new System.Drawing.Point(0, 121);
             this.buttonQuanLiSanPham.Name = "buttonQuanLiSanPham";
             this.buttonQuanLiSanPham.Size = new System.Drawing.Size(200, 74);
-            this.buttonQuanLiSanPham.TabIndex = 0;
+            this.buttonQuanLiSanPham.TabIndex = 1;
             this.buttonQuanLiSanPham.Text = " Quản lí sản phẩm";
             this.buttonQuanLiSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonQuanLiSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

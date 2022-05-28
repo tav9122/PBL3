@@ -9,12 +9,20 @@ namespace PBL3
     {
         private FormManHinhChinh formManHinhChinh = new FormManHinhChinh();
 
-        public FormQuanTriVien()
+        string maQuanTriVien;
+        public FormQuanTriVien(string maQuanTriVien)
         {
             InitializeComponent();
-            linkLabelTenQuanTriVien.Text = "QUẢN TRỊ VIÊN";
+            InitializeFormManHinhChinh();
 
-            //Khởi tạo form màn hình chính
+            linkLabelTenQuanTriVien.Text = BLLQuanLiNhanVien.Instance.GetTenNhanVien(maQuanTriVien);
+            this.maQuanTriVien = maQuanTriVien;
+        }
+
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+
+        private void InitializeFormManHinhChinh()
+        {
             formManHinhChinh.TopLevel = false;
             formManHinhChinh.FormBorderStyle = FormBorderStyle.None;
             formManHinhChinh.Dock = DockStyle.Fill;
@@ -23,8 +31,6 @@ namespace PBL3
             formManHinhChinh.BringToFront();
             formManHinhChinh.Show();
         }
-
-        #region Các hàm chức năng cơ bản, hạn chế sửa
         private void buttonQuanLiSanPham_Click(object sender, EventArgs e)
         {
             BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiSanPham(), sender, panelDesktopPane);
@@ -47,7 +53,7 @@ namespace PBL3
 
         private void linkLabelTenQuanTriVien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Point position = new Point(181, -5);
+            Point position = new Point(200, 0);
             contextMenuStrip1.Show(linkLabelTenQuanTriVien, position);
         }
 
@@ -112,8 +118,8 @@ namespace PBL3
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormThongTinCaNhan f = new FormThongTinCaNhan();
-            f.ShowDialog();
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(maQuanTriVien);
+            formDoiMatKhau.ShowDialog();
         }
     }
 }

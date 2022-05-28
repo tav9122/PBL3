@@ -9,16 +9,18 @@ namespace PBL3
         public FormDangNhap()
         {
             InitializeComponent();
+            InitializeCodeFirstModel();
+        }
 
-            //Bốn câu lệnh ở dưới chỉ có mục đích khởi tạo Model
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+
+        private void InitializeCodeFirstModel()
+        {
             textBoxTenDangNhap.Text = "khoitao";
             textBoxMatKhau.Text = "khoitao";
             buttonDangNhap_Click(null, null);
             textBoxCanhBao.Text = "";
         }
-
-        #region Các hàm chức năng cơ bản, hạn chế sửa
-
         private void textBoxMatKhau_Enter(object sender, EventArgs e)
         {
             panel3.BackColor = Color.FromArgb(125, 125, 200);
@@ -86,9 +88,9 @@ namespace PBL3
                 string result = BLLQuanLiChung.Instance.LoginChecker(textBoxTenDangNhap.Text, textBoxMatKhau.Text);
                 if (result != null)
                 {
-                    if (result == "QUẢN TRỊ VIÊN")
+                    if (result == "QTV")
                     {
-                        FormLuaChonVaiTroDangNhap formLuaChonVaiTroDangNhap = new FormLuaChonVaiTroDangNhap();
+                        FormLuaChonVaiTroDangNhap formLuaChonVaiTroDangNhap = new FormLuaChonVaiTroDangNhap(result);
                         this.Hide();
                         formLuaChonVaiTroDangNhap.ShowDialog();
                         this.Show();
