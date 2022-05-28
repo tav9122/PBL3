@@ -7,11 +7,15 @@ namespace PBL3
 {
     public partial class FormChiTietHoacThemBaoHanh : Form
     {
+        public delegate void BaoHanhDel(int ordertype, string search);
+        public BaoHanhDel Del { get; set; }
         public string serial;
-        public FormChiTietHoacThemBaoHanh(string serial)
+        public int ordertype;
+        public FormChiTietHoacThemBaoHanh(string serial, int ordertype)
         {
             InitializeComponent();
             this.serial = serial;
+            this.ordertype = ordertype;
             GUI();
         }
 
@@ -39,7 +43,22 @@ namespace PBL3
                 
             }
         }
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            BaoHanh obj = new BaoHanh
+            {
+                SoSeri = textBoxSoSeriVatPham.Text,
+                ThoiGianTaoPhieuBaoHanh = dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value,
+                GhiChu = textBoxThongTinBaoHanh.Text,
+                TrangThai = radioButtonHoanThanh.Checked,
+                MaKhachHang = textBoxMaKhachHang.Text
+            };
+            if (serial == "") BLLQuanLiSanPham.Instance.AddBaoHanh(obj);
+            else BLLQuanLiSanPham.Instance.UpdateBaoHanh(obj);
+            Del(ordertype, "");
+            this.Close();
 
+        }
         private void buttonHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -53,8 +72,7 @@ namespace PBL3
             }
             else
             {
-                textBoxTenSanPham.Text = "Tồn tại sản phẩm...";
-
+                textBoxTenSanPham.Text = obj.SanPham.TenSanPham;
             }
         }
         private void textBoxMaKhachHang_TextChanged(object sender, EventArgs e)
@@ -64,9 +82,14 @@ namespace PBL3
             if (obj == null) 
             {
                 textBoxTenKhachHang.Text = "Không tồn tại khách hàng";
-                textBoxTenKhachHang.ForeColor = Color.FromArgb(200, 200, 200);
                 textBoxSoDienThoai.Text = "";
                 textBoxDiaChi.Text = "";
+            }
+            else
+            {
+                textBoxTenKhachHang.Text = obj.TenKhachHang;
+                textBoxSoDienThoai.Text = obj.SoDienThoai;
+                textBoxDiaChi.Text = obj.DiaChi;
             }
         }
 

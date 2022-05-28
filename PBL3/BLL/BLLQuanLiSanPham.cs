@@ -94,9 +94,32 @@ namespace PBL3
             }
             Model.Instance.SaveChanges();
         }
-        public dynamic GetAllBaoHanh()
+        public dynamic GetAllBaoHanh(int ordertype = 0, string search = "")
         {
-            return Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham,p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu}).ToList();
+            switch(ordertype)
+            {
+                case 1:
+                    return Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham, p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu })
+                        .Where(p => p.TenSanPham.Contains(search) || p.TenKhachHang.Contains(search))
+                        .OrderBy(p => p.TenSanPham).ToList();
+                case 2:
+                    return Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham, p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu })
+                        .Where(p => p.TenSanPham.Contains(search) || p.TenKhachHang.Contains(search))
+                        .OrderBy(p => p.TenKhachHang).ToList();
+                case 3:
+                    return Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham, p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu })
+                        .Where(p => p.TenSanPham.Contains(search) || p.TenKhachHang.Contains(search))
+                        .OrderBy(p => p.ThoiGianTaoPhieuBaoHanh).ToList();
+                case 4:
+                    return Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham, p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu })
+                        .Where(p => p.TenSanPham.Contains(search) || p.TenKhachHang.Contains(search))
+                        .OrderBy(p => p.TrangThai).ToList();
+                default:
+                    return Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham, p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu })
+                        .Where(p => p.TenSanPham.Contains(search) || p.TenKhachHang.Contains(search))
+                        .OrderBy(p => p.SoSeri).ToList();
+
+            }
         }
         public BaoHanh GetBaoHanhviaSerial(string serial)
         {
@@ -105,6 +128,18 @@ namespace PBL3
         public VatPham GetVatPhamviSerial(string serial)
         {
             return Model.Instance.VatPhams.FirstOrDefault(p => p.SoSeri == serial);
+        }
+        public void AddBaoHanh(BaoHanh obj)
+        {
+            Model.Instance.BaoHanhs.Add(obj);
+            Model.Instance.SaveChanges();
+        }
+        public void UpdateBaoHanh(BaoHanh obj)
+        {
+            BaoHanh target = Model.Instance.BaoHanhs.FirstOrDefault(p => p.SoSeri == obj.SoSeri);
+            target.GhiChu = obj.GhiChu;
+            target.TrangThai = obj.TrangThai;
+            Model.Instance.SaveChanges();
         }
     }
 }

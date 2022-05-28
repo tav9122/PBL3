@@ -75,13 +75,14 @@
             this.textBoxTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBoxTimKiem.Location = new System.Drawing.Point(611, 85);
+            this.textBoxTimKiem.Location = new System.Drawing.Point(610, 85);
             this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxTimKiem.Name = "textBoxTimKiem";
-            this.textBoxTimKiem.Size = new System.Drawing.Size(327, 29);
+            this.textBoxTimKiem.Size = new System.Drawing.Size(328, 29);
             this.textBoxTimKiem.TabIndex = 30;
-            this.textBoxTimKiem.Text = "Nhập để tìm kiếm...";
+            this.textBoxTimKiem.Text = "Tìm theo tên khách/tên sản phẩm...";
             this.textBoxTimKiem.Enter += new System.EventHandler(this.textBoxTimKiem_Enter);
+            this.textBoxTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxTimKiem_KeyDown);
             this.textBoxTimKiem.Leave += new System.EventHandler(this.textBoxTimKiem_Leave);
             // 
             // comboBoxSapXep
@@ -97,6 +98,7 @@
             this.comboBoxSapXep.Name = "comboBoxSapXep";
             this.comboBoxSapXep.Size = new System.Drawing.Size(201, 32);
             this.comboBoxSapXep.TabIndex = 29;
+            this.comboBoxSapXep.SelectedIndexChanged += new System.EventHandler(this.comboBoxSapXep_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -104,7 +106,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(607, 28);
+            this.label1.Location = new System.Drawing.Point(606, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 24);

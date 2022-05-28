@@ -201,6 +201,7 @@
             this.buttonXacNhan.TabIndex = 70;
             this.buttonXacNhan.Text = "Xác nhận";
             this.buttonXacNhan.UseVisualStyleBackColor = true;
+            this.buttonXacNhan.Click += new System.EventHandler(this.buttonXacNhan_Click);
             // 
             // buttonHuyBo
             // 
