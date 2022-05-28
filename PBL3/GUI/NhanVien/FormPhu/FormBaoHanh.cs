@@ -14,7 +14,6 @@ namespace PBL3
             {
                 "SoSeri", "TenVatPham", "TenKhachHang", "ThoiGianBatDauBaoHanh", "TrangThai"
             });
-            buttonSua.Enabled = false;
         }
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
         {
@@ -57,7 +56,7 @@ namespace PBL3
         private void UpdateView(int ordertype = 0, string search = "")
         {
             dataGridView1.DataSource = BLLQuanLiSanPham.Instance.GetAllBaoHanh(ordertype, search);
-            dataGridView1.ClearSelection();
+            //resize the table to show full data
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
@@ -73,6 +72,6 @@ namespace PBL3
             {
                 UpdateView(comboBoxSapXep.SelectedIndex, textBoxTimKiem.Text);
             }
-        }
+        }   
     }
 }
