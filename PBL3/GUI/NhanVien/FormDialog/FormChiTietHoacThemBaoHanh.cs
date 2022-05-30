@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -7,90 +6,40 @@ namespace PBL3
 {
     public partial class FormChiTietHoacThemBaoHanh : Form
     {
-        public delegate void BaoHanhDel(int ordertype, string search);
-        public BaoHanhDel Del { get; set; }
-        public string serial;
-        public int ordertype;
-        public FormChiTietHoacThemBaoHanh(string serial, int ordertype)
+        bool typeUpdate = false;
+        public FormChiTietHoacThemBaoHanh()
         {
             InitializeComponent();
-            this.serial = serial;
-            this.ordertype = ordertype;
-            GUI();
+            InitializeNewBaoHanhInformations();
         }
 
-        public void GUI()
+        public FormChiTietHoacThemBaoHanh(string soSeri)
         {
-            textBoxTenKhachHang.Enabled = false;
+            InitializeComponent();
+            InitializeBaoHanhInformations(soSeri);
+        }
+
+        #region Các hàm chức năng cơ bản, hạn chế sửa.
+
+        private void InitializeNewBaoHanhInformations()
+        {
+            typeUpdate = false;
+        }
+
+        private void InitializeBaoHanhInformations(string soSeri)
+        {
+            typeUpdate = true;
+            textBoxSoSeri.Text = soSeri;
+            textBoxSoSeri.Enabled = false;
+            textBoxSoDienThoai.Text = BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(soSeri);
             textBoxSoDienThoai.Enabled = false;
-            textBoxDiaChi.Enabled = false;
-            textBoxTenSanPham.Enabled = false;
-            if (serial != "")
-            {
-                BaoHanh obj = BLLQuanLiSanPham.Instance.GetBaoHanhviaSerial(serial);
-                textBoxSoSeriVatPham.Text = obj.SoSeri.ToString();
-                textBoxTenSanPham.Text = obj.VatPham.SanPham.TenSanPham;
-                textBoxSoSeriVatPham.Enabled = false;
-                dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value = obj.ThoiGianTaoPhieuBaoHanh;
-                textBoxThongTinBaoHanh.Text = obj.GhiChu;
-                if (obj.TrangThai) radioButtonHoanThanh.Checked = true;
-                else radioButtonChuaHoanThanh.Checked = true;
-                textBoxMaKhachHang.Text = obj.MaKhachHang;
-                textBoxMaKhachHang.Enabled = false;
-                textBoxTenKhachHang.Text = obj.KhachHang.TenKhachHang;
-                textBoxSoDienThoai.Text = obj.KhachHang.SoDienThoai;
-                textBoxDiaChi.Text = obj.KhachHang.DiaChi;
-                
-            }
+            textBoxGhiChu.Text = BLLBaoHanh.Instance.GetBaoHanh(soSeri).GhiChu;
+            radioButtonHoanThanh.Checked = BLLBaoHanh.Instance.GetBaoHanh(soSeri).TrangThai;
         }
-        private void buttonXacNhan_Click(object sender, EventArgs e)
-        {
-            BaoHanh obj = new BaoHanh
-            {
-                SoSeri = textBoxSoSeriVatPham.Text,
-                ThoiGianTaoPhieuBaoHanh = dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value,
-                GhiChu = textBoxThongTinBaoHanh.Text,
-                TrangThai = radioButtonHoanThanh.Checked,
-                MaKhachHang = textBoxMaKhachHang.Text
-            };
-            if (serial == "") BLLQuanLiSanPham.Instance.AddBaoHanh(obj);
-            else BLLQuanLiSanPham.Instance.UpdateBaoHanh(obj);
-            Del(ordertype, "");
-            this.Close();
 
-        }
         private void buttonHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void textBoxSoSeriVatPham_TextChanged(object sender, EventArgs e)
-        {
-            VatPham obj = BLLQuanLiSanPham.Instance.GetVatPhamviSerial(textBoxSoSeriVatPham.Text);
-            if(obj==null)
-            {
-                textBoxTenSanPham.Text = "Không tồn tại sản phẩm...";                
-            }
-            else
-            {
-                textBoxTenSanPham.Text = obj.SanPham.TenSanPham;
-            }
-        }
-        private void textBoxMaKhachHang_TextChanged(object sender, EventArgs e)
-        {
-            KhachHang obj = BLLQuanLiChung.Instance.GetKhachHangviaID(
-                textBoxMaKhachHang.Text);
-            if (obj == null) 
-            {
-                textBoxTenKhachHang.Text = "Không tồn tại khách hàng";
-                textBoxSoDienThoai.Text = "";
-                textBoxDiaChi.Text = "";
-            }
-            else
-            {
-                textBoxTenKhachHang.Text = obj.TenKhachHang;
-                textBoxSoDienThoai.Text = obj.SoDienThoai;
-                textBoxDiaChi.Text = obj.DiaChi;
-            }
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -109,6 +58,55 @@ namespace PBL3
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void textBoxSoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+            if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) != null)
+            {
+                textBoxTenKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).TenKhachHang;
+                textBoxDiaChi.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).DiaChi;
+                textBoxMaKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).MaKhachHang;
+            }
+        }
+        private void textBoxSoSeri_TextChanged(object sender, EventArgs e)
+        {
+            textBoxTenSanPham.Text = BLLSanPham.Instance.GetTenSanPhamBySoSeri(textBoxSoSeri.Text);
+        }
+
+        #endregion
+
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            if (typeUpdate == false)
+            {
+                if (textBoxSoSeri.Text == "" || textBoxSoDienThoai.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                }
+                else if (BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(textBoxSoSeri.Text) == null)
+                {
+                    MessageBox.Show("Sản phẩm này chưa được mua hoặc không có trong hệ thống!");
+                }
+                else if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) == null)
+                {
+                    MessageBox.Show("Khách hàng không tồn tại!");
+                }
+                else if (BLLBaoHanh.Instance.GetBaoHanh(textBoxSoSeri.Text) != null)
+                {
+                    MessageBox.Show("Sản phẩm này đã đang có trong danh sách bảo hành!");
+                }
+                else
+                {
+                    BLLBaoHanh.Instance.AddBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text, DateTime.Now);
+                    MessageBox.Show("Đã thêm thành công!");
+                    this.Close();
+                }
+            }
+            else
+            {
+                BLLBaoHanh.Instance.UpdateBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text);
+                MessageBox.Show("Đã cập nhật thành công!");
+                this.Close();
+            }
+        }
     }
 }

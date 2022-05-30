@@ -19,9 +19,14 @@ namespace PBL3
         {
             InitializeComponent();
             InitializeComboBoxLoaiSanPhamItems();
+            InitializeSanPhamInformations(maSanPham);
             typeUpdate = true;
             labelTieuDe.Text = "Chi tiết sản phẩm:";
             comboBoxLoaiSanPham.Enabled = false;
+        }
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+        public void InitializeSanPhamInformations(string maSanPham)
+        {
             var sanPham = BLLQuanLiSanPham.Instance.GetSanPham(maSanPham);
             textBoxMaSanPham.Text = sanPham.MaSanPham;
             textBoxTenSanPham.Text = sanPham.TenSanPham;
@@ -33,7 +38,6 @@ namespace PBL3
             textBoxTenHang.Text = sanPham.TenHang;
             textBoxThoiGianBaoHanh.Text = sanPham.ThoiGianBaoHanh;
         }
-
         public void InitializeComboBoxLoaiSanPhamItems()
         {
             foreach (string i in BLLQuanLiSanPham.Instance.GetLoaiSanPhams())
@@ -63,29 +67,6 @@ namespace PBL3
             this.Close();
         }
 
-        private void buttonXacNhan_Click(object sender, EventArgs e)
-        {
-            if (textBoxTenSanPham.Text == "" || textBoxGiaBan.Text == "" || textBoxSoLuongNhap.Text == "" || textBoxSoLuongHienTai.Text == "" || textBoxGiaMua.Text == "" || textBoxTenHang.Text == "" || textBoxThoiGianBaoHanh.Text == "" || comboBoxLoaiSanPham.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-            }
-            else
-            {
-                if (typeUpdate)
-                {
-                    int currentSoLuongNhap = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap;
-                    BLLQuanLiSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
-                    BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text) - currentSoLuongNhap, textBoxMaSanPham.Text);
-                }
-                else
-                {
-                    BLLQuanLiSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
-                    BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text), textBoxMaSanPham.Text);
-                }
-                this.Close();
-            }
-        }
-
         private void comboBoxLoaiSanPham_TextChanged(object sender, EventArgs e)
         {
             if (!typeUpdate)
@@ -97,7 +78,6 @@ namespace PBL3
                 {
                 }
         }
-
         private void textBoxSoLuongNhap_Leave(object sender, EventArgs e)
         {
             if (!typeUpdate)
@@ -116,6 +96,32 @@ namespace PBL3
                 {
                     textBoxSoLuongNhap.Text = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap.ToString();
                 }
+            }
+        }
+        #endregion
+
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            if (textBoxTenSanPham.Text == "" || textBoxGiaBan.Text == "" || textBoxSoLuongNhap.Text == "" || textBoxSoLuongHienTai.Text == "" || textBoxGiaMua.Text == "" || textBoxTenHang.Text == "" || textBoxThoiGianBaoHanh.Text == "" || comboBoxLoaiSanPham.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            }
+            else
+            {
+                if (typeUpdate)
+                {
+                    int currentSoLuongNhap = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap;
+                    BLLQuanLiSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
+                    BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text) - currentSoLuongNhap, textBoxMaSanPham.Text);
+                    MessageBox.Show("Đã cập nhật thành công!");
+                }
+                else
+                {
+                    BLLQuanLiSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
+                    BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text), textBoxMaSanPham.Text);
+                    MessageBox.Show("Đã thêm thành công!");
+                }
+                this.Close();
             }
         }
     }

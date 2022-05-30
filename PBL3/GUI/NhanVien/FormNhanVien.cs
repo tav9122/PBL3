@@ -14,18 +14,18 @@ namespace PBL3
         public FormNhanVien(string maNhanVien)
         {
             InitializeComponent();
-            if (maNhanVien == "QUẢN TRỊ VIÊN")
-            {
-                thôngTinNhânViênToolStripMenuItem.Text = "Đổi mật khẩu";
-                linkLabelTenNhanVien.Text = "QUẢN TRỊ VIÊN";
-            }
-            else
-            {
-                linkLabelTenNhanVien.Text = BLLQuanLiNhanVien.Instance.GetTenNhanVien(maNhanVien);
-            }
-            this.maNhanVien = maNhanVien;
+            InitializeFormManHinhChinh();
 
-            //Khởi tạo form màn hình chính
+            if (maNhanVien == "QTV")
+                contextMenuStrip1.Items.Remove(contextMenuStrip1.Items[0]);
+            linkLabelTenNhanVien.Text = BLLQuanLiNhanVien.Instance.GetTenNhanVien(maNhanVien);
+
+            this.maNhanVien = maNhanVien;
+        }
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+
+        private void InitializeFormManHinhChinh()
+        {
             formManHinhChinh.TopLevel = false;
             formManHinhChinh.FormBorderStyle = FormBorderStyle.None;
             formManHinhChinh.Dock = DockStyle.Fill;
@@ -34,10 +34,9 @@ namespace PBL3
             formManHinhChinh.BringToFront();
             formManHinhChinh.Show();
         }
-        #region Các hàm chức năng cơ bản, hạn chế sửa
         private void buttonSanPham_Click(object sender, EventArgs e)
         {
-            BLLQuanLiChung.Instance.OpenChildForm(new FormSanPham(), sender, panelDesktopPane);
+            BLLQuanLiChung.Instance.OpenChildForm(new FormSanPham(maNhanVien), sender, panelDesktopPane);
         }
 
         private void buttonBaoHanh_Click(object sender, EventArgs e)
@@ -57,7 +56,7 @@ namespace PBL3
 
         private void linkLabelTenNhanVien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Point position = new Point(166, -5);
+            Point position = new Point(200, 0);
             contextMenuStrip1.Show(linkLabelTenNhanVien, position);
         }
 
@@ -123,16 +122,14 @@ namespace PBL3
 
         private void thôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (maNhanVien == "QUẢN TRỊ VIÊN")
-            {
-                FormThongTinCaNhan formThongTinCaNhan = new FormThongTinCaNhan();
-                formThongTinCaNhan.ShowDialog();
-            }
-            else
-            {
-                FormThongTinCaNhan formThongTinCaNhan = new FormThongTinCaNhan(maNhanVien);
-                formThongTinCaNhan.ShowDialog();
-            }
+            FormThongTinNhanVien formThongTinCaNhan = new FormThongTinNhanVien(maNhanVien);
+            formThongTinCaNhan.ShowDialog();
+        }
+
+        private void toolStripMenuItemĐổiMậtKhẩu_Click(object sender, EventArgs e)
+        {
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(maNhanVien);
+            formDoiMatKhau.ShowDialog();
         }
     }
 }

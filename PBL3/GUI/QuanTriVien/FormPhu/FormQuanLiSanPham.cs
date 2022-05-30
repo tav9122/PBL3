@@ -42,17 +42,28 @@ namespace PBL3
                 textBoxTimKiem.Text = "Nhập để tìm kiếm...";
             }
         }
+
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["GiaMua"].DefaultCellStyle.Format = "C0";
+        }
+
         #endregion
 
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            string maSanPham;
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                maSanPham = row.Cells[0].Value.ToString();
-                BLLQuanLiSanPham.Instance.DeleteSanPham(maSanPham);
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    BLLQuanLiSanPham.Instance.DeleteSanPham(row.Cells[0].Value.ToString());
+                }
+                MessageBox.Show("Đã xoá thành công!");
+                ReloadDataGridView(null, null);
             }
-            ReloadDataGridView(null, null);
         }
 
         private void buttonThem_Click(object sender, EventArgs e)

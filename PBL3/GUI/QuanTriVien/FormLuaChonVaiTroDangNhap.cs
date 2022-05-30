@@ -6,9 +6,11 @@ namespace PBL3
 {
     public partial class FormLuaChonVaiTroDangNhap : Form
     {
-        public FormLuaChonVaiTroDangNhap()
+        string maQuanTriVien;
+        public FormLuaChonVaiTroDangNhap(string maQuanTriVien)
         {
             InitializeComponent();
+            this.maQuanTriVien = maQuanTriVien;
         }
         #region Các hàm chức năng cơ bản, hạn chế sửa
         private void button_MouseDown(object sender, MouseEventArgs e)
@@ -24,7 +26,7 @@ namespace PBL3
 
         private void buttonVaiTroQuanTriVien_Click(object sender, EventArgs e)
         {
-            FormQuanTriVien f = new FormQuanTriVien();
+            FormQuanTriVien f = new FormQuanTriVien(maQuanTriVien);
             this.Hide();
             f.ShowDialog();
             this.Close();
@@ -32,7 +34,7 @@ namespace PBL3
 
         private void buttonVaiTroNhanVien_Click(object sender, EventArgs e)
         {
-            FormNhanVien f = new FormNhanVien("QUẢN TRỊ VIÊN");
+            FormNhanVien f = new FormNhanVien(maQuanTriVien);
             this.Hide();
             f.ShowDialog();
             this.Close();

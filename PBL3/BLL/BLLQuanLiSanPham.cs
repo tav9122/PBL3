@@ -51,15 +51,19 @@ namespace PBL3
             return Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham);
         }
 
+        public List<string> GetMaSanPhams()
+        {
+            if (Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList() == null)
+                return new List<string> { "SP0" };
+            else
+                return Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList();
+        }
+
         public List<string> GetLoaiSanPhams()
         {
             return Model.Instance.SanPhams.Select(sp => sp.LoaiSanPham).Distinct().ToList();
         }
 
-        public List<string> GetMaSanPhams()
-        {
-            return Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList();
-        }
         public void DeleteSanPham(string maSanPham)
         {
             Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).DaXoa = true;
@@ -92,44 +96,6 @@ namespace PBL3
             {
                 Model.Instance.VatPhams.Add(new VatPham { SoSeri = maSanPham + "-" + i.ToString().PadLeft(4, '0'), MaSanPham = maSanPham });
             }
-            Model.Instance.SaveChanges();
-        }
-        public dynamic GetAllBaoHanh(int ordertype = 0, string search = "")
-        {
-            var result = Model.Instance.BaoHanhs.Select(p => new { p.SoSeri, p.VatPham.SanPham.TenSanPham, p.KhachHang.TenKhachHang, p.ThoiGianTaoPhieuBaoHanh, p.TrangThai, p.GhiChu })
-                        .Where(p => p.TenSanPham.Contains(search) || p.TenKhachHang.Contains(search));
-            switch (ordertype)
-            {
-                case 1:
-                    return result.OrderBy(p => p.TenSanPham).ToList();
-                case 2:
-                    return result.OrderBy(p => p.TenKhachHang).ToList();
-                case 3:
-                    return result.OrderBy(p => p.ThoiGianTaoPhieuBaoHanh).ToList();
-                case 4:
-                    return result.OrderBy(p => p.TrangThai).ToList();
-                default:
-                    return result.OrderBy(p => p.SoSeri).ToList();
-            }
-        }
-        public BaoHanh GetBaoHanhviaSerial(string serial)
-        {
-            return Model.Instance.BaoHanhs.FirstOrDefault(p => p.SoSeri == serial);
-        }
-        public VatPham GetVatPhamviSerial(string serial)
-        {
-            return Model.Instance.VatPhams.FirstOrDefault(p => p.SoSeri == serial);
-        }
-        public void AddBaoHanh(BaoHanh obj)
-        {
-            Model.Instance.BaoHanhs.Add(obj);
-            Model.Instance.SaveChanges();
-        }
-        public void UpdateBaoHanh(BaoHanh obj)
-        {
-            BaoHanh target = Model.Instance.BaoHanhs.FirstOrDefault(p => p.SoSeri == obj.SoSeri);
-            target.GhiChu = obj.GhiChu;
-            target.TrangThai = obj.TrangThai;
             Model.Instance.SaveChanges();
         }
     }

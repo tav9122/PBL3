@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 
 namespace PBL3
 {
@@ -16,6 +17,7 @@ namespace PBL3
                 new KhachHang { MaKhachHang = "KH3", TenKhachHang = "Đinh Văn Cao", DiaChi = "Hải Châu, Đà Nẵng", SoDienThoai = "098106744"},
                 new KhachHang { MaKhachHang = "KH4", TenKhachHang = "Nguyễn Văn A", DiaChi = "Quang Nam", SoDienThoai = "0385574644"},
             });
+            context.SaveChanges();
 
             //Tạo lịch làm việc
             context.LichLamViecs.Add(new LichLamViec { MaLichLamViec = "LLV1", NgayLamViec = "Thứ 2", ThoiGianBatDau = "6:00", ThoiGianKetThuc = "14:00" });
@@ -38,7 +40,8 @@ namespace PBL3
                 {
                     new NhanVien {MaNhanVien = "NV1", HoVaTen = "Trần Ngọc Tín", SoDienThoai = "0999888777", DiaChi = "Quảng Nam", NgaySinh = new DateTime(2002, 6, 21), GioiTinh = true, MucLuong = 1200000 },
                     new NhanVien {MaNhanVien = "NV2", HoVaTen = "Nguyễn Hoàng Anh", SoDienThoai = "0888777666", DiaChi = "Đà Nẵng", NgaySinh = new DateTime(2002, 7, 10), GioiTinh = true, MucLuong = 1200000 },
-                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, MucLuong = 1000000 }
+                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, MucLuong = 1000000 },
+                    new NhanVien {MaNhanVien = "QTV", HoVaTen = "QUẢN TRỊ VIÊN", SoDienThoai = "", DiaChi = "", NgaySinh = new DateTime(2022, 02, 22), GioiTinh = true, MucLuong = 0},
                 });
 
 
@@ -46,7 +49,7 @@ namespace PBL3
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nv", MatKhau = "nv", MaNhanVien = "NV1" });
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien2", MatKhau = "123", MaNhanVien = "NV2" });
             context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien3", MatKhau = "123", MaNhanVien = "NV3" });
-            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv" });
+            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv", MaNhanVien = "QTV" });
 
             //Tạo sản phẩm
             context.SanPhams.AddRange(new SanPham[]
@@ -59,33 +62,25 @@ namespace PBL3
                 new SanPham {MaSanPham = "DT2", TenSanPham = "Samsung Galaxy S22 Ultra", TenHang = "Samsung", GiaBan = 30000000, GiaMua = 29000000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 20, SoLuongHienTai = 7, ThoiGianBaoHanh = "1 năm"},
                 new SanPham {MaSanPham = "DT3", TenSanPham = "Iphone 12 Pro Max", TenHang = "Apple", GiaBan = 30000000, GiaMua = 29500000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 15, SoLuongHienTai = 8, ThoiGianBaoHanh = "1 năm"},
                 new SanPham {MaSanPham = "DT4", TenSanPham = "Oppo Reno 6", TenHang = "Oppo", GiaBan = 10000000, GiaMua = 9300000, LoaiSanPham = "Điện thoại",  SoLuongNhap = 20, SoLuongHienTai = 2, ThoiGianBaoHanh = "1 năm"}
+
             });
             context.SaveChanges();
-
-
-            //int tongsoluongsanpham = 0;
-            //foreach (var i in context.SanPhams)
-            //{
-            //    for (int j = tongsoluongsanpham; j < i.SoLuongNhap + tongsoluongsanpham; j++)
-            //    {
-            //        context.VatPhams.Add(new VatPham { SoSeri = j, MaSanPham = i.MaSanPham });
-            //    }
-            //    tongsoluongsanpham += i.SoLuongNhap;
-            //}
 
             //Tạo vật phẩm dựa trên số lượng nhập của sản phẩm
             foreach (SanPham i in context.SanPhams)
             {
-                for(int j  = 0; j < i.SoLuongNhap;j++)
+                for (int j = 1; j < i.SoLuongNhap; j++)
                 {
                     context.VatPhams.Add(new VatPham
                     {
                         SoSeri = i.MaSanPham + "-" + j.ToString().PadLeft(4, '0'),
                         MaSanPham = i.MaSanPham
-                    }) ;
+                    });
                 }
-    
             }
+            context.SaveChanges();
+
+
 
             //Tạo nhân viên - lịch làm việc theo mối quan hệ nhiều nhiều
             context.NhanVienLichLamViecs.Add(new NhanVienLichLamViec { MaNhanVien_LichLamViec = 3, MaLichLamViec = "LLV2", MaNhanVien = "NV3" });
@@ -95,17 +90,17 @@ namespace PBL3
             context.SaveChanges();
 
             //Tạo hoá đơn
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD1", MaNhanVien = "NV1", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 20, 18, 50, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD2", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 22, 10, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD3", MaNhanVien = "NV3", MaKhachHang = "KH3", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 18, 40, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD4", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 4, 12, 18, 30, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD5", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 07, 08, 30, 0) });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD6", MaNhanVien = "NV3", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 15, 14, 20, 0) });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD1", MaNhanVien = "NV1", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 20, 18, 50, 0), ThanhTien = 3000000 });
             context.SaveChanges();
+
+            //Gán vật phẩm vào hoá đơn
+            var x = context.VatPhams.FirstOrDefault(vp => vp.MaSanPham == "DT1").MaHoaDon = "HD1";
+            context.SaveChanges();
+
             //Tạo bảo hành
-            context.BaoHanhs.Add(new BaoHanh { SoSeri = "DT1-0001", MaKhachHang = "KH1", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
-            context.BaoHanhs.Add(new BaoHanh { SoSeri = "TN1-0002", MaKhachHang = "KH1", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
+            context.BaoHanhs.Add(new BaoHanh { SoSeri = "DT1-0001", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
             context.SaveChanges();
+
         }
     }
 }

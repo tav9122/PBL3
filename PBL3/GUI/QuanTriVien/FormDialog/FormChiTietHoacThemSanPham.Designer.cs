@@ -202,7 +202,7 @@
             this.textBoxMaSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMaSanPham.Name = "textBoxMaSanPham";
             this.textBoxMaSanPham.Size = new System.Drawing.Size(159, 22);
-            this.textBoxMaSanPham.TabIndex = 100;
+            this.textBoxMaSanPham.TabIndex = 0;
             // 
             // buttonThoat
             // 

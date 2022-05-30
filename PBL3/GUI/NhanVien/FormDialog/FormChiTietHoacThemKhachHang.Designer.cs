@@ -57,9 +57,10 @@
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
-            this.buttonXacNhan.TabIndex = 84;
+            this.buttonXacNhan.TabIndex = 6;
             this.buttonXacNhan.Text = "Xác nhận";
             this.buttonXacNhan.UseVisualStyleBackColor = true;
+            this.buttonXacNhan.Click += new System.EventHandler(this.buttonXacNhan_Click);
             // 
             // buttonHuyBo
             // 
@@ -70,7 +71,7 @@
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
-            this.buttonHuyBo.TabIndex = 83;
+            this.buttonHuyBo.TabIndex = 7;
             this.buttonHuyBo.Text = "Huỷ bỏ";
             this.buttonHuyBo.UseVisualStyleBackColor = true;
             this.buttonHuyBo.Click += new System.EventHandler(this.buttonHuyBo_Click);
@@ -103,13 +104,14 @@
             // textBoxMaKhachHang
             // 
             this.textBoxMaKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMaKhachHang.Enabled = false;
             this.textBoxMaKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMaKhachHang.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxMaKhachHang.Location = new System.Drawing.Point(144, 88);
             this.textBoxMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMaKhachHang.Name = "textBoxMaKhachHang";
             this.textBoxMaKhachHang.Size = new System.Drawing.Size(159, 22);
-            this.textBoxMaKhachHang.TabIndex = 76;
+            this.textBoxMaKhachHang.TabIndex = 1;
             // 
             // label2
             // 
@@ -153,7 +155,7 @@
             this.textBoxTenKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenKhachHang.Name = "textBoxTenKhachHang";
             this.textBoxTenKhachHang.Size = new System.Drawing.Size(159, 22);
-            this.textBoxTenKhachHang.TabIndex = 86;
+            this.textBoxTenKhachHang.TabIndex = 2;
             // 
             // label3
             // 
@@ -174,7 +176,7 @@
             this.textBoxDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxDiaChi.Name = "textBoxDiaChi";
             this.textBoxDiaChi.Size = new System.Drawing.Size(159, 22);
-            this.textBoxDiaChi.TabIndex = 88;
+            this.textBoxDiaChi.TabIndex = 4;
             // 
             // label4
             // 
@@ -195,7 +197,7 @@
             this.textBoxSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoDienThoai.Name = "textBoxSoDienThoai";
             this.textBoxSoDienThoai.Size = new System.Drawing.Size(159, 22);
-            this.textBoxSoDienThoai.TabIndex = 90;
+            this.textBoxSoDienThoai.TabIndex = 3;
             // 
             // label5
             // 
@@ -217,7 +219,7 @@
             this.textBoxGhiChu.Multiline = true;
             this.textBoxGhiChu.Name = "textBoxGhiChu";
             this.textBoxGhiChu.Size = new System.Drawing.Size(374, 118);
-            this.textBoxGhiChu.TabIndex = 91;
+            this.textBoxGhiChu.TabIndex = 5;
             // 
             // label6
             // 

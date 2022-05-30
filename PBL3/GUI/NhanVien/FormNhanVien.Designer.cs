@@ -46,6 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMaximize = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
+            this.toolStripMenuItemĐổiMậtKhẩu = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,7 +110,7 @@
             this.buttonBaoHanh.Location = new System.Drawing.Point(0, 195);
             this.buttonBaoHanh.Name = "buttonBaoHanh";
             this.buttonBaoHanh.Size = new System.Drawing.Size(200, 74);
-            this.buttonBaoHanh.TabIndex = 3;
+            this.buttonBaoHanh.TabIndex = 2;
             this.buttonBaoHanh.Text = " Bảo hành";
             this.buttonBaoHanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBaoHanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -136,7 +137,7 @@
             this.buttonLichSuHoaDon.Location = new System.Drawing.Point(0, 269);
             this.buttonLichSuHoaDon.Name = "buttonLichSuHoaDon";
             this.buttonLichSuHoaDon.Size = new System.Drawing.Size(200, 74);
-            this.buttonLichSuHoaDon.TabIndex = 2;
+            this.buttonLichSuHoaDon.TabIndex = 3;
             this.buttonLichSuHoaDon.Text = " Lịch sử hoá đơn";
             this.buttonLichSuHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLichSuHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -165,7 +166,7 @@
             this.linkLabelTenNhanVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelTenNhanVien.Name = "linkLabelTenNhanVien";
             this.linkLabelTenNhanVien.Size = new System.Drawing.Size(200, 26);
-            this.linkLabelTenNhanVien.TabIndex = 7;
+            this.linkLabelTenNhanVien.TabIndex = 0;
             this.linkLabelTenNhanVien.TabStop = true;
             this.linkLabelTenNhanVien.Text = "TÊN NHÂN VIÊN";
             this.linkLabelTenNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,10 +212,11 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(0, 0);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinNhânViênToolStripMenuItem,
+            this.toolStripMenuItemĐổiMậtKhẩu,
             this.đăngXuấtToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 92);
             // 
             // thôngTinNhânViênToolStripMenuItem
             // 
@@ -277,6 +279,15 @@
             this.buttonMinimize.UseVisualStyleBackColor = true;
             this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
+            // toolStripMenuItemĐổiMậtKhẩu
+            // 
+            this.toolStripMenuItemĐổiMậtKhẩu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItemĐổiMậtKhẩu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.toolStripMenuItemĐổiMậtKhẩu.Name = "toolStripMenuItemĐổiMậtKhẩu";
+            this.toolStripMenuItemĐổiMậtKhẩu.Size = new System.Drawing.Size(210, 22);
+            this.toolStripMenuItemĐổiMậtKhẩu.Text = "Đổi mật khẩu";
+            this.toolStripMenuItemĐổiMậtKhẩu.Click += new System.EventHandler(this.toolStripMenuItemĐổiMậtKhẩu_Click);
+            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,5 +330,6 @@
         private System.Windows.Forms.Button buttonLichSuHoaDon;
         private System.Windows.Forms.Button buttonSanPham;
         private System.Windows.Forms.Button buttonQuanLiKhachHang;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemĐổiMậtKhẩu;
     }
 }

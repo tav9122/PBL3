@@ -9,15 +9,23 @@ namespace PBL3
         public FormBaoHanh()
         {
             InitializeComponent();
-            UpdateView();
-            comboBoxSapXep.Items.AddRange(new string[]
+            comboBoxKieuSapXep.SelectedIndex = 0;
+            foreach (var i in typeof(ViewKhachHang).GetProperties())
             {
-                "SoSeri", "TenVatPham", "TenKhachHang", "ThoiGianBatDauBaoHanh", "TrangThai"
-            });
+                comboBoxKieuSapXep.Items.Add(i.Name);
+            }
+            ReloadDataGridView(null, null);
         }
+
+        private void ReloadDataGridView(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = BLLBaoHanh.Instance.GetBaoHanhs(comboBoxKieuSapXep.Text, textBoxTimKiem.Text);
+        }
+
+        #region Các hàm chức năng cơ bản, hạn chế sửa.
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
         {
-            if (textBoxTimKiem.Text == "Tìm theo tên khách/tên sản phẩm...")
+            if (textBoxTimKiem.Text == "Nhập để tìm kiếm...")
             {
                 textBoxTimKiem.Text = "";
                 textBoxTimKiem.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
@@ -29,49 +37,36 @@ namespace PBL3
             if (textBoxTimKiem.Text == "")
             {
                 textBoxTimKiem.ForeColor = Color.FromArgb(200, 200, 200);
-                textBoxTimKiem.Text = "Tìm theo tên khách/tên sản phẩm...";
+                textBoxTimKiem.Text = "Nhập để tìm kiếm...";
             }
         }
+        #endregion
 
         private void buttonThem_Click(object sender, EventArgs e)
         {
-            FormChiTietHoacThemBaoHanh f = new FormChiTietHoacThemBaoHanh("",
-                comboBoxSapXep.SelectedIndex);
-            f.Del = new FormChiTietHoacThemBaoHanh.BaoHanhDel(UpdateView);
-            f.ShowDialog();
+            FormChiTietHoacThemBaoHanh formChiTietHoacThemBaoHanh = new FormChiTietHoacThemBaoHanh();
+            formChiTietHoacThemBaoHanh.ShowDialog();
+            ReloadDataGridView(null, null);
         }
         private void buttonSua_Click(object sender, EventArgs e)
         {
-            FormChiTietHoacThemBaoHanh f = new FormChiTietHoacThemBaoHanh(
-                dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),
-                comboBoxSapXep.SelectedIndex);
-            f.Del = new FormChiTietHoacThemBaoHanh.BaoHanhDel(UpdateView);
-            f.ShowDialog();
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(dataGridView1.SelectedRows.Count == 1) buttonSua.Enabled = true;
-            else buttonSua.Enabled = false;
-        }
-        private void UpdateView(int ordertype = 0, string search = "")
-        {
-            dataGridView1.DataSource = BLLQuanLiSanPham.Instance.GetAllBaoHanh(ordertype, search);
-            //resize the table to show full data
-            dataGridView1.AutoResizeColumns();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            FormChiTietHoacThemBaoHanh formChiTietHoacThemBaoHanh = new FormChiTietHoacThemBaoHanh(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            formChiTietHoacThemBaoHanh.ShowDialog();
+            ReloadDataGridView(null, null);
         }
 
-        private void comboBoxSapXep_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonXoa_Click(object sender, EventArgs e)
         {
-            if(comboBoxSapXep.SelectedIndex != -1) UpdateView(comboBoxSapXep.SelectedIndex);
-        }
-
-        private void textBoxTimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                UpdateView(comboBoxSapXep.SelectedIndex, textBoxTimKiem.Text);
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    BLLBaoHanh.Instance.DeleteBaoHanh(row.Cells[0].Value.ToString());
+                }
+                MessageBox.Show("Đã xoá thành công!");
+                ReloadDataGridView(null, null);
             }
-        }   
+        }
     }
 }

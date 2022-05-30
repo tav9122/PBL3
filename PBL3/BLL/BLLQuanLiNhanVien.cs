@@ -18,7 +18,8 @@ namespace PBL3
 
         public NhanVien GetNhanVien(string maNhanVien)
         {
-            return Model.Instance.NhanViens.Where(nv => nv.MaNhanVien == maNhanVien).FirstOrDefault();
+            try { return Model.Instance.NhanViens.Where(nv => nv.MaNhanVien == maNhanVien).FirstOrDefault(); }
+            catch { return null; }
         }
 
         public string GetMatKhauNhanVien(string maNhanVien)
@@ -42,12 +43,17 @@ namespace PBL3
             return Model.Instance.LichLamViecs.Where(llv => list.Contains(llv.MaLichLamViec)).Select(llv => new ViewLichLamViec_NhanVien { MaLichLamViec = llv.MaLichLamViec, ThoiGianBatDau = llv.ThoiGianBatDau, ThoiGianKetThuc = llv.ThoiGianKetThuc, NgayLamViec = llv.NgayLamViec }).ToList();
         }
 
-        public void UpdateNhanVien(string maNhanVien, string matKhau, string soDienThoai, string diaChi)
+        public void UpdateNhanVien(string maNhanVien, string soDienThoai, string diaChi)
         {
             var nhanVien = Model.Instance.NhanViens.FirstOrDefault(tk => tk.MaNhanVien == maNhanVien);
             nhanVien.SoDienThoai = soDienThoai;
             nhanVien.DiaChi = diaChi;
-            Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == maNhanVien).MatKhau = matKhau;
+            Model.Instance.SaveChanges();
+        }
+
+        public void UpdateMatKhauNhanVien(string tenDangNhap, string matKhau)
+        {
+            Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == tenDangNhap).MatKhau = matKhau;
             Model.Instance.SaveChanges();
         }
     }

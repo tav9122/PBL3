@@ -61,7 +61,7 @@
             this.buttonThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(70, 28);
-            this.buttonThem.TabIndex = 33;
+            this.buttonThem.TabIndex = 5;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
             this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
@@ -75,7 +75,7 @@
             this.buttonXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXoa.Name = "buttonXoa";
             this.buttonXoa.Size = new System.Drawing.Size(70, 28);
-            this.buttonXoa.TabIndex = 32;
+            this.buttonXoa.TabIndex = 7;
             this.buttonXoa.Text = "Xoá";
             this.buttonXoa.UseVisualStyleBackColor = true;
             this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
@@ -85,6 +85,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -92,9 +93,11 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(692, 302);
-            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
             // 
             // textBoxTimKiem
             // 
@@ -106,7 +109,7 @@
             this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTimKiem.Name = "textBoxTimKiem";
             this.textBoxTimKiem.Size = new System.Drawing.Size(246, 24);
-            this.textBoxTimKiem.TabIndex = 30;
+            this.textBoxTimKiem.TabIndex = 8;
             this.textBoxTimKiem.Text = "Nhập để tìm kiếm...";
             this.textBoxTimKiem.TextChanged += new System.EventHandler(this.ReloadDataGridView);
             this.textBoxTimKiem.Enter += new System.EventHandler(this.textBoxTimKiem_Enter);
@@ -126,7 +129,7 @@
             this.comboBoxKieuSapXep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxKieuSapXep.Name = "comboBoxKieuSapXep";
             this.comboBoxKieuSapXep.Size = new System.Drawing.Size(152, 24);
-            this.comboBoxKieuSapXep.TabIndex = 29;
+            this.comboBoxKieuSapXep.TabIndex = 9;
             this.comboBoxKieuSapXep.SelectedIndexChanged += new System.EventHandler(this.ReloadDataGridView);
             // 
             // label1
@@ -150,7 +153,7 @@
             this.buttonSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(70, 28);
-            this.buttonSua.TabIndex = 35;
+            this.buttonSua.TabIndex = 6;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
             this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
