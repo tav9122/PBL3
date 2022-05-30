@@ -62,11 +62,12 @@ namespace PBL3
             dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
         }
 
-        
+
         private void buttonXoaTuiHang_Click(object sender, EventArgs e)
         {
             BLLSanPham.Instance.ResetSoLuongTrongTuiHang();
             textBoxTuiHang.Text = "";
+            MessageBox.Show("Đã xoá túi hàng thành công!");
             ReloadDataGridView(null, null);
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 
 namespace PBL3
 {
@@ -16,6 +17,7 @@ namespace PBL3
                 new KhachHang { MaKhachHang = "KH3", TenKhachHang = "Đinh Văn Cao", DiaChi = "Hải Châu, Đà Nẵng", SoDienThoai = "098106744"},
                 new KhachHang { MaKhachHang = "KH4", TenKhachHang = "Nguyễn Văn A", DiaChi = "Quang Nam", SoDienThoai = "0385574644"},
             });
+            context.SaveChanges();
 
             //Tạo lịch làm việc
             context.LichLamViecs.Add(new LichLamViec { MaLichLamViec = "LLV1", NgayLamViec = "Thứ 2", ThoiGianBatDau = "6:00", ThoiGianKetThuc = "14:00" });
@@ -65,15 +67,19 @@ namespace PBL3
             context.SaveChanges();
 
             //Tạo vật phẩm dựa trên số lượng nhập của sản phẩm
-            int tongsoluongsanpham = 0;
-            foreach (var i in context.SanPhams)
+            foreach (SanPham i in context.SanPhams)
             {
-                for (int j = tongsoluongsanpham; j < i.SoLuongNhap + tongsoluongsanpham; j++)
+                for (int j = 1; j < i.SoLuongNhap; j++)
                 {
-                    context.VatPhams.Add(new VatPham { SoSeri = j, MaSanPham = i.MaSanPham });
+                    context.VatPhams.Add(new VatPham
+                    {
+                        SoSeri = i.MaSanPham + "-" + j.ToString().PadLeft(4, '0'),
+                        MaSanPham = i.MaSanPham
+                    });
                 }
-                tongsoluongsanpham += i.SoLuongNhap;
             }
+            context.SaveChanges();
+
 
 
             //Tạo nhân viên - lịch làm việc theo mối quan hệ nhiều nhiều
@@ -84,15 +90,17 @@ namespace PBL3
             context.SaveChanges();
 
             //Tạo hoá đơn
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD1", MaNhanVien = "NV1", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 20, 18, 50, 0), ThanhTien = 10000000 });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD2", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 22, 10, 0), ThanhTien = 10000000 });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD3", MaNhanVien = "NV3", MaKhachHang = "KH3", ThoiGianGiaoDich = new DateTime(2022, 5, 19, 18, 40, 0), ThanhTien = 10000000 });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD4", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 4, 12, 18, 30, 0), ThanhTien = 10000000 });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD5", MaNhanVien = "NV2", MaKhachHang = "KH2", ThoiGianGiaoDich = new DateTime(2022, 5, 07, 08, 30, 0), ThanhTien = 10000000 });
-            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD6", MaNhanVien = "NV3", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 15, 14, 20, 0), ThanhTien = 10000000 });
+            context.HoaDons.Add(new HoaDon { MaHoaDon = "HD1", MaNhanVien = "NV1", MaKhachHang = "KH1", ThoiGianGiaoDich = new DateTime(2022, 5, 20, 18, 50, 0), ThanhTien = 3000000 });
+            context.SaveChanges();
+
+            //Gán vật phẩm vào hoá đơn
+            var x = context.VatPhams.FirstOrDefault(vp => vp.MaSanPham == "DT1").MaHoaDon = "HD1";
+            context.SaveChanges();
 
             //Tạo bảo hành
-            context.BaoHanhs.Add(new BaoHanh { SoSeri = 1, TrangThai = "Hỏng", GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
+            context.BaoHanhs.Add(new BaoHanh { SoSeri = "DT1-0001", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
+            context.SaveChanges();
+
         }
     }
 }

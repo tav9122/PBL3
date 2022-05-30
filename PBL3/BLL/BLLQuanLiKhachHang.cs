@@ -39,12 +39,12 @@ namespace PBL3
             try { return khachHangs.OrderBy(kh => kh.GetType().GetProperty(kieuSapXep).GetValue(kh, null)).ToList(); }
             catch { return khachHangs; }
         }
-        
+
         public List<ViewKhachHang> GetKhachHangs(string kieuSapXep, string tuKhoa)
         {
             return SortKhachHang(SearchKhachHang(tuKhoa), kieuSapXep);
         }
-        
+
         public KhachHang GetKhachHang(string maKhachHangHoacSoDienThoai)
         {
             if (Model.Instance.KhachHangs.Where(kh => kh.MaKhachHang == maKhachHangHoacSoDienThoai).FirstOrDefault() != null)

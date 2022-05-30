@@ -113,11 +113,13 @@ namespace PBL3
                     int currentSoLuongNhap = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap;
                     BLLQuanLiSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
                     BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text) - currentSoLuongNhap, textBoxMaSanPham.Text);
+                    MessageBox.Show("Đã cập nhật thành công!");
                 }
                 else
                 {
                     BLLQuanLiSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
                     BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text), textBoxMaSanPham.Text);
+                    MessageBox.Show("Đã thêm thành công!");
                 }
                 this.Close();
             }

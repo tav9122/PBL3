@@ -21,7 +21,7 @@ namespace PBL3
 
         [Column("Số điện thoại")]
         public string SoDienThoai { get; set; }
-        
+
         [Column("Ghi chú")]
         public string GhiChu { get; set; }
 

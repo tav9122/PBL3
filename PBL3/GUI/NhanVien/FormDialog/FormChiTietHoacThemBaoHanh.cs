@@ -6,9 +6,35 @@ namespace PBL3
 {
     public partial class FormChiTietHoacThemBaoHanh : Form
     {
+        bool typeUpdate = false;
         public FormChiTietHoacThemBaoHanh()
         {
             InitializeComponent();
+            InitializeNewBaoHanhInformations();
+        }
+
+        public FormChiTietHoacThemBaoHanh(string soSeri)
+        {
+            InitializeComponent();
+            InitializeBaoHanhInformations(soSeri);
+        }
+
+        #region Các hàm chức năng cơ bản, hạn chế sửa.
+
+        private void InitializeNewBaoHanhInformations()
+        {
+            typeUpdate = false;
+        }
+
+        private void InitializeBaoHanhInformations(string soSeri)
+        {
+            typeUpdate = true;
+            textBoxSoSeri.Text = soSeri;
+            textBoxSoSeri.Enabled = false;
+            textBoxSoDienThoai.Text = BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(soSeri);
+            textBoxSoDienThoai.Enabled = false;
+            textBoxGhiChu.Text = BLLBaoHanh.Instance.GetBaoHanh(soSeri).GhiChu;
+            radioButtonHoanThanh.Checked = BLLBaoHanh.Instance.GetBaoHanh(soSeri).TrangThai;
         }
 
         private void buttonHuyBo_Click(object sender, EventArgs e)
@@ -30,6 +56,57 @@ namespace PBL3
         private void buttonMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void textBoxSoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+            if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) != null)
+            {
+                textBoxTenKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).TenKhachHang;
+                textBoxDiaChi.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).DiaChi;
+                textBoxMaKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).MaKhachHang;
+            }
+        }
+        private void textBoxSoSeri_TextChanged(object sender, EventArgs e)
+        {
+            textBoxTenSanPham.Text = BLLSanPham.Instance.GetTenSanPhamBySoSeri(textBoxSoSeri.Text);
+        }
+
+        #endregion
+
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            if (typeUpdate == false)
+            {
+                if (textBoxSoSeri.Text == "" || textBoxSoDienThoai.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                }
+                else if (BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(textBoxSoSeri.Text) == null)
+                {
+                    MessageBox.Show("Sản phẩm này chưa được mua hoặc không có trong hệ thống!");
+                }
+                else if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) == null)
+                {
+                    MessageBox.Show("Khách hàng không tồn tại!");
+                }
+                else if (BLLBaoHanh.Instance.GetBaoHanh(textBoxSoSeri.Text) != null)
+                {
+                    MessageBox.Show("Sản phẩm này đã đang có trong danh sách bảo hành!");
+                }
+                else
+                {
+                    BLLBaoHanh.Instance.AddBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text, DateTime.Now);
+                    MessageBox.Show("Đã thêm thành công!");
+                    this.Close();
+                }
+            }
+            else
+            {
+                BLLBaoHanh.Instance.UpdateBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text);
+                MessageBox.Show("Đã cập nhật thành công!");
+                this.Close();
+            }
         }
     }
 }

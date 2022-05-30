@@ -96,6 +96,7 @@ namespace PBL3
             else
             {
                 BLLQuanLiNhanVien.Instance.UpdateMatKhauNhanVien(textBoxTenDangNhap.Text, textBoxMatKhau.Text);
+                MessageBox.Show("Đổi mật khẩu thành công!");
                 this.Close();
             }
         }

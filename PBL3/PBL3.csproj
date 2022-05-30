@@ -71,6 +71,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLLBaoHanh.cs" />
     <Compile Include="BLL\BLLLichSuHoaDon.cs" />
     <Compile Include="BLL\BLLQuanLiKhachHang.cs" />
     <Compile Include="BLL\BLLSanPham.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="DTO\Database\SanPham.cs" />
     <Compile Include="DTO\Database\TaiKhoan.cs" />
     <Compile Include="DTO\Database\VatPham.cs" />
+    <Compile Include="DTO\Views\ViewBaoHanh.cs" />
     <Compile Include="DTO\Views\ViewHoaDon.cs" />
     <Compile Include="DTO\Views\ViewKhachHang.cs" />
     <Compile Include="DTO\Views\ViewLichLamViec_NhanVien.cs" />

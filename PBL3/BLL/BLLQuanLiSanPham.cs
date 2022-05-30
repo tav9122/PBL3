@@ -94,7 +94,7 @@ namespace PBL3
         {
             for (int i = Model.Instance.VatPhams.Count() + 1; i < soLuongNhap + Model.Instance.VatPhams.Count(); i++)
             {
-                Model.Instance.VatPhams.Add(new VatPham { SoSeri = i, MaSanPham = maSanPham });
+                Model.Instance.VatPhams.Add(new VatPham { SoSeri = maSanPham + "-" + i.ToString().PadLeft(4, '0'), MaSanPham = maSanPham });
             }
             Model.Instance.SaveChanges();
         }

@@ -71,9 +71,18 @@ namespace PBL3
                 if (typeUpdate == true)
                 {
                     BLLQuanLiKhachHang.Instance.UpdateKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, textBoxGhiChu.Text);
+                    MessageBox.Show("Đã cập nhật thành công!");
+                    BLLQuanLiChung.Instance.alreadyOpenFormBaoHanh = false;
+                    BLLQuanLiChung.Instance.formBaoHanh = null;
+                    this.Close();
                 }
-                else BLLQuanLiKhachHang.Instance.AddKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, textBoxGhiChu.Text);
-                this.Close();
+                else
+                {
+                    BLLQuanLiKhachHang.Instance.AddKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, textBoxGhiChu.Text);
+                    MessageBox.Show("Đã thêm thành công!");
+                    this.Close();
+                }
+
             }
         }
     }

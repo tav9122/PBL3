@@ -80,5 +80,17 @@ namespace PBL3
             Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault().SoLuongHienTai -= soLuong;
             Model.Instance.SaveChanges();
         }
+
+        public string GetTenSanPhamBySoSeri(string soSeri)
+        {
+            try { return Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).SanPham.TenSanPham; }
+            catch { return null; }
+        }
+
+        public string GetSoDienThoaiKhachHangBySoSeri(string soSeri)
+        {
+            try { return Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).HoaDon.KhachHang.SoDienThoai; }
+            catch { return null; }
+        }
     }
 }

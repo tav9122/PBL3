@@ -11,10 +11,10 @@ namespace PBL3
         [Column("Số seri")]
         [Key]
         [Required]
-        public int SoSeri { get; set; }
+        public string SoSeri { get; set; }
 
         [Column("Trạng thái")]
-        public string TrangThai { get; set; }
+        public bool TrangThai { get; set; }
 
         [Column("Ghi chú")]
         public string GhiChu { get; set; }

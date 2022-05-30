@@ -127,6 +127,7 @@ namespace PBL3
                     BLLSanPham.Instance.AssignMaHoaDonToVatPhams(textBoxMaHoaDon.Text, i.MaSanPham, i.SoLuongTrongTuiHang);
                 }
                 BLLSanPham.Instance.ResetSoLuongTrongTuiHang();
+                MessageBox.Show("Hoá đơn đã được lưu thành công!");
                 BLLQuanLiChung.Instance.alreadyOpenFormLichSuHoaDon = false;
                 BLLQuanLiChung.Instance.formLichSuHoaDon = null;
                 this.Close();

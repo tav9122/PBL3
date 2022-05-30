@@ -44,8 +44,16 @@ namespace PBL3
 
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            BLLQuanLiKhachHang.Instance.DeleteKhachHang(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-            ReloadDataGridView(null, null);
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    BLLQuanLiKhachHang.Instance.DeleteKhachHang(row.Cells[0].Value.ToString());
+                }
+                MessageBox.Show("Đã xoá thành công!");
+                ReloadDataGridView(null, null);
+            }
         }
 
         private void buttonSua_Click(object sender, EventArgs e)

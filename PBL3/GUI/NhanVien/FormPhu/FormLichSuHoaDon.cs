@@ -28,7 +28,7 @@ namespace PBL3
         {
             dataGridView1.Columns["ThanhTien"].DefaultCellStyle.Format = "C0";
         }
-        
+
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
         {
             if (textBoxTimKiem.Text == "Nhập để tìm kiếm...")
@@ -51,8 +51,16 @@ namespace PBL3
 
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            BLLLichSuHoaDon.Instance.DeleteHoaDon(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-            ReloadDataGridView(null, null);
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    BLLLichSuHoaDon.Instance.DeleteHoaDon(row.Cells[0].Value.ToString());
+                }
+                MessageBox.Show("Đã xoá thành công!");
+                ReloadDataGridView(null, null);
+            }
         }
 
         private void buttonXem_Click(object sender, EventArgs e)
