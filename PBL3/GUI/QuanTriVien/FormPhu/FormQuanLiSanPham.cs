@@ -1,29 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PBL3
 {
     public partial class FormQuanLiSanPham : Form
     {
+        Dictionary<string, string> dictionary = TypeDescriptor.GetProperties(typeof(ViewSanPham_QuanTriVien)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
         public FormQuanLiSanPham()
         {
             InitializeComponent();
 
             comboBoxKieuSapXep.SelectedIndex = 0;
-            foreach (var i in typeof(ViewSanPham_QuanTriVien).GetProperties())
-            {
-                comboBoxKieuSapXep.Items.Add(i.Name);
-            }
-            ReloadDataGridView(null, null);
+            dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+
+            dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["GiaMua"].DefaultCellStyle.Format = "C0";
         }
 
         private void ReloadDataGridView(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLLQuanLiSanPham.Instance.GetSanPhams(comboBoxKieuSapXep.Text, textBoxTimKiem.Text);
+            dataGridView1.DataSource = BLLQuanLiSanPham.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
         }
 
-        #region Các hàm chức năng cơ bản, hạn chế sửa
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
         {
@@ -43,15 +46,6 @@ namespace PBL3
             }
         }
 
-        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
-        {
-            dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
-            dataGridView1.Columns["GiaMua"].DefaultCellStyle.Format = "C0";
-        }
-
-        #endregion
-
         private void buttonXoa_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
@@ -61,8 +55,8 @@ namespace PBL3
                 {
                     BLLQuanLiSanPham.Instance.DeleteSanPham(row.Cells[0].Value.ToString());
                 }
-                MessageBox.Show("Đã xoá thành công!");
                 ReloadDataGridView(null, null);
+                MessageBox.Show("Đã xoá thành công!");
             }
         }
 

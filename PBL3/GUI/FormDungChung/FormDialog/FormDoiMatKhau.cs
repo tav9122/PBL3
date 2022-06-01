@@ -16,6 +16,7 @@ namespace PBL3
             currentMatKhau = BLLQuanLiNhanVien.Instance.GetMatKhauNhanVien(maNhanVien);
             textBoxMatKhau.Text = BLLQuanLiNhanVien.Instance.GetMatKhauNhanVien(maNhanVien);
         }
+
         #region Các hàm cơ bản, hạn chế sửa.
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
@@ -32,6 +33,8 @@ namespace PBL3
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        #endregion
 
         int count = 0;
         private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
@@ -85,8 +88,6 @@ namespace PBL3
             else
                 textBoxCanhBao.Text = "";
         }
-        #endregion
-
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
             if (textBoxMatKhau.Text != currentMatKhau && textBoxMatKhau.Text != textBoxNhapLaiMatKhauMoi.Text)

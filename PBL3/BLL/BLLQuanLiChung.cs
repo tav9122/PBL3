@@ -122,20 +122,42 @@ namespace PBL3
 
         public string GetNextPrimaryKey(List<string> currentPrimaryKeys)
         {
-            return currentPrimaryKeys[0].Substring(0, 2) + (Convert.ToInt32(currentPrimaryKeys.Count) + 1).ToString();
+            currentPrimaryKeys.Remove("QTV");
+            List<int> temp = new List<int>();
+            int wordsCount = 0;
+            foreach (char c in currentPrimaryKeys[0])
+            {
+                if (char.IsLetter(c))
+                {
+                    wordsCount++;
+                }
+            }
+            foreach (string item in currentPrimaryKeys)
+            {
+                temp.Add(Convert.ToInt32(item.Substring(wordsCount)));
+            }
+            return currentPrimaryKeys[0].Substring(0, wordsCount) + (temp.Max() + 1).ToString();
         }
 
         public string GetNextPrimaryKey(List<string> currentPrimaryKeys, string s)
         {
-            string twoFirstCharacter = "";
+            int wordsCount = 0;
+            foreach (char c in currentPrimaryKeys[0])
+            {
+                if (char.IsLetter(c))
+                {
+                    wordsCount++;
+                }
+            }
+            string headerCharacters = "";
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string temp = s.Normalize(NormalizationForm.FormD);
             temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToUpper();
             foreach (string i in temp.Split(' '))
             {
-                twoFirstCharacter += i[0];
+                headerCharacters += i[0];
             }
-            return twoFirstCharacter + (Model.Instance.SanPhams.Where(sp => sp.MaSanPham.Substring(0, 2) == twoFirstCharacter).Count() + 1).ToString();
+            return headerCharacters + (Model.Instance.SanPhams.Where(sp => sp.MaSanPham.Substring(0, wordsCount) == headerCharacters).Count() + 1).ToString();
         }
 
         public string LoginChecker(string tenDangNhap, string matKhau)

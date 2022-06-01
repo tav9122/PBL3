@@ -6,7 +6,7 @@ namespace PBL3
     [Table("Tài khoản")]
     public class TaiKhoan
     {
-        [Column("Tên tài khoản")]
+        [Column("Tên đăng nhập")]
         [Key]
         [Required]
         public string TenDangNhap { get; set; }

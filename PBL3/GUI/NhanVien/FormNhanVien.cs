@@ -22,7 +22,6 @@ namespace PBL3
 
             this.maNhanVien = maNhanVien;
         }
-        #region Các hàm chức năng cơ bản, hạn chế sửa
 
         private void InitializeFormManHinhChinh()
         {
@@ -34,6 +33,8 @@ namespace PBL3
             formManHinhChinh.BringToFront();
             formManHinhChinh.Show();
         }
+
+
         private void buttonSanPham_Click(object sender, EventArgs e)
         {
             BLLQuanLiChung.Instance.OpenChildForm(new FormSanPham(maNhanVien), sender, panelDesktopPane);
@@ -118,7 +119,6 @@ namespace PBL3
         {
             pictureBox1.Size = new Size(pictureBox1.Size.Width + 3, pictureBox1.Size.Height + 3);
         }
-        #endregion
 
         private void thôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {

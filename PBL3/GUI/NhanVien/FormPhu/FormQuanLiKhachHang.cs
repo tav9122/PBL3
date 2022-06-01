@@ -1,27 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PBL3
 {
     public partial class FormQuanLiKhachHang : Form
     {
+        Dictionary<string, string> dictionary = TypeDescriptor.GetProperties(typeof(ViewKhachHang)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
         public FormQuanLiKhachHang()
         {
             InitializeComponent();
+
             comboBoxKieuSapXep.SelectedIndex = 0;
-            foreach (var i in typeof(ViewKhachHang).GetProperties())
-            {
-                comboBoxKieuSapXep.Items.Add(i.Name);
-            }
-            ReloadDataGridView(null, null);
+            dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+
         }
 
         private void ReloadDataGridView(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLLQuanLiKhachHang.Instance.GetKhachHangs(comboBoxKieuSapXep.Text, textBoxTimKiem.Text);
+            dataGridView1.DataSource = BLLQuanLiKhachHang.Instance.GetKhachHangs(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
         }
-        #region Các hàm chức năng cơ bản, hạn chế sửa.
+
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
         {
             if (textBoxTimKiem.Text == "Nhập để tìm kiếm...")
@@ -40,8 +42,6 @@ namespace PBL3
             }
         }
 
-        #endregion
-
         private void buttonXoa_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
@@ -51,8 +51,8 @@ namespace PBL3
                 {
                     BLLQuanLiKhachHang.Instance.DeleteKhachHang(row.Cells[0].Value.ToString());
                 }
-                MessageBox.Show("Đã xoá thành công!");
                 ReloadDataGridView(null, null);
+                MessageBox.Show("Đã xoá thành công!");
             }
         }
 

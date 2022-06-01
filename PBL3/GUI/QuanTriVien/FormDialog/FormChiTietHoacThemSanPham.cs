@@ -19,13 +19,13 @@ namespace PBL3
         {
             InitializeComponent();
             InitializeComboBoxLoaiSanPhamItems();
-            InitializeSanPhamInformations(maSanPham);
+            InitializeSanPhamInformation(maSanPham);
             typeUpdate = true;
             labelTieuDe.Text = "Chi tiết sản phẩm:";
             comboBoxLoaiSanPham.Enabled = false;
         }
-        #region Các hàm chức năng cơ bản, hạn chế sửa
-        public void InitializeSanPhamInformations(string maSanPham)
+
+        public void InitializeSanPhamInformation(string maSanPham)
         {
             var sanPham = BLLQuanLiSanPham.Instance.GetSanPham(maSanPham);
             textBoxMaSanPham.Text = sanPham.MaSanPham;
@@ -46,6 +46,8 @@ namespace PBL3
             }
         }
 
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
@@ -61,6 +63,8 @@ namespace PBL3
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        #endregion
 
         private void buttonHuyBo_Click(object sender, EventArgs e)
         {
@@ -98,7 +102,6 @@ namespace PBL3
                 }
             }
         }
-        #endregion
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {

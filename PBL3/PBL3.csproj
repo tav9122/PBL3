@@ -74,6 +74,7 @@
     <Compile Include="BLL\BLLBaoHanh.cs" />
     <Compile Include="BLL\BLLLichSuHoaDon.cs" />
     <Compile Include="BLL\BLLQuanLiKhachHang.cs" />
+    <Compile Include="BLL\BLLQuanLiLichLamViec.cs" />
     <Compile Include="BLL\BLLSanPham.cs" />
     <Compile Include="BLL\BLLQuanLiChung.cs" />
     <Compile Include="BLL\BLLQuanLiNhanVien.cs" />
@@ -92,7 +93,8 @@
     <Compile Include="DTO\Views\ViewBaoHanh.cs" />
     <Compile Include="DTO\Views\ViewHoaDon.cs" />
     <Compile Include="DTO\Views\ViewKhachHang.cs" />
-    <Compile Include="DTO\Views\ViewLichLamViec_NhanVien.cs" />
+    <Compile Include="DTO\Views\ViewLichLamViec.cs" />
+    <Compile Include="DTO\Views\ViewNhanVien.cs" />
     <Compile Include="DTO\Views\ViewSanPham_NhanVien.cs" />
     <Compile Include="DTO\Views\ViewSanPham_QuanTriVien.cs" />
     <Compile Include="DTO\Views\ViewVatPham.cs" />

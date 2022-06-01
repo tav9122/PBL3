@@ -35,7 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxThoiGianBatDau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textboxMaLichLamViec = new System.Windows.Forms.TextBox();
+            this.textBoxMaLichLamViec = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonThoat = new System.Windows.Forms.Button();
             this.labelTieuDe = new System.Windows.Forms.Label();
@@ -45,8 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonThem = new System.Windows.Forms.Button();
-            this.buttonXoa = new System.Windows.Forms.Button();
+            this.buttonSua = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +62,7 @@
             this.buttonXacNhan.TabIndex = 122;
             this.buttonXacNhan.Text = "Xác nhận";
             this.buttonXacNhan.UseVisualStyleBackColor = true;
+            this.buttonXacNhan.Click += new System.EventHandler(this.buttonXacNhan_Click);
             // 
             // buttonHuyBo
             // 
@@ -124,16 +124,17 @@
             this.label3.TabIndex = 123;
             this.label3.Text = "Thời gian bắt đầu:";
             // 
-            // textboxMaLichLamViec
+            // textBoxMaLichLamViec
             // 
-            this.textboxMaLichLamViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textboxMaLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxMaLichLamViec.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textboxMaLichLamViec.Location = new System.Drawing.Point(163, 86);
-            this.textboxMaLichLamViec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textboxMaLichLamViec.Name = "textboxMaLichLamViec";
-            this.textboxMaLichLamViec.Size = new System.Drawing.Size(159, 22);
-            this.textboxMaLichLamViec.TabIndex = 118;
+            this.textBoxMaLichLamViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMaLichLamViec.Enabled = false;
+            this.textBoxMaLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaLichLamViec.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxMaLichLamViec.Location = new System.Drawing.Point(163, 86);
+            this.textBoxMaLichLamViec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxMaLichLamViec.Name = "textBoxMaLichLamViec";
+            this.textBoxMaLichLamViec.Size = new System.Drawing.Size(159, 22);
+            this.textBoxMaLichLamViec.TabIndex = 118;
             // 
             // label2
             // 
@@ -216,46 +217,37 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(356, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(283, 18);
+            this.label6.Size = new System.Drawing.Size(227, 18);
             this.label6.TabIndex = 129;
-            this.label6.Text = "Thông tin các nhân viên làm việc trong ca:";
+            this.label6.Text = "Các nhân viên trong lịch làm việc:";
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(359, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(359, 111);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(374, 152);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(374, 166);
             this.dataGridView1.TabIndex = 130;
             // 
-            // buttonThem
+            // buttonSua
             // 
-            this.buttonThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.buttonThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThem.Location = new System.Drawing.Point(587, 286);
-            this.buttonThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonThem.Name = "buttonThem";
-            this.buttonThem.Size = new System.Drawing.Size(70, 28);
-            this.buttonThem.TabIndex = 132;
-            this.buttonThem.Text = "Thêm";
-            this.buttonThem.UseVisualStyleBackColor = true;
-            // 
-            // buttonXoa
-            // 
-            this.buttonXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.buttonXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXoa.Location = new System.Drawing.Point(663, 286);
-            this.buttonXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonXoa.Name = "buttonXoa";
-            this.buttonXoa.Size = new System.Drawing.Size(70, 28);
-            this.buttonXoa.TabIndex = 131;
-            this.buttonXoa.Text = "Xoá";
-            this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.buttonSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonSua.Location = new System.Drawing.Point(663, 285);
+            this.buttonSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSua.Name = "buttonSua";
+            this.buttonSua.Size = new System.Drawing.Size(70, 28);
+            this.buttonSua.TabIndex = 131;
+            this.buttonSua.Text = "Sửa";
+            this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // FormChiTietHoacThemLichLamViec
             // 
@@ -264,8 +256,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(761, 379);
             this.ControlBox = false;
-            this.Controls.Add(this.buttonThem);
-            this.Controls.Add(this.buttonXoa);
+            this.Controls.Add(this.buttonSua);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxNgayLamViecTrongTuan);
@@ -277,7 +268,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxThoiGianBatDau);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textboxMaLichLamViec);
+            this.Controls.Add(this.textBoxMaLichLamViec);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.labelTieuDe);
@@ -300,7 +291,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxThoiGianBatDau;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textboxMaLichLamViec;
+        private System.Windows.Forms.TextBox textBoxMaLichLamViec;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonThoat;
         private System.Windows.Forms.Label labelTieuDe;
@@ -310,7 +301,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonThem;
-        private System.Windows.Forms.Button buttonXoa;
+        private System.Windows.Forms.Button buttonSua;
     }
 }

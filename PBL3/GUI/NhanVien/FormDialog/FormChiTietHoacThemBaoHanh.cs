@@ -10,37 +10,16 @@ namespace PBL3
         public FormChiTietHoacThemBaoHanh()
         {
             InitializeComponent();
-            InitializeNewBaoHanhInformations();
+            InitializeNewBaoHanhInformation();
         }
 
         public FormChiTietHoacThemBaoHanh(string soSeri)
         {
             InitializeComponent();
-            InitializeBaoHanhInformations(soSeri);
+            InitializeBaoHanhInformation(soSeri);
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
-
-        private void InitializeNewBaoHanhInformations()
-        {
-            typeUpdate = false;
-        }
-
-        private void InitializeBaoHanhInformations(string soSeri)
-        {
-            typeUpdate = true;
-            textBoxSoSeri.Text = soSeri;
-            textBoxSoSeri.Enabled = false;
-            textBoxSoDienThoai.Text = BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(soSeri);
-            textBoxSoDienThoai.Enabled = false;
-            textBoxGhiChu.Text = BLLBaoHanh.Instance.GetBaoHanh(soSeri).GhiChu;
-            radioButtonHoanThanh.Checked = BLLBaoHanh.Instance.GetBaoHanh(soSeri).TrangThai;
-        }
-
-        private void buttonHuyBo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
@@ -58,6 +37,9 @@ namespace PBL3
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+        #endregion
+
         private void textBoxSoDienThoai_TextChanged(object sender, EventArgs e)
         {
             if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) != null)
@@ -72,7 +54,27 @@ namespace PBL3
             textBoxTenSanPham.Text = BLLSanPham.Instance.GetTenSanPhamBySoSeri(textBoxSoSeri.Text);
         }
 
-        #endregion
+        private void InitializeNewBaoHanhInformation()
+        {
+            typeUpdate = false;
+        }
+
+        private void InitializeBaoHanhInformation(string soSeri)
+        {
+            typeUpdate = true;
+            textBoxSoSeri.Text = soSeri;
+            textBoxSoSeri.Enabled = false;
+            dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value = BLLBaoHanh.Instance.GetBaoHanh(soSeri).ThoiGianTaoPhieuBaoHanh;
+            textBoxSoDienThoai.Text = BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(soSeri);
+            textBoxSoDienThoai.Enabled = false;
+            textBoxGhiChu.Text = BLLBaoHanh.Instance.GetBaoHanh(soSeri).GhiChu;
+            radioButtonHoanThanh.Checked = BLLBaoHanh.Instance.GetBaoHanh(soSeri).TrangThai;
+        }
+
+        private void buttonHuyBo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {

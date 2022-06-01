@@ -1,32 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PBL3
 {
     public partial class FormLichSuHoaDon : Form
     {
+        Dictionary<string, string> dictionary = TypeDescriptor.GetProperties(typeof(ViewHoaDon)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
         public FormLichSuHoaDon()
         {
             InitializeComponent();
+
             comboBoxKieuSapXep.SelectedIndex = 0;
-            foreach (var i in typeof(ViewHoaDon).GetProperties())
-            {
-                comboBoxKieuSapXep.Items.Add(i.Name);
-            }
-            ReloadDataGridView(null, null);
+            dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+
+            dataGridView1.Columns["ThanhTien"].DefaultCellStyle.Format = "C0";
         }
 
         private void ReloadDataGridView(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLLLichSuHoaDon.Instance.GetHoaDons(comboBoxKieuSapXep.Text, textBoxTimKiem.Text);
-        }
-
-        #region Các hàm chức năng cơ bản, hạn chế sửa.
-
-        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
-        {
-            dataGridView1.Columns["ThanhTien"].DefaultCellStyle.Format = "C0";
+            dataGridView1.DataSource = BLLLichSuHoaDon.Instance.GetHoaDons(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
@@ -47,8 +43,6 @@ namespace PBL3
             }
         }
 
-        #endregion
-
         private void buttonXoa_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
@@ -58,8 +52,8 @@ namespace PBL3
                 {
                     BLLLichSuHoaDon.Instance.DeleteHoaDon(row.Cells[0].Value.ToString());
                 }
-                MessageBox.Show("Đã xoá thành công!");
                 ReloadDataGridView(null, null);
+                MessageBox.Show("Đã xoá thành công!");
             }
         }
 

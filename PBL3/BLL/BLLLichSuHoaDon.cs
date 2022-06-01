@@ -40,7 +40,7 @@ namespace PBL3
         {
             if (tuKhoa == "Nhập để tìm kiếm...")
                 tuKhoa = "";
-            string[] cacTuKhoa = tuKhoa.Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
+            string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
             List<ViewHoaDon> list = Model.Instance.HoaDons.AsEnumerable().Where(hd => hd.DaXoa == false && (hd.MaHoaDon.ToLower().Contains(temp) || hd.MaKhachHang.ToLower().Contains(temp) || hd.MaNhanVien.ToLower().Contains(temp) || hd.KhachHang.SoDienThoai.ToLower().Contains(temp) || hd.ThoiGianGiaoDich.ToString("dd/MM/yyyy h:m tt").Contains(temp)))
                 .Select(hd => new ViewHoaDon { MaHoaDon = hd.MaHoaDon, MaNhanVien = hd.MaNhanVien, MaKhachHang = hd.MaKhachHang, SoDienThoai = hd.KhachHang.SoDienThoai, ThoiGianGiaoDich = hd.ThoiGianGiaoDich, ThanhTien = hd.ThanhTien })
@@ -55,10 +55,10 @@ namespace PBL3
             return list;
         }
 
-        public List<ViewHoaDon> SortHoaDon(List<ViewHoaDon> sanPhams, string kieuSapXep)
+        public List<ViewHoaDon> SortHoaDon(List<ViewHoaDon> hoaDons, string kieuSapXep)
         {
-            try { return sanPhams.OrderBy(hd => hd.GetType().GetProperty(kieuSapXep).GetValue(hd, null)).ToList(); }
-            catch { return sanPhams; }
+            try { return hoaDons.OrderBy(hd => hd.GetType().GetProperty(kieuSapXep).GetValue(hd, null)).ToList(); }
+            catch { return hoaDons; }
         }
 
         public List<ViewHoaDon> GetHoaDons(string kieuSapXep, string tuKhoa)

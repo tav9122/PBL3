@@ -10,38 +10,15 @@ namespace PBL3
         public FormChiTietHoacThemKhachHang(string maKhachHang)
         {
             InitializeComponent();
-            InitializeKhachHangInformations(maKhachHang);
+            InitializeKhachHangInformation(maKhachHang);
         }
         public FormChiTietHoacThemKhachHang()
         {
             InitializeComponent();
-            InitializeNewKhachHangInformations();
+            InitializeNewKhachHangInformation();
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa
-
-        public void InitializeNewKhachHangInformations()
-        {
-            typeUpdate = false;
-            labelTieuDe.Text = "Thêm khách hàng:";
-            textBoxMaKhachHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiKhachHang.Instance.GetMaKhachHangs());
-        }
-
-        public void InitializeKhachHangInformations(string maKhachHang)
-        {
-            typeUpdate = true;
-            labelTieuDe.Text = "Chi tiết khách hàng:";
-            var khachHang = BLLQuanLiKhachHang.Instance.GetKhachHang(maKhachHang);
-            textBoxMaKhachHang.Text = khachHang.MaKhachHang;
-            textBoxTenKhachHang.Text = khachHang.TenKhachHang;
-            textBoxDiaChi.Text = khachHang.DiaChi;
-            textBoxSoDienThoai.Text = khachHang.SoDienThoai;
-            textBoxGhiChu.Text = khachHang.GhiChu;
-        }
-        private void buttonHuyBo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
@@ -60,6 +37,29 @@ namespace PBL3
         }
         #endregion
 
+        public void InitializeNewKhachHangInformation()
+        {
+            typeUpdate = false;
+            labelTieuDe.Text = "Thêm khách hàng:";
+            textBoxMaKhachHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiKhachHang.Instance.GetMaKhachHangs());
+        }
+
+        public void InitializeKhachHangInformation(string maKhachHang)
+        {
+            typeUpdate = true;
+            labelTieuDe.Text = "Chi tiết khách hàng:";
+            var khachHang = BLLQuanLiKhachHang.Instance.GetKhachHang(maKhachHang);
+            textBoxMaKhachHang.Text = khachHang.MaKhachHang;
+            textBoxTenKhachHang.Text = khachHang.TenKhachHang;
+            textBoxDiaChi.Text = khachHang.DiaChi;
+            textBoxSoDienThoai.Text = khachHang.SoDienThoai;
+            textBoxGhiChu.Text = khachHang.GhiChu;
+        }
+        private void buttonHuyBo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
             if (textBoxDiaChi.Text == "" || textBoxMaKhachHang.Text == "" || textBoxSoDienThoai.Text == "" || textBoxTenKhachHang.Text == "")
@@ -71,9 +71,9 @@ namespace PBL3
                 if (typeUpdate == true)
                 {
                     BLLQuanLiKhachHang.Instance.UpdateKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, textBoxGhiChu.Text);
-                    MessageBox.Show("Đã cập nhật thành công!");
                     BLLQuanLiChung.Instance.alreadyOpenFormBaoHanh = false;
                     BLLQuanLiChung.Instance.formBaoHanh = null;
+                    MessageBox.Show("Đã cập nhật thành công!");
                     this.Close();
                 }
                 else

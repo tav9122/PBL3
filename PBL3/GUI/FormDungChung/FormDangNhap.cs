@@ -14,13 +14,6 @@ namespace PBL3
 
         #region Các hàm chức năng cơ bản, hạn chế sửa
 
-        private void InitializeCodeFirstModel()
-        {
-            textBoxTenDangNhap.Text = "khoitao";
-            textBoxMatKhau.Text = "khoitao";
-            buttonDangNhap_Click(null, null);
-            textBoxCanhBao.Text = "";
-        }
         private void textBoxMatKhau_Enter(object sender, EventArgs e)
         {
             panel3.BackColor = Color.FromArgb(125, 125, 200);
@@ -58,6 +51,8 @@ namespace PBL3
             }
         }
 
+        #endregion
+
         int count = 0;
         private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
         {
@@ -73,7 +68,14 @@ namespace PBL3
                 buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
             }
         }
-        #endregion
+
+        private void InitializeCodeFirstModel()
+        {
+            textBoxTenDangNhap.Text = "khoitao";
+            textBoxMatKhau.Text = "khoitao";
+            buttonDangNhap_Click(null, null);
+            textBoxCanhBao.Text = "";
+        }
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {

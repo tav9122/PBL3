@@ -19,10 +19,10 @@ namespace PBL3
         {
             if (tuKhoa == "Nhập để tìm kiếm...")
                 tuKhoa = "";
-            string[] cacTuKhoa = tuKhoa.Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
+            string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
             List<ViewKhachHang> list = Model.Instance.KhachHangs.Where(kh => kh.DaXoa == false && (kh.DiaChi.ToLower().Contains(temp) || kh.SoDienThoai.ToLower().Contains(temp) || kh.TenKhachHang.ToLower().Contains(temp) || kh.MaKhachHang.ToLower().Contains(temp)))
-                .Select(sp => new ViewKhachHang { DiaChi = sp.DiaChi, TenKhachHang = sp.TenKhachHang, MaKhachHang = sp.MaKhachHang, SoDienThoai = sp.SoDienThoai })
+                .Select(kh => new ViewKhachHang { DiaChi = kh.DiaChi, TenKhachHang = kh.TenKhachHang, MaKhachHang = kh.MaKhachHang, SoDienThoai = kh.SoDienThoai })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
@@ -71,7 +71,10 @@ namespace PBL3
 
         public List<string> GetMaKhachHangs()
         {
-            return Model.Instance.KhachHangs.Select(kh => kh.MaKhachHang).ToList();
+            if (Model.Instance.KhachHangs.Select(x => x.MaKhachHang).ToList() == null)
+                return new List<string> { "KH0" };
+            else
+                return Model.Instance.KhachHangs.Select(x => x.MaKhachHang).ToList();
         }
 
         public void DeleteKhachHang(string maKhachHang)

@@ -43,9 +43,9 @@
             this.textBoxDiaChi = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxTenKhachHang = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBoxSoDienThoai = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxMaKhachHang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -224,16 +224,6 @@
             this.textBoxTenKhachHang.Size = new System.Drawing.Size(159, 22);
             this.textBoxTenKhachHang.TabIndex = 6;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 18);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "Tên khách hàng:";
-            // 
             // textBoxSoDienThoai
             // 
             this.textBoxSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -255,6 +245,16 @@
             this.label6.Size = new System.Drawing.Size(98, 18);
             this.label6.TabIndex = 49;
             this.label6.Text = "Số điện thoại:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 18);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Tên khách hàng:";
             // 
             // textBoxMaKhachHang
             // 
@@ -292,7 +292,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(713, 215);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
             // 
             // textBoxMaNhanVien
             // 

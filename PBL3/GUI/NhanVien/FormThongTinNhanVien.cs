@@ -9,12 +9,10 @@ namespace PBL3
         public FormThongTinNhanVien(string maNhanVien)
         {
             InitializeComponent();
-            InitializeNhanVienInformations(maNhanVien);
+            InitializeNhanVienInformation(maNhanVien);
         }
 
-        #region Các hàm chức năng cơ bản, hạn chế sửa
-
-        private void InitializeNhanVienInformations(string maNhanVien)
+        private void InitializeNhanVienInformation(string maNhanVien)
         {
             var nhanVien = BLLQuanLiNhanVien.Instance.GetNhanVien(maNhanVien);
             textBoxMaNhanVien.Text = nhanVien.MaNhanVien;
@@ -23,8 +21,12 @@ namespace PBL3
             textBoxSoDienThoai.Text = nhanVien.SoDienThoai;
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
-            dataGridView1.DataSource = BLLQuanLiNhanVien.Instance.GetLichLamViecNhanVien(maNhanVien);
+            dataGridView1.DataSource = BLLQuanLiNhanVien.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
         }
+
+        #region Các hàm chức năng cơ bản, hạn chế sửa
+
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
@@ -41,12 +43,13 @@ namespace PBL3
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+        #endregion
+
         private void buttonHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        #endregion
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
@@ -56,7 +59,7 @@ namespace PBL3
             }
             else
             {
-                BLLQuanLiNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text);
+                BLLQuanLiNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxHoVaTen.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, -1, null);
                 this.Close();
             }
         }
