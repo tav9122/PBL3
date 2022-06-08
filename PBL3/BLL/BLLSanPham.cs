@@ -23,7 +23,7 @@ namespace PBL3
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
             List<ViewSanPham_NhanVien> list = Model.Instance.SanPhams.Where(sp => sp.DaXoa == false && (sp.MaSanPham.ToLower().Contains(temp) || sp.LoaiSanPham.ToLower().Contains(temp) || sp.TenSanPham.ToLower().Contains(temp) || sp.TenHang.ToLower().Contains(temp)))
-                .Select(sp => new ViewSanPham_NhanVien { MaSanPham = sp.MaSanPham, TenSanPham = sp.TenSanPham, TenHang = sp.TenHang, LoaiSanPham = sp.LoaiSanPham, GiaBan = sp.GiaBan, SoLuongHienTai = sp.SoLuongHienTai, ThoiGianBaoHanh = sp.ThoiGianBaoHanh, SoLuongTrongTuiHang = sp.SoLuongTrongTuiHang })
+                .Select(sp => new ViewSanPham_NhanVien { MaSanPham = sp.MaSanPham, TenSanPham = sp.TenSanPham, TenHang = sp.TenHang, LoaiSanPham = sp.LoaiSanPham, GiaBan = sp.GiaBan, SoLuongHienTai = sp.SoLuongHienTai, ThoiGianBaoHanh = sp.ThoiGianBaoHanh, SoLuongTrongTuiHang = sp.Temp })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
@@ -44,25 +44,6 @@ namespace PBL3
         public List<ViewSanPham_NhanVien> GetSanPhams(string kieuSapXep, string tuKhoa)
         {
             return SortSanPham(SearchSanPham(tuKhoa), kieuSapXep);
-        }
-
-        public void SetSoLuongTrongTuiHang(string maSanPham, int soLuong)
-        {
-            Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).SoLuongTrongTuiHang = soLuong;
-            Model.Instance.SaveChanges();
-        }
-        public void ResetSoLuongTrongTuiHang()
-        {
-            foreach (SanPham sanPham in Model.Instance.SanPhams.Where(sp => sp.SoLuongTrongTuiHang > 0))
-            {
-                sanPham.SoLuongTrongTuiHang = 0;
-            }
-            Model.Instance.SaveChanges();
-        }
-
-        public List<ViewSanPham_NhanVien> GetTuiHang()
-        {
-            return Model.Instance.SanPhams.Where(sp => sp.SoLuongTrongTuiHang > 0).Select(sp => new ViewSanPham_NhanVien { MaSanPham = sp.MaSanPham, TenSanPham = sp.TenSanPham, TenHang = sp.TenHang, LoaiSanPham = sp.LoaiSanPham, GiaBan = sp.GiaBan, SoLuongHienTai = sp.SoLuongHienTai, ThoiGianBaoHanh = sp.ThoiGianBaoHanh, SoLuongTrongTuiHang = sp.SoLuongTrongTuiHang }).ToList();
         }
 
         public void AssignMaHoaDonToVatPhams(string maHoaDon, string maSanPham, int soLuong)
@@ -91,6 +72,10 @@ namespace PBL3
         {
             try { return Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).HoaDon.KhachHang.SoDienThoai; }
             catch { return null; }
+        }
+        public List<ViewSanPham_NhanVien> GetSanPhamWithTempValueGreaterThanZero()
+        {
+            return Model.Instance.SanPhams.Where(sp => sp.Temp > 0).Select(sp => new ViewSanPham_NhanVien { MaSanPham = sp.MaSanPham, TenSanPham = sp.TenSanPham, TenHang = sp.TenHang, LoaiSanPham = sp.LoaiSanPham, GiaBan = sp.GiaBan, SoLuongHienTai = sp.SoLuongHienTai, ThoiGianBaoHanh = sp.ThoiGianBaoHanh, SoLuongTrongTuiHang = sp.Temp }).ToList();
         }
     }
 }

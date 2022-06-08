@@ -56,16 +56,16 @@ namespace PBL3
         private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
         {
             textBoxTuiHang.Text = "";
-            foreach (ViewSanPham_NhanVien sanPham in BLLSanPham.Instance.GetTuiHang())
+            foreach (SanPham sanPham in BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
             {
-                textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.SoLuongTrongTuiHang + ",    ";
+                textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.Temp + ",    ";
             }
         }
 
 
         private void buttonXoaTuiHang_Click(object sender, EventArgs e)
         {
-            BLLSanPham.Instance.ResetSoLuongTrongTuiHang();
+            BLLQuanLiSanPham.Instance.ResetTemp();
             textBoxTuiHang.Text = "";
             ReloadDataGridView(null, null);
             MessageBox.Show("Đã xoá túi hàng thành công!");
@@ -76,23 +76,23 @@ namespace PBL3
             if (Convert.ToInt32(dataGridView1.CurrentCell.Value) > Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value))
             {
                 MessageBox.Show("Số lượng nhập vào lớn hơn số lượng hiện có trong kho!");
-                BLLSanPham.Instance.SetSoLuongTrongTuiHang(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value));
+                BLLQuanLiSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value));
                 dataGridView1.CurrentCell.Value = Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value);
             }
             else
             {
-                BLLSanPham.Instance.SetSoLuongTrongTuiHang(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongTrongTuiHang"].Value));
+                BLLQuanLiSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongTrongTuiHang"].Value));
             }
             textBoxTuiHang.Text = "";
-            foreach (ViewSanPham_NhanVien sanPham in BLLSanPham.Instance.GetTuiHang())
+            foreach (SanPham sanPham in BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
             {
-                textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.SoLuongTrongTuiHang + ",    ";
+                textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.Temp + ",    ";
             }
         }
 
         private void buttonThanhToan_Click(object sender, EventArgs e)
         {
-            if (BLLSanPham.Instance.GetTuiHang().Count == 0)
+            if (BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero().Count == 0)
             {
                 MessageBox.Show("Không có sản phẩm nào trong túi hàng!");
             }

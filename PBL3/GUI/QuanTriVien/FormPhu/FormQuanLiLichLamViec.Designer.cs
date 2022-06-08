@@ -137,7 +137,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 18);
             this.label3.TabIndex = 42;
-            this.label3.Text = "Sắp xếp theo";
+            this.label3.Text = "Sắp xếp theo:";
             // 
             // dataGridView1
             // 

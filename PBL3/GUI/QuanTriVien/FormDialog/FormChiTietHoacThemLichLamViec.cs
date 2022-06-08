@@ -16,6 +16,7 @@ namespace PBL3
             InitializeComponent();
             InitializeNewLichLamViecInformation();
 
+            dataGridView1.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["LichLamViecs"].Visible = false;
             dataGridView1.Columns["NgaySinh"].Visible = false;
             dataGridView1.Columns["TenDangNhap"].Visible = false;
@@ -27,6 +28,7 @@ namespace PBL3
             InitializeComponent();
             InitializeLichLamViecInformation(maLichLamViec);
 
+            dataGridView1.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["LichLamViecs"].Visible = false;
             dataGridView1.Columns["NgaySinh"].Visible = false;
             dataGridView1.Columns["TenDangNhap"].Visible = false;

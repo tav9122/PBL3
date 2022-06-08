@@ -86,7 +86,7 @@ namespace PBL3
                 result += i + ", ";
             }
             try { return result.Substring(0, result.Length - 2); }
-            catch { return "-"; }
+            catch { return ""; }
         }
 
         public void UpdateNhanVien(string maNhanVien, string soDienThoai, string diaChi, string hoVaTen, DateTime ngaySinh, bool gioiTinh, double mucLuong, List<string> maLichLamViecs)

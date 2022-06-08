@@ -27,7 +27,7 @@ namespace PBL3
 
         public double GetTongSoTien()
         {
-            return Model.Instance.SanPhams.Where(hd => hd.SoLuongTrongTuiHang > 0).Sum(hd => hd.GiaBan * hd.SoLuongTrongTuiHang);
+            return Model.Instance.SanPhams.Where(hd => hd.Temp > 0).Sum(hd => hd.GiaBan * hd.Temp);
         }
 
         public void AddHoaDon(string maHoaDon, string maNhanVien, string maKhachHang, DateTime thoiGianGiaoDich, double thanhTien)
@@ -77,10 +77,10 @@ namespace PBL3
             return Model.Instance.HoaDons.FirstOrDefault(hd => hd.MaHoaDon == maHoaDon);
         }
 
-        public List<ViewVatPham> GetVatPhamsByMaHoaDon(string maHoaDon)
+        public List<ViewVatPham_NhanVien> GetVatPhamsByMaHoaDon(string maHoaDon)
         {
-            List<ViewVatPham> vatPhams = new List<ViewVatPham>();
-            foreach (ViewVatPham vatPham in Model.Instance.VatPhams.Where(vp => vp.MaHoaDon == maHoaDon).Select(vp => new ViewVatPham { SoSeri = vp.SoSeri, MaSanPham = vp.MaSanPham, TenSanPham = vp.SanPham.TenSanPham, GiaBan = vp.SanPham.GiaBan, MaHoaDon = vp.MaHoaDon }))
+            List<ViewVatPham_NhanVien> vatPhams = new List<ViewVatPham_NhanVien>();
+            foreach (ViewVatPham_NhanVien vatPham in Model.Instance.VatPhams.Where(vp => vp.MaHoaDon == maHoaDon).Select(vp => new ViewVatPham_NhanVien { SoSeri = vp.SoSeri, MaSanPham = vp.MaSanPham, TenSanPham = vp.SanPham.TenSanPham, GiaBan = vp.GiaBan }))
             {
                 vatPhams.Add(vatPham);
             }

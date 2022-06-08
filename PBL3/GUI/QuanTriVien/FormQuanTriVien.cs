@@ -40,10 +40,16 @@ namespace PBL3
         {
             BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiNhanVien(), sender, panelDesktopPane);
         }
+
         private void buttonQuanLiLichLamViec_Click(object sender, EventArgs e)
         {
             BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiLichLamViec(), sender, panelDesktopPane);
 
+        }
+
+        private void buttonQuanLiLoHang_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiLoHang(), sender, panelDesktopPane);
         }
 
         private void buttonThongKe_Click(object sender, EventArgs e)

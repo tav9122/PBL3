@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -36,17 +35,6 @@ namespace PBL3
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void buttonMaximize_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
 
         #endregion
 
@@ -78,7 +66,7 @@ namespace PBL3
             dateTimePickerThoiGianGiaoDich.Value = DateTime.Now;
             textBoxThanhTien.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C0}", BLLLichSuHoaDon.Instance.GetTongSoTien());
             textBoxMaKhachHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiKhachHang.Instance.GetMaKhachHangs());
-            dataGridView1.DataSource = BLLSanPham.Instance.GetTuiHang();
+            dataGridView1.DataSource = BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero();
         }
 
         public void InitializeHoaDonInformation(string maHoaDon)
@@ -98,6 +86,8 @@ namespace PBL3
             textBoxDiaChi.Enabled = false;
             textBoxSoDienThoai.Enabled = false;
             buttonXacNhan.Visible = false;
+
+            dataGridView1.Columns["SoSeri"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void buttonHuyBo_Click(object sender, EventArgs e)
@@ -119,11 +109,11 @@ namespace PBL3
                     BLLQuanLiKhachHang.Instance.AddKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, "");
                 }
                 BLLLichSuHoaDon.Instance.AddHoaDon(textBoxMaHoaDon.Text, textBoxMaNhanVien.Text, textBoxMaKhachHang.Text, dateTimePickerThoiGianGiaoDich.Value, BLLLichSuHoaDon.Instance.GetTongSoTien());
-                foreach (ViewSanPham_NhanVien i in BLLSanPham.Instance.GetTuiHang().Distinct())
+                foreach (SanPham i in BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
                 {
-                    BLLSanPham.Instance.AssignMaHoaDonToVatPhams(textBoxMaHoaDon.Text, i.MaSanPham, i.SoLuongTrongTuiHang);
+                    BLLSanPham.Instance.AssignMaHoaDonToVatPhams(textBoxMaHoaDon.Text, i.MaSanPham, i.Temp);
                 }
-                BLLSanPham.Instance.ResetSoLuongTrongTuiHang();
+                BLLQuanLiSanPham.Instance.ResetTemp();
                 BLLQuanLiChung.Instance.alreadyOpenFormLichSuHoaDon = false;
                 BLLQuanLiChung.Instance.formLichSuHoaDon = null;
                 MessageBox.Show("Tạo hoá đơn thành công!");

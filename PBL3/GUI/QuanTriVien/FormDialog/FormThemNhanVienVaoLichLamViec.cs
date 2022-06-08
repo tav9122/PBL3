@@ -12,17 +12,24 @@ namespace PBL3
         public SendNhanViens sendNhanViens;
 
         public List<ViewNhanVien> listNhanVienTamThoi = new List<ViewNhanVien>();
+        public string maLichLamViec;
         public FormThemNhanVienVaoLichLamViec(string maLichLamViec)
         {
             InitializeComponent();
+            this.maLichLamViec = maLichLamViec;
             listNhanVienTamThoi = BLLQuanLiLichLamViec.Instance.GetNhanViensOfLichLamViec(maLichLamViec);
+            labelMaLichLamViec.Text = maLichLamViec;
+
             Reload();
 
-            dataGridView1.Columns["LichLamViecs"].Visible = false;
+            dataGridView1.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["LichLamViecs"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["NgaySinh"].Visible = false;
             dataGridView1.Columns["TenDangNhap"].Visible = false;
             dataGridView1.Columns["MucLuong"].Visible = false;
-            dataGridView2.Columns["LichLamViecs"].Visible = false;
+
+            dataGridView2.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns["LichLamViecs"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView2.Columns["NgaySinh"].Visible = false;
             dataGridView2.Columns["TenDangNhap"].Visible = false;
             dataGridView2.Columns["MucLuong"].Visible = false;
@@ -55,8 +62,28 @@ namespace PBL3
 
         private void Reload()
         {
-            dataGridView1.DataSource = listNhanVienTamThoi.ToList();
-            dataGridView2.DataSource = BLLQuanLiNhanVien.Instance.GetNhanViens("", "").Where(x => !listNhanVienTamThoi.Any(y => y.MaNhanVien == x.MaNhanVien)).ToList();
+            List<ViewNhanVien> temp1 = listNhanVienTamThoi.ToList();
+            foreach (ViewNhanVien nhanVien in temp1)
+            {
+                if (!nhanVien.LichLamViecs.Contains(maLichLamViec))
+                {
+                    if (nhanVien.LichLamViecs == "")
+                        nhanVien.LichLamViecs += maLichLamViec;
+                    else
+                        nhanVien.LichLamViecs += ", " + maLichLamViec;
+                }
+            }
+            dataGridView1.DataSource = temp1;
+
+
+            List<ViewNhanVien> temp2 = BLLQuanLiNhanVien.Instance.GetNhanViens("", "").Where(x => !listNhanVienTamThoi.Any(y => y.MaNhanVien == x.MaNhanVien)).ToList();
+            foreach (ViewNhanVien nhanVien in temp2)
+            {
+                nhanVien.LichLamViecs = nhanVien.LichLamViecs.Replace(", " + maLichLamViec, "");
+                nhanVien.LichLamViecs = nhanVien.LichLamViecs.Replace(maLichLamViec + ", ", "");
+                nhanVien.LichLamViecs = nhanVien.LichLamViecs.Replace(maLichLamViec, "");
+            }
+            dataGridView2.DataSource = temp2;
         }
 
         private void buttonXoa_Click(object sender, System.EventArgs e)
@@ -69,7 +96,6 @@ namespace PBL3
                     listNhanVienTamThoi.RemoveAt(row.Index);
                 }
                 Reload();
-                MessageBox.Show("Đã xóa thành công!");
             }
         }
 
@@ -90,11 +116,10 @@ namespace PBL3
                         GioiTinh = Convert.ToBoolean(row.Cells["GioiTinh"].Value),
                         MucLuong = Convert.ToDouble(row.Cells["MucLuong"].Value),
                         TenDangNhap = row.Cells["TenDangNhap"].Value.ToString(),
-                        LichLamViecs = row.Cells["LichLamViecs"].Value.ToString(),
+                        LichLamViecs = row.Cells["LichLamViecs"].Value.ToString()
                     });
                 }
                 Reload();
-                MessageBox.Show("Đã thêm thành công!");
             }
         }
 

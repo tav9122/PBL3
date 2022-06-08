@@ -38,8 +38,7 @@ namespace PBL3
         public string ThoiGianBaoHanh { get; set; }
 
         [DefaultValue(0)]
-        [Column("Số lượng trong túi hàng")]
-        public int SoLuongTrongTuiHang { get; set; }
+        public int Temp { get; set; }
 
         public virtual ICollection<VatPham> VatPhams { get; set; }
 

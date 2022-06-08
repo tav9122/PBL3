@@ -42,7 +42,6 @@
             this.textBoxTenSanPham = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxMaSanPham = new System.Windows.Forms.TextBox();
-            this.buttonThoat = new System.Windows.Forms.Button();
             this.labelTieuDe = new System.Windows.Forms.Label();
             this.textBoxSoLuongHienTai = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,6 +65,8 @@
             this.textBoxGiaBan.Name = "textBoxGiaBan";
             this.textBoxGiaBan.Size = new System.Drawing.Size(143, 22);
             this.textBoxGiaBan.TabIndex = 4;
+            this.textBoxGiaBan.Enter += new System.EventHandler(this.textBoxGiaBan_Enter);
+            this.textBoxGiaBan.Leave += new System.EventHandler(this.textBoxGiaBan_Leave);
             // 
             // label11
             // 
@@ -82,7 +83,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(266, 327);
+            this.buttonXacNhan.Location = new System.Drawing.Point(265, 360);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -96,7 +97,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(393, 327);
+            this.buttonHuyBo.Location = new System.Drawing.Point(392, 360);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -204,20 +205,6 @@
             this.textBoxMaSanPham.Size = new System.Drawing.Size(159, 22);
             this.textBoxMaSanPham.TabIndex = 0;
             // 
-            // buttonThoat
-            // 
-            this.buttonThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThoat.Location = new System.Drawing.Point(10, 552);
-            this.buttonThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(88, 28);
-            this.buttonThoat.TabIndex = 120;
-            this.buttonThoat.Text = "Thoát";
-            this.buttonThoat.UseVisualStyleBackColor = true;
-            // 
             // labelTieuDe
             // 
             this.labelTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
@@ -239,6 +226,7 @@
             this.textBoxSoLuongHienTai.Name = "textBoxSoLuongHienTai";
             this.textBoxSoLuongHienTai.Size = new System.Drawing.Size(143, 22);
             this.textBoxSoLuongHienTai.TabIndex = 7;
+            this.textBoxSoLuongHienTai.Text = "0";
             // 
             // label6
             // 
@@ -260,6 +248,8 @@
             this.textBoxGiaMua.Name = "textBoxGiaMua";
             this.textBoxGiaMua.Size = new System.Drawing.Size(143, 22);
             this.textBoxGiaMua.TabIndex = 5;
+            this.textBoxGiaMua.Enter += new System.EventHandler(this.textBoxGiaBan_Enter);
+            this.textBoxGiaMua.Leave += new System.EventHandler(this.textBoxGiaBan_Leave);
             // 
             // label7
             // 
@@ -274,6 +264,7 @@
             // textBoxSoLuongNhap
             // 
             this.textBoxSoLuongNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSoLuongNhap.Enabled = false;
             this.textBoxSoLuongNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSoLuongNhap.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBoxSoLuongNhap.Location = new System.Drawing.Point(570, 172);
@@ -281,7 +272,7 @@
             this.textBoxSoLuongNhap.Name = "textBoxSoLuongNhap";
             this.textBoxSoLuongNhap.Size = new System.Drawing.Size(143, 22);
             this.textBoxSoLuongNhap.TabIndex = 6;
-            this.textBoxSoLuongNhap.Leave += new System.EventHandler(this.textBoxSoLuongNhap_Leave);
+            this.textBoxSoLuongNhap.Text = "0";
             // 
             // label12
             // 
@@ -330,7 +321,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(747, 368);
+            this.ClientSize = new System.Drawing.Size(747, 401);
             this.ControlBox = false;
             this.Controls.Add(this.comboBoxLoaiSanPham);
             this.Controls.Add(this.textBoxThoiGianBaoHanh);
@@ -353,7 +344,6 @@
             this.Controls.Add(this.textBoxTenSanPham);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxMaSanPham);
-            this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.labelTieuDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -379,7 +369,6 @@
         private System.Windows.Forms.TextBox textBoxTenSanPham;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxMaSanPham;
-        private System.Windows.Forms.Button buttonThoat;
         private System.Windows.Forms.Label labelTieuDe;
         private System.Windows.Forms.TextBox textBoxSoLuongHienTai;
         private System.Windows.Forms.Label label6;

@@ -75,6 +75,7 @@
     <Compile Include="BLL\BLLLichSuHoaDon.cs" />
     <Compile Include="BLL\BLLQuanLiKhachHang.cs" />
     <Compile Include="BLL\BLLQuanLiLichLamViec.cs" />
+    <Compile Include="BLL\BLLQuanLiLoHang.cs" />
     <Compile Include="BLL\BLLSanPham.cs" />
     <Compile Include="BLL\BLLQuanLiChung.cs" />
     <Compile Include="BLL\BLLQuanLiNhanVien.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="DTO\Database\HoaDon.cs" />
     <Compile Include="DTO\Database\KhachHang.cs" />
     <Compile Include="DTO\Database\LichLamViec.cs" />
+    <Compile Include="DTO\Database\LoHang.cs" />
     <Compile Include="DTO\Database\NhanVien.cs" />
     <Compile Include="DTO\Database\NhanVienLichLamViec.cs" />
     <Compile Include="DTO\Database\SanPham.cs" />
@@ -94,10 +96,13 @@
     <Compile Include="DTO\Views\ViewHoaDon.cs" />
     <Compile Include="DTO\Views\ViewKhachHang.cs" />
     <Compile Include="DTO\Views\ViewLichLamViec.cs" />
+    <Compile Include="DTO\Views\ViewLoHang.cs" />
     <Compile Include="DTO\Views\ViewNhanVien.cs" />
     <Compile Include="DTO\Views\ViewSanPham_NhanVien.cs" />
     <Compile Include="DTO\Views\ViewSanPham_QuanTriVien.cs" />
-    <Compile Include="DTO\Views\ViewVatPham.cs" />
+    <Compile Include="DTO\Views\ViewSanPham_QuanTriVien_LoHang.cs" />
+    <Compile Include="DTO\Views\ViewVatPham_NhanVien.cs" />
+    <Compile Include="DTO\Views\ViewVatPham_QuanTriVien.cs" />
     <Compile Include="GUI\FormDungChung\FormDialog\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +145,12 @@
     <Compile Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemLichLamViec.Designer.cs">
       <DependentUpon>FormChiTietHoacThemLichLamViec.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemLoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemLoHang.Designer.cs">
+      <DependentUpon>FormChiTietHoacThemLoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +180,12 @@
     </Compile>
     <Compile Include="GUI\QuanTriVien\FormLuaChonVaiTroDangNhap.Designer.cs">
       <DependentUpon>FormLuaChonVaiTroDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormPhu\FormQuanLiLoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormPhu\FormQuanLiLoHang.Designer.cs">
+      <DependentUpon>FormQuanLiLoHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QuanTriVien\FormQuanTriVien.cs">
       <SubType>Form</SubType>
@@ -259,6 +276,9 @@
     <EmbeddedResource Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemLichLamViec.resx">
       <DependentUpon>FormChiTietHoacThemLichLamViec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemLoHang.resx">
+      <DependentUpon>FormChiTietHoacThemLoHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormDialog\FormChiTietHoacThemNhanVien.resx">
       <DependentUpon>FormChiTietHoacThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +297,9 @@
     <EmbeddedResource Include="GUI\QuanTriVien\FormPhu\FormQuanLiLichLamViec.resx">
       <DependentUpon>FormQuanLiLichLamViec.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanTriVien\FormPhu\FormQuanLiLoHang.resx">
+      <DependentUpon>FormQuanLiLoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormQuanTriVien.resx">
       <DependentUpon>FormQuanTriVien.cs</DependentUpon>
@@ -337,7 +360,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\quanlilohang26.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lichsuhoadon32.png" />
   </ItemGroup>
@@ -409,6 +434,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quantrivien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanlilohang32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

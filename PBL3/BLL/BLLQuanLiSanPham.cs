@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PBL3
@@ -78,7 +79,6 @@ namespace PBL3
         public void UpdateSanPham(string maSanPham, string tenSanPham, string tenHang, string loaiSanPham, double giaMua, double giaBan, int soLuongNhap, int soLuongHienTai, string thoiGianBaoHanh)
         {
             var sanpham = Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham);
-            sanpham.MaSanPham = maSanPham;
             sanpham.TenSanPham = tenSanPham;
             sanpham.TenHang = tenHang;
             sanpham.LoaiSanPham = loaiSanPham;
@@ -87,16 +87,48 @@ namespace PBL3
             sanpham.SoLuongNhap = soLuongNhap;
             sanpham.SoLuongHienTai = soLuongHienTai;
             sanpham.ThoiGianBaoHanh = thoiGianBaoHanh;
+
+            foreach (VatPham vatPhams in Model.Instance.VatPhams.Where(vp => vp.MaSanPham == maSanPham))
+            {
+                if (vatPhams.MaHoaDon == null)
+                {
+                    vatPhams.GiaBan = giaBan;
+                }
+            }
             Model.Instance.SaveChanges();
         }
 
-        public void InitializeNewSeri(int soLuongNhap, string maSanPham)
+        public void InitializeNewVatPhams(int soLuongNhapThem, string maSanPham, string maLoHang)
         {
-            for (int i = Model.Instance.VatPhams.Count() + 1; i < soLuongNhap + Model.Instance.VatPhams.Count(); i++)
+            int count = Model.Instance.VatPhams.Count();
+            Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).SoLuongHienTai += soLuongNhapThem;
+            Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).SoLuongNhap += soLuongNhapThem;
+            for (int i = 0; i < soLuongNhapThem; i++)
             {
-                Model.Instance.VatPhams.Add(new VatPham { SoSeri = maSanPham + "-" + i.ToString().PadLeft(4, '0'), MaSanPham = maSanPham });
+                Model.Instance.VatPhams.Add(new VatPham { SoSeri = DateTime.Now.ToString("yyyyMMdd") + count.ToString().PadLeft(6, '0'), MaSanPham = maSanPham, MaLoHang = maLoHang, GiaMua = Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).GiaMua, GiaBan = Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).GiaBan });
+                count++;
             }
             Model.Instance.SaveChanges();
+        }
+
+        public void SetTempValue(string maSanPham, int soLuong)
+        {
+            Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).Temp = soLuong;
+            Model.Instance.SaveChanges();
+        }
+
+        public void ResetTemp()
+        {
+            foreach (SanPham sanPham in Model.Instance.SanPhams.Where(sp => sp.Temp > 0))
+            {
+                sanPham.Temp = 0;
+            }
+            Model.Instance.SaveChanges();
+        }
+
+        public List<SanPham> GetSanPhamWithTempValueGreaterThanZero()
+        {
+            return Model.Instance.SanPhams.Where(sp => sp.Temp > 0).ToList();
         }
     }
 }

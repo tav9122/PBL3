@@ -19,8 +19,8 @@ namespace PBL3
         {
             InitializeComponent();
             InitializeComboBoxLoaiSanPhamItems();
-            InitializeSanPhamInformation(maSanPham);
             typeUpdate = true;
+            InitializeSanPhamInformation(maSanPham);
             labelTieuDe.Text = "Chi tiết sản phẩm:";
             comboBoxLoaiSanPham.Enabled = false;
         }
@@ -30,10 +30,10 @@ namespace PBL3
             var sanPham = BLLQuanLiSanPham.Instance.GetSanPham(maSanPham);
             textBoxMaSanPham.Text = sanPham.MaSanPham;
             textBoxTenSanPham.Text = sanPham.TenSanPham;
-            textBoxGiaBan.Text = sanPham.GiaBan.ToString();
+            textBoxGiaBan.Text = sanPham.GiaBan.ToString("C0");
             textBoxSoLuongNhap.Text = sanPham.SoLuongNhap.ToString();
             textBoxSoLuongHienTai.Text = sanPham.SoLuongHienTai.ToString();
-            textBoxGiaMua.Text = sanPham.GiaMua.ToString();
+            textBoxGiaMua.Text = sanPham.GiaMua.ToString("C0");
             comboBoxLoaiSanPham.Text = sanPham.LoaiSanPham;
             textBoxTenHang.Text = sanPham.TenHang;
             textBoxThoiGianBaoHanh.Text = sanPham.ThoiGianBaoHanh;
@@ -76,31 +76,11 @@ namespace PBL3
             if (!typeUpdate)
                 try
                 {
-                    textBoxMaSanPham.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiSanPham.Instance.GetLoaiSanPhams(), comboBoxLoaiSanPham.Text);
+                    textBoxMaSanPham.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(comboBoxLoaiSanPham.Text);
                 }
                 catch
                 {
                 }
-        }
-        private void textBoxSoLuongNhap_Leave(object sender, EventArgs e)
-        {
-            if (!typeUpdate)
-                textBoxSoLuongHienTai.Text = textBoxSoLuongNhap.Text;
-            else
-            {
-                try
-                {
-                    if (Convert.ToInt32(textBoxSoLuongNhap.Text) < BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap)
-                    {
-                        textBoxSoLuongNhap.Text = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap.ToString();
-                    }
-                    textBoxSoLuongHienTai.Text = (BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongHienTai + (Convert.ToInt32(textBoxSoLuongNhap.Text) - BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap)).ToString();
-                }
-                catch
-                {
-                    textBoxSoLuongNhap.Text = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap.ToString();
-                }
-            }
         }
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
@@ -113,19 +93,29 @@ namespace PBL3
             {
                 if (typeUpdate)
                 {
-                    int currentSoLuongNhap = BLLQuanLiSanPham.Instance.GetSanPham(textBoxMaSanPham.Text).SoLuongNhap;
-                    BLLQuanLiSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
-                    BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text) - currentSoLuongNhap, textBoxMaSanPham.Text);
+                    BLLQuanLiSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
                     MessageBox.Show("Đã cập nhật thành công!");
                 }
                 else
                 {
-                    BLLQuanLiSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text), Convert.ToDouble(textBoxGiaBan.Text), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
-                    BLLQuanLiSanPham.Instance.InitializeNewSeri(Convert.ToInt32(textBoxSoLuongNhap.Text), textBoxMaSanPham.Text);
+                    BLLQuanLiSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
                     MessageBox.Show("Đã thêm thành công!");
                 }
                 this.Close();
             }
+        }
+
+        private void textBoxGiaBan_Enter(object sender, EventArgs e)
+        {
+            try { ((TextBox)sender).Text = ((TextBox)sender).Text.Substring(0, ((TextBox)sender).Text.Length - 2); }
+            catch { }
+        }
+
+        private void textBoxGiaBan_Leave(object sender, EventArgs e)
+        {
+            try { ((TextBox)sender).Text = String.Format("{0:C0}", Convert.ToDouble(((TextBox)sender).Text)); }
+            catch { }
+
         }
     }
 }

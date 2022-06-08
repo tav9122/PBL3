@@ -123,7 +123,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 18);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Sắp xếp theo";
+            this.label1.Text = "Sắp xếp theo:";
             // 
             // buttonSua
             // 

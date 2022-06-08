@@ -35,7 +35,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxMaKhachHang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonThoat = new System.Windows.Forms.Button();
             this.labelTieuDe = new System.Windows.Forms.Label();
             this.textBoxTenKhachHang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +52,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(270, 266);
+            this.buttonXacNhan.Location = new System.Drawing.Point(274, 324);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -67,7 +66,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(397, 266);
+            this.buttonHuyBo.Location = new System.Drawing.Point(401, 324);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -122,19 +121,6 @@
             this.label2.Size = new System.Drawing.Size(113, 18);
             this.label2.TabIndex = 75;
             this.label2.Text = "Mã khách hàng:";
-            // 
-            // buttonThoat
-            // 
-            this.buttonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThoat.Location = new System.Drawing.Point(31, 543);
-            this.buttonThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(88, 28);
-            this.buttonThoat.TabIndex = 78;
-            this.buttonThoat.Text = "Thoát";
-            this.buttonThoat.UseVisualStyleBackColor = true;
             // 
             // labelTieuDe
             // 
@@ -236,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(761, 307);
+            this.ClientSize = new System.Drawing.Size(761, 365);
             this.ControlBox = false;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxGhiChu);
@@ -251,7 +237,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxMaKhachHang);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.labelTieuDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -271,7 +256,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxMaKhachHang;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonThoat;
         private System.Windows.Forms.Label labelTieuDe;
         private System.Windows.Forms.TextBox textBoxTenKhachHang;
         private System.Windows.Forms.Label label3;

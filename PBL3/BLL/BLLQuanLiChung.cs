@@ -32,6 +32,7 @@ namespace PBL3
         public bool alreadyOpenFormQuanLiLichLamViec { get; set; }
         public bool alreadyOpenFormThongKe { get; set; }
         public bool alreadyOpenFormQuanLiKhachHang { get; set; }
+        public bool alreadyOpenFormQuanLiLoHang { get; set; }
 
         public Form formBaoHanh { get; set; }
         public Form formLichSuHoaDon { get; set; }
@@ -41,10 +42,11 @@ namespace PBL3
         public Form formQuanLiLichLamViec { get; set; }
         public Form formThongKe { get; set; }
         public Form formQuanLiKhachHang { get; set; }
+        public Form formQuanLiLoHang { get; set; }
 
         public void ResetProperties()
         {
-            BLLSanPham.Instance.ResetSoLuongTrongTuiHang();
+            BLLQuanLiSanPham.Instance.ResetTemp();
             alreadyOpenFormBaoHanh = false;
             alreadyOpenFormLichSuHoaDon = false;
             alreadyOpenFormSanPham = false;
@@ -53,6 +55,7 @@ namespace PBL3
             alreadyOpenFormQuanLiLichLamViec = false;
             alreadyOpenFormThongKe = false;
             alreadyOpenFormQuanLiKhachHang = false;
+            alreadyOpenFormQuanLiLoHang = false;
             formBaoHanh = null;
             formLichSuHoaDon = null;
             formSanPham = null;
@@ -61,6 +64,7 @@ namespace PBL3
             formQuanLiLichLamViec = null;
             formThongKe = null;
             formQuanLiKhachHang = null;
+            formQuanLiLoHang = null;
         }
 
         private string tempText { get; set; }
@@ -139,25 +143,18 @@ namespace PBL3
             return currentPrimaryKeys[0].Substring(0, wordsCount) + (temp.Max() + 1).ToString();
         }
 
-        public string GetNextPrimaryKey(List<string> currentPrimaryKeys, string s)
+        public string GetNextPrimaryKey(string s)
         {
-            int wordsCount = 0;
-            foreach (char c in currentPrimaryKeys[0])
-            {
-                if (char.IsLetter(c))
-                {
-                    wordsCount++;
-                }
-            }
-            string headerCharacters = "";
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string temp = s.Normalize(NormalizationForm.FormD);
             temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToUpper();
+
+            string headerCharacters = "";
             foreach (string i in temp.Split(' '))
             {
                 headerCharacters += i[0];
             }
-            return headerCharacters + (Model.Instance.SanPhams.Where(sp => sp.MaSanPham.Substring(0, wordsCount) == headerCharacters).Count() + 1).ToString();
+            return headerCharacters + (Model.Instance.SanPhams.Where(sp => sp.MaSanPham.Substring(0, headerCharacters.Length).Equals(headerCharacters)).Count() + 1).ToString();
         }
 
         public string LoginChecker(string tenDangNhap, string matKhau)

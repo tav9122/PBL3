@@ -32,7 +32,6 @@
             this.buttonXacNhan = new System.Windows.Forms.Button();
             this.buttonHuyBo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBoxSoDienThoai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxDiaChi = new System.Windows.Forms.TextBox();
@@ -41,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxMaNhanVien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonThoat = new System.Windows.Forms.Button();
             this.labelTieuDe = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonNam = new System.Windows.Forms.RadioButton();
@@ -52,7 +50,6 @@
             this.textBoxCanhBao = new System.Windows.Forms.TextBox();
             this.textBoxNhapLaiMatKhauMoi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonAnHienMatKhau = new System.Windows.Forms.Button();
             this.textBoxMatKhau = new System.Windows.Forms.TextBox();
             this.textBoxTenDangNhap = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,6 +59,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSua = new System.Windows.Forms.Button();
+            this.buttonAnHienMatKhau = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,20 +105,6 @@
             this.panel1.Size = new System.Drawing.Size(761, 29);
             this.panel1.TabIndex = 95;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(739, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 18);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
             // textBoxSoDienThoai
             // 
@@ -205,20 +190,6 @@
             this.label2.Size = new System.Drawing.Size(99, 18);
             this.label2.TabIndex = 93;
             this.label2.Text = "Mã nhân viên:";
-            // 
-            // buttonThoat
-            // 
-            this.buttonThoat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThoat.Location = new System.Drawing.Point(20, 582);
-            this.buttonThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(88, 28);
-            this.buttonThoat.TabIndex = 96;
-            this.buttonThoat.Text = "Thoát";
-            this.buttonThoat.UseVisualStyleBackColor = true;
             // 
             // labelTieuDe
             // 
@@ -345,20 +316,6 @@
             this.label8.Text = "Nhập lại mật khẩu mới:";
             this.label8.Visible = false;
             // 
-            // buttonAnHienMatKhau
-            // 
-            this.buttonAnHienMatKhau.FlatAppearance.BorderSize = 0;
-            this.buttonAnHienMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buttonAnHienMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.buttonAnHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnHienMatKhau.Image = global::PBL3.Properties.Resources.openedeye20;
-            this.buttonAnHienMatKhau.Location = new System.Drawing.Point(262, 106);
-            this.buttonAnHienMatKhau.Name = "buttonAnHienMatKhau";
-            this.buttonAnHienMatKhau.Size = new System.Drawing.Size(20, 20);
-            this.buttonAnHienMatKhau.TabIndex = 35;
-            this.buttonAnHienMatKhau.UseVisualStyleBackColor = true;
-            this.buttonAnHienMatKhau.Click += new System.EventHandler(this.buttonAnHienMatKhau_Click);
-            // 
             // textBoxMatKhau
             // 
             this.textBoxMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -464,6 +421,34 @@
             this.buttonSua.UseVisualStyleBackColor = true;
             this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
+            // buttonAnHienMatKhau
+            // 
+            this.buttonAnHienMatKhau.FlatAppearance.BorderSize = 0;
+            this.buttonAnHienMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAnHienMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonAnHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnHienMatKhau.Image = global::PBL3.Properties.Resources.openedeye20;
+            this.buttonAnHienMatKhau.Location = new System.Drawing.Point(262, 106);
+            this.buttonAnHienMatKhau.Name = "buttonAnHienMatKhau";
+            this.buttonAnHienMatKhau.Size = new System.Drawing.Size(20, 20);
+            this.buttonAnHienMatKhau.TabIndex = 35;
+            this.buttonAnHienMatKhau.UseVisualStyleBackColor = true;
+            this.buttonAnHienMatKhau.Click += new System.EventHandler(this.buttonAnHienMatKhau_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(739, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(15, 18);
+            this.button1.TabIndex = 26;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
             // FormChiTietHoacThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,7 +476,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxMaNhanVien);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.labelTieuDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -522,7 +506,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxMaNhanVien;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonThoat;
         private System.Windows.Forms.Label labelTieuDe;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButtonNam;

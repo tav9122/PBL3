@@ -13,13 +13,17 @@ namespace PBL3
 
         public List<ViewLichLamViec> listLichLamViecTamThoi = new List<ViewLichLamViec>();
 
+        public string maNhanVien;
         public FormThemLichLamViecVaoNhanVien(string maNhanVien)
         {
             InitializeComponent();
+            this.maNhanVien = maNhanVien;
             listLichLamViecTamThoi = BLLQuanLiNhanVien.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
+            labelMaNhanVien.Text = maNhanVien;
             Reload();
 
-            dataGridView1.Columns["NhanViens"].Visible = false;
+            dataGridView1.Columns["NhanViens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns["NhanViens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -42,8 +46,29 @@ namespace PBL3
 
         private void Reload()
         {
-            dataGridView1.DataSource = listLichLamViecTamThoi.ToList();
-            dataGridView2.DataSource = BLLQuanLiLichLamViec.Instance.GetLichLamViecs("", "").Where(x => !listLichLamViecTamThoi.Any(y => y.MaLichLamViec == x.MaLichLamViec)).ToList();
+
+            List<ViewLichLamViec> temp1 = listLichLamViecTamThoi.ToList();
+            foreach (ViewLichLamViec nhanVien in temp1)
+            {
+                if (!nhanVien.NhanViens.Contains(maNhanVien))
+                {
+                    if (nhanVien.NhanViens == "")
+                        nhanVien.NhanViens += maNhanVien;
+                    else
+                        nhanVien.NhanViens += ", " + maNhanVien;
+                }
+            }
+            dataGridView1.DataSource = temp1;
+
+
+            List<ViewLichLamViec> temp2 = BLLQuanLiLichLamViec.Instance.GetLichLamViecs("", "").Where(x => !listLichLamViecTamThoi.Any(y => y.MaLichLamViec == x.MaLichLamViec)).ToList();
+            foreach (ViewLichLamViec nhanVien in temp2)
+            {
+                nhanVien.NhanViens = nhanVien.NhanViens.Replace(", " + maNhanVien, "");
+                nhanVien.NhanViens = nhanVien.NhanViens.Replace(maNhanVien + ", ", "");
+                nhanVien.NhanViens = nhanVien.NhanViens.Replace(maNhanVien, "");
+            }
+            dataGridView2.DataSource = temp2;
         }
 
         private void buttonXoa_Click(object sender, System.EventArgs e)
@@ -56,7 +81,6 @@ namespace PBL3
                     listLichLamViecTamThoi.RemoveAt(row.Index);
                 }
                 Reload();
-                MessageBox.Show("Đã xóa thành công!");
             }
         }
 
@@ -77,7 +101,6 @@ namespace PBL3
                     });
                 }
                 Reload();
-                MessageBox.Show("Đã thêm thành công!");
             }
         }
 

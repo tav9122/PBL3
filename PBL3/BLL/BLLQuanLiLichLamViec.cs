@@ -94,7 +94,7 @@ namespace PBL3
                 result += i + ", ";
             }
             try { return result.Substring(0, result.Length - 2); }
-            catch { return "-"; }
+            catch { return ""; }
         }
 
         public List<string> GetMaLichLamViecs()

@@ -37,6 +37,7 @@ namespace PBL3
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<VatPham> VatPhams { get; set; }
         public virtual DbSet<NhanVienLichLamViec> NhanVienLichLamViecs { get; set; }
+        public virtual DbSet<LoHang> LoHangs { get; set; }
 
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
