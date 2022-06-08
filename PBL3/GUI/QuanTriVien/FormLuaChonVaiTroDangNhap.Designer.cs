@@ -91,7 +91,7 @@
             this.buttonVaiTroQuanTriVien.Location = new System.Drawing.Point(86, 105);
             this.buttonVaiTroQuanTriVien.Name = "buttonVaiTroQuanTriVien";
             this.buttonVaiTroQuanTriVien.Size = new System.Drawing.Size(54, 51);
-            this.buttonVaiTroQuanTriVien.TabIndex = 20;
+            this.buttonVaiTroQuanTriVien.TabIndex = 0;
             this.buttonVaiTroQuanTriVien.UseVisualStyleBackColor = true;
             this.buttonVaiTroQuanTriVien.Click += new System.EventHandler(this.buttonVaiTroQuanTriVien_Click);
             this.buttonVaiTroQuanTriVien.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_MouseDown);
@@ -108,7 +108,7 @@
             this.buttonVaiTroNhanVien.Location = new System.Drawing.Point(214, 103);
             this.buttonVaiTroNhanVien.Name = "buttonVaiTroNhanVien";
             this.buttonVaiTroNhanVien.Size = new System.Drawing.Size(65, 56);
-            this.buttonVaiTroNhanVien.TabIndex = 19;
+            this.buttonVaiTroNhanVien.TabIndex = 1;
             this.buttonVaiTroNhanVien.UseVisualStyleBackColor = true;
             this.buttonVaiTroNhanVien.Click += new System.EventHandler(this.buttonVaiTroNhanVien_Click);
             this.buttonVaiTroNhanVien.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_MouseDown);

@@ -93,12 +93,12 @@ namespace PBL3
             {
                 if (typeUpdate)
                 {
-                    BLLQuanLiSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
+                    BLLQuanLiSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaBan.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
                     MessageBox.Show("Đã cập nhật thành công!");
                 }
                 else
                 {
-                    BLLQuanLiSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
+                    BLLQuanLiSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaBan.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
                     MessageBox.Show("Đã thêm thành công!");
                 }
                 this.Close();
