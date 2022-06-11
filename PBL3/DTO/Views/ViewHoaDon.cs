@@ -11,6 +11,9 @@ namespace PBL3
         [DisplayName("Mã nhân viên")]
         public string MaNhanVien { get; set; }
 
+        [DisplayName("Tên nhân viên")]
+        public string TenNhanVien { get; set; }
+
         [DisplayName("Mã khách hàng")]
         public string MaKhachHang { get; set; }
 

@@ -9,19 +9,16 @@ namespace PBL3
         public FormThongTinNhanVien(string maNhanVien)
         {
             InitializeComponent();
-            InitializeNhanVienInformation(maNhanVien);
-        }
 
-        private void InitializeNhanVienInformation(string maNhanVien)
-        {
-            var nhanVien = BLLQuanLiNhanVien.Instance.GetNhanVien(maNhanVien);
+            var nhanVien = BLLNhanVien.Instance.GetNhanVien(maNhanVien);
             textBoxMaNhanVien.Text = nhanVien.MaNhanVien;
             textBoxHoVaTen.Text = nhanVien.HoVaTen;
             textBoxDiaChi.Text = nhanVien.DiaChi;
             textBoxSoDienThoai.Text = nhanVien.SoDienThoai;
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
-            dataGridView1.DataSource = BLLQuanLiNhanVien.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
+
+            dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa
@@ -59,7 +56,7 @@ namespace PBL3
             }
             else
             {
-                BLLQuanLiNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxHoVaTen.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, -1, null);
+                BLLNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxHoVaTen.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, -1, null);
                 this.Close();
             }
         }

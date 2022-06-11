@@ -3,15 +3,15 @@ using System.Linq;
 
 namespace PBL3
 {
-    internal class BLLSanPham
+    internal class BLLButtonSanPham
     {
-        private static BLLSanPham instance;
-        public static BLLSanPham Instance
+        private static BLLButtonSanPham instance;
+        public static BLLButtonSanPham Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new BLLSanPham();
+                    instance = new BLLButtonSanPham();
                 return instance;
             }
         }
@@ -62,20 +62,14 @@ namespace PBL3
             Model.Instance.SaveChanges();
         }
 
-        public string GetTenSanPhamBySoSeri(string soSeri)
-        {
-            try { return Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).SanPham.TenSanPham; }
-            catch { return null; }
-        }
-
-        public string GetSoDienThoaiKhachHangBySoSeri(string soSeri)
-        {
-            try { return Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).HoaDon.KhachHang.SoDienThoai; }
-            catch { return null; }
-        }
         public List<ViewSanPham_NhanVien> GetSanPhamWithTempValueGreaterThanZero()
         {
             return Model.Instance.SanPhams.Where(sp => sp.Temp > 0).Select(sp => new ViewSanPham_NhanVien { MaSanPham = sp.MaSanPham, TenSanPham = sp.TenSanPham, TenHang = sp.TenHang, LoaiSanPham = sp.LoaiSanPham, GiaBan = sp.GiaBan, SoLuongHienTai = sp.SoLuongHienTai, ThoiGianBaoHanh = sp.ThoiGianBaoHanh, SoLuongTrongTuiHang = sp.Temp }).ToList();
+        }
+
+        public double GetTongTien()
+        {
+            return Model.Instance.SanPhams.Where(hd => hd.Temp > 0).Sum(hd => hd.GiaBan * hd.Temp);
         }
     }
 }

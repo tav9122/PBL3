@@ -14,36 +14,26 @@ namespace PBL3
         public FormChiTietHoacThemNhanVien()
         {
             InitializeComponent();
-            InitializeNewNhanVienInformation();
+            typeUpdate = false;
 
+            labelTieuDe.Text = "Thêm nhân viên:";
+            textBoxMaNhanVien.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLNhanVien.Instance.GetMaNhanViens());
+
+            dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien("");
             dataGridView1.Columns["NhanViens"].Visible = false;
         }
 
         public FormChiTietHoacThemNhanVien(string maNhanVien)
         {
             InitializeComponent();
-            InitializeNhanVienInformation(maNhanVien);
-
-            dataGridView1.Columns["NhanViens"].Visible = false;
-        }
-
-        private void InitializeNewNhanVienInformation()
-        {
-            typeUpdate = false;
-            labelTieuDe.Text = "Thêm nhân viên:";
-            textBoxMaNhanVien.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiNhanVien.Instance.GetMaNhanViens());
-            dataGridView1.DataSource = BLLQuanLiNhanVien.Instance.GetLichLamViecsOfNhanVien("");
-        }
-
-        private void InitializeNhanVienInformation(string maNhanVien)
-        {
             typeUpdate = true;
+
             labelTieuDe.Text = "Chi tiết nhân viên:";
 
-            listLichLamViecTamThoi = BLLQuanLiNhanVien.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
+            listLichLamViecTamThoi = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
 
-            var nhanVien = BLLQuanLiNhanVien.Instance.GetNhanVien(maNhanVien);
-            currentMatKhau = BLLQuanLiNhanVien.Instance.GetMatKhauNhanVien(nhanVien.MaNhanVien);
+            var nhanVien = BLLNhanVien.Instance.GetNhanVien(maNhanVien);
+            currentMatKhau = BLLTaiKhoan.Instance.GetMatKhauNhanVien(nhanVien.MaNhanVien);
             textBoxMaNhanVien.Text = nhanVien.MaNhanVien;
             textBoxTenNhanVien.Text = nhanVien.HoVaTen;
             textBoxDiaChi.Text = nhanVien.DiaChi;
@@ -51,11 +41,13 @@ namespace PBL3
             textBoxMucLuong.Text = nhanVien.MucLuong.ToString();
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
-            textBoxTenDangNhap.Text = BLLQuanLiNhanVien.Instance.GetTenDangNhapNhanVien(nhanVien.MaNhanVien);
-            textBoxMatKhau.Text = BLLQuanLiNhanVien.Instance.GetMatKhauNhanVien(nhanVien.MaNhanVien);
-            dataGridView1.DataSource = BLLQuanLiNhanVien.Instance.GetLichLamViecsOfNhanVien(nhanVien.MaNhanVien);
+            textBoxTenDangNhap.Text = BLLTaiKhoan.Instance.GetTenDangNhapNhanVien(nhanVien.MaNhanVien);
+            textBoxMatKhau.Text = BLLTaiKhoan.Instance.GetMatKhauNhanVien(nhanVien.MaNhanVien);
 
             textBoxTenDangNhap.Enabled = false;
+
+            dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(nhanVien.MaNhanVien);
+            dataGridView1.Columns["NhanViens"].Visible = false;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -75,6 +67,52 @@ namespace PBL3
             this.WindowState = FormWindowState.Minimized;
         }
         #endregion
+
+        private void buttonHuyBo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            if (textBoxTenNhanVien.Text == "" || textBoxSoDienThoai.Text == "" || textBoxDiaChi.Text == "" || textBoxMucLuong.Text == "" || textBoxTenDangNhap.Text == "" || textBoxMatKhau.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+            if (textBoxMatKhau.Text != currentMatKhau && textBoxMatKhau.Text != textBoxNhapLaiMatKhauMoi.Text)
+            {
+                MessageBox.Show("Mật khẩu ở hai trường cần phải giống nhau!");
+                return;
+            }
+            if (typeUpdate == true)
+            {
+                BLLNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList());
+                BLLTaiKhoan.Instance.UpdateMatKhauNhanVien(textBoxTenDangNhap.Text, textBoxMatKhau.Text);
+                MessageBox.Show("Cập nhật thành công!");
+            }
+            else
+            {
+                BLLNhanVien.Instance.AddNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList(), textBoxTenDangNhap.Text, textBoxMatKhau.Text);
+                MessageBox.Show("Thêm thành công!");
+            }
+            BLLQuanLiChung.Instance.alreadyOpenFormQuanLiLichLamViec = false;
+            BLLQuanLiChung.Instance.formQuanLiLichLamViec = null;
+            this.Close();
+        }
+
+        private void buttonSua_Click(object sender, EventArgs e)
+        {
+            FormThemLichLamViecVaoNhanVien formThemLichLamViecVaoNhanVien = new FormThemLichLamViecVaoNhanVien(textBoxMaNhanVien.Text);
+            formThemLichLamViecVaoNhanVien.sendLichLamViecs = new FormThemLichLamViecVaoNhanVien.SendLichLamViecs(ReceiveLichLamViecs);
+            formThemLichLamViecVaoNhanVien.ShowDialog();
+        }
+
+        private void ReceiveLichLamViecs(List<ViewLichLamViec> listLichLamViecTamThoi)
+        {
+            dataGridView1.DataSource = listLichLamViecTamThoi;
+            this.listLichLamViecTamThoi = listLichLamViecTamThoi;
+        }
 
         int count = 0;
         private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
@@ -125,57 +163,11 @@ namespace PBL3
                 textBoxCanhBao.Text = "";
         }
 
-        private void ReceiveLichLamViecs(List<ViewLichLamViec> listLichLamViecTamThoi)
-        {
-            dataGridView1.DataSource = listLichLamViecTamThoi;
-            this.listLichLamViecTamThoi = listLichLamViecTamThoi;
-        }
-
-        private void buttonSua_Click(object sender, EventArgs e)
-        {
-            FormThemLichLamViecVaoNhanVien formThemLichLamViecVaoNhanVien = new FormThemLichLamViecVaoNhanVien(textBoxMaNhanVien.Text);
-            formThemLichLamViecVaoNhanVien.sendLichLamViecs = new FormThemLichLamViecVaoNhanVien.SendLichLamViecs(ReceiveLichLamViecs);
-            formThemLichLamViecVaoNhanVien.ShowDialog();
-        }
-
-        private void buttonXacNhan_Click(object sender, EventArgs e)
-        {
-            if (textBoxTenNhanVien.Text == "" || textBoxSoDienThoai.Text == "" || textBoxDiaChi.Text == "" || textBoxMucLuong.Text == "" || textBoxTenDangNhap.Text == "" || textBoxMatKhau.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                return;
-            }
-            if (textBoxMatKhau.Text != currentMatKhau && textBoxMatKhau.Text != textBoxNhapLaiMatKhauMoi.Text)
-            {
-                MessageBox.Show("Mật khẩu ở hai trường cần phải giống nhau!");
-                return;
-            }
-            if (typeUpdate == true)
-            {
-                BLLQuanLiNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList());
-                BLLQuanLiNhanVien.Instance.UpdateMatKhauNhanVien(textBoxTenDangNhap.Text, textBoxMatKhau.Text);
-                MessageBox.Show("Cập nhật thành công!");
-            }
-            else
-            {
-                BLLQuanLiNhanVien.Instance.AddNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList(), textBoxTenDangNhap.Text, textBoxMatKhau.Text);
-                MessageBox.Show("Thêm thành công!");
-            }
-            BLLQuanLiChung.Instance.alreadyOpenFormQuanLiLichLamViec = false;
-            BLLQuanLiChung.Instance.formQuanLiLichLamViec = null;
-            this.Close();
-        }
-
-        private void buttonHuyBo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void textBoxTenDangNhap_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (BLLQuanLiNhanVien.Instance.GetMatKhauNhanVien(textBoxTenDangNhap.Text) != null)
+                if (BLLTaiKhoan.Instance.GetMatKhauNhanVien(textBoxTenDangNhap.Text) != null)
                 {
                     textBoxCanhBao.Text = "Tên đăng nhập đã tồn tại";
                     buttonXacNhan.Enabled = false;

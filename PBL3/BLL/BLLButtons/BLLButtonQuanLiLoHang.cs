@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace PBL3
 {
-    internal class BLLQuanLiLoHang
+    internal class BLLButtonQuanLiLoHang
     {
-        private static BLLQuanLiLoHang instance;
-        public static BLLQuanLiLoHang Instance
+        private static BLLButtonQuanLiLoHang instance;
+        public static BLLButtonQuanLiLoHang Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new BLLQuanLiLoHang();
+                    instance = new BLLButtonQuanLiLoHang();
                 return instance;
             }
         }
@@ -47,37 +46,20 @@ namespace PBL3
             return SortLoHang(SearchLoHang(tuKhoa), kieuSapXep);
         }
 
-        public void DeleteLoHang(string maLoHang)
-        {
-            Model.Instance.LoHangs.FirstOrDefault(lh => lh.MaLoHang == maLoHang).DaXoa = true;
-            Model.Instance.SaveChanges();
-        }
-
-        public void AddLoHang(string maLoHang, DateTime thoiGianNhapHang, double tongTien)
-        {
-            Model.Instance.LoHangs.Add(new LoHang { MaLoHang = maLoHang, ThoiGianNhapHang = thoiGianNhapHang, TongTien = tongTien });
-            Model.Instance.SaveChanges();
-        }
-
-        public LoHang GetLoHang(string maLoHang)
-        {
-            return Model.Instance.LoHangs.Where(llv => llv.MaLoHang == maLoHang).FirstOrDefault();
-        }
-
-        public List<string> GetMaLoHangs()
-        {
-            if (Model.Instance.LoHangs.Select(x => x.MaLoHang).ToList() == null)
-                return new List<string> { "LH0" };
-            else
-                return Model.Instance.LoHangs.Select(x => x.MaLoHang).ToList();
-        }
-
-
-        public double GetTongSoTien()
+        public double GetTongTien()
         {
             return Model.Instance.SanPhams.Where(hd => hd.Temp > 0).Sum(hd => hd.GiaMua * hd.Temp);
         }
 
+        public void UpdateSoLuongSanPham(string maSanPham, int soLuong)
+        {
+            Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault().SoLuongNhap += soLuong;
+            Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault().SoLuongHienTai += soLuong;
+            Model.Instance.SaveChanges();
+        }
+
+
+        //Đây là các hàm hiển thị sản phẩm riêng cho lô hàng.
         public List<ViewSanPham_QuanTriVien_LoHang> SearchSanPham(string tuKhoa)
         {
             if (tuKhoa == "Nhập để tìm kiếm...")
@@ -109,6 +91,7 @@ namespace PBL3
         }
 
 
+        //Đây là các hàm hiển thị vật phẩm riêng cho lô hàng.
         public List<ViewVatPham_QuanTriVien> SearchVatPham(string tuKhoa, string maLoHang)
         {
             if (tuKhoa == "Nhập để tìm kiếm...")
@@ -137,13 +120,6 @@ namespace PBL3
         public List<ViewVatPham_QuanTriVien> GetVatPhams(string kieuSapXep, string tuKhoa, string maLoHang)
         {
             return SortVatPham(SearchVatPham(tuKhoa, maLoHang), kieuSapXep);
-        }
-
-        public void UpdateSoLuongSanPham(string maSanPham, int soLuong)
-        {
-            Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault().SoLuongNhap += soLuong;
-            Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault().SoLuongHienTai += soLuong;
-            Model.Instance.SaveChanges();
         }
     }
 }

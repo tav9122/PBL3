@@ -8,10 +8,6 @@ namespace PBL3
         public FormManHinhChinh()
         {
             InitializeComponent();
-            SetInitialData();
-        }
-        public void SetInitialData()
-        {
             timer1.Start();
         }
 

@@ -12,14 +12,17 @@ namespace PBL3
     public partial class FormChiTietHoacThemLoHang : Form
     {
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
         public bool typeView = false;
+
         public FormChiTietHoacThemLoHang()
         {
             dictionary = TypeDescriptor.GetProperties(typeof(ViewSanPham_QuanTriVien_LoHang)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
 
             InitializeComponent();
-            labelTieuDe.Text = "Thêm lô hàng:";
             typeView = false;
+
+            labelTieuDe.Text = "Thêm lô hàng:";
 
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
@@ -29,7 +32,7 @@ namespace PBL3
                     col.ReadOnly = true;
             }
 
-            textBoxMaLoHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLQuanLiLoHang.Instance.GetMaLoHangs());
+            textBoxMaLoHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLLoHang.Instance.GetMaLoHangs());
             dateTimePicker1.Value = DateTime.Now;
             textBoxTongTien.Text = 0.ToString("C0");
 
@@ -50,16 +53,16 @@ namespace PBL3
             dictionary = TypeDescriptor.GetProperties(typeof(ViewVatPham_NhanVien)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
 
             InitializeComponent();
-            labelTieuDe.Text = "Chi tiết lô hàng:";
             typeView = true;
-
-            var loHang = BLLQuanLiLoHang.Instance.GetLoHang(maLoHang);
-            textBoxMaLoHang.Text = maLoHang;
-            dateTimePicker1.Value = loHang.ThoiGianNhapHang;
-            textBoxTongTien.Text = loHang.TongTien.ToString("C0");
+            labelTieuDe.Text = "Chi tiết lô hàng:";
 
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+
+            var loHang = BLLLoHang.Instance.GetLoHang(maLoHang);
+            textBoxMaLoHang.Text = maLoHang;
+            dateTimePicker1.Value = loHang.ThoiGianNhapHang;
+            textBoxTongTien.Text = loHang.TongTien.ToString("C0");
 
             buttonXacNhan.Visible = false;
             buttonThemSanPhamMoi.Visible = false;
@@ -73,10 +76,10 @@ namespace PBL3
         private void ReloadDataGridView(object sender, EventArgs e)
         {
             if (typeView == false)
-                dataGridView1.DataSource = BLLQuanLiLoHang.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
+                dataGridView1.DataSource = BLLButtonQuanLiLoHang.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
             else
             {
-                dataGridView1.DataSource = BLLQuanLiLoHang.Instance.GetVatPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, textBoxMaLoHang.Text);
+                dataGridView1.DataSource = BLLButtonQuanLiLoHang.Instance.GetVatPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, textBoxMaLoHang.Text);
                 labelSoLuongCacVatPhamDangHienThi.Text = dataGridView1.RowCount.ToString();
 
                 double tongTien = 0;
@@ -87,13 +90,6 @@ namespace PBL3
                 labelTongTienCacVatPhamDangHienThi.Text = tongTien.ToString("C0");
             }
         }
-
-        private void buttonHuyBo_Click(object sender, EventArgs e)
-        {
-            BLLQuanLiSanPham.Instance.ResetTemp();
-            this.Close();
-        }
-
         #region Các hàm chức năng cơ bản, hạn chế sửa.
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -113,6 +109,56 @@ namespace PBL3
         }
         #endregion
 
+        private void buttonHuyBo_Click(object sender, EventArgs e)
+        {
+            BLLSanPham.Instance.ResetTemp();
+            this.Close();
+        }
+
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            if (BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero().Count == 0)
+            {
+                MessageBox.Show("Số lượng sản phẩm nhập thêm không được bằng 0!");
+                return;
+            }
+            BLLLoHang.Instance.AddLoHang(textBoxMaLoHang.Text, dateTimePicker1.Value, Convert.ToDouble(textBoxTongTien.Text.Substring(0, textBoxTongTien.Text.Length - 2)));
+            foreach (SanPham sanPham in BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
+            {
+                BLLVatPham.Instance.InitializeNewVatPhams(sanPham.Temp, sanPham.MaSanPham, textBoxMaLoHang.Text);
+            }
+            BLLQuanLiChung.Instance.alreadyOpenFormQuanLiSanPham = false;
+            BLLQuanLiChung.Instance.formQuanLiSanPham = null;
+            MessageBox.Show("Lưu lô nhập hàng thành công!");
+            this.Close();
+        }
+
+        private void buttonThemSanPhamMoi_Click(object sender, EventArgs e)
+        {
+            FormChiTietHoacThemSanPham formChiTietHoacThemSanPham = new FormChiTietHoacThemSanPham();
+            formChiTietHoacThemSanPham.ShowDialog();
+            ReloadDataGridView(null, null);
+        }
+
+        private void buttonResetSoLuongNhapThem_Click(object sender, EventArgs e)
+        {
+            textBoxTongTien.Text = 0.ToString("C0");
+            BLLSanPham.Instance.ResetTemp();
+            ReloadDataGridView(null, null);
+            MessageBox.Show("Đã reset thành công!");
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Convert.ToInt32(dataGridView1.CurrentCell.Value) < 0)
+            {
+                MessageBox.Show("Số lượng nhập không hợp lệ!");
+                dataGridView1.CurrentCell.Value = 0;
+            }
+            BLLSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongNhapThem"].Value));
+            textBoxTongTien.Text = BLLButtonQuanLiLoHang.Instance.GetTongTien().ToString("C0");
+        }
+
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
         {
             if (textBoxTimKiem.Text == "Nhập để tìm kiếm...")
@@ -129,50 +175,6 @@ namespace PBL3
                 textBoxTimKiem.ForeColor = Color.FromArgb(200, 200, 200);
                 textBoxTimKiem.Text = "Nhập để tìm kiếm...";
             }
-        }
-
-        private void buttonResetSoLuongNhapThem_Click(object sender, EventArgs e)
-        {
-            textBoxTongTien.Text = 0.ToString("C0");
-            BLLQuanLiSanPham.Instance.ResetTemp();
-            ReloadDataGridView(null, null);
-            MessageBox.Show("Đã reset thành công!");
-        }
-
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (Convert.ToInt32(dataGridView1.CurrentCell.Value) < 0)
-            {
-                MessageBox.Show("Số lượng nhập không hợp lệ!");
-                dataGridView1.CurrentCell.Value = 0;
-            }
-            BLLQuanLiSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongNhapThem"].Value));
-            textBoxTongTien.Text = BLLQuanLiLoHang.Instance.GetTongSoTien().ToString("C0");
-        }
-
-        private void buttonXacNhan_Click(object sender, EventArgs e)
-        {
-            if (BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero().Count == 0)
-            {
-                MessageBox.Show("Số lượng sản phẩm nhập thêm không được bằng 0!");
-                return;
-            }
-            BLLQuanLiLoHang.Instance.AddLoHang(textBoxMaLoHang.Text, dateTimePicker1.Value, Convert.ToDouble(textBoxTongTien.Text.Substring(0, textBoxTongTien.Text.Length - 2)));
-            foreach (SanPham sanPham in BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
-            {
-                BLLQuanLiSanPham.Instance.InitializeNewVatPhams(sanPham.Temp, sanPham.MaSanPham, textBoxMaLoHang.Text);
-            }
-            BLLQuanLiChung.Instance.alreadyOpenFormQuanLiSanPham = false;
-            BLLQuanLiChung.Instance.formQuanLiSanPham = null;
-            MessageBox.Show("Lưu lô nhập hàng thành công!");
-            this.Close();
-        }
-
-        private void buttonThemSanPhamMoi_Click(object sender, EventArgs e)
-        {
-            FormChiTietHoacThemSanPham formChiTietHoacThemSanPham = new FormChiTietHoacThemSanPham();
-            formChiTietHoacThemSanPham.ShowDialog();
-            ReloadDataGridView(null, null);
         }
     }
 }

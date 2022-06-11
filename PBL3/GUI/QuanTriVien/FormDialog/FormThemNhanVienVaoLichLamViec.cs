@@ -12,12 +12,15 @@ namespace PBL3
         public SendNhanViens sendNhanViens;
 
         public List<ViewNhanVien> listNhanVienTamThoi = new List<ViewNhanVien>();
+
         public string maLichLamViec;
+
         public FormThemNhanVienVaoLichLamViec(string maLichLamViec)
         {
             InitializeComponent();
-            this.maLichLamViec = maLichLamViec;
-            listNhanVienTamThoi = BLLQuanLiLichLamViec.Instance.GetNhanViensOfLichLamViec(maLichLamViec);
+
+            listNhanVienTamThoi = BLLNhanVienLichLamViec.Instance.GetNhanViensOfLichLamViec(maLichLamViec);
+
             labelMaLichLamViec.Text = maLichLamViec;
 
             Reload();
@@ -34,6 +37,7 @@ namespace PBL3
             dataGridView2.Columns["TenDangNhap"].Visible = false;
             dataGridView2.Columns["MucLuong"].Visible = false;
 
+            this.maLichLamViec = maLichLamViec;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -55,11 +59,6 @@ namespace PBL3
         }
         #endregion
 
-        private void buttonHuyBo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Reload()
         {
             List<ViewNhanVien> temp1 = listNhanVienTamThoi.ToList();
@@ -76,7 +75,7 @@ namespace PBL3
             dataGridView1.DataSource = temp1;
 
 
-            List<ViewNhanVien> temp2 = BLLQuanLiNhanVien.Instance.GetNhanViens("", "").Where(x => !listNhanVienTamThoi.Any(y => y.MaNhanVien == x.MaNhanVien)).ToList();
+            List<ViewNhanVien> temp2 = BLLButtonQuanLiNhanVien.Instance.GetNhanViens("", "").Where(x => !listNhanVienTamThoi.Any(y => y.MaNhanVien == x.MaNhanVien)).ToList();
             foreach (ViewNhanVien nhanVien in temp2)
             {
                 nhanVien.LichLamViecs = nhanVien.LichLamViecs.Replace(", " + maLichLamViec, "");
@@ -121,6 +120,11 @@ namespace PBL3
                 }
                 Reload();
             }
+        }
+
+        private void buttonHuyBo_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void buttonXacNhan_Click(object sender, System.EventArgs e)

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietHoacThemBaoHanh));
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.labelTieuDe = new System.Windows.Forms.Label();
             this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,7 +55,6 @@
             this.textBoxMaKhachHang = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,6 +81,20 @@
             this.panel1.Size = new System.Drawing.Size(761, 29);
             this.panel1.TabIndex = 57;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(739, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(15, 18);
+            this.button1.TabIndex = 26;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
             // labelTieuDe
             // 
@@ -227,7 +241,7 @@
             this.textBoxSoSeri.Name = "textBoxSoSeri";
             this.textBoxSoSeri.Size = new System.Drawing.Size(159, 22);
             this.textBoxSoSeri.TabIndex = 48;
-            this.textBoxSoSeri.TextChanged += new System.EventHandler(this.textBoxSoSeri_TextChanged);
+            this.textBoxSoSeri.Leave += new System.EventHandler(this.textBoxSoSeri_Leave);
             // 
             // label7
             // 
@@ -305,20 +319,20 @@
             // textBoxSoDienThoai
             // 
             this.textBoxSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSoDienThoai.Enabled = false;
             this.textBoxSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBoxSoDienThoai.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxSoDienThoai.Location = new System.Drawing.Point(122, 61);
+            this.textBoxSoDienThoai.Location = new System.Drawing.Point(122, 26);
             this.textBoxSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoDienThoai.Name = "textBoxSoDienThoai";
             this.textBoxSoDienThoai.Size = new System.Drawing.Size(159, 22);
             this.textBoxSoDienThoai.TabIndex = 50;
-            this.textBoxSoDienThoai.TextChanged += new System.EventHandler(this.textBoxSoDienThoai_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 61);
+            this.label6.Location = new System.Drawing.Point(3, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 18);
             this.label6.TabIndex = 49;
@@ -330,7 +344,7 @@
             this.textBoxMaKhachHang.Enabled = false;
             this.textBoxMaKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBoxMaKhachHang.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxMaKhachHang.Location = new System.Drawing.Point(122, 24);
+            this.textBoxMaKhachHang.Location = new System.Drawing.Point(122, 63);
             this.textBoxMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMaKhachHang.Name = "textBoxMaKhachHang";
             this.textBoxMaKhachHang.Size = new System.Drawing.Size(159, 22);
@@ -340,7 +354,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 24);
+            this.label10.Location = new System.Drawing.Point(3, 63);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 18);
             this.label10.TabIndex = 47;
@@ -355,20 +369,6 @@
             this.label11.Size = new System.Drawing.Size(128, 18);
             this.label11.TabIndex = 75;
             this.label11.Text = "Ghi chú bảo hành:";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(739, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 18);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
             // FormChiTietHoacThemBaoHanh
             // 

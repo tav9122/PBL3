@@ -12,6 +12,14 @@ namespace PBL3
             InitializeCodeFirstModel();
         }
 
+        private void InitializeCodeFirstModel()
+        {
+            textBoxTenDangNhap.Text = "khoitao";
+            textBoxMatKhau.Text = "khoitao";
+            buttonDangNhap_Click(null, null);
+            textBoxCanhBao.Text = "";
+        }
+
         #region Các hàm chức năng cơ bản, hạn chế sửa
 
         private void textBoxMatKhau_Enter(object sender, EventArgs e)
@@ -52,30 +60,6 @@ namespace PBL3
         }
 
         #endregion
-
-        int count = 0;
-        private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
-        {
-            count++;
-            if (count % 2 == 0)
-            {
-                textBoxMatKhau.Multiline = false;
-                buttonAnHienMatKhau.Image = Properties.Resources.openedeye20;
-            }
-            else
-            {
-                textBoxMatKhau.Multiline = true;
-                buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
-            }
-        }
-
-        private void InitializeCodeFirstModel()
-        {
-            textBoxTenDangNhap.Text = "khoitao";
-            textBoxMatKhau.Text = "khoitao";
-            buttonDangNhap_Click(null, null);
-            textBoxCanhBao.Text = "";
-        }
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
@@ -120,6 +104,22 @@ namespace PBL3
         private void linkLabelQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("Tính năng lấy lại mật khẩu tạm thời chưa khả dụng vì lí do bảo mật, hãy liên hệ với quản trị viên!");
+        }
+
+        int count = 0;
+        private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
+        {
+            count++;
+            if (count % 2 == 0)
+            {
+                textBoxMatKhau.Multiline = false;
+                buttonAnHienMatKhau.Image = Properties.Resources.openedeye20;
+            }
+            else
+            {
+                textBoxMatKhau.Multiline = true;
+                buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
+            }
         }
     }
 }

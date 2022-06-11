@@ -10,13 +10,20 @@ namespace PBL3
         public FormChiTietHoacThemBaoHanh()
         {
             InitializeComponent();
-            InitializeNewBaoHanhInformation();
+            typeUpdate = false;
         }
 
         public FormChiTietHoacThemBaoHanh(string soSeri)
         {
             InitializeComponent();
-            InitializeBaoHanhInformation(soSeri);
+            typeUpdate = true;
+
+            textBoxSoSeri.Text = soSeri;
+            dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value = BLLBaoHanh.Instance.GetBaoHanh(soSeri).ThoiGianTaoPhieuBaoHanh;
+            textBoxGhiChu.Text = BLLBaoHanh.Instance.GetBaoHanh(soSeri).GhiChu;
+            radioButtonHoanThanh.Checked = BLLBaoHanh.Instance.GetBaoHanh(soSeri).TrangThai;
+
+            textBoxSoSeri.Enabled = false;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -40,37 +47,6 @@ namespace PBL3
 
         #endregion
 
-        private void textBoxSoDienThoai_TextChanged(object sender, EventArgs e)
-        {
-            if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) != null)
-            {
-                textBoxTenKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).TenKhachHang;
-                textBoxDiaChi.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).DiaChi;
-                textBoxMaKhachHang.Text = BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).MaKhachHang;
-            }
-        }
-        private void textBoxSoSeri_TextChanged(object sender, EventArgs e)
-        {
-            textBoxTenSanPham.Text = BLLSanPham.Instance.GetTenSanPhamBySoSeri(textBoxSoSeri.Text);
-        }
-
-        private void InitializeNewBaoHanhInformation()
-        {
-            typeUpdate = false;
-        }
-
-        private void InitializeBaoHanhInformation(string soSeri)
-        {
-            typeUpdate = true;
-            textBoxSoSeri.Text = soSeri;
-            textBoxSoSeri.Enabled = false;
-            dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value = BLLBaoHanh.Instance.GetBaoHanh(soSeri).ThoiGianTaoPhieuBaoHanh;
-            textBoxSoDienThoai.Text = BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(soSeri);
-            textBoxSoDienThoai.Enabled = false;
-            textBoxGhiChu.Text = BLLBaoHanh.Instance.GetBaoHanh(soSeri).GhiChu;
-            radioButtonHoanThanh.Checked = BLLBaoHanh.Instance.GetBaoHanh(soSeri).TrangThai;
-        }
-
         private void buttonHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -84,18 +60,6 @@ namespace PBL3
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 }
-                else if (BLLSanPham.Instance.GetSoDienThoaiKhachHangBySoSeri(textBoxSoSeri.Text) == null)
-                {
-                    MessageBox.Show("Sản phẩm này chưa được mua hoặc không có trong hệ thống!");
-                }
-                else if (BLLQuanLiKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) == null)
-                {
-                    MessageBox.Show("Khách hàng không tồn tại!");
-                }
-                else if (BLLBaoHanh.Instance.GetBaoHanh(textBoxSoSeri.Text) != null)
-                {
-                    MessageBox.Show("Sản phẩm này đã đang có trong danh sách bảo hành!");
-                }
                 else
                 {
                     BLLBaoHanh.Instance.AddBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text, DateTime.Now);
@@ -108,6 +72,30 @@ namespace PBL3
                 BLLBaoHanh.Instance.UpdateBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text);
                 MessageBox.Show("Đã cập nhật thành công!");
                 this.Close();
+            }
+        }
+
+        private void textBoxSoSeri_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                var vatPham = BLLVatPham.Instance.GetVatPham(textBoxSoSeri.Text);
+                textBoxTenSanPham.Text = vatPham.SanPham.TenSanPham;
+                textBoxTenKhachHang.Text = vatPham.HoaDon.KhachHang.TenKhachHang;
+                textBoxDiaChi.Text = vatPham.HoaDon.KhachHang.DiaChi;
+                textBoxMaKhachHang.Text = vatPham.HoaDon.KhachHang.MaKhachHang;
+                textBoxSoDienThoai.Text = vatPham.HoaDon.KhachHang.SoDienThoai;
+                buttonXacNhan.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Vật phẩm chưa được mua hoặc không có trên hệ thống");
+                buttonXacNhan.Enabled = false;
+                return;
+            }
+            if (BLLButtonBaoHanh.Instance.DaysExceedWarrantyPeriod(textBoxSoSeri.Text) != 0)
+            {
+                MessageBox.Show("Thông báo: Vật phẩm đã quá hạn bảo hành " + BLLButtonBaoHanh.Instance.DaysExceedWarrantyPeriod(textBoxSoSeri.Text).ToString() + " ngày!");
             }
         }
     }

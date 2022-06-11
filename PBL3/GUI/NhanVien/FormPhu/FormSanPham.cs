@@ -10,7 +10,9 @@ namespace PBL3
     public partial class FormSanPham : Form
     {
         string maNhanVien;
+
         Dictionary<string, string> dictionary = TypeDescriptor.GetProperties(typeof(ViewSanPham_NhanVien)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
+
         public FormSanPham(string maNhanVien)
         {
             InitializeComponent();
@@ -31,7 +33,29 @@ namespace PBL3
 
         private void ReloadDataGridView(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLLSanPham.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
+            dataGridView1.DataSource = BLLButtonSanPham.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
+        }
+
+        private void buttonXoaTuiHang_Click(object sender, EventArgs e)
+        {
+            BLLSanPham.Instance.ResetTemp();
+            textBoxTuiHang.Text = "";
+            ReloadDataGridView(null, null);
+            MessageBox.Show("Đã xoá túi hàng thành công!");
+        }
+
+        private void buttonThanhToan_Click(object sender, EventArgs e)
+        {
+            if (BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero().Count == 0)
+            {
+                MessageBox.Show("Không có sản phẩm nào trong túi hàng!");
+            }
+            else
+            {
+                FormChiTietHoacThemHoaDon formChiTietHoacThemHoaDon = new FormChiTietHoacThemHoaDon(maNhanVien);
+                formChiTietHoacThemHoaDon.ShowDialog();
+                ReloadDataGridView(null, null);
+            }
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)
@@ -52,55 +76,31 @@ namespace PBL3
             }
         }
 
-
-        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
-        {
-            textBoxTuiHang.Text = "";
-            foreach (SanPham sanPham in BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
-            {
-                textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.Temp + ",    ";
-            }
-        }
-
-
-        private void buttonXoaTuiHang_Click(object sender, EventArgs e)
-        {
-            BLLQuanLiSanPham.Instance.ResetTemp();
-            textBoxTuiHang.Text = "";
-            ReloadDataGridView(null, null);
-            MessageBox.Show("Đã xoá túi hàng thành công!");
-        }
-
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (Convert.ToInt32(dataGridView1.CurrentCell.Value) > Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value))
             {
                 MessageBox.Show("Số lượng nhập vào lớn hơn số lượng hiện có trong kho!");
-                BLLQuanLiSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value));
+                BLLSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value));
                 dataGridView1.CurrentCell.Value = Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongHienTai"].Value);
             }
             else
             {
-                BLLQuanLiSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongTrongTuiHang"].Value));
+                BLLSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongTrongTuiHang"].Value));
             }
             textBoxTuiHang.Text = "";
-            foreach (SanPham sanPham in BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
+            foreach (SanPham sanPham in BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
             {
                 textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.Temp + ",    ";
             }
         }
 
-        private void buttonThanhToan_Click(object sender, EventArgs e)
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
         {
-            if (BLLQuanLiSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero().Count == 0)
+            textBoxTuiHang.Text = "";
+            foreach (SanPham sanPham in BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
             {
-                MessageBox.Show("Không có sản phẩm nào trong túi hàng!");
-            }
-            else
-            {
-                FormChiTietHoacThemHoaDon formChiTietHoacThemHoaDon = new FormChiTietHoacThemHoaDon(maNhanVien);
-                formChiTietHoacThemHoaDon.ShowDialog();
-                ReloadDataGridView(null, null);
+                textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.Temp + ",    ";
             }
         }
     }

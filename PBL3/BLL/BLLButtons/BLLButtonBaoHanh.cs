@@ -4,19 +4,18 @@ using System.Linq;
 
 namespace PBL3
 {
-    internal class BLLBaoHanh
+    internal class BLLButtonBaoHanh
     {
-        private static BLLBaoHanh instance;
-        public static BLLBaoHanh Instance
+        private static BLLButtonBaoHanh instance;
+        public static BLLButtonBaoHanh Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new BLLBaoHanh();
+                    instance = new BLLButtonBaoHanh();
                 return instance;
             }
         }
-
         public List<ViewBaoHanh> SearchBaoHanh(string tuKhoa)
         {
             if (tuKhoa == "Nhập để tìm kiếm...")
@@ -47,29 +46,16 @@ namespace PBL3
             return SortBaoHanh(SearchBaoHanh(tuKhoa), kieuSapXep);
         }
 
-        public BaoHanh GetBaoHanh(string soSeri)
+        public int DaysExceedWarrantyPeriod(string soSeri)
         {
-            return Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).FirstOrDefault();
+            if ((DateTime.Now - Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).HoaDon.ThoiGianGiaoDich).Days > 365 * Convert.ToInt32(Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).SanPham.ThoiGianBaoHanh.Substring(0, 1)))
+            {
+                return (DateTime.Now - Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).HoaDon.ThoiGianGiaoDich).Days - 365 * Convert.ToInt32(Model.Instance.VatPhams.FirstOrDefault(vp => vp.SoSeri == soSeri).SanPham.ThoiGianBaoHanh.Substring(0, 1));
+            }
+            else
+            {
+                return 0;
+            }
         }
-        public void DeleteBaoHanh(string soSeri)
-        {
-            Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).FirstOrDefault().DaXoa = true;
-            Model.Instance.SaveChanges();
-        }
-
-        public void AddBaoHanh(string soSeri, bool trangThai, string ghiChu, DateTime thoiGianTaoPhieuBaoHanh)
-        {
-            Model.Instance.BaoHanhs.Add(new BaoHanh { SoSeri = soSeri, TrangThai = trangThai, GhiChu = ghiChu, ThoiGianTaoPhieuBaoHanh = thoiGianTaoPhieuBaoHanh });
-            Model.Instance.SaveChanges();
-        }
-
-        public void UpdateBaoHanh(string soSeri, bool trangThai, string ghiChu)
-        {
-            Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).First().TrangThai = trangThai;
-            Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).First().GhiChu = ghiChu;
-            Model.Instance.SaveChanges();
-        }
-
     }
-
 }

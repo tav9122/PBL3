@@ -13,13 +13,13 @@ namespace PBL3
         public FormQuanTriVien(string maQuanTriVien)
         {
             InitializeComponent();
+
             InitializeFormManHinhChinh();
 
-            linkLabelTenQuanTriVien.Text = BLLQuanLiNhanVien.Instance.GetTenNhanVien(maQuanTriVien);
+            linkLabelTenQuanTriVien.Text = BLLNhanVien.Instance.GetNhanVien(maQuanTriVien).HoVaTen;
+
             this.maQuanTriVien = maQuanTriVien;
         }
-
-        #region Các hàm chức năng cơ bản, hạn chế sửa
 
         private void InitializeFormManHinhChinh()
         {
@@ -31,48 +31,8 @@ namespace PBL3
             formManHinhChinh.BringToFront();
             formManHinhChinh.Show();
         }
-        private void buttonQuanLiSanPham_Click(object sender, EventArgs e)
-        {
-            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiSanPham(), sender, panelDesktopPane);
-        }
 
-        private void buttonQuanLiNhanVien_Click(object sender, EventArgs e)
-        {
-            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiNhanVien(), sender, panelDesktopPane);
-        }
-
-        private void buttonQuanLiLichLamViec_Click(object sender, EventArgs e)
-        {
-            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiLichLamViec(), sender, panelDesktopPane);
-
-        }
-
-        private void buttonQuanLiLoHang_Click(object sender, EventArgs e)
-        {
-            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiLoHang(), sender, panelDesktopPane);
-        }
-
-        private void buttonThongKe_Click(object sender, EventArgs e)
-        {
-            BLLQuanLiChung.Instance.OpenChildForm(new FormThongKe(), sender, panelDesktopPane);
-        }
-
-        private void linkLabelTenQuanTriVien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Point position = new Point(200, 0);
-            contextMenuStrip1.Show(linkLabelTenQuanTriVien, position);
-        }
-
-        private void ToolStripMenuItem_MouseEnter(object sender, EventArgs e)
-        {
-            ((ToolStripMenuItem)sender).ForeColor = Color.WhiteSmoke;
-        }
-
-        private void ToolStripMenuItem_MouseLeave(object sender, EventArgs e)
-        {
-            ((ToolStripMenuItem)sender).ForeColor = Color.Gainsboro;
-        }
-
+        #region Các hàm chức năng cơ bản, hạn chế sửa.
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
@@ -99,11 +59,66 @@ namespace PBL3
                 this.WindowState = FormWindowState.Maximized;
             }
         }
+        #endregion
+
+        private void buttonQuanLiSanPham_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiSanPham(), sender, panelDesktopPane);
+        }
+
+        private void buttonQuanLiNhanVien_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiNhanVien(), sender, panelDesktopPane);
+        }
+
+        private void buttonQuanLiLichLamViec_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiLichLamViec(), sender, panelDesktopPane);
+
+        }
+
+        private void buttonQuanLiLoHang_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiLoHang(), sender, panelDesktopPane);
+        }
+
+        private void buttonThongKe_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormThongKe(), sender, panelDesktopPane);
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            BLLQuanLiChung.Instance.ResetProperties();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(maQuanTriVien);
+            formDoiMatKhau.ShowDialog();
+        }
+
+        private void linkLabelTenQuanTriVien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Point position = new Point(200, 0);
+            contextMenuStrip1.Show(linkLabelTenQuanTriVien, position);
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             BLLQuanLiChung.Instance.DisableButton();
             formManHinhChinh.BringToFront();
+        }
+
+        private void ToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            ((ToolStripMenuItem)sender).ForeColor = Color.WhiteSmoke;
+        }
+
+        private void ToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            ((ToolStripMenuItem)sender).ForeColor = Color.Gainsboro;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -114,18 +129,6 @@ namespace PBL3
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             pictureBox1.Size = new Size(pictureBox1.Size.Width + 3, pictureBox1.Size.Height + 3);
-        }
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            BLLQuanLiChung.Instance.ResetProperties();
-        }
-        #endregion
-
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(maQuanTriVien);
-            formDoiMatKhau.ShowDialog();
         }
     }
 }

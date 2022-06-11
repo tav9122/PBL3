@@ -14,16 +14,21 @@ namespace PBL3
         public List<ViewLichLamViec> listLichLamViecTamThoi = new List<ViewLichLamViec>();
 
         public string maNhanVien;
+
         public FormThemLichLamViecVaoNhanVien(string maNhanVien)
         {
             InitializeComponent();
-            this.maNhanVien = maNhanVien;
-            listLichLamViecTamThoi = BLLQuanLiNhanVien.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
+
+            listLichLamViecTamThoi = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
+
             labelMaNhanVien.Text = maNhanVien;
+
             Reload();
 
             dataGridView1.Columns["NhanViens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView2.Columns["NhanViens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            this.maNhanVien = maNhanVien;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -61,7 +66,7 @@ namespace PBL3
             dataGridView1.DataSource = temp1;
 
 
-            List<ViewLichLamViec> temp2 = BLLQuanLiLichLamViec.Instance.GetLichLamViecs("", "").Where(x => !listLichLamViecTamThoi.Any(y => y.MaLichLamViec == x.MaLichLamViec)).ToList();
+            List<ViewLichLamViec> temp2 = BLLButtonQuanLiLichLamViec.Instance.GetLichLamViecs("", "").Where(x => !listLichLamViecTamThoi.Any(y => y.MaLichLamViec == x.MaLichLamViec)).ToList();
             foreach (ViewLichLamViec nhanVien in temp2)
             {
                 nhanVien.NhanViens = nhanVien.NhanViens.Replace(", " + maNhanVien, "");

@@ -23,7 +23,6 @@ namespace PBL3
         [Column("Thời gian giao dịch")]
         public DateTime ThoiGianGiaoDich { get; set; }
 
-
         [Column("Thành tiền")]
         public Double ThanhTien { get; set; }
 

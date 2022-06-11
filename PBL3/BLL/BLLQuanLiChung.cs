@@ -46,7 +46,7 @@ namespace PBL3
 
         public void ResetProperties()
         {
-            BLLQuanLiSanPham.Instance.ResetTemp();
+            BLLSanPham.Instance.ResetTemp();
             alreadyOpenFormBaoHanh = false;
             alreadyOpenFormLichSuHoaDon = false;
             alreadyOpenFormSanPham = false;
@@ -66,6 +66,7 @@ namespace PBL3
             formQuanLiKhachHang = null;
             formQuanLiLoHang = null;
         }
+
 
         private string tempText { get; set; }
 

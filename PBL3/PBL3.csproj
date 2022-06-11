@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,15 +72,25 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\BLLBaoHanh.cs" />
-    <Compile Include="BLL\BLLLichSuHoaDon.cs" />
-    <Compile Include="BLL\BLLQuanLiKhachHang.cs" />
-    <Compile Include="BLL\BLLQuanLiLichLamViec.cs" />
-    <Compile Include="BLL\BLLQuanLiLoHang.cs" />
-    <Compile Include="BLL\BLLSanPham.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonBaoHanh.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonLichSuHoaDon.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonQuanLiKhachHang.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonQuanLiLichLamViec.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonQuanLiLoHang.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonSanPham.cs" />
+    <Compile Include="BLL\BLLClasses\BLLBaoHanh.cs" />
+    <Compile Include="BLL\BLLClasses\BLLHoaDon.cs" />
+    <Compile Include="BLL\BLLClasses\BLLKhachHang.cs" />
+    <Compile Include="BLL\BLLClasses\BLLLichLamViec.cs" />
+    <Compile Include="BLL\BLLClasses\BLLLoHang.cs" />
+    <Compile Include="BLL\BLLClasses\BLLNhanVien.cs" />
+    <Compile Include="BLL\BLLClasses\BLLNhanVienLichLamViec.cs" />
+    <Compile Include="BLL\BLLClasses\BLLSanPham.cs" />
+    <Compile Include="BLL\BLLClasses\BLLTaiKhoan.cs" />
+    <Compile Include="BLL\BLLClasses\BLLVatPham.cs" />
     <Compile Include="BLL\BLLQuanLiChung.cs" />
-    <Compile Include="BLL\BLLQuanLiNhanVien.cs" />
-    <Compile Include="BLL\BLLQuanLiSanPham.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonQuanLiNhanVien.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonQuanLiSanPham.cs" />
     <Compile Include="DAL\KhoiTaoDatabase.cs" />
     <Compile Include="DAL\Model.cs" />
     <Compile Include="DTO\Database\BaoHanh.cs" />

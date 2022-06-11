@@ -12,6 +12,7 @@ namespace PBL3
             InitializeComponent();
             this.maQuanTriVien = maQuanTriVien;
         }
+
         #region Các hàm chức năng cơ bản, hạn chế sửa
         private void button_MouseDown(object sender, MouseEventArgs e)
         {
