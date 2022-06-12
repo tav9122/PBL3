@@ -104,7 +104,7 @@ namespace PBL3
             context.SaveChanges();
 
             //Tạo bảo hành
-            context.BaoHanhs.Add(new BaoHanh { SoSeri = DateTime.Now.ToString("yyyyMMdd") + "000000", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
+            context.BaoHanhs.Add(new BaoHanh { MaBaoHanh = "BH1", SoSeri = DateTime.Now.ToString("yyyyMMdd") + "000000", TrangThai = false, GhiChu = "Hư loa", ThoiGianTaoPhieuBaoHanh = new DateTime(2022, 5, 20, 18, 50, 0) });
             context.SaveChanges();
 
         }

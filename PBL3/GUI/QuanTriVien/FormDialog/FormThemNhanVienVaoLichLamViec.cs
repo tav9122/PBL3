@@ -23,6 +23,8 @@ namespace PBL3
 
             labelMaLichLamViec.Text = maLichLamViec;
 
+            this.maLichLamViec = maLichLamViec;
+
             Reload();
 
             dataGridView1.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -36,8 +38,6 @@ namespace PBL3
             dataGridView2.Columns["NgaySinh"].Visible = false;
             dataGridView2.Columns["TenDangNhap"].Visible = false;
             dataGridView2.Columns["MucLuong"].Visible = false;
-
-            this.maLichLamViec = maLichLamViec;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.

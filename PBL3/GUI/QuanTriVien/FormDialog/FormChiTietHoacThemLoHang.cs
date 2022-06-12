@@ -54,13 +54,15 @@ namespace PBL3
 
             InitializeComponent();
             typeView = true;
+
             labelTieuDe.Text = "Chi tiết lô hàng:";
+
+            textBoxMaLoHang.Text = maLoHang;
 
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
 
             var loHang = BLLLoHang.Instance.GetLoHang(maLoHang);
-            textBoxMaLoHang.Text = maLoHang;
             dateTimePicker1.Value = loHang.ThoiGianNhapHang;
             textBoxTongTien.Text = loHang.TongTien.ToString("C0");
 
@@ -156,7 +158,8 @@ namespace PBL3
                 dataGridView1.CurrentCell.Value = 0;
             }
             BLLSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongNhapThem"].Value));
-            textBoxTongTien.Text = BLLButtonQuanLiLoHang.Instance.GetTongTien().ToString("C0");
+            try { textBoxTongTien.Text = BLLButtonQuanLiLoHang.Instance.GetTongTien().ToString("C0"); }
+            catch { }
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)

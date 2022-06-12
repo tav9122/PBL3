@@ -5,6 +5,9 @@ namespace PBL3
 {
     internal class ViewBaoHanh
     {
+        [DisplayName("Mã bảo hành")]
+        public string MaBaoHanh { get; set; }
+
         [DisplayName("Số seri")]
         public string SoSeri { get; set; }
 

@@ -8,9 +8,12 @@ namespace PBL3
     [Table("Bảo hành")]
     public class BaoHanh
     {
-        [Column("Số seri")]
+        [Column("Mã bảo hành")]
         [Key]
         [Required]
+        public string MaBaoHanh { get; set; }
+
+        [Column("Số seri")]
         public string SoSeri { get; set; }
 
         [Column("Trạng thái")]

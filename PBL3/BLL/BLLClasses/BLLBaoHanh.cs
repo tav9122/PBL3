@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PBL3
@@ -16,28 +17,36 @@ namespace PBL3
             }
         }
 
-        public void AddBaoHanh(string soSeri, bool trangThai, string ghiChu, DateTime thoiGianTaoPhieuBaoHanh)
+        public void AddBaoHanh(string maBaoHanh, string soSeri, bool trangThai, string ghiChu, DateTime thoiGianTaoPhieuBaoHanh)
         {
-            Model.Instance.BaoHanhs.Add(new BaoHanh { SoSeri = soSeri, TrangThai = trangThai, GhiChu = ghiChu, ThoiGianTaoPhieuBaoHanh = thoiGianTaoPhieuBaoHanh });
+            Model.Instance.BaoHanhs.Add(new BaoHanh { MaBaoHanh = maBaoHanh, SoSeri = soSeri, TrangThai = trangThai, GhiChu = ghiChu, ThoiGianTaoPhieuBaoHanh = thoiGianTaoPhieuBaoHanh });
             Model.Instance.SaveChanges();
         }
 
-        public void UpdateBaoHanh(string soSeri, bool trangThai, string ghiChu)
+        public void UpdateBaoHanh(string maBaoHanh, bool trangThai, string ghiChu)
         {
-            Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).First().TrangThai = trangThai;
-            Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).First().GhiChu = ghiChu;
+            Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh).TrangThai = trangThai;
+            Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh).GhiChu = ghiChu;
             Model.Instance.SaveChanges();
         }
 
-        public void DeleteBaoHanh(string soSeri)
+        public void DeleteBaoHanh(string maBaoHanh)
         {
-            Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).FirstOrDefault().DaXoa = true;
+            Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh).DaXoa = true;
             Model.Instance.SaveChanges();
         }
 
-        public BaoHanh GetBaoHanh(string soSeri)
+        public BaoHanh GetBaoHanh(string maBaoHanh)
         {
-            return Model.Instance.BaoHanhs.Where(bh => bh.SoSeri == soSeri).FirstOrDefault();
+            return Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh);
+        }
+
+        public List<string> GetMaBaoHanhs()
+        {
+            if (Model.Instance.BaoHanhs.Select(x => x.MaBaoHanh).ToList() == null)
+                return new List<string> { "BH0" };
+            else
+                return Model.Instance.BaoHanhs.Select(x => x.MaBaoHanh).ToList();
         }
     }
 }

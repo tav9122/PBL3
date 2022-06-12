@@ -11,19 +11,25 @@ namespace PBL3
         {
             InitializeComponent();
             typeUpdate = false;
+
+            textBoxMaBaoHanh.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLBaoHanh.Instance.GetMaBaoHanhs());
         }
 
-        public FormChiTietHoacThemBaoHanh(string soSeri)
+        public FormChiTietHoacThemBaoHanh(string maBaoHanh)
         {
             InitializeComponent();
             typeUpdate = true;
 
-            textBoxSoSeri.Text = soSeri;
-            dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value = BLLBaoHanh.Instance.GetBaoHanh(soSeri).ThoiGianTaoPhieuBaoHanh;
-            textBoxGhiChu.Text = BLLBaoHanh.Instance.GetBaoHanh(soSeri).GhiChu;
-            radioButtonHoanThanh.Checked = BLLBaoHanh.Instance.GetBaoHanh(soSeri).TrangThai;
+            var baoHanh = BLLBaoHanh.Instance.GetBaoHanh(maBaoHanh);
+            textBoxMaBaoHanh.Text = baoHanh.MaBaoHanh;
+            textBoxSoSeri.Text = baoHanh.SoSeri;
+            dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Value = baoHanh.ThoiGianTaoPhieuBaoHanh;
+            textBoxGhiChu.Text = baoHanh.GhiChu;
+            radioButtonHoanThanh.Checked = baoHanh.TrangThai;
 
             textBoxSoSeri.Enabled = false;
+
+            textBoxSoSeri_Leave(null, null);
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -62,14 +68,14 @@ namespace PBL3
                 }
                 else
                 {
-                    BLLBaoHanh.Instance.AddBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text, DateTime.Now);
+                    BLLBaoHanh.Instance.AddBaoHanh(textBoxMaBaoHanh.Text, textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text, DateTime.Now);
                     MessageBox.Show("Đã thêm thành công!");
                     this.Close();
                 }
             }
             else
             {
-                BLLBaoHanh.Instance.UpdateBaoHanh(textBoxSoSeri.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text);
+                BLLBaoHanh.Instance.UpdateBaoHanh(textBoxMaBaoHanh.Text, radioButtonHoanThanh.Checked, textBoxGhiChu.Text);
                 MessageBox.Show("Đã cập nhật thành công!");
                 this.Close();
             }
@@ -85,11 +91,19 @@ namespace PBL3
                 textBoxDiaChi.Text = vatPham.HoaDon.KhachHang.DiaChi;
                 textBoxMaKhachHang.Text = vatPham.HoaDon.KhachHang.MaKhachHang;
                 textBoxSoDienThoai.Text = vatPham.HoaDon.KhachHang.SoDienThoai;
+
                 buttonXacNhan.Enabled = true;
             }
             catch
             {
                 MessageBox.Show("Vật phẩm chưa được mua hoặc không có trên hệ thống");
+
+                textBoxTenSanPham.Text = "";
+                textBoxTenKhachHang.Text = "";
+                textBoxDiaChi.Text = "";
+                textBoxMaKhachHang.Text = "";
+                textBoxSoDienThoai.Text = "";
+
                 buttonXacNhan.Enabled = false;
                 return;
             }

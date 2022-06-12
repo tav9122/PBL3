@@ -23,12 +23,12 @@ namespace PBL3
 
             labelMaNhanVien.Text = maNhanVien;
 
+            this.maNhanVien = maNhanVien;
+
             Reload();
 
             dataGridView1.Columns["NhanViens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView2.Columns["NhanViens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-            this.maNhanVien = maNhanVien;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
