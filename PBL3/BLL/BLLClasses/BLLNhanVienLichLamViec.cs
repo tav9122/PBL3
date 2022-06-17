@@ -22,7 +22,7 @@ namespace PBL3
             try
             {
                 List<string> list = Model.Instance.NhanVienLichLamViecs.Where(nvllv => nvllv.MaLichLamViec == maLichLamViec).Select(nvllv => nvllv.MaNhanVien).ToList();
-                return Model.Instance.NhanViens.AsEnumerable().Where(llv => list.Contains(llv.MaNhanVien)).Select(nv => new ViewNhanVien { MaNhanVien = nv.MaNhanVien, HoVaTen = nv.HoVaTen, SoDienThoai = nv.SoDienThoai, DiaChi = nv.DiaChi, NgaySinh = Convert.ToDateTime(nv.NgaySinh.ToString("dd/MM/yyyy")), GioiTinh = nv.GioiTinh, TenDangNhap = Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap, MucLuong = nv.MucLuong, LichLamViecs = BLLNhanVienLichLamViec.Instance.GetMaLichLamViecsOfNhanVien(nv.MaNhanVien) }).ToList();
+                return Model.Instance.NhanViens.AsEnumerable().Where(llv => list.Contains(llv.MaNhanVien)).Select(nv => new ViewNhanVien { MaNhanVien = nv.MaNhanVien, HoVaTen = nv.HoVaTen, SoDienThoai = nv.SoDienThoai, Email = nv.Email, DiaChi = nv.DiaChi, NgaySinh = Convert.ToDateTime(nv.NgaySinh.ToString("dd/MM/yyyy")), GioiTinh = nv.GioiTinh, TenDangNhap = Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap, MucLuong = nv.MucLuong, LichLamViecs = BLLNhanVienLichLamViec.Instance.GetMaLichLamViecsOfNhanVien(nv.MaNhanVien) }).ToList();
             }
             catch { return null; }
         }

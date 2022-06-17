@@ -27,14 +27,10 @@ namespace PBL3
 
             Reload();
 
-            dataGridView1.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns["LichLamViecs"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["NgaySinh"].Visible = false;
             dataGridView1.Columns["TenDangNhap"].Visible = false;
             dataGridView1.Columns["MucLuong"].Visible = false;
 
-            dataGridView2.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView2.Columns["LichLamViecs"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView2.Columns["NgaySinh"].Visible = false;
             dataGridView2.Columns["TenDangNhap"].Visible = false;
             dataGridView2.Columns["MucLuong"].Visible = false;
@@ -110,6 +106,7 @@ namespace PBL3
                         MaNhanVien = row.Cells["MaNhanVien"].Value.ToString(),
                         HoVaTen = row.Cells["HoVaTen"].Value.ToString(),
                         SoDienThoai = row.Cells["SoDienThoai"].Value.ToString(),
+                        Email = row.Cells["Email"].Value.ToString(),
                         DiaChi = row.Cells["DiaChi"].Value.ToString(),
                         NgaySinh = Convert.ToDateTime(row.Cells["NgaySinh"].Value),
                         GioiTinh = Convert.ToBoolean(row.Cells["GioiTinh"].Value),

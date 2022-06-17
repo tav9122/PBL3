@@ -20,6 +20,7 @@ namespace PBL3
 
             dataGridView1.Columns["LichLamViecs"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["Email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["MucLuong"].DefaultCellStyle.Format = "C0";
         }
 

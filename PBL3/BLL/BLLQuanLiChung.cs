@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -165,6 +167,28 @@ namespace PBL3
                 return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == tenDangNhap).MaNhanVien;
             }
             return null;
+        }
+
+        public void ResetAndSendNewPasswordToEmail(string email, string newPassword)
+        {
+            BLLTaiKhoan.Instance.UpdateMatKhauNhanVien(BLLTaiKhoan.Instance.GetTenDangNhapNhanVien(BLLNhanVien.Instance.GetNhanVien(email).MaNhanVien), newPassword);
+
+            SmtpClient smtp = new SmtpClient();
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress("taikhoan0142@outlook.com.vn", "ResetPassword");
+            mail.BodyEncoding = mail.SubjectEncoding = Encoding.UTF8;
+            mail.IsBodyHtml = true;
+            mail.Priority = MailPriority.High;
+            mail.Body = "Mật khẩu mới của bạn là: " + newPassword;
+            mail.Subject = "Reset mật khẩu tài khoản.";
+            mail.To.Add(email);
+
+            smtp.EnableSsl = true;
+            smtp.Credentials = new NetworkCredential("taikhoan0142@outlook.com.vn", "1234567890Vu@");
+            smtp.Host = "smtp.office365.com";
+            smtp.Port = 587;
+            smtp.Send(mail);
         }
     }
 }

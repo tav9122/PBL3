@@ -20,6 +20,9 @@ namespace PBL3
         [Column("Số điện thoại")]
         public string SoDienThoai { get; set; }
 
+        [Column("Email")]
+        public string Email { get; set; }
+
         [Column("Địa chỉ")]
         public string DiaChi { get; set; }
 

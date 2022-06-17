@@ -38,10 +38,10 @@ namespace PBL3
             //Tạo nhân viên
             context.NhanViens.AddRange(new NhanVien[]
                 {
-                    new NhanVien {MaNhanVien = "NV1", HoVaTen = "Trần Ngọc Tín", SoDienThoai = "0999888777", DiaChi = "Quảng Nam", NgaySinh = new DateTime(2002, 6, 21), GioiTinh = true, MucLuong = 1200000 },
-                    new NhanVien {MaNhanVien = "NV2", HoVaTen = "Nguyễn Hoàng Anh", SoDienThoai = "0888777666", DiaChi = "Đà Nẵng", NgaySinh = new DateTime(2002, 7, 10), GioiTinh = true, MucLuong = 1200000 },
-                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, MucLuong = 1000000 },
-                    new NhanVien {MaNhanVien = "QTV", HoVaTen = "QUẢN TRỊ VIÊN", SoDienThoai = "", DiaChi = "", NgaySinh = new DateTime(2022, 02, 22), GioiTinh = true, MucLuong = 0},
+                    new NhanVien {MaNhanVien = "NV1", HoVaTen = "Trần Ngọc Tín", SoDienThoai = "0999888777", Email = "tranngoctin77@gmail.com", DiaChi = "Quảng Nam", NgaySinh = new DateTime(2002, 6, 21), GioiTinh = true, MucLuong = 1200000 },
+                    new NhanVien {MaNhanVien = "NV2", HoVaTen = "Nguyễn Hoàng Anh", SoDienThoai = "0888777666", Email = "tranngoctin77@gmail.com", DiaChi = "Đà Nẵng", NgaySinh = new DateTime(2002, 7, 10), GioiTinh = true, MucLuong = 1200000 },
+                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", Email = "tav.9122@gmail.com", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, MucLuong = 1000000 },
+                    new NhanVien {MaNhanVien = "QTV", HoVaTen = "QUẢN TRỊ VIÊN", SoDienThoai = "", Email = "NULL", DiaChi = "", NgaySinh = new DateTime(2022, 02, 22), GioiTinh = true, MucLuong = 0},
                 });
 
 

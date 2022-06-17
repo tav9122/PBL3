@@ -103,7 +103,8 @@ namespace PBL3
 
         private void linkLabelQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Tính năng lấy lại mật khẩu tạm thời chưa khả dụng vì lí do bảo mật, hãy liên hệ với quản trị viên!");
+            FormResetMatKhau formResetMatKhau = new FormResetMatKhau();
+            formResetMatKhau.ShowDialog();
         }
 
         int count = 0;

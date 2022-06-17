@@ -17,19 +17,20 @@ namespace PBL3
             }
         }
 
-        public void AddNhanVien(string maNhanVien, string soDienThoai, string diaChi, string hoVaTen, DateTime ngaySinh, bool gioiTinh, double mucLuong, List<string> maLichLamViecs, string tenTaiKhoan, string matKhau)
+        public void AddNhanVien(string maNhanVien, string soDienThoai, string email, string diaChi, string hoVaTen, DateTime ngaySinh, bool gioiTinh, double mucLuong, List<string> maLichLamViecs, string tenTaiKhoan, string matKhau)
         {
-            Model.Instance.NhanViens.Add(new NhanVien { MaNhanVien = maNhanVien, SoDienThoai = soDienThoai, DiaChi = diaChi, HoVaTen = hoVaTen, NgaySinh = ngaySinh, GioiTinh = gioiTinh, MucLuong = mucLuong });
+            Model.Instance.NhanViens.Add(new NhanVien { MaNhanVien = maNhanVien, SoDienThoai = soDienThoai, Email = email, DiaChi = diaChi, HoVaTen = hoVaTen, NgaySinh = ngaySinh, GioiTinh = gioiTinh, MucLuong = mucLuong });
             Model.Instance.TaiKhoans.Add(new TaiKhoan { MaNhanVien = maNhanVien, TenDangNhap = tenTaiKhoan, MatKhau = matKhau });
             if (maLichLamViecs != null)
                 BLLNhanVienLichLamViec.Instance.SetLichLamViecsOfNhanVien(maNhanVien, maLichLamViecs);
             Model.Instance.SaveChanges();
         }
 
-        public void UpdateNhanVien(string maNhanVien, string soDienThoai, string diaChi, string hoVaTen, DateTime ngaySinh, bool gioiTinh, double mucLuong, List<string> maLichLamViecs)
+        public void UpdateNhanVien(string maNhanVien, string soDienThoai, string email, string diaChi, string hoVaTen, DateTime ngaySinh, bool gioiTinh, double mucLuong, List<string> maLichLamViecs)
         {
             var nhanVien = Model.Instance.NhanViens.FirstOrDefault(tk => tk.MaNhanVien == maNhanVien);
             nhanVien.SoDienThoai = soDienThoai;
+            nhanVien.Email = email;
             nhanVien.DiaChi = diaChi;
             nhanVien.HoVaTen = hoVaTen;
             nhanVien.NgaySinh = ngaySinh;
@@ -49,9 +50,15 @@ namespace PBL3
             Model.Instance.SaveChanges();
         }
 
-        public NhanVien GetNhanVien(string maNhanVien)
+        public NhanVien GetNhanVien(string text)
         {
-            try { return Model.Instance.NhanViens.Where(nv => nv.MaNhanVien == maNhanVien).FirstOrDefault(); }
+            try
+            {
+                if (text.Contains("@"))
+                    return Model.Instance.NhanViens.Where(nv => nv.Email == text).FirstOrDefault();
+                else
+                    return Model.Instance.NhanViens.Where(nv => nv.MaNhanVien == text).FirstOrDefault();
+            }
             catch { return null; }
         }
 

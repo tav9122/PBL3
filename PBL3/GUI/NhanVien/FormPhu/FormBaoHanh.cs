@@ -19,6 +19,7 @@ namespace PBL3
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
 
             dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["ThoiGianTaoPhieuBaoHanh"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void ReloadDataGridView(object sender, EventArgs e)

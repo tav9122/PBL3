@@ -14,7 +14,6 @@ namespace PBL3
 
             textBoxTenDangNhap.Text = BLLTaiKhoan.Instance.GetTenDangNhapNhanVien(maNhanVien);
             currentMatKhau = BLLTaiKhoan.Instance.GetMatKhauNhanVien(maNhanVien);
-            textBoxMatKhau.Text = BLLTaiKhoan.Instance.GetMatKhauNhanVien(maNhanVien);
         }
 
         #region Các hàm cơ bản, hạn chế sửa.
@@ -43,47 +42,45 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            if (textBoxMatKhau.Text != currentMatKhau && textBoxMatKhau.Text != textBoxNhapLaiMatKhauMoi.Text)
+            BLLTaiKhoan.Instance.UpdateMatKhauNhanVien(textBoxTenDangNhap.Text, textBoxMatKhauCu.Text);
+            MessageBox.Show("Đổi mật khẩu thành công!");
+            this.Close();
+        }
+
+        private void textBoxMatKhauCu_Leave(object sender, EventArgs e)
+        {
+            if (textBoxMatKhauCu.Text != currentMatKhau)
             {
-                MessageBox.Show("Mật khẩu ở cả 2 trường cần phải giống nhau!");
+                textBoxCanhBao.Text = "Mật khẩu cũ không đúng!";
+                textBoxMatKhauMoi.Enabled = false;
+                textBoxNhapLaiMatKhauMoi.Enabled = false;
             }
             else
             {
-                BLLTaiKhoan.Instance.UpdateMatKhauNhanVien(textBoxTenDangNhap.Text, textBoxMatKhau.Text);
-                MessageBox.Show("Đổi mật khẩu thành công!");
-                this.Close();
+                textBoxCanhBao.Text = "";
+                textBoxMatKhauMoi.Enabled = true;
+                textBoxNhapLaiMatKhauMoi.Enabled = true;
             }
         }
 
         private void textBoxMatKhau_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxMatKhau.Text != currentMatKhau)
+            if (textBoxMatKhauMoi.Text == "" && textBoxNhapLaiMatKhauMoi.Text == "")
             {
-                label8.Visible = true;
-                textBoxNhapLaiMatKhauMoi.Visible = true;
-                if (textBoxNhapLaiMatKhauMoi.Text != textBoxMatKhau.Text)
-                {
-                    textBoxCanhBao.Text = "Mật khẩu không khớp";
-                }
-                else
-                    textBoxCanhBao.Text = "";
+                buttonXacNhan.Enabled = false;
+                textBoxCanhBao.Text = "";
+                return;
+            }
+            if (textBoxNhapLaiMatKhauMoi.Text != textBoxMatKhauMoi.Text)
+            {
+                textBoxCanhBao.Text = "Mật khẩu mới không khớp!";
+                buttonXacNhan.Enabled = false;
             }
             else
             {
-                label8.Visible = false;
-                textBoxNhapLaiMatKhauMoi.Visible = false;
                 textBoxCanhBao.Text = "";
+                buttonXacNhan.Enabled = true;
             }
-        }
-
-        private void textBoxNhapLaiMatKhauMoi_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxNhapLaiMatKhauMoi.Text != textBoxMatKhau.Text)
-            {
-                textBoxCanhBao.Text = "Mật khẩu không khớp";
-            }
-            else
-                textBoxCanhBao.Text = "";
         }
 
         int count = 0;
@@ -92,13 +89,13 @@ namespace PBL3
             count++;
             if (count % 2 == 0)
             {
-                textBoxMatKhau.Multiline = false;
+                textBoxMatKhauCu.Multiline = false;
                 textBoxNhapLaiMatKhauMoi.Multiline = false;
                 buttonAnHienMatKhau.Image = Properties.Resources.openedeye20;
             }
             else
             {
-                textBoxMatKhau.Multiline = true;
+                textBoxMatKhauCu.Multiline = true;
                 textBoxNhapLaiMatKhauMoi.Multiline = true;
                 buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
             }

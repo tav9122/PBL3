@@ -14,6 +14,9 @@ namespace PBL3
         [DisplayName("Số điện thoại")]
         public string SoDienThoai { get; set; }
 
+        [DisplayName("Email")]
+        public string Email { get; set; }
+
         [DisplayName("Địa chỉ")]
         public string DiaChi { get; set; }
 

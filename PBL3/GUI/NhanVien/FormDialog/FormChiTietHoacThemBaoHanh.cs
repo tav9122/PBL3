@@ -109,7 +109,7 @@ namespace PBL3
             }
             if (BLLButtonBaoHanh.Instance.DaysExceedWarrantyPeriod(textBoxSoSeri.Text) != 0)
             {
-                MessageBox.Show("Thông báo: Vật phẩm đã quá hạn bảo hành " + BLLButtonBaoHanh.Instance.DaysExceedWarrantyPeriod(textBoxSoSeri.Text).ToString() + " ngày!");
+                MessageBox.Show("Thông báo: Vật phẩm đã quá hạn bảo hành " + BLLButtonBaoHanh.Instance.DaysExceedWarrantyPeriod(textBoxSoSeri.Text).ToString() + " ngày.");
             }
         }
     }

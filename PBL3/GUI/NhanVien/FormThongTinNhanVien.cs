@@ -15,6 +15,7 @@ namespace PBL3
             textBoxHoVaTen.Text = nhanVien.HoVaTen;
             textBoxDiaChi.Text = nhanVien.DiaChi;
             textBoxSoDienThoai.Text = nhanVien.SoDienThoai;
+            textBoxEmail.Text = nhanVien.Email;
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
 
@@ -50,13 +51,14 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            if (textBoxDiaChi.Text == "" || textBoxSoDienThoai.Text == "")
+            if (textBoxDiaChi.Text == "" || textBoxSoDienThoai.Text == "" || textBoxEmail.Text == "")
             {
                 MessageBox.Show("Không được để trống các trường!");
             }
             else
             {
-                BLLNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxHoVaTen.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, -1, null);
+                BLLNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxEmail.Text, textBoxDiaChi.Text, textBoxHoVaTen.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, -1, null);
+                MessageBox.Show("Cập nhật thông tin thành công!");
                 this.Close();
             }
         }

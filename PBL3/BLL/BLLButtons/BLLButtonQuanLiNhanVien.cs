@@ -22,14 +22,14 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewNhanVien> list = Model.Instance.NhanViens.AsEnumerable().Where(nv => nv.DaXoa == false && nv.MaNhanVien != "QTV" && (nv.MaNhanVien.ToLower().Contains(temp) || nv.HoVaTen.ToLower().Contains(temp) || nv.SoDienThoai.ToLower().Contains(temp) || nv.DiaChi.ToLower().Contains(temp) || nv.NgaySinh.ToString("dd/MM/yyyy h:m tt").Contains(temp) || Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap.ToLower().Contains(temp)))
-                .Select(nv => new ViewNhanVien { MaNhanVien = nv.MaNhanVien, HoVaTen = nv.HoVaTen, SoDienThoai = nv.SoDienThoai, DiaChi = nv.DiaChi, NgaySinh = Convert.ToDateTime(nv.NgaySinh.ToString("dd/MM/yyyy")), GioiTinh = nv.GioiTinh, TenDangNhap = Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap, MucLuong = nv.MucLuong, LichLamViecs = BLLNhanVienLichLamViec.Instance.GetMaLichLamViecsOfNhanVien(nv.MaNhanVien) })
+            List<ViewNhanVien> list = Model.Instance.NhanViens.AsEnumerable().Where(nv => nv.DaXoa == false && nv.MaNhanVien != "QTV" && (nv.MaNhanVien.ToLower().Contains(temp) || nv.HoVaTen.ToLower().Contains(temp) || nv.SoDienThoai.ToLower().Contains(temp) || nv.Email.ToLower().Contains(temp) || nv.DiaChi.ToLower().Contains(temp) || nv.NgaySinh.ToString("dd/MM/yyyy h:m tt").Contains(temp) || Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap.ToLower().Contains(temp)))
+                .Select(nv => new ViewNhanVien { MaNhanVien = nv.MaNhanVien, HoVaTen = nv.HoVaTen, SoDienThoai = nv.SoDienThoai, Email = nv.Email, DiaChi = nv.DiaChi, NgaySinh = Convert.ToDateTime(nv.NgaySinh.ToString("dd/MM/yyyy")), GioiTinh = nv.GioiTinh, TenDangNhap = Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap, MucLuong = nv.MucLuong, LichLamViecs = BLLNhanVienLichLamViec.Instance.GetMaLichLamViecsOfNhanVien(nv.MaNhanVien) })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
                 if (s != temp)
                 {
-                    list = list.Where(nv => nv.MaNhanVien.ToLower().Contains(s) || nv.HoVaTen.ToLower().Contains(s) || nv.SoDienThoai.ToLower().Contains(s) || nv.DiaChi.ToLower().Contains(s) || nv.NgaySinh.ToString("dd/MM/yyyy h:m tt").Contains(s) || nv.TenDangNhap.Contains(s)).ToList();
+                    list = list.Where(nv => nv.MaNhanVien.ToLower().Contains(s) || nv.HoVaTen.ToLower().Contains(s) || nv.SoDienThoai.ToLower().Contains(s) || nv.Email.ToLower().Contains(s) || nv.DiaChi.ToLower().Contains(s) || nv.NgaySinh.ToString("dd/MM/yyyy h:m tt").Contains(s) || nv.TenDangNhap.Contains(s)).ToList();
                 }
             }
             return list;

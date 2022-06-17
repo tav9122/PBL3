@@ -17,6 +17,8 @@ namespace PBL3
             typeUpdate = false;
 
             labelTieuDe.Text = "Thêm nhân viên:";
+            buttonTaoHoacResetMatKhau.Text = "Tạo mật khẩu";
+
             textBoxMaNhanVien.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLNhanVien.Instance.GetMaNhanViens());
 
             dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien("");
@@ -29,6 +31,7 @@ namespace PBL3
             typeUpdate = true;
 
             labelTieuDe.Text = "Chi tiết nhân viên:";
+            buttonTaoHoacResetMatKhau.Text = "Reset mật khẩu";
 
             listLichLamViecTamThoi = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
 
@@ -38,6 +41,7 @@ namespace PBL3
             textBoxTenNhanVien.Text = nhanVien.HoVaTen;
             textBoxDiaChi.Text = nhanVien.DiaChi;
             textBoxSoDienThoai.Text = nhanVien.SoDienThoai;
+            textBoxEmail.Text = nhanVien.Email;
             textBoxMucLuong.Text = nhanVien.MucLuong.ToString();
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
@@ -75,7 +79,7 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            if (textBoxTenNhanVien.Text == "" || textBoxSoDienThoai.Text == "" || textBoxDiaChi.Text == "" || textBoxMucLuong.Text == "" || textBoxTenDangNhap.Text == "" || textBoxMatKhau.Text == "")
+            if (textBoxTenNhanVien.Text == "" || textBoxSoDienThoai.Text == "" || textBoxEmail.Text == "" || textBoxDiaChi.Text == "" || textBoxMucLuong.Text == "" || textBoxTenDangNhap.Text == "" || textBoxMatKhau.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
@@ -87,14 +91,15 @@ namespace PBL3
             }
             if (typeUpdate == true)
             {
-                BLLNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList());
+                BLLNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxEmail.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList());
                 BLLTaiKhoan.Instance.UpdateMatKhauNhanVien(textBoxTenDangNhap.Text, textBoxMatKhau.Text);
                 MessageBox.Show("Cập nhật thành công!");
             }
             else
             {
-                BLLNhanVien.Instance.AddNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList(), textBoxTenDangNhap.Text, textBoxMatKhau.Text);
-                MessageBox.Show("Thêm thành công!");
+                BLLNhanVien.Instance.AddNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxEmail.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList(), textBoxTenDangNhap.Text, textBoxMatKhau.Text);
+                BLLQuanLiChung.Instance.ResetAndSendNewPasswordToEmail(textBoxEmail.Text, textBoxMatKhau.Text);
+                MessageBox.Show("Thêm thành công!, mật khẩu đã được gửi tới email của nhân viên.");
             }
             BLLQuanLiChung.Instance.alreadyOpenFormQuanLiLichLamViec = false;
             BLLQuanLiChung.Instance.formQuanLiLichLamViec = null;
@@ -108,6 +113,29 @@ namespace PBL3
             formThemLichLamViecVaoNhanVien.ShowDialog();
         }
 
+        private void buttonTaoHoacResetMatKhau_Click(object sender, EventArgs e)
+        {
+            string newPassword = "";
+            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            Random rnd = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                newPassword += chars[rnd.Next(chars.Length)];
+            }
+
+            if (typeUpdate == true)
+            {
+                BLLQuanLiChung.Instance.ResetAndSendNewPasswordToEmail(textBoxEmail.Text, newPassword);
+                currentMatKhau = BLLTaiKhoan.Instance.GetMatKhauNhanVien(textBoxMaNhanVien.Text);
+                textBoxMatKhau.Text = BLLTaiKhoan.Instance.GetMatKhauNhanVien(textBoxMaNhanVien.Text);
+                MessageBox.Show("Mật khẩu đã được gửi tới email của nhân viên.");
+            }
+            else
+            {
+                currentMatKhau = newPassword;
+                textBoxMatKhau.Text = newPassword;
+            }
+        }
         private void ReceiveLichLamViecs(List<ViewLichLamViec> listLichLamViecTamThoi)
         {
             dataGridView1.DataSource = listLichLamViecTamThoi;
