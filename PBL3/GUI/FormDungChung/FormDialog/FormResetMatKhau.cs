@@ -37,15 +37,15 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            string newPassword = "";
+            string matKhauMoi = "";
             string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             Random rnd = new Random();
             for (int i = 0; i < 6; i++)
             {
-                newPassword += chars[rnd.Next(chars.Length)];
+                matKhauMoi += chars[rnd.Next(chars.Length)];
             }
 
-            BLLQuanLiChung.Instance.ResetAndSendNewPasswordToEmail(textBoxEmailAddress.Text, newPassword);
+            BLLTaiKhoan.Instance.UpdateAndSendMatKhauMoiToMail(textBoxEmailAddress.Text, matKhauMoi);
             MessageBox.Show("Đã gửi mật khẩu mới đến email của bạn!");
             this.Close();
         }
