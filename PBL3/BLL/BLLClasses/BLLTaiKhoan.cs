@@ -67,7 +67,7 @@ namespace PBL3
             smtp.Credentials = new NetworkCredential("taikhoan0142@outlook.com.vn", "1234567890Vu@");
             smtp.Host = "smtp.office365.com";
             smtp.Port = 587;
-            smtp.Send(mail);
+            smtp.SendAsync(mail, null);
         }
     }
 }
