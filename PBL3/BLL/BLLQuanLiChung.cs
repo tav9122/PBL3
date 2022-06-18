@@ -160,7 +160,7 @@ namespace PBL3
 
         public string LoginChecker(string tenDangNhap, string matKhau)
         {
-            if (Model.Instance.TaiKhoans.Where(tk => tk.TenDangNhap.ToLower() == tenDangNhap.ToLower() && tk.MatKhau == matKhau).Count() > 0)
+            if (Model.Instance.TaiKhoans.AsEnumerable().Where(tk => tk.TenDangNhap.ToLower() == tenDangNhap.ToLower() && tk.MatKhau == matKhau).Count() > 0)
             {
                 return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap.ToLower() == tenDangNhap.ToLower()).MaNhanVien;
             }
