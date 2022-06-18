@@ -95,8 +95,8 @@ namespace PBL3
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(maQuanTriVien);
-            formDoiMatKhau.ShowDialog();
+            FormThongTinTaiKhoan formThongTinTaiKhoan = new FormThongTinTaiKhoan(maQuanTriVien);
+            formThongTinTaiKhoan.ShowDialog();
         }
 
         private void linkLabelTenQuanTriVien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

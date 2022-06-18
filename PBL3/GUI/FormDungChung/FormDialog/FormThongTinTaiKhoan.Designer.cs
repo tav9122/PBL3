@@ -1,6 +1,6 @@
 ﻿namespace PBL3
 {
-    partial class FormDoiMatKhau
+    partial class FormThongTinTaiKhoan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoiMatKhau));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThongTinTaiKhoan));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxMatKhauMoi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -169,6 +169,7 @@
             this.textBoxTenDangNhap.Name = "textBoxTenDangNhap";
             this.textBoxTenDangNhap.Size = new System.Drawing.Size(148, 22);
             this.textBoxTenDangNhap.TabIndex = 0;
+            this.textBoxTenDangNhap.Leave += new System.EventHandler(this.textBoxTenDangNhap_Leave);
             // 
             // label6
             // 
@@ -196,9 +197,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.label1.Location = new System.Drawing.Point(23, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 27);
+            this.label1.Size = new System.Drawing.Size(249, 27);
             this.label1.TabIndex = 38;
-            this.label1.Text = "Đổi mật khẩu:";
+            this.label1.Text = "Đổi thông tin tài khoản:";
             // 
             // panel1
             // 
@@ -227,7 +228,6 @@
             // 
             // buttonXacNhan
             // 
-            this.buttonXacNhan.Enabled = false;
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -254,7 +254,7 @@
             this.buttonHuyBo.UseVisualStyleBackColor = true;
             this.buttonHuyBo.Click += new System.EventHandler(this.buttonHuyBo_Click);
             // 
-            // FormDoiMatKhau
+            // FormThongTinTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,7 +267,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FormDoiMatKhau";
+            this.Name = "FormThongTinTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -46,10 +46,10 @@ namespace PBL3
 
 
             //Tạo tài khoản
-            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nv", MatKhau = "nv", MaNhanVien = "NV1" });
-            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien2", MatKhau = "123", MaNhanVien = "NV2" });
-            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "nhanvien3", MatKhau = "123", MaNhanVien = "NV3" });
-            context.TaiKhoans.Add(new TaiKhoan { TenDangNhap = "qtv", MatKhau = "qtv", MaNhanVien = "QTV" });
+            context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK1", TenDangNhap = "TK1", MatKhau = "tk1", MaNhanVien = "NV1" });
+            context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK2", TenDangNhap = "TK2", MatKhau = "tk2", MaNhanVien = "NV2" });
+            context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK3", TenDangNhap = "TK3", MatKhau = "tk3", MaNhanVien = "NV3" });
+            context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "QTV", TenDangNhap = "QTV", MatKhau = "qtv", MaNhanVien = "QTV" });
 
             //Tạo lô hàng
             context.LoHangs.Add(new LoHang { MaLoHang = "LH1", ThoiGianNhapHang = DateTime.Now, TongTien = 1499500000 });

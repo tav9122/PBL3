@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PBL3
@@ -6,14 +7,20 @@ namespace PBL3
     [Table("Tài khoản")]
     public class TaiKhoan
     {
-        [Column("Tên đăng nhập")]
         [Key]
         [Required]
+        [Column("Mã tài khoản")]
+        public string MaTaiKhoan { get; set; }
+
+        [Column("Tên đăng nhập")]
         public string TenDangNhap { get; set; }
 
         [Column("Mật khẩu")]
-        [Required]
         public string MatKhau { get; set; }
+
+        [Column("Đã đổi tên đăng nhập")]
+        [DefaultValue(false)]
+        public bool DaDoiTenDangNhap { get; set; }
 
         [Column("Mã nhân viên")]
         public string MaNhanVien { get; set; }

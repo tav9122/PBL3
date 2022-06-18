@@ -66,7 +66,7 @@ D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\bin\Debug\EntityFrame
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\bin\Debug\EntityFramework.SqlServer.xml
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.csproj.SuggestedBindingRedirects.cache
-D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormDoiMatKhau.resources
+D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormThongTinTaiKhoan.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormResetMatKhau.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormThongTinNhanVien.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormChiTietHoacThemBaoHanh.resources

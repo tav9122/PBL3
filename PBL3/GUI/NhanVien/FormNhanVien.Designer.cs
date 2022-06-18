@@ -42,11 +42,11 @@
             this.buttonSanPham = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thôngTinNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemĐổiMậtKhẩu = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMaximize = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
-            this.toolStripMenuItemĐổiMậtKhẩu = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -229,6 +229,15 @@
             this.thôngTinNhânViênToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
             this.thôngTinNhânViênToolStripMenuItem.MouseLeave += new System.EventHandler(this.ToolStripMenuItem_MouseLeave);
             // 
+            // toolStripMenuItemĐổiMậtKhẩu
+            // 
+            this.toolStripMenuItemĐổiMậtKhẩu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItemĐổiMậtKhẩu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.toolStripMenuItemĐổiMậtKhẩu.Name = "toolStripMenuItemĐổiMậtKhẩu";
+            this.toolStripMenuItemĐổiMậtKhẩu.Size = new System.Drawing.Size(210, 22);
+            this.toolStripMenuItemĐổiMậtKhẩu.Text = "Thông tin tài khoản";
+            this.toolStripMenuItemĐổiMậtKhẩu.Click += new System.EventHandler(this.toolStripMenuItemĐổiMậtKhẩu_Click);
+            // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,15 +287,6 @@
             this.buttonMinimize.TabIndex = 0;
             this.buttonMinimize.UseVisualStyleBackColor = true;
             this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
-            // 
-            // toolStripMenuItemĐổiMậtKhẩu
-            // 
-            this.toolStripMenuItemĐổiMậtKhẩu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItemĐổiMậtKhẩu.ForeColor = System.Drawing.Color.Gainsboro;
-            this.toolStripMenuItemĐổiMậtKhẩu.Name = "toolStripMenuItemĐổiMậtKhẩu";
-            this.toolStripMenuItemĐổiMậtKhẩu.Size = new System.Drawing.Size(210, 22);
-            this.toolStripMenuItemĐổiMậtKhẩu.Text = "Đổi mật khẩu";
-            this.toolStripMenuItemĐổiMậtKhẩu.Click += new System.EventHandler(this.toolStripMenuItemĐổiMậtKhẩu_Click);
             // 
             // FormNhanVien
             // 

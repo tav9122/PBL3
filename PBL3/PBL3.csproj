@@ -114,11 +114,11 @@
     <Compile Include="DTO\Views\ViewSanPham_QuanTriVien_LoHang.cs" />
     <Compile Include="DTO\Views\ViewVatPham_NhanVien.cs" />
     <Compile Include="DTO\Views\ViewVatPham_QuanTriVien.cs" />
-    <Compile Include="GUI\FormDungChung\FormDialog\FormDoiMatKhau.cs">
+    <Compile Include="GUI\FormDungChung\FormDialog\FormThongTinTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormDungChung\FormDialog\FormDoiMatKhau.Designer.cs">
-      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    <Compile Include="GUI\FormDungChung\FormDialog\FormThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>FormThongTinTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormDungChung\FormDialog\FormResetMatKhau.cs">
       <SubType>Form</SubType>
@@ -272,8 +272,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\FormDungChung\FormDialog\FormDoiMatKhau.resx">
-      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\FormDungChung\FormDialog\FormThongTinTaiKhoan.resx">
+      <DependentUpon>FormThongTinTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDungChung\FormDialog\FormResetMatKhau.resx">
       <DependentUpon>FormResetMatKhau.cs</DependentUpon>

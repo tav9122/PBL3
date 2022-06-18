@@ -1,19 +1,30 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace PBL3
 {
-    public partial class FormDoiMatKhau : Form
+    public partial class FormThongTinTaiKhoan : Form
     {
         string currentMatKhau;
+        string maNhanVien;
 
-        public FormDoiMatKhau(string maNhanVien)
+        public FormThongTinTaiKhoan(string maNhanVien)
         {
             InitializeComponent();
 
-            textBoxTenDangNhap.Text = BLLTaiKhoan.Instance.GetTenDangNhapNhanVien(maNhanVien);
-            currentMatKhau = BLLTaiKhoan.Instance.GetMatKhauNhanVien(maNhanVien);
+            if (maNhanVien == "QTV")
+                textBoxTenDangNhap.Enabled = true;
+            else if (BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap == false)
+            {
+                textBoxTenDangNhap.Enabled = true;
+            }
+
+            textBoxTenDangNhap.Text = BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).TenDangNhap;
+            currentMatKhau = BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).MatKhau;
+
+            this.maNhanVien = maNhanVien;
         }
 
         #region Các hàm cơ bản, hạn chế sửa.
@@ -42,9 +53,27 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            BLLTaiKhoan.Instance.UpdateMatKhauNhanVien(textBoxTenDangNhap.Text, textBoxMatKhauCu.Text);
-            MessageBox.Show("Đổi mật khẩu thành công!");
+            BLLTaiKhoan.Instance.UpdateTaiKhoanNhanVien(BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).MaTaiKhoan, textBoxTenDangNhap.Text, textBoxMatKhauMoi.Text);
+            BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap = true;
+            MessageBox.Show("Thay đổi thông tin tài khoản thành công!");
             this.Close();
+        }
+
+        private void textBoxTenDangNhap_Leave(object sender, EventArgs e)
+        {
+            foreach (var i in BLLTaiKhoan.Instance.GetTaiKhoans().Where(tk => tk.NhanVien.MaNhanVien != maNhanVien))
+            {
+                if (i.TenDangNhap == textBoxTenDangNhap.Text)
+                {
+                    textBoxCanhBao.Text = "Tên đăng nhập đã tồn tại!";
+                    buttonXacNhan.Enabled = false;
+                }
+                else
+                {
+                    textBoxCanhBao.Text = "";
+                    buttonXacNhan.Enabled = true;
+                }
+            }
         }
 
         private void textBoxMatKhauCu_Leave(object sender, EventArgs e)
@@ -65,12 +94,6 @@ namespace PBL3
 
         private void textBoxMatKhau_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxMatKhauMoi.Text == "" && textBoxNhapLaiMatKhauMoi.Text == "")
-            {
-                buttonXacNhan.Enabled = false;
-                textBoxCanhBao.Text = "";
-                return;
-            }
             if (textBoxNhapLaiMatKhauMoi.Text != textBoxMatKhauMoi.Text)
             {
                 textBoxCanhBao.Text = "Mật khẩu mới không khớp!";

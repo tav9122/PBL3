@@ -31,9 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanTriVien));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonQuanLiLoHang = new System.Windows.Forms.Button();
+            this.buttonQuanLiLichLamViec = new System.Windows.Forms.Button();
+            this.buttonThongKe = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.linkLabelTenQuanTriVien = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonQuanLiNhanVien = new System.Windows.Forms.Button();
+            this.buttonQuanLiSanPham = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,17 +47,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMaximize = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonQuanLiLoHang = new System.Windows.Forms.Button();
-            this.buttonQuanLiLichLamViec = new System.Windows.Forms.Button();
-            this.buttonThongKe = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonQuanLiNhanVien = new System.Windows.Forms.Button();
-            this.buttonQuanLiSanPham = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -70,124 +70,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 585);
             this.panelMenu.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
-            this.panel1.Location = new System.Drawing.Point(24, 114);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 1);
-            this.panel1.TabIndex = 1;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelLogo.Controls.Add(this.linkLabelTenQuanTriVien);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 113);
-            this.panelLogo.TabIndex = 0;
-            this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
-            // 
-            // linkLabelTenQuanTriVien
-            // 
-            this.linkLabelTenQuanTriVien.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
-            this.linkLabelTenQuanTriVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelTenQuanTriVien.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelTenQuanTriVien.LinkColor = System.Drawing.Color.White;
-            this.linkLabelTenQuanTriVien.Location = new System.Drawing.Point(0, 82);
-            this.linkLabelTenQuanTriVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabelTenQuanTriVien.Name = "linkLabelTenQuanTriVien";
-            this.linkLabelTenQuanTriVien.Size = new System.Drawing.Size(200, 26);
-            this.linkLabelTenQuanTriVien.TabIndex = 0;
-            this.linkLabelTenQuanTriVien.TabStop = true;
-            this.linkLabelTenQuanTriVien.Text = "TÊN QUẢN TRỊ VIÊN";
-            this.linkLabelTenQuanTriVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabelTenQuanTriVien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTenQuanTriVien_LinkClicked);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(0, 0);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đổiMậtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 48);
-            // 
-            // đổiMậtKhẩuToolStripMenuItem
-            // 
-            this.đổiMậtKhẩuToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.đổiMậtKhẩuToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
-            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
-            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
-            this.đổiMậtKhẩuToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
-            this.đổiMậtKhẩuToolStripMenuItem.MouseLeave += new System.EventHandler(this.ToolStripMenuItem_MouseLeave);
-            // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            this.đăngXuấtToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
-            this.đăngXuấtToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
-            this.đăngXuấtToolStripMenuItem.MouseLeave += new System.EventHandler(this.ToolStripMenuItem_MouseLeave);
-            // 
-            // panelDesktopPane
-            // 
-            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
-            this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(848, 567);
-            this.panelDesktopPane.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.buttonMaximize);
-            this.panel2.Controls.Add(this.buttonMinimize);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(200, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(848, 18);
-            this.panel2.TabIndex = 8;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
-            // 
-            // buttonMaximize
-            // 
-            this.buttonMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMaximize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.BackgroundImage")));
-            this.buttonMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMaximize.FlatAppearance.BorderSize = 0;
-            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMaximize.Location = new System.Drawing.Point(826, 0);
-            this.buttonMaximize.Name = "buttonMaximize";
-            this.buttonMaximize.Size = new System.Drawing.Size(19, 18);
-            this.buttonMaximize.TabIndex = 1;
-            this.buttonMaximize.UseVisualStyleBackColor = true;
-            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
-            // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.BackgroundImage")));
-            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(805, 0);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.Size = new System.Drawing.Size(15, 18);
-            this.buttonMinimize.TabIndex = 0;
-            this.buttonMinimize.UseVisualStyleBackColor = true;
-            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
             // buttonQuanLiLoHang
             // 
@@ -246,6 +128,42 @@
             this.buttonThongKe.UseVisualStyleBackColor = false;
             this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
+            this.panel1.Location = new System.Drawing.Point(24, 114);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(150, 1);
+            this.panel1.TabIndex = 1;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelLogo.Controls.Add(this.linkLabelTenQuanTriVien);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(200, 113);
+            this.panelLogo.TabIndex = 0;
+            this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
+            // 
+            // linkLabelTenQuanTriVien
+            // 
+            this.linkLabelTenQuanTriVien.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
+            this.linkLabelTenQuanTriVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelTenQuanTriVien.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelTenQuanTriVien.LinkColor = System.Drawing.Color.White;
+            this.linkLabelTenQuanTriVien.Location = new System.Drawing.Point(0, 82);
+            this.linkLabelTenQuanTriVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabelTenQuanTriVien.Name = "linkLabelTenQuanTriVien";
+            this.linkLabelTenQuanTriVien.Size = new System.Drawing.Size(200, 26);
+            this.linkLabelTenQuanTriVien.TabIndex = 0;
+            this.linkLabelTenQuanTriVien.TabStop = true;
+            this.linkLabelTenQuanTriVien.Text = "TÊN QUẢN TRỊ VIÊN";
+            this.linkLabelTenQuanTriVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelTenQuanTriVien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTenQuanTriVien_LinkClicked);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -300,6 +218,88 @@
             this.buttonQuanLiSanPham.UseVisualStyleBackColor = false;
             this.buttonQuanLiSanPham.Click += new System.EventHandler(this.buttonQuanLiSanPham_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(0, 0);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đổiMậtKhẩuToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 70);
+            // 
+            // đổiMậtKhẩuToolStripMenuItem
+            // 
+            this.đổiMậtKhẩuToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.đổiMậtKhẩuToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
+            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Thông tin tài khoản";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+            this.đổiMậtKhẩuToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
+            this.đổiMậtKhẩuToolStripMenuItem.MouseLeave += new System.EventHandler(this.ToolStripMenuItem_MouseLeave);
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            this.đăngXuấtToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
+            this.đăngXuấtToolStripMenuItem.MouseLeave += new System.EventHandler(this.ToolStripMenuItem_MouseLeave);
+            // 
+            // panelDesktopPane
+            // 
+            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
+            this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panelDesktopPane.Name = "panelDesktopPane";
+            this.panelDesktopPane.Size = new System.Drawing.Size(848, 567);
+            this.panelDesktopPane.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.buttonMaximize);
+            this.panel2.Controls.Add(this.buttonMinimize);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(848, 18);
+            this.panel2.TabIndex = 8;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
+            // 
+            // buttonMaximize
+            // 
+            this.buttonMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMaximize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.BackgroundImage")));
+            this.buttonMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMaximize.FlatAppearance.BorderSize = 0;
+            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaximize.Location = new System.Drawing.Point(826, 0);
+            this.buttonMaximize.Name = "buttonMaximize";
+            this.buttonMaximize.Size = new System.Drawing.Size(19, 18);
+            this.buttonMaximize.TabIndex = 1;
+            this.buttonMaximize.UseVisualStyleBackColor = true;
+            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
+            // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.BackgroundImage")));
+            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Location = new System.Drawing.Point(805, 0);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(15, 18);
+            this.buttonMinimize.TabIndex = 0;
+            this.buttonMinimize.UseVisualStyleBackColor = true;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
             // FormQuanTriVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,9 +317,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

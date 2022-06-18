@@ -45,7 +45,7 @@ namespace PBL3
                 matKhauMoi += chars[rnd.Next(chars.Length)];
             }
 
-            BLLTaiKhoan.Instance.UpdateAndSendMatKhauMoiToMail(textBoxEmailAddress.Text, matKhauMoi);
+            BLLTaiKhoan.Instance.UpdateAndSendTaiKhoanInformationToMail(textBoxEmailAddress.Text, "", matKhauMoi);
             MessageBox.Show("Đã gửi mật khẩu mới đến email của bạn!");
             this.Close();
         }
