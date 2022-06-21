@@ -2,9 +2,9 @@
 
 namespace PBL3
 {
-    public partial class FormThongKe : Form
+    public partial class FormThongKeTheoBang : Form
     {
-        public FormThongKe()
+        public FormThongKeTheoBang()
         {
             InitializeComponent();
         }

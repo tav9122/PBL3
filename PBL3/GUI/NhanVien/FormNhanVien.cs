@@ -16,7 +16,7 @@ namespace PBL3
             InitializeComponent();
             InitializeFormManHinhChinh();
 
-            if (maNhanVien == "QTV")
+            if (BLLNhanVien.Instance.GetNhanVien(maNhanVien).VaiTro == true)
                 contextMenuStrip1.Items.Remove(contextMenuStrip1.Items[0]);
             linkLabelTenNhanVien.Text = BLLNhanVien.Instance.GetNhanVien(maNhanVien).HoVaTen;
 

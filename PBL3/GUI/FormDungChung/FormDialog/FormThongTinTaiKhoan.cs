@@ -14,7 +14,7 @@ namespace PBL3
         {
             InitializeComponent();
 
-            if (maNhanVien == "QTV")
+            if (BLLNhanVien.Instance.GetNhanVien(maNhanVien).VaiTro == true)
                 textBoxTenDangNhap.Enabled = true;
             else if (BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap == false)
             {

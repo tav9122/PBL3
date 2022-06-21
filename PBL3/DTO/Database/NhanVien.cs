@@ -32,8 +32,15 @@ namespace PBL3
         [Column("Giới tính")]
         public bool GioiTinh { get; set; }
 
+        [Column("Ngày bắt đầu làm việc")]
+        public DateTime NgayBatDauLamViec { get; set; }
+
         [Column("Mức lương")]
         public double MucLuong { get; set; }
+
+        [DefaultValue("false")]
+        [Column("Vai trò")]
+        public bool VaiTro { get; set; }
 
         public virtual ICollection<NhanVienLichLamViec> NhanVienLichLamViecs { get; set; }
 

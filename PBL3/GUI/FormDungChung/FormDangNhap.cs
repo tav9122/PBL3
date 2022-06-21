@@ -74,7 +74,7 @@ namespace PBL3
                 string result = BLLQuanLiChung.Instance.LoginChecker(textBoxTenDangNhap.Text, textBoxMatKhau.Text);
                 if (result != null)
                 {
-                    if (result == "QTV")
+                    if (BLLNhanVien.Instance.GetNhanVien(result).VaiTro == true)
                     {
                         FormLuaChonVaiTroDangNhap formLuaChonVaiTroDangNhap = new FormLuaChonVaiTroDangNhap(result);
                         this.Hide();

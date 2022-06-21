@@ -17,9 +17,9 @@ namespace PBL3
             }
         }
 
-        public void AddNhanVien(string maNhanVien, string soDienThoai, string email, string diaChi, string hoVaTen, DateTime ngaySinh, bool gioiTinh, double mucLuong, List<string> maLichLamViecs, string tenDangNhap, string matKhau)
+        public void AddNhanVien(string maNhanVien, string soDienThoai, string email, string diaChi, string hoVaTen, DateTime ngaySinh, bool gioiTinh, double mucLuong, DateTime ngayBatDauLamViec, List<string> maLichLamViecs, string tenDangNhap, string matKhau)
         {
-            Model.Instance.NhanViens.Add(new NhanVien { MaNhanVien = maNhanVien, SoDienThoai = soDienThoai, Email = email, DiaChi = diaChi, HoVaTen = hoVaTen, NgaySinh = ngaySinh, GioiTinh = gioiTinh, MucLuong = mucLuong });
+            Model.Instance.NhanViens.Add(new NhanVien { MaNhanVien = maNhanVien, SoDienThoai = soDienThoai, Email = email, DiaChi = diaChi, HoVaTen = hoVaTen, NgaySinh = ngaySinh, GioiTinh = gioiTinh, MucLuong = mucLuong, NgayBatDauLamViec = ngayBatDauLamViec });
             Model.Instance.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLTaiKhoan.Instance.GetMaTaiKhoans()), MaNhanVien = maNhanVien, TenDangNhap = tenDangNhap, MatKhau = matKhau });
             if (maLichLamViecs != null)
                 BLLNhanVienLichLamViec.Instance.SetLichLamViecsOfNhanVien(maNhanVien, maLichLamViecs);

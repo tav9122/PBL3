@@ -26,6 +26,9 @@ namespace PBL3
         [DisplayName("Giới tính")]
         public bool GioiTinh { get; set; }
 
+        [DisplayName("Ngày bắt đầu làm việc")]
+        public DateTime NgayBatDauLamViec { get; set; }
+
         [DisplayName("Mức lương")]
         public double MucLuong { get; set; }
 

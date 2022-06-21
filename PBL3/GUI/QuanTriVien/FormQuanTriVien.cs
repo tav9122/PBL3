@@ -84,7 +84,17 @@ namespace PBL3
 
         private void buttonThongKe_Click(object sender, EventArgs e)
         {
-            BLLQuanLiChung.Instance.OpenChildForm(new FormThongKe(), sender, panelDesktopPane);
+            BLLQuanLiChung.Instance.ShowOrHideDropdown(sender, panelButtonThongKe);
+        }
+
+        private void buttonThongKeTheoBieuDo_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormThongKeTheoBieuDo(), sender, panelDesktopPane);
+        }
+
+        private void buttonThongKeTheoBang_Click(object sender, EventArgs e)
+        {
+            BLLQuanLiChung.Instance.OpenChildForm(new FormThongKeTheoBang(), sender, panelDesktopPane);
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)

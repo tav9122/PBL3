@@ -60,7 +60,7 @@
             this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(848, 567);
+            this.panelDesktopPane.Size = new System.Drawing.Size(848, 580);
             this.panelDesktopPane.TabIndex = 6;
             // 
             // panelMenu
@@ -76,7 +76,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 585);
+            this.panelMenu.Size = new System.Drawing.Size(200, 598);
             this.panelMenu.TabIndex = 5;
             // 
             // buttonQuanLiKhachHang
@@ -216,7 +216,7 @@
             this.đăngXuấtToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 70);
             // 
             // thôngTinNhânViênToolStripMenuItem
             // 
@@ -293,7 +293,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1048, 585);
+            this.ClientSize = new System.Drawing.Size(1048, 598);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panel2);

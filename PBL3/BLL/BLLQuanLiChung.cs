@@ -30,7 +30,8 @@ namespace PBL3
         public bool alreadyOpenFormQuanLiNhanVien { get; set; }
         public bool alreadyOpenFormQuanLiSanPham { get; set; }
         public bool alreadyOpenFormQuanLiLichLamViec { get; set; }
-        public bool alreadyOpenFormThongKe { get; set; }
+        public bool alreadyOpenFormThongKeTheoBang { get; set; }
+        public bool alreadyOpenFormThongKeTheoBieuDo { get; set; }
         public bool alreadyOpenFormQuanLiKhachHang { get; set; }
         public bool alreadyOpenFormQuanLiLoHang { get; set; }
 
@@ -40,7 +41,8 @@ namespace PBL3
         public Form formQuanLiNhanVien { get; set; }
         public Form formQuanLiSanPham { get; set; }
         public Form formQuanLiLichLamViec { get; set; }
-        public Form formThongKe { get; set; }
+        public Form formThongKeTheoBang { get; set; }
+        public Form formThongKeTheoBieuDo { get; set; }
         public Form formQuanLiKhachHang { get; set; }
         public Form formQuanLiLoHang { get; set; }
 
@@ -53,16 +55,19 @@ namespace PBL3
             alreadyOpenFormQuanLiNhanVien = false;
             alreadyOpenFormQuanLiSanPham = false;
             alreadyOpenFormQuanLiLichLamViec = false;
-            alreadyOpenFormThongKe = false;
+            alreadyOpenFormThongKeTheoBang = false;
+            alreadyOpenFormThongKeTheoBieuDo = false;
             alreadyOpenFormQuanLiKhachHang = false;
             alreadyOpenFormQuanLiLoHang = false;
+
             formBaoHanh = null;
             formLichSuHoaDon = null;
             formSanPham = null;
             formQuanLiNhanVien = null;
             formQuanLiSanPham = null;
             formQuanLiLichLamViec = null;
-            formThongKe = null;
+            formThongKeTheoBang = null;
+            formThongKeTheoBieuDo = null;
             formQuanLiKhachHang = null;
             formQuanLiLoHang = null;
         }
@@ -76,14 +81,19 @@ namespace PBL3
             {
                 DisableButton();
                 currentButton = (Button)buttonSender;
+                currentButton.BackColor = Color.FromArgb(125, 125, 161);
+                tempText = currentButton.Text;
+
                 Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
                 string temp = currentButton.Text.Normalize(NormalizationForm.FormD);
                 temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToLower().Replace(" ", "") + "32";
-                currentButton.Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
-                currentButton.BackColor = Color.FromArgb(125, 125, 161);
-                tempText = currentButton.Text;
-                currentButton.Text = "";
-                currentButton.ImageAlign = ContentAlignment.MiddleCenter;
+
+                if ((Image)Properties.Resources.ResourceManager.GetObject(temp) != null)
+                {
+                    currentButton.Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
+                    currentButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    currentButton.Text = "";
+                }
             }
         }
 
@@ -91,13 +101,18 @@ namespace PBL3
         {
             if (currentButton != null)
             {
+                currentButton.BackColor = Color.FromArgb(39, 39, 58);
+                currentButton.Text = tempText;
+
                 Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
                 string temp = tempText.Normalize(NormalizationForm.FormD);
                 temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToLower().Replace(" ", "") + "26";
-                currentButton.Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
-                currentButton.BackColor = Color.FromArgb(39, 39, 58);
-                currentButton.Text = tempText;
-                currentButton.ImageAlign = ContentAlignment.MiddleLeft;
+
+                if ((Image)Properties.Resources.ResourceManager.GetObject(temp) != null)
+                {
+                    currentButton.Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
+                    currentButton.ImageAlign = ContentAlignment.MiddleLeft;
+                }
             }
         }
 
@@ -125,9 +140,69 @@ namespace PBL3
             }
         }
 
+        Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
+        private void ActivateDropDownButton(object buttonSender, Panel panel)
+        {
+            dictionary.Add(((Button)buttonSender).Name, ((Button)buttonSender).Text);
+
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = ((Button)buttonSender).Text.Normalize(NormalizationForm.FormD);
+            temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToLower().Replace(" ", "") + "32";
+
+            ((Button)buttonSender).Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
+            ((Button)buttonSender).Text = "";
+            ((Button)buttonSender).ImageAlign = ContentAlignment.MiddleCenter;
+
+            System.Timers.Timer timer = new System.Timers.Timer(10);
+            timer.Start();
+            timer.Elapsed += (sender, e) =>
+            {
+                if (panel.Size != panel.MaximumSize)
+                    panel.Height += 10;
+                else
+                    timer.Stop();
+            };
+        }
+
+        public void DisableDropDownButton(object buttonSender, Panel panel)
+        {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = dictionary.FirstOrDefault(dic => dic.Key == ((Button)buttonSender).Name).Value.Normalize(NormalizationForm.FormD);
+            temp = regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').ToLower().Replace(" ", "") + "26";
+
+            ((Button)buttonSender).Image = (Image)Properties.Resources.ResourceManager.GetObject(temp);
+            ((Button)buttonSender).Text = dictionary.FirstOrDefault(dic => dic.Key == ((Button)buttonSender).Name).Value;
+            ((Button)buttonSender).ImageAlign = ContentAlignment.MiddleLeft;
+
+            dictionary.Remove(((Button)buttonSender).Name);
+
+            System.Timers.Timer timer = new System.Timers.Timer(10);
+            timer.Start();
+            timer.Elapsed += (sender, e) =>
+            {
+                if (panel.Size != panel.MinimumSize)
+                    panel.Height -= 10;
+                else
+                    timer.Stop();
+            };
+        }
+
+        public void ShowOrHideDropdown(object buttonSender, Panel panel)
+        {
+            if (dictionary.Where(dic => dic.Key == ((Button)buttonSender).Name).Count() == 0)
+            {
+                ActivateDropDownButton(buttonSender, panel);
+            }
+            else
+            {
+                DisableDropDownButton(buttonSender, panel);
+            }
+        }
+
         public string GetNextPrimaryKey(List<string> currentPrimaryKeys)
         {
-            currentPrimaryKeys.Remove("QTV");
+            currentPrimaryKeys.RemoveAll(primaryKey => primaryKey.Contains("QTV"));
             List<int> temp = new List<int>();
             int wordsCount = 0;
             foreach (char c in currentPrimaryKeys[0])

@@ -38,18 +38,19 @@ namespace PBL3
             //Tạo nhân viên
             context.NhanViens.AddRange(new NhanVien[]
                 {
-                    new NhanVien {MaNhanVien = "NV1", HoVaTen = "Trần Ngọc Tín", SoDienThoai = "0999888777", Email = "tranngoctin77@gmail.com", DiaChi = "Quảng Nam", NgaySinh = new DateTime(2002, 6, 21), GioiTinh = true, MucLuong = 1200000 },
-                    new NhanVien {MaNhanVien = "NV2", HoVaTen = "Nguyễn Hoàng Anh", SoDienThoai = "0888777666", Email = "tranngoctin77@gmail.com", DiaChi = "Đà Nẵng", NgaySinh = new DateTime(2002, 7, 10), GioiTinh = true, MucLuong = 1200000 },
-                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", Email = "tav.9122@gmail.com", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, MucLuong = 1000000 },
-                    new NhanVien {MaNhanVien = "QTV", HoVaTen = "QUẢN TRỊ VIÊN", SoDienThoai = "", Email = "NULL", DiaChi = "", NgaySinh = new DateTime(2022, 02, 22), GioiTinh = true, MucLuong = 0},
+                    new NhanVien {MaNhanVien = "NV1", HoVaTen = "Trần Ngọc Tín", SoDienThoai = "0999888777", Email = "tranngoctin77@gmail.com", DiaChi = "Quảng Nam", NgaySinh = new DateTime(2002, 6, 21), GioiTinh = true, NgayBatDauLamViec = DateTime.Now, MucLuong = 1200000},
+                    new NhanVien {MaNhanVien = "NV2", HoVaTen = "Nguyễn Hoàng Anh", SoDienThoai = "0888777666", Email = "tranngoctin7777@gmail.com", DiaChi = "Đà Nẵng", NgaySinh = new DateTime(2002, 7, 10), GioiTinh = true, NgayBatDauLamViec = DateTime.Now, MucLuong = 1200000},
+                    new NhanVien {MaNhanVien = "NV3", HoVaTen = "Trần Anh Vũ", SoDienThoai = "0777666555", Email = "kunkute054@gmail.com", DiaChi = "Huế", NgaySinh = new DateTime(2002, 10, 9), GioiTinh = false, NgayBatDauLamViec = DateTime.Now, MucLuong = 1000000 },
+                    new NhanVien {MaNhanVien = "QTV1", HoVaTen = "Vũ Nhôm", SoDienThoai = "1111111111", Email = "tav.9122@gmail.com", DiaChi = "Huế", NgaySinh = new DateTime(2022, 02, 22), GioiTinh = true, MucLuong = 0, NgayBatDauLamViec = new DateTime(2022, 02, 22), VaiTro = true},
+                    new NhanVien {MaNhanVien = "QTV2", HoVaTen = "Hải Bánh", SoDienThoai = "2222222222", Email = "kunkute357@gmail.com", DiaChi = "Đà Nẵng", NgaySinh = new DateTime(2022, 02, 22), GioiTinh = true, MucLuong = 0, NgayBatDauLamViec = new DateTime(2022, 02, 22), VaiTro = true},
                 });
-
 
             //Tạo tài khoản
             context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK1", TenDangNhap = "TK1", MatKhau = "tk1", MaNhanVien = "NV1" });
             context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK2", TenDangNhap = "TK2", MatKhau = "tk2", MaNhanVien = "NV2" });
             context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK3", TenDangNhap = "TK3", MatKhau = "tk3", MaNhanVien = "NV3" });
-            context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "QTV", TenDangNhap = "QTV", MatKhau = "qtv", MaNhanVien = "QTV" });
+            context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK4", TenDangNhap = "QTV", MatKhau = "qtv", MaNhanVien = "QTV1" });
+            context.TaiKhoans.Add(new TaiKhoan { MaTaiKhoan = "TK5", TenDangNhap = "QTV2", MatKhau = "qtv2", MaNhanVien = "QTV2" });
 
             //Tạo lô hàng
             context.LoHangs.Add(new LoHang { MaLoHang = "LH1", ThoiGianNhapHang = DateTime.Now, TongTien = 1499500000 });

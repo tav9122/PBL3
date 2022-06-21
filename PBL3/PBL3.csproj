@@ -204,6 +204,18 @@
     <Compile Include="GUI\QuanTriVien\FormPhu\FormQuanLiLoHang.Designer.cs">
       <DependentUpon>FormQuanLiLoHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuanTriVien\FormPhu\FormThongKeTheoBang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormPhu\FormThongKeTheoBang.Designer.cs">
+      <DependentUpon>FormThongKeTheoBang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormPhu\FormThongKeTheoBieuDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanTriVien\FormPhu\FormThongKeTheoBieuDo.Designer.cs">
+      <DependentUpon>FormThongKeTheoBieuDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuanTriVien\FormQuanTriVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,12 +233,6 @@
     </Compile>
     <Compile Include="GUI\QuanTriVien\FormPhu\FormQuanLiSanPham.Designer.cs">
       <DependentUpon>FormQuanLiSanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\QuanTriVien\FormPhu\FormThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\QuanTriVien\FormPhu\FormThongKe.Designer.cs">
-      <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormDungChung\FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -329,9 +335,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormPhu\FormQuanLiSanPham.resx">
       <DependentUpon>FormQuanLiSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanTriVien\FormPhu\FormThongKe.resx">
-      <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormDungChung\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>

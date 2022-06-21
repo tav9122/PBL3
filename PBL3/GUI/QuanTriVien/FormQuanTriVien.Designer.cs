@@ -31,9 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanTriVien));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelButtonThongKe = new System.Windows.Forms.Panel();
+            this.buttonThongKe = new System.Windows.Forms.Button();
+            this.buttonThongKeTheoBieuDo = new System.Windows.Forms.Button();
+            this.buttonThongKeTheoBang = new System.Windows.Forms.Button();
             this.buttonQuanLiLoHang = new System.Windows.Forms.Button();
             this.buttonQuanLiLichLamViec = new System.Windows.Forms.Button();
-            this.buttonThongKe = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.linkLabelTenQuanTriVien = new System.Windows.Forms.LinkLabel();
@@ -48,6 +51,7 @@
             this.buttonMaximize = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
+            this.panelButtonThongKe.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -57,9 +61,9 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.panelButtonThongKe);
             this.panelMenu.Controls.Add(this.buttonQuanLiLoHang);
             this.panelMenu.Controls.Add(this.buttonQuanLiLichLamViec);
-            this.panelMenu.Controls.Add(this.buttonThongKe);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.buttonQuanLiNhanVien);
@@ -68,8 +72,75 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 585);
+            this.panelMenu.Size = new System.Drawing.Size(200, 598);
             this.panelMenu.TabIndex = 3;
+            // 
+            // panelButtonThongKe
+            // 
+            this.panelButtonThongKe.Controls.Add(this.buttonThongKe);
+            this.panelButtonThongKe.Controls.Add(this.buttonThongKeTheoBieuDo);
+            this.panelButtonThongKe.Controls.Add(this.buttonThongKeTheoBang);
+            this.panelButtonThongKe.Location = new System.Drawing.Point(0, 417);
+            this.panelButtonThongKe.MaximumSize = new System.Drawing.Size(200, 146);
+            this.panelButtonThongKe.MinimumSize = new System.Drawing.Size(200, 74);
+            this.panelButtonThongKe.Name = "panelButtonThongKe";
+            this.panelButtonThongKe.Size = new System.Drawing.Size(200, 74);
+            this.panelButtonThongKe.TabIndex = 7;
+            // 
+            // buttonThongKe
+            // 
+            this.buttonThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonThongKe.FlatAppearance.BorderSize = 0;
+            this.buttonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.buttonThongKe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonThongKe.Image = global::PBL3.Properties.Resources.thongke26;
+            this.buttonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKe.Location = new System.Drawing.Point(0, 0);
+            this.buttonThongKe.Name = "buttonThongKe";
+            this.buttonThongKe.Size = new System.Drawing.Size(200, 74);
+            this.buttonThongKe.TabIndex = 4;
+            this.buttonThongKe.Text = " Thống kê";
+            this.buttonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonThongKe.UseVisualStyleBackColor = false;
+            this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
+            // 
+            // buttonThongKeTheoBieuDo
+            // 
+            this.buttonThongKeTheoBieuDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonThongKeTheoBieuDo.FlatAppearance.BorderSize = 0;
+            this.buttonThongKeTheoBieuDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonThongKeTheoBieuDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThongKeTheoBieuDo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonThongKeTheoBieuDo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKeTheoBieuDo.Location = new System.Drawing.Point(0, 110);
+            this.buttonThongKeTheoBieuDo.Name = "buttonThongKeTheoBieuDo";
+            this.buttonThongKeTheoBieuDo.Size = new System.Drawing.Size(200, 36);
+            this.buttonThongKeTheoBieuDo.TabIndex = 6;
+            this.buttonThongKeTheoBieuDo.Text = "Thống kê theo biểu đồ";
+            this.buttonThongKeTheoBieuDo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKeTheoBieuDo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonThongKeTheoBieuDo.UseVisualStyleBackColor = false;
+            this.buttonThongKeTheoBieuDo.Click += new System.EventHandler(this.buttonThongKeTheoBieuDo_Click);
+            // 
+            // buttonThongKeTheoBang
+            // 
+            this.buttonThongKeTheoBang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.buttonThongKeTheoBang.FlatAppearance.BorderSize = 0;
+            this.buttonThongKeTheoBang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonThongKeTheoBang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThongKeTheoBang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonThongKeTheoBang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKeTheoBang.Location = new System.Drawing.Point(0, 74);
+            this.buttonThongKeTheoBang.Name = "buttonThongKeTheoBang";
+            this.buttonThongKeTheoBang.Size = new System.Drawing.Size(200, 36);
+            this.buttonThongKeTheoBang.TabIndex = 5;
+            this.buttonThongKeTheoBang.Text = "Thống kê theo bảng";
+            this.buttonThongKeTheoBang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKeTheoBang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonThongKeTheoBang.UseVisualStyleBackColor = false;
+            this.buttonThongKeTheoBang.Click += new System.EventHandler(this.buttonThongKeTheoBang_Click);
             // 
             // buttonQuanLiLoHang
             // 
@@ -108,25 +179,6 @@
             this.buttonQuanLiLichLamViec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonQuanLiLichLamViec.UseVisualStyleBackColor = false;
             this.buttonQuanLiLichLamViec.Click += new System.EventHandler(this.buttonQuanLiLichLamViec_Click);
-            // 
-            // buttonThongKe
-            // 
-            this.buttonThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonThongKe.FlatAppearance.BorderSize = 0;
-            this.buttonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.buttonThongKe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonThongKe.Image = global::PBL3.Properties.Resources.thongke26;
-            this.buttonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonThongKe.Location = new System.Drawing.Point(0, 417);
-            this.buttonThongKe.Name = "buttonThongKe";
-            this.buttonThongKe.Size = new System.Drawing.Size(200, 74);
-            this.buttonThongKe.TabIndex = 4;
-            this.buttonThongKe.Text = " Thống kê";
-            this.buttonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonThongKe.UseVisualStyleBackColor = false;
-            this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
             // 
             // panel1
             // 
@@ -228,7 +280,7 @@
             this.đăngXuấtToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 48);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
@@ -246,7 +298,7 @@
             this.đăngXuấtToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             this.đăngXuấtToolStripMenuItem.MouseEnter += new System.EventHandler(this.ToolStripMenuItem_MouseEnter);
@@ -258,7 +310,7 @@
             this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(848, 567);
+            this.panelDesktopPane.Size = new System.Drawing.Size(848, 580);
             this.panelDesktopPane.TabIndex = 4;
             // 
             // panel2
@@ -305,7 +357,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1048, 585);
+            this.ClientSize = new System.Drawing.Size(1048, 598);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panel2);
@@ -316,6 +368,7 @@
             this.Name = "FormQuanTriVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
+            this.panelButtonThongKe.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -342,5 +395,8 @@
         private System.Windows.Forms.Button buttonQuanLiLichLamViec;
         private System.Windows.Forms.Button buttonQuanLiNhanVien;
         private System.Windows.Forms.Button buttonQuanLiLoHang;
+        private System.Windows.Forms.Panel panelButtonThongKe;
+        private System.Windows.Forms.Button buttonThongKeTheoBieuDo;
+        private System.Windows.Forms.Button buttonThongKeTheoBang;
     }
 }

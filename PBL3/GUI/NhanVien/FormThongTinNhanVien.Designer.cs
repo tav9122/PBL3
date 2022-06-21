@@ -51,6 +51,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePickerNgayBatDauLamViec = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 136);
+            this.label2.Location = new System.Drawing.Point(27, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 1;
@@ -82,7 +84,7 @@
             this.textBoxHoVaTen.Enabled = false;
             this.textBoxHoVaTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBoxHoVaTen.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxHoVaTen.Location = new System.Drawing.Point(127, 136);
+            this.textBoxHoVaTen.Location = new System.Drawing.Point(127, 132);
             this.textBoxHoVaTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxHoVaTen.Name = "textBoxHoVaTen";
             this.textBoxHoVaTen.Size = new System.Drawing.Size(218, 22);
@@ -138,7 +140,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(425, 142);
+            this.label4.Location = new System.Drawing.Point(425, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 18);
             this.label4.TabIndex = 28;
@@ -149,7 +151,7 @@
             this.textBoxSoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBoxSoDienThoai.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxSoDienThoai.Location = new System.Drawing.Point(127, 189);
+            this.textBoxSoDienThoai.Location = new System.Drawing.Point(127, 177);
             this.textBoxSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoDienThoai.Name = "textBoxSoDienThoai";
             this.textBoxSoDienThoai.Size = new System.Drawing.Size(218, 22);
@@ -159,7 +161,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 189);
+            this.label5.Location = new System.Drawing.Point(27, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 18);
             this.label5.TabIndex = 30;
@@ -171,7 +173,7 @@
             this.dateTimePickerNgaySinh.Enabled = false;
             this.dateTimePickerNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dateTimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(508, 142);
+            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(508, 132);
             this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
             this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(175, 22);
             this.dateTimePickerNgaySinh.TabIndex = 5;
@@ -183,7 +185,7 @@
             this.groupBox1.Enabled = false;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.groupBox1.Location = new System.Drawing.Point(428, 194);
+            this.groupBox1.Location = new System.Drawing.Point(428, 180);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(255, 52);
             this.groupBox1.TabIndex = 33;
@@ -219,7 +221,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(254, 474);
+            this.buttonXacNhan.Location = new System.Drawing.Point(252, 520);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -233,7 +235,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(381, 474);
+            this.buttonHuyBo.Location = new System.Drawing.Point(379, 520);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -246,7 +248,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(27, 287);
+            this.label9.Location = new System.Drawing.Point(25, 310);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(97, 18);
             this.label9.TabIndex = 37;
@@ -258,7 +260,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 318);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 341);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -293,7 +295,7 @@
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxEmail.Location = new System.Drawing.Point(127, 241);
+            this.textBoxEmail.Location = new System.Drawing.Point(127, 223);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(218, 22);
@@ -303,19 +305,42 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(27, 241);
+            this.label6.Location = new System.Drawing.Point(27, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 18);
             this.label6.TabIndex = 136;
             this.label6.Text = "Email:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(25, 269);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 18);
+            this.label8.TabIndex = 138;
+            this.label8.Text = "Ngày bắt đầu làm việc:";
+            // 
+            // dateTimePickerNgayBatDauLamViec
+            // 
+            this.dateTimePickerNgayBatDauLamViec.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerNgayBatDauLamViec.Enabled = false;
+            this.dateTimePickerNgayBatDauLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.dateTimePickerNgayBatDauLamViec.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerNgayBatDauLamViec.Location = new System.Drawing.Point(187, 269);
+            this.dateTimePickerNgayBatDauLamViec.Name = "dateTimePickerNgayBatDauLamViec";
+            this.dateTimePickerNgayBatDauLamViec.Size = new System.Drawing.Size(158, 22);
+            this.dateTimePickerNgayBatDauLamViec.TabIndex = 139;
             // 
             // FormThongTinNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(724, 515);
+            this.ClientSize = new System.Drawing.Size(724, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.dateTimePickerNgayBatDauLamViec);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxMaNhanVien);
@@ -371,5 +396,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNgayBatDauLamViec;
     }
 }

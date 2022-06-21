@@ -59,6 +59,8 @@
             this.buttonSua = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePickerNgayBatDauLamViec = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,7 +72,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(275, 520);
+            this.buttonXacNhan.Location = new System.Drawing.Point(271, 541);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -84,7 +86,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(402, 520);
+            this.buttonHuyBo.Location = new System.Drawing.Point(398, 541);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -326,7 +328,7 @@
             this.textBoxMucLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMucLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMucLuong.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxMucLuong.Location = new System.Drawing.Point(140, 414);
+            this.textBoxMucLuong.Location = new System.Drawing.Point(140, 455);
             this.textBoxMucLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMucLuong.Name = "textBoxMucLuong";
             this.textBoxMucLuong.Size = new System.Drawing.Size(221, 22);
@@ -336,7 +338,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(21, 414);
+            this.label11.Location = new System.Drawing.Point(21, 455);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 18);
             this.label11.TabIndex = 113;
@@ -411,13 +413,36 @@
             this.label6.TabIndex = 134;
             this.label6.Text = "Email:";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(21, 412);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 18);
+            this.label8.TabIndex = 136;
+            this.label8.Text = "Ngày bắt đầu làm việc:";
+            // 
+            // dateTimePickerNgayBatDauLamViec
+            // 
+            this.dateTimePickerNgayBatDauLamViec.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerNgayBatDauLamViec.Enabled = false;
+            this.dateTimePickerNgayBatDauLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.dateTimePickerNgayBatDauLamViec.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerNgayBatDauLamViec.Location = new System.Drawing.Point(183, 412);
+            this.dateTimePickerNgayBatDauLamViec.Name = "dateTimePickerNgayBatDauLamViec";
+            this.dateTimePickerNgayBatDauLamViec.Size = new System.Drawing.Size(178, 22);
+            this.dateTimePickerNgayBatDauLamViec.TabIndex = 137;
+            // 
             // FormChiTietHoacThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(761, 561);
+            this.ClientSize = new System.Drawing.Size(761, 582);
             this.ControlBox = false;
+            this.Controls.Add(this.dateTimePickerNgayBatDauLamViec);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonSua);
@@ -487,5 +512,7 @@
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonTaoMatKhauMoiChoNhanVien;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNgayBatDauLamViec;
     }
 }

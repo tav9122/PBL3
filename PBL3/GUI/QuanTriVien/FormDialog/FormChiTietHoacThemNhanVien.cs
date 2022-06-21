@@ -22,6 +22,7 @@ namespace PBL3
 
             textBoxMaNhanVien.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLNhanVien.Instance.GetMaNhanViens());
             textBoxTenDangNhap.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLTaiKhoan.Instance.GetMaTaiKhoans());
+            dateTimePickerNgayBatDauLamViec.Value = DateTime.Now;
 
             dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien("");
 
@@ -48,6 +49,7 @@ namespace PBL3
             textBoxMucLuong.Text = nhanVien.MucLuong.ToString();
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
+            dateTimePickerNgayBatDauLamViec.Value = nhanVien.NgayBatDauLamViec;
             textBoxTenDangNhap.Text = BLLTaiKhoan.Instance.GetTaiKhoan(nhanVien.MaNhanVien).TenDangNhap;
 
             textBoxTenDangNhap.Enabled = true;
@@ -86,6 +88,12 @@ namespace PBL3
                 return;
             }
 
+            if (!textBoxEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Email không hợp lệ!");
+                return;
+            }
+
             if (typeUpdate == true)
             {
                 foreach (var i in BLLTaiKhoan.Instance.GetTaiKhoans().Where(tk => tk.NhanVien.MaNhanVien != textBoxMaNhanVien.Text))
@@ -109,7 +117,7 @@ namespace PBL3
             else
             {
                 buttonTaoMatKhauMoiChoNhanVien_Click(null, null);
-                BLLNhanVien.Instance.AddNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxEmail.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList(), textBoxTenDangNhap.Text, newMatKhau);
+                BLLNhanVien.Instance.AddNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxEmail.Text, textBoxDiaChi.Text, textBoxTenNhanVien.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, Convert.ToDouble(textBoxMucLuong.Text), dateTimePickerNgayBatDauLamViec.Value, listLichLamViecTamThoi.Select(llv => llv.MaLichLamViec).ToList(), textBoxTenDangNhap.Text, newMatKhau);
                 BLLTaiKhoan.Instance.UpdateAndSendTaiKhoanInformationToMail(textBoxEmail.Text, textBoxTenDangNhap.Text, newMatKhau);
                 MessageBox.Show("Thêm thành công! \nThông tin tài khoản mới đã được gửi tới email của nhân viên.");
             }

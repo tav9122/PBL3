@@ -18,6 +18,7 @@ namespace PBL3
             textBoxEmail.Text = nhanVien.Email;
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
+            dateTimePickerNgayBatDauLamViec.Value = nhanVien.NgayBatDauLamViec;
 
             dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
         }
