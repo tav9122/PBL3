@@ -154,12 +154,20 @@ namespace PBL3
             ((Button)buttonSender).Text = "";
             ((Button)buttonSender).ImageAlign = ContentAlignment.MiddleCenter;
 
-            System.Timers.Timer timer = new System.Timers.Timer(10);
+            System.Timers.Timer timer = new System.Timers.Timer(1);
             timer.Start();
             timer.Elapsed += (sender, e) =>
             {
                 if (panel.Size != panel.MaximumSize)
-                    panel.Height += 10;
+                    if (panel.InvokeRequired)
+                    {
+                        panel.Invoke(new MethodInvoker(delegate ()
+                        {
+                            panel.Height += 5;
+                        }));
+                    }
+                    else
+                        panel.Height += 5;
                 else
                     timer.Stop();
             };
@@ -177,12 +185,20 @@ namespace PBL3
 
             dictionary.Remove(((Button)buttonSender).Name);
 
-            System.Timers.Timer timer = new System.Timers.Timer(10);
+            System.Timers.Timer timer = new System.Timers.Timer(1);
             timer.Start();
             timer.Elapsed += (sender, e) =>
             {
                 if (panel.Size != panel.MinimumSize)
-                    panel.Height -= 10;
+                    if (panel.InvokeRequired)
+                    {
+                        panel.Invoke(new MethodInvoker(delegate ()
+                        {
+                            panel.Height -= 5;
+                        }));
+                    }
+                    else
+                        panel.Height -= 5;
                 else
                     timer.Stop();
             };
@@ -202,7 +218,6 @@ namespace PBL3
 
         public string GetNextPrimaryKey(List<string> currentPrimaryKeys)
         {
-            currentPrimaryKeys.RemoveAll(primaryKey => primaryKey.Contains("QTV"));
             List<int> temp = new List<int>();
             int wordsCount = 0;
             foreach (char c in currentPrimaryKeys[0])

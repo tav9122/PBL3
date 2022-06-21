@@ -18,6 +18,7 @@ namespace PBL3
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
 
+            ReloadDataGridView(null, null);
             dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
             dataGridView1.Columns["GiaMua"].DefaultCellStyle.Format = "C0";

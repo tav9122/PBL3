@@ -53,8 +53,9 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
+            if (BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).TenDangNhap != textBoxTenDangNhap.Text)
+                BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap = true;
             BLLTaiKhoan.Instance.UpdateTaiKhoanNhanVien(BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).MaTaiKhoan, textBoxTenDangNhap.Text, textBoxMatKhauMoi.Text);
-            BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap = true;
             MessageBox.Show("Thay đổi thông tin tài khoản thành công!");
             this.Close();
         }

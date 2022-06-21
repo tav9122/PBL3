@@ -23,12 +23,6 @@ namespace PBL3
             Model.Instance.SaveChanges();
         }
 
-        public void DeleteHoaDon(string maHoaDon)
-        {
-            Model.Instance.HoaDons.Where(hd => hd.MaHoaDon == maHoaDon).FirstOrDefault().DaXoa = true;
-            Model.Instance.SaveChanges();
-        }
-
         public HoaDon GetHoaDon(string maHoaDon)
         {
             return Model.Instance.HoaDons.FirstOrDefault(hd => hd.MaHoaDon == maHoaDon);

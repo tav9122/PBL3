@@ -18,6 +18,7 @@ namespace PBL3
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
 
+            ReloadDataGridView(null, null);
             dataGridView1.Columns["ThanhTien"].DefaultCellStyle.Format = "C0";
             dataGridView1.Columns["TenNhanVien"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
@@ -31,20 +32,6 @@ namespace PBL3
         {
             FormChiTietHoacThemHoaDon formChiTietHoacThemHoaDon = new FormChiTietHoacThemHoaDon(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             formChiTietHoacThemHoaDon.ShowDialog();
-        }
-
-        private void buttonXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                {
-                    BLLHoaDon.Instance.DeleteHoaDon(row.Cells[0].Value.ToString());
-                }
-                ReloadDataGridView(null, null);
-                MessageBox.Show("Đã xoá thành công!");
-            }
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)

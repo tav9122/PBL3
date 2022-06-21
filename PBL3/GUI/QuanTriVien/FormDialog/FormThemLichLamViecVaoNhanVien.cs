@@ -78,35 +78,27 @@ namespace PBL3
 
         private void buttonXoa_Click(object sender, System.EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xoá các lịch này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                {
-                    listLichLamViecTamThoi.RemoveAt(row.Index);
-                }
-                Reload();
+                listLichLamViecTamThoi.RemoveAt(row.Index);
             }
+            Reload();
         }
 
         private void buttonThem_Click(object sender, System.EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn thêm các lịch này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
             {
-                foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                listLichLamViecTamThoi.Add(new ViewLichLamViec
                 {
-                    listLichLamViecTamThoi.Add(new ViewLichLamViec
-                    {
-                        MaLichLamViec = row.Cells["MaLichLamViec"].Value.ToString(),
-                        ThoiGianBatDau = row.Cells["ThoiGianBatDau"].Value.ToString(),
-                        ThoiGianKetThuc = row.Cells["ThoiGianKetThuc"].Value.ToString(),
-                        NgayLamViec = row.Cells["NgayLamViec"].Value.ToString(),
-                        NhanViens = row.Cells["NhanViens"].Value.ToString()
-                    });
-                }
-                Reload();
+                    MaLichLamViec = row.Cells["MaLichLamViec"].Value.ToString(),
+                    ThoiGianBatDau = row.Cells["ThoiGianBatDau"].Value.ToString(),
+                    ThoiGianKetThuc = row.Cells["ThoiGianKetThuc"].Value.ToString(),
+                    NgayLamViec = row.Cells["NgayLamViec"].Value.ToString(),
+                    NhanViens = row.Cells["NhanViens"].Value.ToString()
+                });
             }
+            Reload();
         }
 
         private void buttonHuyBo_Click(object sender, System.EventArgs e)
@@ -117,6 +109,7 @@ namespace PBL3
         private void buttonXacNhan_Click(object sender, System.EventArgs e)
         {
             sendLichLamViecs(listLichLamViecTamThoi);
+            MessageBox.Show("Cập nhật thành công, nhấn xác nhận để lưu thay đổi!");
             this.Close();
         }
 

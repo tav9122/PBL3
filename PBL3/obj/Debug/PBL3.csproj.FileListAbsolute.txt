@@ -82,6 +82,8 @@ D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormTh
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormLuaChonVaiTroDangNhap.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanLiLichLamViec.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanLiLoHang.resources
+D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormThongKeTheoBang.resources
+D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormThongKeTheoBieuDo.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanTriVien.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanLiNhanVien.resources
 D:\OneDrive - tav9122\ANH VU\source\respo\GitHub\PBL3\PBL3\obj\Debug\PBL3.FormQuanLiSanPham.resources

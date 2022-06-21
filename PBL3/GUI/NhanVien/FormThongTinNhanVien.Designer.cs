@@ -330,7 +330,7 @@
             this.dateTimePickerNgayBatDauLamViec.Location = new System.Drawing.Point(187, 269);
             this.dateTimePickerNgayBatDauLamViec.Name = "dateTimePickerNgayBatDauLamViec";
             this.dateTimePickerNgayBatDauLamViec.Size = new System.Drawing.Size(158, 22);
-            this.dateTimePickerNgayBatDauLamViec.TabIndex = 139;
+            this.dateTimePickerNgayBatDauLamViec.TabIndex = 3;
             // 
             // FormThongTinNhanVien
             // 

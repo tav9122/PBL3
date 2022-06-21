@@ -17,6 +17,8 @@ namespace PBL3
 
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+
+            ReloadDataGridView(null, null);
         }
 
         private void ReloadDataGridView(object sender, EventArgs e)

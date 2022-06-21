@@ -42,16 +42,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelTieuDe = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBoxTimKiem = new System.Windows.Forms.TextBox();
             this.comboBoxKieuSapXep = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonResetSoLuongNhapThem = new System.Windows.Forms.Button();
             this.buttonThemSanPhamMoi = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.labelSoLuongCacVatPhamDangHienThi = new System.Windows.Forms.Label();
             this.labelTongTienCacVatPhamDangHienThi = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -212,6 +210,20 @@
             this.panel1.Size = new System.Drawing.Size(787, 29);
             this.panel1.TabIndex = 62;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(765, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(15, 18);
+            this.button1.TabIndex = 26;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
             // textBoxTimKiem
             // 
             this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -243,7 +255,7 @@
             this.comboBoxKieuSapXep.Name = "comboBoxKieuSapXep";
             this.comboBoxKieuSapXep.Size = new System.Drawing.Size(152, 24);
             this.comboBoxKieuSapXep.TabIndex = 4;
-            this.comboBoxKieuSapXep.SelectedIndexChanged += new System.EventHandler(this.ReloadDataGridView);
+            this.comboBoxKieuSapXep.DropDownClosed += new System.EventHandler(this.ReloadDataGridView);
             // 
             // label1
             // 
@@ -285,41 +297,17 @@
             this.buttonThemSanPhamMoi.UseVisualStyleBackColor = true;
             this.buttonThemSanPhamMoi.Click += new System.EventHandler(this.buttonThemSanPhamMoi_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 564);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 18);
-            this.label2.TabIndex = 73;
-            this.label2.Text = "Số lượng các vật phẩm đang hiển thị:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 585);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(251, 18);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Tổng tiền các vật phẩm đang hiển thị:";
-            // 
             // labelSoLuongCacVatPhamDangHienThi
             // 
             this.labelSoLuongCacVatPhamDangHienThi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSoLuongCacVatPhamDangHienThi.AutoSize = true;
             this.labelSoLuongCacVatPhamDangHienThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelSoLuongCacVatPhamDangHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSoLuongCacVatPhamDangHienThi.Location = new System.Drawing.Point(274, 564);
+            this.labelSoLuongCacVatPhamDangHienThi.Location = new System.Drawing.Point(19, 564);
             this.labelSoLuongCacVatPhamDangHienThi.Name = "labelSoLuongCacVatPhamDangHienThi";
-            this.labelSoLuongCacVatPhamDangHienThi.Size = new System.Drawing.Size(15, 18);
-            this.labelSoLuongCacVatPhamDangHienThi.TabIndex = 75;
-            this.labelSoLuongCacVatPhamDangHienThi.Text = "x";
+            this.labelSoLuongCacVatPhamDangHienThi.Size = new System.Drawing.Size(249, 18);
+            this.labelSoLuongCacVatPhamDangHienThi.TabIndex = 73;
+            this.labelSoLuongCacVatPhamDangHienThi.Text = "Số lượng các vật phẩm đang hiển thị:";
             // 
             // labelTongTienCacVatPhamDangHienThi
             // 
@@ -327,25 +315,11 @@
             this.labelTongTienCacVatPhamDangHienThi.AutoSize = true;
             this.labelTongTienCacVatPhamDangHienThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTongTienCacVatPhamDangHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTongTienCacVatPhamDangHienThi.Location = new System.Drawing.Point(276, 585);
+            this.labelTongTienCacVatPhamDangHienThi.Location = new System.Drawing.Point(19, 585);
             this.labelTongTienCacVatPhamDangHienThi.Name = "labelTongTienCacVatPhamDangHienThi";
-            this.labelTongTienCacVatPhamDangHienThi.Size = new System.Drawing.Size(15, 18);
-            this.labelTongTienCacVatPhamDangHienThi.TabIndex = 76;
-            this.labelTongTienCacVatPhamDangHienThi.Text = "x";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(765, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 18);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonMinimize_Click);
+            this.labelTongTienCacVatPhamDangHienThi.Size = new System.Drawing.Size(251, 18);
+            this.labelTongTienCacVatPhamDangHienThi.TabIndex = 74;
+            this.labelTongTienCacVatPhamDangHienThi.Text = "Tổng tiền các vật phẩm đang hiển thị:";
             // 
             // FormChiTietHoacThemLoHang
             // 
@@ -356,8 +330,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.labelTongTienCacVatPhamDangHienThi);
             this.Controls.Add(this.labelSoLuongCacVatPhamDangHienThi);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonThemSanPhamMoi);
             this.Controls.Add(this.buttonResetSoLuongNhapThem);
             this.Controls.Add(this.textBoxTimKiem);
@@ -402,8 +374,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonResetSoLuongNhapThem;
         private System.Windows.Forms.Button buttonThemSanPhamMoi;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelSoLuongCacVatPhamDangHienThi;
         private System.Windows.Forms.Label labelTongTienCacVatPhamDangHienThi;
     }

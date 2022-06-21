@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PBL3
 {
+    [Table("Lô hàng")]
     public class LoHang
     {
         [Key]

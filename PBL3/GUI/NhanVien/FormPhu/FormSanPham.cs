@@ -20,6 +20,7 @@ namespace PBL3
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
 
+            ReloadDataGridView(null, null);
             foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
                 if (col != dataGridView1.Columns["SoLuongTrongTuiHang"])

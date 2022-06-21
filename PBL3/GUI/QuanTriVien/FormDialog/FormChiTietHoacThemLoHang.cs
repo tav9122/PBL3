@@ -26,24 +26,23 @@ namespace PBL3
 
             comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
-            {
-                if (col != dataGridView1.Columns["SoLuongNhapThem"])
-                    col.ReadOnly = true;
-            }
 
             textBoxMaLoHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLLoHang.Instance.GetMaLoHangs());
             dateTimePicker1.Value = DateTime.Now;
             textBoxTongTien.Text = 0.ToString("C0");
 
+            ReloadDataGridView(null, null);
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                if (col != dataGridView1.Columns["SoLuongNhapThem"])
+                    col.ReadOnly = true;
+            }
             dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["GiaMua"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["GiaBan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["GiaBan"].DefaultCellStyle.Format = "C0";
             dataGridView1.Columns["GiaMua"].DefaultCellStyle.Format = "C0";
 
-            label2.Visible = false;
-            label4.Visible = false;
             labelSoLuongCacVatPhamDangHienThi.Visible = false;
             labelTongTienCacVatPhamDangHienThi.Visible = false;
         }
@@ -71,8 +70,10 @@ namespace PBL3
             buttonResetSoLuongNhapThem.Visible = false;
             dataGridView1.ReadOnly = true;
 
+            ReloadDataGridView(null, null);
             dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["SoSeri"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["GiaMua"].DefaultCellStyle.Format = "C0";
         }
 
         private void ReloadDataGridView(object sender, EventArgs e)
@@ -82,14 +83,14 @@ namespace PBL3
             else
             {
                 dataGridView1.DataSource = BLLButtonQuanLiLoHang.Instance.GetVatPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, textBoxMaLoHang.Text);
-                labelSoLuongCacVatPhamDangHienThi.Text = dataGridView1.RowCount.ToString();
+                labelSoLuongCacVatPhamDangHienThi.Text = "Số lượng các vật phẩm đang hiển thị: " + dataGridView1.RowCount.ToString();
 
                 double tongTien = 0;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     tongTien += (double)row.Cells["GiaMua"].Value;
                 }
-                labelTongTienCacVatPhamDangHienThi.Text = tongTien.ToString("C0");
+                labelTongTienCacVatPhamDangHienThi.Text = "Tổng tiền các vật phẩm đang hiển thị: " + tongTien.ToString("C0");
             }
         }
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -129,8 +130,12 @@ namespace PBL3
             {
                 BLLVatPham.Instance.InitializeNewVatPhams(sanPham.Temp, sanPham.MaSanPham, textBoxMaLoHang.Text);
             }
+
             BLLQuanLiChung.Instance.alreadyOpenFormQuanLiSanPham = false;
             BLLQuanLiChung.Instance.formQuanLiSanPham = null;
+            BLLQuanLiChung.Instance.alreadyOpenFormThongKeTheoBang = false;
+            BLLQuanLiChung.Instance.formThongKeTheoBang = null;
+
             MessageBox.Show("Lưu lô nhập hàng thành công!");
             this.Close();
         }

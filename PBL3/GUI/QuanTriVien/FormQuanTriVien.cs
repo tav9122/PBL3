@@ -74,7 +74,6 @@ namespace PBL3
         private void buttonQuanLiLichLamViec_Click(object sender, EventArgs e)
         {
             BLLQuanLiChung.Instance.OpenChildForm(new FormQuanLiLichLamViec(), sender, panelDesktopPane);
-
         }
 
         private void buttonQuanLiLoHang_Click(object sender, EventArgs e)

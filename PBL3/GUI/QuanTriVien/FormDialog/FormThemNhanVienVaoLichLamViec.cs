@@ -83,40 +83,32 @@ namespace PBL3
 
         private void buttonXoa_Click(object sender, System.EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xoá các nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                {
-                    listNhanVienTamThoi.RemoveAt(row.Index);
-                }
-                Reload();
+                listNhanVienTamThoi.RemoveAt(row.Index);
             }
+            Reload();
         }
 
         private void buttonThem_Click(object sender, System.EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn thêm các nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
             {
-                foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                listNhanVienTamThoi.Add(new ViewNhanVien
                 {
-                    listNhanVienTamThoi.Add(new ViewNhanVien
-                    {
-                        MaNhanVien = row.Cells["MaNhanVien"].Value.ToString(),
-                        HoVaTen = row.Cells["HoVaTen"].Value.ToString(),
-                        SoDienThoai = row.Cells["SoDienThoai"].Value.ToString(),
-                        Email = row.Cells["Email"].Value.ToString(),
-                        DiaChi = row.Cells["DiaChi"].Value.ToString(),
-                        NgaySinh = Convert.ToDateTime(row.Cells["NgaySinh"].Value),
-                        GioiTinh = Convert.ToBoolean(row.Cells["GioiTinh"].Value),
-                        MucLuong = Convert.ToDouble(row.Cells["MucLuong"].Value),
-                        TenDangNhap = row.Cells["TenDangNhap"].Value.ToString(),
-                        LichLamViecs = row.Cells["LichLamViecs"].Value.ToString()
-                    });
-                }
-                Reload();
+                    MaNhanVien = row.Cells["MaNhanVien"].Value.ToString(),
+                    HoVaTen = row.Cells["HoVaTen"].Value.ToString(),
+                    SoDienThoai = row.Cells["SoDienThoai"].Value.ToString(),
+                    Email = row.Cells["Email"].Value.ToString(),
+                    DiaChi = row.Cells["DiaChi"].Value.ToString(),
+                    NgaySinh = Convert.ToDateTime(row.Cells["NgaySinh"].Value),
+                    GioiTinh = Convert.ToBoolean(row.Cells["GioiTinh"].Value),
+                    MucLuong = Convert.ToDouble(row.Cells["MucLuong"].Value),
+                    TenDangNhap = row.Cells["TenDangNhap"].Value.ToString(),
+                    LichLamViecs = row.Cells["LichLamViecs"].Value.ToString()
+                });
             }
+            Reload();
         }
 
         private void buttonHuyBo_Click(object sender, EventArgs e)
@@ -127,6 +119,7 @@ namespace PBL3
         private void buttonXacNhan_Click(object sender, System.EventArgs e)
         {
             sendNhanViens(listNhanVienTamThoi);
+            MessageBox.Show("Cập nhật thành công, nhấn xác nhận để lưu thay đổi!");
             this.Close();
         }
 

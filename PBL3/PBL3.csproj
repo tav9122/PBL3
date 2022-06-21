@@ -59,6 +59,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -78,6 +79,8 @@
     <Compile Include="BLL\BLLButtons\BLLButtonQuanLiLichLamViec.cs" />
     <Compile Include="BLL\BLLButtons\BLLButtonQuanLiLoHang.cs" />
     <Compile Include="BLL\BLLButtons\BLLButtonSanPham.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonThongKeTheoBang.cs" />
+    <Compile Include="BLL\BLLButtons\BLLButtonThongKeTheoBieuDo.cs" />
     <Compile Include="BLL\BLLClasses\BLLBaoHanh.cs" />
     <Compile Include="BLL\BLLClasses\BLLHoaDon.cs" />
     <Compile Include="BLL\BLLClasses\BLLKhachHang.cs" />
@@ -112,6 +115,8 @@
     <Compile Include="DTO\Views\ViewSanPham_NhanVien.cs" />
     <Compile Include="DTO\Views\ViewSanPham_QuanTriVien.cs" />
     <Compile Include="DTO\Views\ViewSanPham_QuanTriVien_LoHang.cs" />
+    <Compile Include="DTO\Views\ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien.cs" />
+    <Compile Include="DTO\Views\ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong.cs" />
     <Compile Include="DTO\Views\ViewVatPham_NhanVien.cs" />
     <Compile Include="DTO\Views\ViewVatPham_QuanTriVien.cs" />
     <Compile Include="GUI\FormDungChung\FormDialog\FormThongTinTaiKhoan.cs">
@@ -326,6 +331,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormPhu\FormQuanLiLoHang.resx">
       <DependentUpon>FormQuanLiLoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanTriVien\FormPhu\FormThongKeTheoBang.resx">
+      <DependentUpon>FormThongKeTheoBang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanTriVien\FormPhu\FormThongKeTheoBieuDo.resx">
+      <DependentUpon>FormThongKeTheoBieuDo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanTriVien\FormQuanTriVien.resx">
       <DependentUpon>FormQuanTriVien.cs</DependentUpon>

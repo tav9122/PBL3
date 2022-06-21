@@ -129,7 +129,7 @@
             this.comboBoxKieuSapXep.Name = "comboBoxKieuSapXep";
             this.comboBoxKieuSapXep.Size = new System.Drawing.Size(152, 24);
             this.comboBoxKieuSapXep.TabIndex = 8;
-            this.comboBoxKieuSapXep.SelectedIndexChanged += new System.EventHandler(this.ReloadDataGridView);
+            this.comboBoxKieuSapXep.DropDownClosed += new System.EventHandler(this.ReloadDataGridView);
             // 
             // label1
             // 
