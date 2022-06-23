@@ -29,7 +29,8 @@ namespace PBL3
             x.MaKhachHang = maKhachHang;
             x.DiaChi = diaChi;
             x.SoDienThoai = soDienThoai;
-            x.GhiChu = ghiChu;
+            if (ghiChu != null)
+                x.GhiChu = ghiChu;
             Model.Instance.SaveChanges();
         }
 

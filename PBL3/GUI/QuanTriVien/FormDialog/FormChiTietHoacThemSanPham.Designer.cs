@@ -60,7 +60,7 @@
             this.textBoxGiaBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGiaBan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxGiaBan.Location = new System.Drawing.Point(570, 86);
+            this.textBoxGiaBan.Location = new System.Drawing.Point(584, 86);
             this.textBoxGiaBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGiaBan.Name = "textBoxGiaBan";
             this.textBoxGiaBan.Size = new System.Drawing.Size(143, 22);
@@ -72,7 +72,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(427, 86);
+            this.label11.Location = new System.Drawing.Point(441, 86);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 18);
             this.label11.TabIndex = 132;
@@ -83,7 +83,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(265, 360);
+            this.buttonXacNhan.Location = new System.Drawing.Point(272, 317);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -97,7 +97,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(392, 360);
+            this.buttonHuyBo.Location = new System.Drawing.Point(399, 317);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -108,12 +108,12 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 29);
+            this.panel1.Size = new System.Drawing.Size(759, 29);
             this.panel1.TabIndex = 119;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -124,7 +124,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(725, 7);
+            this.button1.Location = new System.Drawing.Point(731, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(15, 18);
             this.button1.TabIndex = 26;
@@ -139,7 +139,7 @@
             this.textBoxTenHang.Location = new System.Drawing.Point(136, 216);
             this.textBoxTenHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenHang.Name = "textBoxTenHang";
-            this.textBoxTenHang.Size = new System.Drawing.Size(159, 22);
+            this.textBoxTenHang.Size = new System.Drawing.Size(228, 22);
             this.textBoxTenHang.TabIndex = 3;
             // 
             // label5
@@ -180,7 +180,7 @@
             this.textBoxTenSanPham.Location = new System.Drawing.Point(136, 172);
             this.textBoxTenSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenSanPham.Name = "textBoxTenSanPham";
-            this.textBoxTenSanPham.Size = new System.Drawing.Size(159, 22);
+            this.textBoxTenSanPham.Size = new System.Drawing.Size(228, 22);
             this.textBoxTenSanPham.TabIndex = 2;
             // 
             // label3
@@ -202,7 +202,7 @@
             this.textBoxMaSanPham.Location = new System.Drawing.Point(136, 86);
             this.textBoxMaSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMaSanPham.Name = "textBoxMaSanPham";
-            this.textBoxMaSanPham.Size = new System.Drawing.Size(159, 22);
+            this.textBoxMaSanPham.Size = new System.Drawing.Size(228, 22);
             this.textBoxMaSanPham.TabIndex = 0;
             // 
             // labelTieuDe
@@ -221,7 +221,7 @@
             this.textBoxSoLuongHienTai.Enabled = false;
             this.textBoxSoLuongHienTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSoLuongHienTai.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxSoLuongHienTai.Location = new System.Drawing.Point(570, 216);
+            this.textBoxSoLuongHienTai.Location = new System.Drawing.Point(584, 216);
             this.textBoxSoLuongHienTai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoLuongHienTai.Name = "textBoxSoLuongHienTai";
             this.textBoxSoLuongHienTai.Size = new System.Drawing.Size(143, 22);
@@ -232,7 +232,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(427, 216);
+            this.label6.Location = new System.Drawing.Point(441, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 18);
             this.label6.TabIndex = 138;
@@ -243,7 +243,7 @@
             this.textBoxGiaMua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxGiaMua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGiaMua.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxGiaMua.Location = new System.Drawing.Point(570, 130);
+            this.textBoxGiaMua.Location = new System.Drawing.Point(584, 130);
             this.textBoxGiaMua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGiaMua.Name = "textBoxGiaMua";
             this.textBoxGiaMua.Size = new System.Drawing.Size(143, 22);
@@ -255,7 +255,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(427, 130);
+            this.label7.Location = new System.Drawing.Point(441, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 18);
             this.label7.TabIndex = 136;
@@ -267,7 +267,7 @@
             this.textBoxSoLuongNhap.Enabled = false;
             this.textBoxSoLuongNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSoLuongNhap.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxSoLuongNhap.Location = new System.Drawing.Point(570, 172);
+            this.textBoxSoLuongNhap.Location = new System.Drawing.Point(584, 172);
             this.textBoxSoLuongNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoLuongNhap.Name = "textBoxSoLuongNhap";
             this.textBoxSoLuongNhap.Size = new System.Drawing.Size(143, 22);
@@ -278,7 +278,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(427, 172);
+            this.label12.Location = new System.Drawing.Point(441, 172);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 18);
             this.label12.TabIndex = 134;
@@ -289,7 +289,7 @@
             this.textBoxThoiGianBaoHanh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThoiGianBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxThoiGianBaoHanh.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxThoiGianBaoHanh.Location = new System.Drawing.Point(570, 260);
+            this.textBoxThoiGianBaoHanh.Location = new System.Drawing.Point(584, 260);
             this.textBoxThoiGianBaoHanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxThoiGianBaoHanh.Name = "textBoxThoiGianBaoHanh";
             this.textBoxThoiGianBaoHanh.Size = new System.Drawing.Size(143, 22);
@@ -299,7 +299,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(427, 260);
+            this.label1.Location = new System.Drawing.Point(441, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 18);
             this.label1.TabIndex = 140;
@@ -312,7 +312,7 @@
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
             this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(136, 130);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
-            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(159, 24);
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(228, 24);
             this.comboBoxLoaiSanPham.TabIndex = 1;
             this.comboBoxLoaiSanPham.TextChanged += new System.EventHandler(this.comboBoxLoaiSanPham_TextChanged);
             // 
@@ -321,7 +321,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(747, 401);
+            this.ClientSize = new System.Drawing.Size(759, 358);
             this.ControlBox = false;
             this.Controls.Add(this.comboBoxLoaiSanPham);
             this.Controls.Add(this.textBoxThoiGianBaoHanh);

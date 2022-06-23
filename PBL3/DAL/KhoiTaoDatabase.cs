@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PBL3
 {
-    public class KhoiTaoDatabase : CreateDatabaseIfNotExists<Model>
+    public class KhoiTaoDatabase : DropCreateDatabaseIfModelChanges<Model>
     {
         protected override void Seed(Model context)
         {

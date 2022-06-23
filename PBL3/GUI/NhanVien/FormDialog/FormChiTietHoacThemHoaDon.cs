@@ -89,12 +89,22 @@ namespace PBL3
                     BLLQuanLiChung.Instance.alreadyOpenFormQuanLiKhachHang = false;
                     BLLQuanLiChung.Instance.formQuanLiKhachHang = null;
                 }
+                else
+                {
+                    BLLKhachHang.Instance.UpdateKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, null);
+                    BLLQuanLiChung.Instance.alreadyOpenFormQuanLiKhachHang = false;
+                    BLLQuanLiChung.Instance.formQuanLiKhachHang = null;
+                }
+
                 BLLHoaDon.Instance.AddHoaDon(textBoxMaHoaDon.Text, textBoxMaNhanVien.Text, textBoxMaKhachHang.Text, dateTimePickerThoiGianGiaoDich.Value, BLLButtonSanPham.Instance.GetTongTien());
+
                 foreach (SanPham i in BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
                 {
                     BLLButtonSanPham.Instance.AssignMaHoaDonToVatPhams(textBoxMaHoaDon.Text, i.MaSanPham, i.Temp);
                 }
+
                 BLLSanPham.Instance.ResetTemp();
+
                 BLLQuanLiChung.Instance.alreadyOpenFormLichSuHoaDon = false;
                 BLLQuanLiChung.Instance.formLichSuHoaDon = null;
                 MessageBox.Show("Tạo hoá đơn thành công!");
@@ -106,16 +116,12 @@ namespace PBL3
         {
             if (BLLKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) != null)
             {
-                textBoxTenKhachHang.Enabled = false;
-                textBoxDiaChi.Enabled = false;
                 textBoxTenKhachHang.Text = BLLKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).TenKhachHang;
                 textBoxDiaChi.Text = BLLKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).DiaChi;
                 textBoxMaKhachHang.Text = BLLKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text).MaKhachHang;
             }
             else
             {
-                textBoxTenKhachHang.Enabled = true;
-                textBoxDiaChi.Enabled = true;
                 textBoxTenKhachHang.Text = "";
                 textBoxDiaChi.Text = "";
                 textBoxMaKhachHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLKhachHang.Instance.GetMaKhachHangs());
