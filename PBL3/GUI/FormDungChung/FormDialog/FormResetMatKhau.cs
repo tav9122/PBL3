@@ -37,17 +37,16 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            string matKhauMoi = "";
-            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            Random rnd = new Random();
-            for (int i = 0; i < 6; i++)
+            try
             {
-                matKhauMoi += chars[rnd.Next(chars.Length)];
+                BLLTaiKhoan.Instance.UpdateAndSendTaiKhoanInformationToMail(textBoxEmailAddress.Text, "", BLLTaiKhoan.Instance.GenerateSixLengthRandomMatKhau());
+                MessageBox.Show("Đã gửi mật khẩu mới đến email của bạn!");
+                this.Close();
             }
-
-            BLLTaiKhoan.Instance.UpdateAndSendTaiKhoanInformationToMail(textBoxEmailAddress.Text, "", matKhauMoi);
-            MessageBox.Show("Đã gửi mật khẩu mới đến email của bạn!");
-            this.Close();
+            catch
+            {
+                MessageBox.Show("Email không hợp lệ!");
+            }
         }
     }
 }

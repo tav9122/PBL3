@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -76,49 +77,49 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
-            if (textBoxTenSanPham.Text == "" || textBoxGiaBan.Text == "" || textBoxSoLuongNhap.Text == "" || textBoxSoLuongHienTai.Text == "" || textBoxGiaMua.Text == "" || textBoxTenHang.Text == "" || textBoxThoiGianBaoHanh.Text == "" || comboBoxLoaiSanPham.Text == "")
+            try
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-            }
-            else
-            {
-                if (typeUpdate)
+                if (textBoxTenSanPham.Text == "" || textBoxGiaBan.Text == "" || textBoxSoLuongNhap.Text == "" || textBoxSoLuongHienTai.Text == "" || textBoxGiaMua.Text == "" || textBoxTenHang.Text == "" || textBoxThoiGianBaoHanh.Text == "" || comboBoxLoaiSanPham.Text == "")
                 {
-                    BLLSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaBan.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
-                    MessageBox.Show("Đã cập nhật thành công!");
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 }
                 else
                 {
-                    BLLSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaBan.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
-                    MessageBox.Show("Đã thêm thành công!");
+                    if (typeUpdate)
+                    {
+                        BLLSanPham.Instance.UpdateSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaBan.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
+                        MessageBox.Show("Đã cập nhật thành công!");
+                    }
+                    else
+                    {
+                        BLLSanPham.Instance.AddSanPham(textBoxMaSanPham.Text, textBoxTenSanPham.Text, textBoxTenHang.Text, comboBoxLoaiSanPham.Text, Convert.ToDouble(textBoxGiaMua.Text.Substring(0, textBoxGiaMua.TextLength - 1)), Convert.ToDouble(textBoxGiaBan.Text.Substring(0, textBoxGiaBan.TextLength - 1)), Convert.ToInt32(textBoxSoLuongNhap.Text), Convert.ToInt32(textBoxSoLuongHienTai.Text), textBoxThoiGianBaoHanh.Text);
+                        MessageBox.Show("Đã thêm thành công!");
+                    }
+                    this.Close();
                 }
-                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Các thông tin không hợp lệ!");
             }
         }
 
         private void comboBoxLoaiSanPham_TextChanged(object sender, EventArgs e)
         {
             if (!typeUpdate)
-                try
-                {
-                    textBoxMaSanPham.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(comboBoxLoaiSanPham.Text);
-                }
-                catch
-                {
-                }
+                textBoxMaSanPham.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(comboBoxLoaiSanPham.Text);
         }
 
         private void textBoxGiaBan_Enter(object sender, EventArgs e)
         {
-            try { ((TextBox)sender).Text = ((TextBox)sender).Text.Substring(0, ((TextBox)sender).Text.Length - 2); }
-            catch { }
+            if (((TextBox)sender).Text.Length > 2)
+                ((TextBox)sender).Text = ((TextBox)sender).Text.Substring(0, ((TextBox)sender).Text.Length - 2);
         }
 
         private void textBoxGiaBan_Leave(object sender, EventArgs e)
         {
-            try { ((TextBox)sender).Text = String.Format("{0:C0}", Convert.ToDouble(((TextBox)sender).Text)); }
-            catch { }
-
+            if (!((TextBox)sender).Text.Any(x => char.IsLetter(x)) && ((TextBox)sender).Text.Length > 0)
+                ((TextBox)sender).Text = String.Format("{0:C0}", Convert.ToDouble(((TextBox)sender).Text));
         }
     }
 }

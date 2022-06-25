@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -45,6 +46,18 @@ namespace PBL3
             if (matKhau != "")
                 taiKhoan.MatKhau = matKhau;
             Model.Instance.SaveChanges();
+        }
+
+        public string GenerateSixLengthRandomMatKhau()
+        {
+            string randomMatKhau = "";
+            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            Random rnd = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                randomMatKhau += chars[rnd.Next(chars.Length)];
+            }
+            return randomMatKhau;
         }
 
         public void UpdateAndSendTaiKhoanInformationToMail(string email, string tenDangNhap, string matKhauMoi)

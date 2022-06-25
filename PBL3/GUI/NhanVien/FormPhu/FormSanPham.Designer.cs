@@ -122,8 +122,6 @@
             this.comboBoxKieuSapXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKieuSapXep.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBoxKieuSapXep.FormattingEnabled = true;
-            this.comboBoxKieuSapXep.Items.AddRange(new object[] {
-            "Không sắp xếp"});
             this.comboBoxKieuSapXep.Location = new System.Drawing.Point(552, 20);
             this.comboBoxKieuSapXep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxKieuSapXep.Name = "comboBoxKieuSapXep";

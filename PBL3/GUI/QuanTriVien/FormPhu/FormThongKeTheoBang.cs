@@ -17,9 +17,11 @@ namespace PBL3
             InitializeComponent();
 
             comboBoxKieuThongKe.SelectedIndex = 0;
-            dictionaryTongTien.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
 
+            dictionaryTongTien.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
             comboBoxKieuSapXep.SelectedIndex = 0;
+
+            dateTimePicker1.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month - 1, DateTime.Now.Day, 0, 0, 0);
 
             ReloadDataGridView(null, null);
             dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -30,17 +32,18 @@ namespace PBL3
             if (sender is ComboBox && ((ComboBox)sender).Name == "comboBoxKieuThongKe")
             {
                 comboBoxKieuSapXep.Items.Clear();
-                comboBoxKieuSapXep.Items.Add("Không sắp xếp");
-                comboBoxKieuSapXep.SelectedIndex = 0;
             }
 
             dateTimePicker1.Value = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, 0, 0, 0);
             dateTimePicker2.Value = new DateTime(dateTimePicker2.Value.Year, dateTimePicker2.Value.Month, dateTimePicker2.Value.Day, 23, 59, 59);
 
-            if (comboBoxKieuThongKe.Text == "Tổng tiền nhập và doanh thu")
+            if (comboBoxKieuThongKe.Text == "Tổng tiền nhập hàng và doanh thu")
             {
                 if (sender is ComboBox && ((ComboBox)sender).Name == "comboBoxKieuThongKe")
+                {
                     dictionaryTongTien.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+                    comboBoxKieuSapXep.SelectedIndex = 0;
+                }
                 dataGridView1.DataSource = BLLButtonThongKeTheoBang.Instance.GetTongTienSanPhams(dictionaryTongTien.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, dateTimePicker1.Value, dateTimePicker2.Value);
 
                 double tongTienNhap = 0;
@@ -60,7 +63,10 @@ namespace PBL3
             else if (comboBoxKieuThongKe.Text == "Số lượng nhập và bán")
             {
                 if (sender is ComboBox && ((ComboBox)sender).Name == "comboBoxKieuThongKe")
+                {
                     dictionarySoLuong.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+                    comboBoxKieuSapXep.SelectedIndex = 0;
+                }
 
                 dataGridView1.DataSource = BLLButtonThongKeTheoBang.Instance.GetSoLuongSanPhams(dictionarySoLuong.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, dateTimePicker1.Value, dateTimePicker2.Value);
 

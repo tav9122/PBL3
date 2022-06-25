@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,9 +25,5 @@ namespace PBL3
         public string GhiChu { get; set; }
 
         public virtual ICollection<HoaDon> HoaDons { get; set; }
-
-        [DefaultValue("false")]
-        [Column("Đã xoá")]
-        public bool DaXoa { get; set; }
     }
 }

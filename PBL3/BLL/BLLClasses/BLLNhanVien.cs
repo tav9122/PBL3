@@ -52,14 +52,12 @@ namespace PBL3
 
         public NhanVien GetNhanVien(string text)
         {
-            try
-            {
-                if (text.Contains("@"))
-                    return Model.Instance.NhanViens.Where(nv => nv.Email == text).FirstOrDefault();
-                else
-                    return Model.Instance.NhanViens.Where(nv => nv.MaNhanVien == text).FirstOrDefault();
-            }
-            catch { return null; }
+            NhanVien nhanVien;
+            if (text.Contains("@"))
+                nhanVien = Model.Instance.NhanViens.Where(nv => nv.Email == text).FirstOrDefault();
+            else
+                nhanVien = Model.Instance.NhanViens.Where(nv => nv.MaNhanVien == text).FirstOrDefault();
+            return nhanVien;
         }
 
         public List<string> GetMaNhanViens()

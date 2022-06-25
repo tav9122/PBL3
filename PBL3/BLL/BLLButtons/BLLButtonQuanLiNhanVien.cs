@@ -37,8 +37,9 @@ namespace PBL3
 
         public List<ViewNhanVien> SortNhanVien(List<ViewNhanVien> nhanViens, string kieuSapXep)
         {
-            try { return nhanViens.OrderBy(nv => nv.GetType().GetProperty(kieuSapXep).GetValue(nv, null)).ToList(); }
-            catch { return nhanViens; }
+            if (kieuSapXep == "MaNhanVien")
+                return nhanViens.OrderBy(nv => Convert.ToInt32(nv.MaNhanVien.Substring(2))).ToList();
+            return nhanViens.OrderBy(nv => nv.GetType().GetProperty(kieuSapXep).GetValue(nv, null)).ToList();
         }
 
         public List<ViewNhanVien> GetNhanViens(string kieuSapXep, string tuKhoa)

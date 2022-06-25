@@ -333,6 +333,8 @@
             this.textBoxMucLuong.Name = "textBoxMucLuong";
             this.textBoxMucLuong.Size = new System.Drawing.Size(221, 22);
             this.textBoxMucLuong.TabIndex = 9;
+            this.textBoxMucLuong.Enter += new System.EventHandler(this.textBoxMucLuong_Enter);
+            this.textBoxMucLuong.Leave += new System.EventHandler(this.textBoxMucLuong_Leave);
             // 
             // label11
             // 

@@ -16,8 +16,8 @@ namespace PBL3
         {
             InitializeComponent();
 
-            comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+            comboBoxKieuSapXep.SelectedIndex = 0;
 
             ReloadDataGridView(null, null);
             dataGridView1.Columns["TongTien"].DefaultCellStyle.Format = "C0";
@@ -40,20 +40,6 @@ namespace PBL3
             FormChiTietHoacThemLoHang formChiTietHoacThemLoHang = new FormChiTietHoacThemLoHang(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             formChiTietHoacThemLoHang.ShowDialog();
             ReloadDataGridView(null, null);
-        }
-
-        private void buttonXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                {
-                    BLLLoHang.Instance.DeleteLoHang(row.Cells["MaLoHang"].Value.ToString());
-                }
-                ReloadDataGridView(null, null);
-                MessageBox.Show("Đã xoá thành công!");
-            }
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)

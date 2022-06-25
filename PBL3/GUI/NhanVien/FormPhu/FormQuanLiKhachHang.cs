@@ -15,8 +15,8 @@ namespace PBL3
         {
             InitializeComponent();
 
-            comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+            comboBoxKieuSapXep.SelectedIndex = 0;
 
             ReloadDataGridView(null, null);
         }
@@ -26,32 +26,11 @@ namespace PBL3
             dataGridView1.DataSource = BLLButtonQuanLiKhachHang.Instance.GetKhachHangs(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
         }
 
-        private void buttonThem_Click(object sender, EventArgs e)
-        {
-            FormChiTietHoacThemKhachHang formChiTietHoacThemKhachHang = new FormChiTietHoacThemKhachHang();
-            formChiTietHoacThemKhachHang.ShowDialog();
-            ReloadDataGridView(null, null);
-        }
-
         private void buttonSua_Click(object sender, EventArgs e)
         {
-            FormChiTietHoacThemKhachHang formChiTietHoacThemKhachHang = new FormChiTietHoacThemKhachHang(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            FormChiTietKhachHang formChiTietHoacThemKhachHang = new FormChiTietKhachHang(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             formChiTietHoacThemKhachHang.ShowDialog();
             ReloadDataGridView(null, null);
-        }
-
-        private void buttonXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                {
-                    BLLKhachHang.Instance.DeleteKhachHang(row.Cells[0].Value.ToString());
-                }
-                ReloadDataGridView(null, null);
-                MessageBox.Show("Đã xoá thành công!");
-            }
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)

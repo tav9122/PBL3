@@ -19,12 +19,8 @@ namespace PBL3
 
         public List<ViewNhanVien> GetNhanViensOfLichLamViec(string maLichLamViec)
         {
-            try
-            {
-                List<string> list = Model.Instance.NhanVienLichLamViecs.Where(nvllv => nvllv.MaLichLamViec == maLichLamViec).Select(nvllv => nvllv.MaNhanVien).ToList();
-                return Model.Instance.NhanViens.AsEnumerable().Where(llv => list.Contains(llv.MaNhanVien)).Select(nv => new ViewNhanVien { MaNhanVien = nv.MaNhanVien, HoVaTen = nv.HoVaTen, SoDienThoai = nv.SoDienThoai, Email = nv.Email, DiaChi = nv.DiaChi, NgaySinh = Convert.ToDateTime(nv.NgaySinh.ToString("dd/MM/yyyy")), GioiTinh = nv.GioiTinh, TenDangNhap = Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap, MucLuong = nv.MucLuong, LichLamViecs = BLLNhanVienLichLamViec.Instance.GetMaLichLamViecsOfNhanVien(nv.MaNhanVien) }).ToList();
-            }
-            catch { return null; }
+            List<string> list = Model.Instance.NhanVienLichLamViecs.Where(nvllv => nvllv.MaLichLamViec == maLichLamViec).Select(nvllv => nvllv.MaNhanVien).ToList();
+            return Model.Instance.NhanViens.AsEnumerable().Where(llv => list.Contains(llv.MaNhanVien)).Select(nv => new ViewNhanVien { MaNhanVien = nv.MaNhanVien, HoVaTen = nv.HoVaTen, SoDienThoai = nv.SoDienThoai, Email = nv.Email, DiaChi = nv.DiaChi, NgaySinh = Convert.ToDateTime(nv.NgaySinh.ToString("dd/MM/yyyy")), GioiTinh = nv.GioiTinh, TenDangNhap = Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.MaNhanVien == nv.MaNhanVien).TenDangNhap, MucLuong = nv.MucLuong, LichLamViecs = BLLNhanVienLichLamViec.Instance.GetMaLichLamViecsOfNhanVien(nv.MaNhanVien) }).ToList();
         }
 
         public void SetNhanViensOfLichlamViec(string maLichLamViec, List<string> maNhanViens)
@@ -40,22 +36,20 @@ namespace PBL3
         public string GetMaNhanViensOfLichLamViec(string maLichLamViecs)
         {
             string result = "";
-            foreach (string i in Model.Instance.NhanVienLichLamViecs.Where(nvllv => nvllv.MaLichLamViec == maLichLamViecs).Select(nvllv => nvllv.MaNhanVien).ToList())
+            foreach (string i in Model.Instance.NhanVienLichLamViecs.AsEnumerable().Where(nvllv => nvllv.MaLichLamViec == maLichLamViecs).OrderBy(nvllv => Convert.ToInt32(nvllv.MaNhanVien.Substring(2))).Select(nvllv => nvllv.MaNhanVien).ToList())
             {
                 result += i + ", ";
             }
-            try { return result.Substring(0, result.Length - 2); }
-            catch { return ""; }
+            if (result.Length >= 2)
+                result = result.Substring(0, result.Length - 2);
+            else result = "";
+            return result;
         }
 
         public List<ViewLichLamViec> GetLichLamViecsOfNhanVien(string maNhanVien)
         {
-            try
-            {
-                List<string> list = Model.Instance.NhanVienLichLamViecs.Where(nvllv => nvllv.MaNhanVien == maNhanVien).Select(nvllv => nvllv.MaLichLamViec).ToList();
-                return Model.Instance.LichLamViecs.AsEnumerable().Where(llv => list.Contains(llv.MaLichLamViec)).Select(llv => new ViewLichLamViec { MaLichLamViec = llv.MaLichLamViec, ThoiGianBatDau = llv.ThoiGianBatDau, ThoiGianKetThuc = llv.ThoiGianKetThuc, NgayLamViec = llv.NgayLamViec, NhanViens = BLLNhanVienLichLamViec.Instance.GetMaNhanViensOfLichLamViec(llv.MaLichLamViec) }).ToList();
-            }
-            catch { return null; }
+            List<string> list = Model.Instance.NhanVienLichLamViecs.Where(nvllv => nvllv.MaNhanVien == maNhanVien).Select(nvllv => nvllv.MaLichLamViec).ToList();
+            return Model.Instance.LichLamViecs.AsEnumerable().Where(llv => list.Contains(llv.MaLichLamViec)).Select(llv => new ViewLichLamViec { MaLichLamViec = llv.MaLichLamViec, ThoiGianBatDau = llv.ThoiGianBatDau, ThoiGianKetThuc = llv.ThoiGianKetThuc, NgayLamViec = llv.NgayLamViec, NhanViens = BLLNhanVienLichLamViec.Instance.GetMaNhanViensOfLichLamViec(llv.MaLichLamViec) }).ToList();
         }
 
         public void SetLichLamViecsOfNhanVien(string maNhanVien, List<string> maLichLamViecs)
@@ -71,12 +65,14 @@ namespace PBL3
         public string GetMaLichLamViecsOfNhanVien(string maNhanVien)
         {
             string result = "";
-            foreach (string i in Model.Instance.NhanVienLichLamViecs.Where(nvllv => nvllv.MaNhanVien == maNhanVien).Select(nvllv => nvllv.MaLichLamViec).ToList())
+            foreach (string i in Model.Instance.NhanVienLichLamViecs.AsEnumerable().Where(nvllv => nvllv.MaNhanVien == maNhanVien).OrderBy(nvllv => Convert.ToInt32(nvllv.MaLichLamViec.Substring(3))).Select(nvllv => nvllv.MaLichLamViec).ToList())
             {
                 result += i + ", ";
             }
-            try { return result.Substring(0, result.Length - 2); }
-            catch { return ""; }
+            if (result.Length >= 2)
+                result = result.Substring(0, result.Length - 2);
+            else result = "";
+            return result;
         }
     }
 }

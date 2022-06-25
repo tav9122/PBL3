@@ -56,6 +56,11 @@ namespace PBL3
             {
                 MessageBox.Show("Không được để trống các trường!");
             }
+            if (!textBoxEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Email không hợp lệ!");
+                return;
+            }
             else
             {
                 BLLNhanVien.Instance.UpdateNhanVien(textBoxMaNhanVien.Text, textBoxSoDienThoai.Text, textBoxEmail.Text, textBoxDiaChi.Text, textBoxHoVaTen.Text, dateTimePickerNgaySinh.Value, radioButtonNam.Checked, -1, null);

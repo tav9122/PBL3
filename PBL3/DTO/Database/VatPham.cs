@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PBL3
@@ -31,9 +30,5 @@ namespace PBL3
         public string MaLoHang { get; set; }
         [ForeignKey("MaLoHang")]
         public virtual LoHang LoHang { get; set; }
-
-        [DefaultValue("false")]
-        [Column("Đã xoá")]
-        public bool DaXoa { get; set; }
     }
 }

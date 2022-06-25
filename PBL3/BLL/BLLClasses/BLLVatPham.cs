@@ -32,8 +32,10 @@ namespace PBL3
 
         public VatPham GetVatPham(string soSeri)
         {
-            try { return Model.Instance.VatPhams.Where(vp => vp.SoSeri == soSeri).FirstOrDefault(); }
-            catch { return null; }
+            if (Model.Instance.VatPhams.Where(vp => vp.SoSeri == soSeri).Count() > 0)
+                return Model.Instance.VatPhams.Where(vp => vp.SoSeri == soSeri).FirstOrDefault();
+            else
+                return null;
         }
 
         public List<ViewVatPham_NhanVien> GetVatPhamsByMaHoaDon(string maHoaDon)
@@ -43,7 +45,7 @@ namespace PBL3
             {
                 vatPhams.Add(vatPham);
             }
-            return vatPhams;
+            return vatPhams.OrderBy(vp => Convert.ToDouble(vp.SoSeri)).ToList();
         }
     }
 }

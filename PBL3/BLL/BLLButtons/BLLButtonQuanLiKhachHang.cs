@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PBL3
@@ -22,7 +23,7 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewKhachHang> list = Model.Instance.KhachHangs.Where(kh => kh.DaXoa == false && (kh.DiaChi.ToLower().Contains(temp) || kh.SoDienThoai.ToLower().Contains(temp) || kh.TenKhachHang.ToLower().Contains(temp) || kh.MaKhachHang.ToLower().Contains(temp)))
+            List<ViewKhachHang> list = Model.Instance.KhachHangs.Where(kh => kh.DiaChi.ToLower().Contains(temp) || kh.SoDienThoai.ToLower().Contains(temp) || kh.TenKhachHang.ToLower().Contains(temp) || kh.MaKhachHang.ToLower().Contains(temp))
                 .Select(kh => new ViewKhachHang { DiaChi = kh.DiaChi, TenKhachHang = kh.TenKhachHang, MaKhachHang = kh.MaKhachHang, SoDienThoai = kh.SoDienThoai })
                 .ToList();
             foreach (string s in cacTuKhoa)
@@ -37,8 +38,9 @@ namespace PBL3
 
         public List<ViewKhachHang> SortKhachHang(List<ViewKhachHang> khachHangs, string kieuSapXep)
         {
-            try { return khachHangs.OrderBy(kh => kh.GetType().GetProperty(kieuSapXep).GetValue(kh, null)).ToList(); }
-            catch { return khachHangs; }
+            if (kieuSapXep == "MaKhachHang")
+                return khachHangs.OrderBy(kh => Convert.ToInt32(kh.MaKhachHang.Substring(2))).ToList();
+            return khachHangs.OrderBy(kh => kh.GetType().GetProperty(kieuSapXep).GetValue(kh, null)).ToList();
         }
 
         public List<ViewKhachHang> GetKhachHangs(string kieuSapXep, string tuKhoa)

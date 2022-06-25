@@ -37,8 +37,7 @@ namespace PBL3
 
         public List<ViewSanPham_NhanVien> SortSanPham(List<ViewSanPham_NhanVien> sanPhams, string kieuSapXep)
         {
-            try { return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList(); }
-            catch { return sanPhams; }
+            return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
         }
 
         public List<ViewSanPham_NhanVien> GetSanPhams(string kieuSapXep, string tuKhoa)

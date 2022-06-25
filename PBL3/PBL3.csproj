@@ -143,11 +143,11 @@
     <Compile Include="GUI\NhanVien\FormDialog\FormChiTietHoacThemBaoHanh.Designer.cs">
       <DependentUpon>FormChiTietHoacThemBaoHanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\NhanVien\FormDialog\FormChiTietHoacThemKhachHang.cs">
+    <Compile Include="GUI\NhanVien\FormDialog\FormChiTietKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\NhanVien\FormDialog\FormChiTietHoacThemKhachHang.Designer.cs">
-      <DependentUpon>FormChiTietHoacThemKhachHang.cs</DependentUpon>
+    <Compile Include="GUI\NhanVien\FormDialog\FormChiTietKhachHang.Designer.cs">
+      <DependentUpon>FormChiTietKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhanVien\FormDialog\FormChiTietHoacThemHoaDon.cs">
       <SubType>Form</SubType>
@@ -295,8 +295,8 @@
     <EmbeddedResource Include="GUI\NhanVien\FormDialog\FormChiTietHoacThemBaoHanh.resx">
       <DependentUpon>FormChiTietHoacThemBaoHanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\NhanVien\FormDialog\FormChiTietHoacThemKhachHang.resx">
-      <DependentUpon>FormChiTietHoacThemKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\NhanVien\FormDialog\FormChiTietKhachHang.resx">
+      <DependentUpon>FormChiTietKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanVien\FormDialog\FormChiTietHoacThemHoaDon.resx">
       <DependentUpon>FormChiTietHoacThemHoaDon.cs</DependentUpon>

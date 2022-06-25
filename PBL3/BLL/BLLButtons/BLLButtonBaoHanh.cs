@@ -22,7 +22,7 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewBaoHanh> list = Model.Instance.BaoHanhs.AsEnumerable().Where(bh => bh.DaXoa == false && (bh.MaBaoHanh.ToLower().Contains(temp) || bh.SoSeri.ToLower().Contains(temp) || bh.VatPham.HoaDon.KhachHang.TenKhachHang.ToLower().Contains(temp) || bh.VatPham.SanPham.TenSanPham.ToLower().Contains(temp) || bh.VatPham.HoaDon.KhachHang.SoDienThoai.Contains(temp) || bh.TrangThai.ToString().Contains(temp) || bh.GhiChu.ToLower().Contains(temp) || bh.ThoiGianTaoPhieuBaoHanh.ToString("dd/MM/yyyy h:m tt").Contains(temp)))
+            List<ViewBaoHanh> list = Model.Instance.BaoHanhs.AsEnumerable().Where(bh => bh.MaBaoHanh.ToLower().Contains(temp) || bh.SoSeri.ToLower().Contains(temp) || bh.VatPham.HoaDon.KhachHang.TenKhachHang.ToLower().Contains(temp) || bh.VatPham.SanPham.TenSanPham.ToLower().Contains(temp) || bh.VatPham.HoaDon.KhachHang.SoDienThoai.Contains(temp) || bh.TrangThai.ToString().Contains(temp) || bh.GhiChu.ToLower().Contains(temp) || bh.ThoiGianTaoPhieuBaoHanh.ToString("dd/MM/yyyy h:m tt").Contains(temp))
                 .Select(bh => new ViewBaoHanh { MaBaoHanh = bh.MaBaoHanh, SoSeri = bh.SoSeri, TenKhachHang = bh.VatPham.HoaDon.KhachHang.TenKhachHang, TenSanPham = bh.VatPham.SanPham.TenSanPham, SoDienThoai = bh.VatPham.HoaDon.KhachHang.SoDienThoai, TrangThai = bh.TrangThai, GhiChu = bh.GhiChu, ThoiGianTaoPhieuBaoHanh = bh.ThoiGianTaoPhieuBaoHanh })
                 .ToList();
             foreach (string s in cacTuKhoa)
@@ -37,8 +37,9 @@ namespace PBL3
 
         public List<ViewBaoHanh> SortBaoHanh(List<ViewBaoHanh> baoHanhs, string kieuSapXep)
         {
-            try { return baoHanhs.OrderBy(bh => bh.GetType().GetProperty(kieuSapXep).GetValue(bh, null)).ToList(); }
-            catch { return baoHanhs; }
+            if (kieuSapXep == "MaBaoHanh")
+                return baoHanhs.OrderBy(bh => Convert.ToInt32(bh.MaBaoHanh.Substring(2))).ToList();
+            return baoHanhs.OrderBy(bh => bh.GetType().GetProperty(kieuSapXep).GetValue(bh, null)).ToList();
         }
 
         public List<ViewBaoHanh> GetBaoHanhs(string kieuSapXep, string tuKhoa)

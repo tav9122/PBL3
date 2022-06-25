@@ -27,9 +27,10 @@ namespace PBL3
             return list;
         }
 
-        public double GetDoanhThuOfMonth(string month)
+        public double GetDoanhThuOfMonth(string tenSanPham, string month)
         {
-            return Model.Instance.VatPhams.AsEnumerable().Where(vp => vp.HoaDon != null && vp.HoaDon.ThoiGianGiaoDich.ToString("MM/yyyy") == month).Sum(vp => vp.GiaBan);
+            if (tenSanPham == "Nhập tên sản phẩm để thống kê riêng...") tenSanPham = "";
+            return Model.Instance.VatPhams.AsEnumerable().Where(vp => vp.HoaDon != null && vp.SanPham.TenSanPham.ToLower().Contains(tenSanPham) && vp.HoaDon.ThoiGianGiaoDich.ToString("MM/yyyy") == month).Sum(vp => vp.GiaBan);
         }
 
         public List<string> SplitToYears(DateTime date1, DateTime date2)
@@ -42,9 +43,10 @@ namespace PBL3
             return list;
         }
 
-        public double GetDoanhThuOfYear(string year)
+        public double GetDoanhThuOfYear(string tenSanPham, string year)
         {
-            return Model.Instance.VatPhams.AsEnumerable().Where(vp => vp.HoaDon != null && vp.HoaDon.ThoiGianGiaoDich.ToString("yyyy") == year).Sum(vp => vp.GiaBan);
+            if (tenSanPham == "Nhập tên sản phẩm để thống kê riêng...") tenSanPham = "";
+            return Model.Instance.VatPhams.AsEnumerable().Where(vp => vp.HoaDon != null && vp.SanPham.TenSanPham.ToLower().Contains(tenSanPham) && vp.HoaDon.ThoiGianGiaoDich.ToString("yyyy") == year).Sum(vp => vp.GiaBan);
         }
 
         public Dictionary<string, int> GetSanPhamBanChayNhat(DateTime date1, DateTime date2)

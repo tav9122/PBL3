@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PBL3
@@ -37,8 +38,9 @@ namespace PBL3
 
         public List<ViewLichLamViec> SortLichLamViec(List<ViewLichLamViec> lichLamViecs, string kieuSapXep)
         {
-            try { return lichLamViecs.OrderBy(llv => llv.GetType().GetProperty(kieuSapXep).GetValue(llv, null)).ToList(); }
-            catch { return lichLamViecs; }
+            if (kieuSapXep == "MaLichLamViec")
+                return lichLamViecs.OrderBy(llv => Convert.ToInt32(llv.MaLichLamViec.Substring(3))).ToList();
+            return lichLamViecs.OrderBy(llv => llv.GetType().GetProperty(kieuSapXep).GetValue(llv, null)).ToList();
         }
 
         public List<ViewLichLamViec> GetLichLamViecs(string kieuSapXep, string tuKhoa)

@@ -34,12 +34,6 @@ namespace PBL3
             Model.Instance.SaveChanges();
         }
 
-        public void DeleteKhachHang(string maKhachHang)
-        {
-            Model.Instance.KhachHangs.Where(kh => kh.MaKhachHang == maKhachHang).FirstOrDefault().DaXoa = true;
-            Model.Instance.SaveChanges();
-        }
-
         public KhachHang GetKhachHang(string maKhachHangHoacSoDienThoai)
         {
             if (Model.Instance.KhachHangs.Where(kh => kh.MaKhachHang == maKhachHangHoacSoDienThoai).FirstOrDefault() != null)

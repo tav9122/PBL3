@@ -15,8 +15,8 @@ namespace PBL3
         {
             InitializeComponent();
 
-            comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+            comboBoxKieuSapXep.SelectedIndex = 0;
 
             ReloadDataGridView(null, null);
             dataGridView1.Columns["NhanViens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

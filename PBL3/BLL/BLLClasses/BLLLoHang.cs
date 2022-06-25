@@ -23,12 +23,6 @@ namespace PBL3
             Model.Instance.SaveChanges();
         }
 
-        public void DeleteLoHang(string maLoHang)
-        {
-            Model.Instance.LoHangs.FirstOrDefault(lh => lh.MaLoHang == maLoHang).DaXoa = true;
-            Model.Instance.SaveChanges();
-        }
-
         public LoHang GetLoHang(string maLoHang)
         {
             return Model.Instance.LoHangs.Where(llv => llv.MaLoHang == maLoHang).FirstOrDefault();

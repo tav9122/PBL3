@@ -38,8 +38,7 @@ namespace PBL3
 
         public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> SortTongTienSanPham(List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> sanPhams, string kieuSapXep)
         {
-            try { return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList(); }
-            catch { return sanPhams; }
+            return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
         }
 
         public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> GetTongTienSanPhams(string kieuSapXep, string tuKhoa, DateTime date1, DateTime date2)
@@ -68,8 +67,7 @@ namespace PBL3
 
         public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> SortSoLuongSanPham(List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> sanPhams, string kieuSapXep)
         {
-            try { return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList(); }
-            catch { return sanPhams; }
+            return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
         }
 
         public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> GetSoLuongSanPhams(string kieuSapXep, string tuKhoa, DateTime date1, DateTime date2)

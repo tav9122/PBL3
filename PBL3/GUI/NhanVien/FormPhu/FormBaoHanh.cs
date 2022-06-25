@@ -15,13 +15,14 @@ namespace PBL3
         {
             InitializeComponent();
 
-            comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+            comboBoxKieuSapXep.SelectedIndex = 0;
 
             ReloadDataGridView(null, null);
             dataGridView1.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["ThoiGianTaoPhieuBaoHanh"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["SoSeri"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["TenKhachHang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void ReloadDataGridView(object sender, EventArgs e)
@@ -41,20 +42,6 @@ namespace PBL3
             FormChiTietHoacThemBaoHanh formChiTietHoacThemBaoHanh = new FormChiTietHoacThemBaoHanh(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             formChiTietHoacThemBaoHanh.ShowDialog();
             ReloadDataGridView(null, null);
-        }
-
-        private void buttonXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa các dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                {
-                    BLLBaoHanh.Instance.DeleteBaoHanh(row.Cells[0].Value.ToString());
-                }
-                ReloadDataGridView(null, null);
-                MessageBox.Show("Đã xoá thành công!");
-            }
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)

@@ -169,7 +169,6 @@
             this.textBoxTenDangNhap.Name = "textBoxTenDangNhap";
             this.textBoxTenDangNhap.Size = new System.Drawing.Size(148, 22);
             this.textBoxTenDangNhap.TabIndex = 0;
-            this.textBoxTenDangNhap.Leave += new System.EventHandler(this.textBoxTenDangNhap_Leave);
             // 
             // label6
             // 
@@ -199,7 +198,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 27);
             this.label1.TabIndex = 38;
-            this.label1.Text = "Đổi thông tin tài khoản:";
+            this.label1.Text = "Thông tin tài khoản:";
             // 
             // panel1
             // 

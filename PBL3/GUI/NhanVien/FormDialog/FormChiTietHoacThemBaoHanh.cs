@@ -83,9 +83,9 @@ namespace PBL3
 
         private void textBoxSoSeri_Leave(object sender, EventArgs e)
         {
-            try
+            var vatPham = BLLVatPham.Instance.GetVatPham(textBoxSoSeri.Text);
+            if (vatPham != null && vatPham.HoaDon != null)
             {
-                var vatPham = BLLVatPham.Instance.GetVatPham(textBoxSoSeri.Text);
                 textBoxTenSanPham.Text = vatPham.SanPham.TenSanPham;
                 textBoxTenKhachHang.Text = vatPham.HoaDon.KhachHang.TenKhachHang;
                 textBoxDiaChi.Text = vatPham.HoaDon.KhachHang.DiaChi;
@@ -94,7 +94,7 @@ namespace PBL3
 
                 buttonXacNhan.Enabled = true;
             }
-            catch
+            else
             {
                 MessageBox.Show("Vật phẩm chưa được mua hoặc không có trên hệ thống");
 

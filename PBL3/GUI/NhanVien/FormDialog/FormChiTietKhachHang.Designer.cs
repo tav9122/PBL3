@@ -1,6 +1,6 @@
 ﻿namespace PBL3
 {
-    partial class FormChiTietHoacThemKhachHang
+    partial class FormChiTietKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietHoacThemKhachHang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietKhachHang));
             this.buttonXacNhan = new System.Windows.Forms.Button();
             this.buttonHuyBo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -130,7 +130,7 @@
             this.labelTieuDe.Name = "labelTieuDe";
             this.labelTieuDe.Size = new System.Drawing.Size(330, 27);
             this.labelTieuDe.TabIndex = 74;
-            this.labelTieuDe.Text = "Chi tiết hoặc thêm khách hàng:";
+            this.labelTieuDe.Text = "Chi tiết khách hàng:";
             // 
             // textBoxTenKhachHang
             // 
@@ -204,7 +204,7 @@
             this.textBoxGhiChu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGhiChu.Multiline = true;
             this.textBoxGhiChu.Name = "textBoxGhiChu";
-            this.textBoxGhiChu.Size = new System.Drawing.Size(374, 118);
+            this.textBoxGhiChu.Size = new System.Drawing.Size(374, 164);
             this.textBoxGhiChu.TabIndex = 5;
             // 
             // label6
@@ -217,7 +217,7 @@
             this.label6.TabIndex = 92;
             this.label6.Text = "Ghi chú:";
             // 
-            // FormChiTietHoacThemKhachHang
+            // FormChiTietKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -240,7 +240,7 @@
             this.Controls.Add(this.labelTieuDe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormChiTietHoacThemKhachHang";
+            this.Name = "FormChiTietKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

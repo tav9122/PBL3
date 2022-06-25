@@ -30,12 +30,6 @@ namespace PBL3
             Model.Instance.SaveChanges();
         }
 
-        public void DeleteBaoHanh(string maBaoHanh)
-        {
-            Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh).DaXoa = true;
-            Model.Instance.SaveChanges();
-        }
-
         public BaoHanh GetBaoHanh(string maBaoHanh)
         {
             return Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh);

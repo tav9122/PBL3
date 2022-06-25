@@ -21,6 +21,5 @@ namespace PBL3
         public string MaLichLamViec { get; set; }
         [ForeignKey("MaLichLamViec")]
         public virtual LichLamViec LichLamViec { get; set; }
-
     }
 }

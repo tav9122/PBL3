@@ -243,9 +243,11 @@ namespace PBL3
             string headerCharacters = "";
             foreach (string i in temp.Split(' '))
             {
-                headerCharacters += i[0];
+                if (i.Length > 0)
+                    headerCharacters += i[0];
             }
-            return headerCharacters + (Model.Instance.SanPhams.Where(sp => sp.MaSanPham.Substring(0, headerCharacters.Length).Equals(headerCharacters)).Count() + 1).ToString();
+
+            return headerCharacters + (Model.Instance.SanPhams.AsEnumerable().Where(sp => string.Concat(sp.MaSanPham.Where(char.IsLetter)).Equals(string.Concat(headerCharacters.Where(char.IsLetter)))).Count() + 1).ToString();
         }
 
         public string LoginChecker(string tenDangNhap, string matKhau)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PBL3
@@ -22,7 +23,7 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewHoaDon> list = Model.Instance.HoaDons.AsEnumerable().Where(hd => hd.DaXoa == false && (hd.MaHoaDon.ToLower().Contains(temp) || hd.MaKhachHang.ToLower().Contains(temp) || hd.MaNhanVien.ToLower().Contains(temp) || hd.NhanVien.HoVaTen.ToLower().Contains(temp) || hd.KhachHang.SoDienThoai.ToLower().Contains(temp) || hd.ThoiGianGiaoDich.ToString("dd/MM/yyyy h:m tt").Contains(temp)))
+            List<ViewHoaDon> list = Model.Instance.HoaDons.AsEnumerable().Where(hd => hd.MaHoaDon.ToLower().Contains(temp) || hd.MaKhachHang.ToLower().Contains(temp) || hd.MaNhanVien.ToLower().Contains(temp) || hd.NhanVien.HoVaTen.ToLower().Contains(temp) || hd.KhachHang.SoDienThoai.ToLower().Contains(temp) || hd.ThoiGianGiaoDich.ToString("dd/MM/yyyy h:m tt").Contains(temp))
                 .Select(hd => new ViewHoaDon { MaHoaDon = hd.MaHoaDon, MaNhanVien = hd.MaNhanVien, TenNhanVien = hd.NhanVien.HoVaTen, MaKhachHang = hd.MaKhachHang, SoDienThoai = hd.KhachHang.SoDienThoai, ThoiGianGiaoDich = hd.ThoiGianGiaoDich, ThanhTien = hd.ThanhTien })
                 .ToList();
             foreach (string s in cacTuKhoa)
@@ -37,8 +38,9 @@ namespace PBL3
 
         public List<ViewHoaDon> SortHoaDon(List<ViewHoaDon> hoaDons, string kieuSapXep)
         {
-            try { return hoaDons.OrderBy(hd => hd.GetType().GetProperty(kieuSapXep).GetValue(hd, null)).ToList(); }
-            catch { return hoaDons; }
+            if (kieuSapXep == "MaHoaDon")
+                return hoaDons.OrderBy(hd => Convert.ToInt32(hd.MaHoaDon.Substring(2))).ToList();
+            return hoaDons.OrderBy(hd => hd.GetType().GetProperty(kieuSapXep).GetValue(hd, null)).ToList();
         }
 
         public List<ViewHoaDon> GetHoaDons(string kieuSapXep, string tuKhoa)

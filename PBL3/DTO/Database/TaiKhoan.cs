@@ -27,6 +27,5 @@ namespace PBL3
 
         [ForeignKey("MaNhanVien")]
         public virtual NhanVien NhanVien { get; set; }
-
     }
 }

@@ -14,13 +14,6 @@ namespace PBL3
         {
             InitializeComponent();
 
-            if (BLLNhanVien.Instance.GetNhanVien(maNhanVien).VaiTro == true)
-                textBoxTenDangNhap.Enabled = true;
-            else if (BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap == false)
-            {
-                textBoxTenDangNhap.Enabled = true;
-            }
-
             textBoxTenDangNhap.Text = BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).TenDangNhap;
             currentMatKhau = BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).MatKhau;
 
@@ -53,6 +46,15 @@ namespace PBL3
 
         private void buttonXacNhan_Click(object sender, EventArgs e)
         {
+            foreach (var i in BLLTaiKhoan.Instance.GetTaiKhoans().Where(tk => tk.NhanVien.MaNhanVien != maNhanVien))
+            {
+                if (i.TenDangNhap.ToLower() == textBoxTenDangNhap.Text.ToLower())
+                {
+                    MessageBox.Show("Tên đăng nhập đã tồn tại!");
+                    return;
+                }
+            }
+
             if (BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).TenDangNhap != textBoxTenDangNhap.Text)
                 BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap = true;
             BLLTaiKhoan.Instance.UpdateTaiKhoanNhanVien(BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).MaTaiKhoan, textBoxTenDangNhap.Text, textBoxMatKhauMoi.Text);
@@ -60,33 +62,24 @@ namespace PBL3
             this.Close();
         }
 
-        private void textBoxTenDangNhap_Leave(object sender, EventArgs e)
-        {
-            foreach (var i in BLLTaiKhoan.Instance.GetTaiKhoans().Where(tk => tk.NhanVien.MaNhanVien != maNhanVien))
-            {
-                if (i.TenDangNhap == textBoxTenDangNhap.Text)
-                {
-                    textBoxCanhBao.Text = "Tên đăng nhập đã tồn tại!";
-                    buttonXacNhan.Enabled = false;
-                }
-                else
-                {
-                    textBoxCanhBao.Text = "";
-                    buttonXacNhan.Enabled = true;
-                }
-            }
-        }
-
         private void textBoxMatKhauCu_Leave(object sender, EventArgs e)
         {
+
             if (textBoxMatKhauCu.Text != currentMatKhau)
             {
                 textBoxCanhBao.Text = "Mật khẩu cũ không đúng!";
                 textBoxMatKhauMoi.Enabled = false;
                 textBoxNhapLaiMatKhauMoi.Enabled = false;
+                textBoxTenDangNhap.Enabled = false;
             }
             else
             {
+                if (BLLNhanVien.Instance.GetNhanVien(maNhanVien).VaiTro == true)
+                    textBoxTenDangNhap.Enabled = true;
+                else if (BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien).DaDoiTenDangNhap == false)
+                {
+                    textBoxTenDangNhap.Enabled = true;
+                }
                 textBoxCanhBao.Text = "";
                 textBoxMatKhauMoi.Enabled = true;
                 textBoxNhapLaiMatKhauMoi.Enabled = true;

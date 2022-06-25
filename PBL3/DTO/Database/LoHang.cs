@@ -20,8 +20,5 @@ namespace PBL3
         public double TongTien { get; set; }
 
         public virtual ICollection<VatPham> VatPhams { get; set; }
-
-        [Column("Đã xoá")]
-        public bool DaXoa { get; set; }
     }
 }

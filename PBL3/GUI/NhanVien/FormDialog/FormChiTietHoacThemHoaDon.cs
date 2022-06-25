@@ -86,15 +86,13 @@ namespace PBL3
                 if (BLLKhachHang.Instance.GetKhachHang(textBoxSoDienThoai.Text) == null)
                 {
                     BLLKhachHang.Instance.AddKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, "");
-                    BLLQuanLiChung.Instance.alreadyOpenFormQuanLiKhachHang = false;
-                    BLLQuanLiChung.Instance.formQuanLiKhachHang = null;
                 }
                 else
                 {
                     BLLKhachHang.Instance.UpdateKhachHang(textBoxMaKhachHang.Text, textBoxTenKhachHang.Text, textBoxDiaChi.Text, textBoxSoDienThoai.Text, null);
-                    BLLQuanLiChung.Instance.alreadyOpenFormQuanLiKhachHang = false;
-                    BLLQuanLiChung.Instance.formQuanLiKhachHang = null;
                 }
+                BLLQuanLiChung.Instance.alreadyOpenFormQuanLiKhachHang = false;
+                BLLQuanLiChung.Instance.formQuanLiKhachHang = null;
 
                 BLLHoaDon.Instance.AddHoaDon(textBoxMaHoaDon.Text, textBoxMaNhanVien.Text, textBoxMaKhachHang.Text, dateTimePickerThoiGianGiaoDich.Value, BLLButtonSanPham.Instance.GetTongTien());
 

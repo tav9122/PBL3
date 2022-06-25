@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -27,9 +26,5 @@ namespace PBL3
 
         [ForeignKey("SoSeri")]
         public virtual VatPham VatPham { get; set; }
-
-        [DefaultValue("false")]
-        [Column("Đã xoá")]
-        public bool DaXoa { get; set; }
     }
 }

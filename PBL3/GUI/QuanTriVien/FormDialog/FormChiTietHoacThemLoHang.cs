@@ -24,8 +24,8 @@ namespace PBL3
 
             labelTieuDe.Text = "Thêm lô hàng:";
 
-            comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+            comboBoxKieuSapXep.SelectedIndex = 0;
 
             textBoxMaLoHang.Text = BLLQuanLiChung.Instance.GetNextPrimaryKey(BLLLoHang.Instance.GetMaLoHangs());
             dateTimePicker1.Value = DateTime.Now;
@@ -49,7 +49,7 @@ namespace PBL3
 
         public FormChiTietHoacThemLoHang(string maLoHang)
         {
-            dictionary = TypeDescriptor.GetProperties(typeof(ViewVatPham_NhanVien)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
+            dictionary = TypeDescriptor.GetProperties(typeof(ViewVatPham_QuanTriVien)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
 
             InitializeComponent();
             typeView = true;
@@ -58,8 +58,8 @@ namespace PBL3
 
             textBoxMaLoHang.Text = maLoHang;
 
-            comboBoxKieuSapXep.SelectedIndex = 0;
             dictionary.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
+            comboBoxKieuSapXep.SelectedIndex = 0;
 
             var loHang = BLLLoHang.Instance.GetLoHang(maLoHang);
             dateTimePicker1.Value = loHang.ThoiGianNhapHang;
@@ -163,8 +163,7 @@ namespace PBL3
                 dataGridView1.CurrentCell.Value = 0;
             }
             BLLSanPham.Instance.SetTempValue(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString(), Convert.ToInt32(dataGridView1.CurrentRow.Cells["SoLuongNhapThem"].Value));
-            try { textBoxTongTien.Text = BLLButtonQuanLiLoHang.Instance.GetTongTien().ToString("C0"); }
-            catch { }
+            textBoxTongTien.Text = BLLButtonQuanLiLoHang.Instance.GetTongTien().ToString("C0");
         }
 
         private void textBoxTimKiem_Enter(object sender, EventArgs e)

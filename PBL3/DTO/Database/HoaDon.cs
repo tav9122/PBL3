@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -32,9 +31,5 @@ namespace PBL3
 
         [ForeignKey("MaKhachHang")]
         public virtual KhachHang KhachHang { get; set; }
-
-        [DefaultValue("false")]
-        [Column("Đã xoá")]
-        public bool DaXoa { get; set; }
     }
 }
