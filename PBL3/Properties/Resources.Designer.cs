@@ -111,12 +111,32 @@ namespace PBL3.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon login {
+            get {
+                object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap nhanvien {
             get {
                 object obj = ResourceManager.GetObject("nhanvien", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon nhanvien1 {
+            get {
+                object obj = ResourceManager.GetObject("nhanvien1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -277,6 +297,16 @@ namespace PBL3.Properties {
             get {
                 object obj = ResourceManager.GetObject("quantrivien", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon quantrivien1 {
+            get {
+                object obj = ResourceManager.GetObject("quantrivien1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

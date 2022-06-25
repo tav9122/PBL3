@@ -472,5 +472,14 @@
   <ItemGroup>
     <None Include="Resources\quanlilohang32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanvien.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quantrivien.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
