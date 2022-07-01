@@ -30,10 +30,13 @@ namespace PBL3
             dataGridView1.Columns["NgaySinh"].Visible = false;
             dataGridView1.Columns["TenDangNhap"].Visible = false;
             dataGridView1.Columns["MucLuong"].Visible = false;
+            dataGridView1.Columns["NgayBatDauLamViec"].Visible = false;
 
             dataGridView2.Columns["NgaySinh"].Visible = false;
             dataGridView2.Columns["TenDangNhap"].Visible = false;
             dataGridView2.Columns["MucLuong"].Visible = false;
+            dataGridView2.Columns["NgayBatDauLamViec"].Visible = false;
+
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.
@@ -71,7 +74,7 @@ namespace PBL3
             dataGridView1.DataSource = temp1;
 
 
-            List<ViewNhanVien> temp2 = BLLButtonQuanLiNhanVien.Instance.GetNhanViens("MaNhanVien", "").Where(x => !listNhanVienTamThoi.Any(y => y.MaNhanVien == x.MaNhanVien)).ToList();
+            List<ViewNhanVien> temp2 = BLLButtonQuanLiNhanVien.Instance.GetNhanViens("MaNhanVien", "", true).Where(x => !listNhanVienTamThoi.Any(y => y.MaNhanVien == x.MaNhanVien)).ToList();
             foreach (ViewNhanVien nhanVien in temp2)
             {
                 nhanVien.LichLamViecs = nhanVien.LichLamViecs.Replace(", " + maLichLamViec, "");
@@ -101,10 +104,7 @@ namespace PBL3
                     SoDienThoai = row.Cells["SoDienThoai"].Value.ToString(),
                     Email = row.Cells["Email"].Value.ToString(),
                     DiaChi = row.Cells["DiaChi"].Value.ToString(),
-                    NgaySinh = Convert.ToDateTime(row.Cells["NgaySinh"].Value),
                     GioiTinh = Convert.ToBoolean(row.Cells["GioiTinh"].Value),
-                    MucLuong = Convert.ToDouble(row.Cells["MucLuong"].Value),
-                    TenDangNhap = row.Cells["TenDangNhap"].Value.ToString(),
                     LichLamViecs = row.Cells["LichLamViecs"].Value.ToString()
                 });
             }

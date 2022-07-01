@@ -66,7 +66,7 @@ namespace PBL3
             dataGridView1.DataSource = temp1;
 
 
-            List<ViewLichLamViec> temp2 = BLLButtonQuanLiLichLamViec.Instance.GetLichLamViecs("MaLichLamViec", "").Where(x => !listLichLamViecTamThoi.Any(y => y.MaLichLamViec == x.MaLichLamViec)).ToList();
+            List<ViewLichLamViec> temp2 = BLLButtonQuanLiLichLamViec.Instance.GetLichLamViecs("MaLichLamViec", "", true).Where(x => !listLichLamViecTamThoi.Any(y => y.MaLichLamViec == x.MaLichLamViec)).ToList();
             foreach (ViewLichLamViec nhanVien in temp2)
             {
                 nhanVien.NhanViens = nhanVien.NhanViens.Replace(", " + maNhanVien, "");

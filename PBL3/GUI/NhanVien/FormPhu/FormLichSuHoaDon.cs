@@ -10,6 +10,7 @@ namespace PBL3
     public partial class FormLichSuHoaDon : Form
     {
         Dictionary<string, string> dictionary = TypeDescriptor.GetProperties(typeof(ViewHoaDon)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
+        bool ascendingSort = true;
 
         public FormLichSuHoaDon()
         {
@@ -25,7 +26,7 @@ namespace PBL3
 
         private void ReloadDataGridView(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLLButtonLichSuHoaDon.Instance.GetHoaDons(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
+            dataGridView1.DataSource = BLLButtonLichSuHoaDon.Instance.GetHoaDons(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, ascendingSort);
         }
 
         private void buttonXem_Click(object sender, EventArgs e)
@@ -49,6 +50,22 @@ namespace PBL3
             {
                 textBoxTimKiem.ForeColor = Color.FromArgb(200, 200, 200);
                 textBoxTimKiem.Text = "Nhập để tìm kiếm...";
+            }
+        }
+
+        private void buttonAscendingDescending_Click(object sender, EventArgs e)
+        {
+            if (ascendingSort == true)
+            {
+                ascendingSort = false;
+                buttonAscendingDescending.Image = Properties.Resources.downarrow20;
+                ReloadDataGridView(null, null);
+            }
+            else
+            {
+                ascendingSort = true;
+                buttonAscendingDescending.Image = Properties.Resources.uparrow20;
+                ReloadDataGridView(null, null);
             }
         }
     }

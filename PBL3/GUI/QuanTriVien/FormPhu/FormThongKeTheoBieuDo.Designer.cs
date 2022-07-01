@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comboBoxKieuThongKe = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxThongKeTheo = new System.Windows.Forms.ComboBox();
@@ -54,10 +54,10 @@
             this.comboBoxKieuThongKe.Items.AddRange(new object[] {
             "Tổng doanh thu",
             "Các sản phẩm bán chạy nhất"});
-            this.comboBoxKieuThongKe.Location = new System.Drawing.Point(123, 18);
+            this.comboBoxKieuThongKe.Location = new System.Drawing.Point(123, 21);
             this.comboBoxKieuThongKe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxKieuThongKe.Name = "comboBoxKieuThongKe";
-            this.comboBoxKieuThongKe.Size = new System.Drawing.Size(227, 24);
+            this.comboBoxKieuThongKe.Size = new System.Drawing.Size(236, 24);
             this.comboBoxKieuThongKe.TabIndex = 0;
             this.comboBoxKieuThongKe.DropDownClosed += new System.EventHandler(this.ReloadDataGridView);
             // 
@@ -66,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 21);
+            this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 18);
             this.label1.TabIndex = 58;
@@ -83,10 +83,10 @@
             this.comboBoxThongKeTheo.Items.AddRange(new object[] {
             "Tháng",
             "Năm"});
-            this.comboBoxThongKeTheo.Location = new System.Drawing.Point(532, 20);
+            this.comboBoxThongKeTheo.Location = new System.Drawing.Point(482, 21);
             this.comboBoxThongKeTheo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxThongKeTheo.Name = "comboBoxThongKeTheo";
-            this.comboBoxThongKeTheo.Size = new System.Drawing.Size(172, 24);
+            this.comboBoxThongKeTheo.Size = new System.Drawing.Size(222, 24);
             this.comboBoxThongKeTheo.TabIndex = 4;
             this.comboBoxThongKeTheo.DropDownClosed += new System.EventHandler(this.ReloadDataGridView);
             // 
@@ -96,7 +96,7 @@
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(419, 23);
+            this.label4.Location = new System.Drawing.Point(369, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 18);
             this.label4.TabIndex = 62;
@@ -107,17 +107,17 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(17, 87);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(17, 100);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(687, 320);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(687, 307);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
             // 
@@ -128,7 +128,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label2.Location = new System.Drawing.Point(15, 60);
+            this.label2.Location = new System.Drawing.Point(15, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 16);
             this.label2.TabIndex = 84;
@@ -138,7 +138,7 @@
             // 
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(221, 56);
+            this.dateTimePicker2.Location = new System.Drawing.Point(230, 71);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(129, 20);
             this.dateTimePicker2.TabIndex = 2;
@@ -151,7 +151,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label3.Location = new System.Drawing.Point(181, 60);
+            this.label3.Location = new System.Drawing.Point(187, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 83;
@@ -161,7 +161,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(46, 56);
+            this.dateTimePicker1.Location = new System.Drawing.Point(49, 71);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
             this.dateTimePicker1.TabIndex = 1;
@@ -173,10 +173,10 @@
             this.textBoxThongKeRieng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxThongKeRieng.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxThongKeRieng.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBoxThongKeRieng.Location = new System.Drawing.Point(422, 52);
+            this.textBoxThongKeRieng.Location = new System.Drawing.Point(372, 69);
             this.textBoxThongKeRieng.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxThongKeRieng.Name = "textBoxThongKeRieng";
-            this.textBoxThongKeRieng.Size = new System.Drawing.Size(282, 24);
+            this.textBoxThongKeRieng.Size = new System.Drawing.Size(332, 24);
             this.textBoxThongKeRieng.TabIndex = 3;
             this.textBoxThongKeRieng.Text = "Nhập tên sản phẩm để thống kê riêng...";
             this.textBoxThongKeRieng.TextChanged += new System.EventHandler(this.ReloadDataGridView);

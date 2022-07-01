@@ -62,10 +62,11 @@ namespace PBL3
 
         public List<string> GetMaNhanViens()
         {
-            if (Model.Instance.NhanViens.Select(x => x.MaNhanVien).ToList() == null)
+            var x = Model.Instance.NhanViens.Select(nv => nv.MaNhanVien).ToList();
+            if (!x.Any())
                 return new List<string> { "NV0" };
             else
-                return Model.Instance.NhanViens.Select(x => x.MaNhanVien).ToList();
+                return x;
         }
     }
 }

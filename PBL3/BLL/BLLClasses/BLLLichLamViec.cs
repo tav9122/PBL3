@@ -47,10 +47,11 @@ namespace PBL3
 
         public List<string> GetMaLichLamViecs()
         {
-            if (Model.Instance.LichLamViecs.Select(x => x.MaLichLamViec).ToList() == null)
+            var x = Model.Instance.LichLamViecs.Select(llv => llv.MaLichLamViec).ToList();
+            if (!x.Any())
                 return new List<string> { "LLV0" };
             else
-                return Model.Instance.LichLamViecs.Select(x => x.MaLichLamViec).ToList();
+                return x;
         }
     }
 }

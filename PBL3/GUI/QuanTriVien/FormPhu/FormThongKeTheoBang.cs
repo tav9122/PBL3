@@ -11,7 +11,7 @@ namespace PBL3
     {
         Dictionary<string, string> dictionaryTongTien = TypeDescriptor.GetProperties(typeof(ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
         Dictionary<string, string> dictionarySoLuong = TypeDescriptor.GetProperties(typeof(ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
-
+        bool ascendingSort = true;
         public FormThongKeTheoBang()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace PBL3
                     dictionaryTongTien.Select(d => d.Value).ToList().ForEach(i => comboBoxKieuSapXep.Items.Add(i));
                     comboBoxKieuSapXep.SelectedIndex = 0;
                 }
-                dataGridView1.DataSource = BLLButtonThongKeTheoBang.Instance.GetTongTienSanPhams(dictionaryTongTien.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, dateTimePicker1.Value, dateTimePicker2.Value);
+                dataGridView1.DataSource = BLLButtonThongKeTheoBang.Instance.GetTongTienSanPhams(dictionaryTongTien.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, ascendingSort, dateTimePicker1.Value, dateTimePicker2.Value);
 
                 double tongTienNhap = 0;
                 double tongDoanhThu = 0;
@@ -68,7 +68,7 @@ namespace PBL3
                     comboBoxKieuSapXep.SelectedIndex = 0;
                 }
 
-                dataGridView1.DataSource = BLLButtonThongKeTheoBang.Instance.GetSoLuongSanPhams(dictionarySoLuong.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, dateTimePicker1.Value, dateTimePicker2.Value);
+                dataGridView1.DataSource = BLLButtonThongKeTheoBang.Instance.GetSoLuongSanPhams(dictionarySoLuong.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, ascendingSort, dateTimePicker1.Value, dateTimePicker2.Value);
 
                 int soLuongNhap = 0;
                 int tongSoLuongBan = 0;
@@ -98,6 +98,22 @@ namespace PBL3
             {
                 textBoxTimKiem.ForeColor = Color.FromArgb(200, 200, 200);
                 textBoxTimKiem.Text = "Nhập để tìm kiếm...";
+            }
+        }
+
+        private void buttonAscendingDescending_Click(object sender, EventArgs e)
+        {
+            if (ascendingSort == true)
+            {
+                ascendingSort = false;
+                buttonAscendingDescending.Image = Properties.Resources.downarrow20;
+                ReloadDataGridView(null, null);
+            }
+            else
+            {
+                ascendingSort = true;
+                buttonAscendingDescending.Image = Properties.Resources.uparrow20;
+                ReloadDataGridView(null, null);
             }
         }
     }

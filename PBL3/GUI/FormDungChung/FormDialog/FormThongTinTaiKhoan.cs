@@ -9,6 +9,7 @@ namespace PBL3
     {
         string currentMatKhau;
         string maNhanVien;
+        bool ShowPassword = false;
 
         public FormThongTinTaiKhoan(string maNhanVien)
         {
@@ -100,19 +101,21 @@ namespace PBL3
             }
         }
 
-        int count = 0;
         private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
         {
-            count++;
-            if (count % 2 == 0)
+            if (ShowPassword == true)
             {
+                ShowPassword = false;
                 textBoxMatKhauCu.Multiline = false;
+                textBoxMatKhauMoi.Multiline = false;
                 textBoxNhapLaiMatKhauMoi.Multiline = false;
                 buttonAnHienMatKhau.Image = Properties.Resources.openedeye20;
             }
             else
             {
+                ShowPassword = true;
                 textBoxMatKhauCu.Multiline = true;
+                textBoxMatKhauMoi.Multiline = true;
                 textBoxNhapLaiMatKhauMoi.Multiline = true;
                 buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
             }

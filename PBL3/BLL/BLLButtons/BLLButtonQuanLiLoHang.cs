@@ -23,42 +23,53 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewLoHang> list = Model.Instance.LoHangs.AsEnumerable().Where(lh => lh.MaLoHang.ToLower().Contains(temp) || lh.TongTien.ToString().Contains(temp) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy h:m tt").Contains(temp))
+            List<ViewLoHang> list = Model.Instance.LoHangs.AsEnumerable().Where(lh => lh.MaLoHang.ToLower().Contains(temp) || lh.TongTien.ToString().Contains(temp) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(temp))
                 .Select(lh => new ViewLoHang { MaLoHang = lh.MaLoHang, ThoiGianNhapHang = lh.ThoiGianNhapHang, TongTien = lh.TongTien })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
                 if (s != temp)
                 {
-                    list = list.Where(lh => lh.MaLoHang.ToLower().Contains(s) || lh.TongTien.ToString().Contains(s) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy h:m tt").Contains(s)).ToList();
+                    list = list.Where(lh => lh.MaLoHang.ToLower().Contains(s) || lh.TongTien.ToString().Contains(s) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(s)).ToList();
                 }
             }
             return list;
         }
 
-        public List<ViewLoHang> SortLoHang(List<ViewLoHang> loHangs, string kieuSapXep)
+        public List<ViewLoHang> SortLoHang(List<ViewLoHang> loHangs, string kieuSapXep, bool ascending)
         {
-            if (kieuSapXep == "MaLoHang")
-                return loHangs.OrderBy(lh => Convert.ToInt32(lh.MaLoHang.Substring(2))).ToList();
-            return loHangs.OrderBy(lh => lh.GetType().GetProperty(kieuSapXep).GetValue(lh, null)).ToList();
+            if (ascending == true)
+            {
+                if (kieuSapXep == "MaLoHang")
+                    return loHangs.OrderBy(lh => Convert.ToInt32(lh.MaLoHang.Substring(2))).ToList();
+                return loHangs.OrderBy(lh => lh.GetType().GetProperty(kieuSapXep).GetValue(lh, null)).ToList();
+            }
+            else
+            {
+                if (kieuSapXep == "MaLoHang")
+                    return loHangs.OrderByDescending(lh => Convert.ToInt32(lh.MaLoHang.Substring(2))).ToList();
+                return loHangs.OrderByDescending(lh => lh.GetType().GetProperty(kieuSapXep).GetValue(lh, null)).ToList();
+            }
         }
 
-        public List<ViewLoHang> GetLoHangs(string kieuSapXep, string tuKhoa)
+        public List<ViewLoHang> GetLoHangs(string kieuSapXep, string tuKhoa, bool ascending)
         {
-            return SortLoHang(SearchLoHang(tuKhoa), kieuSapXep);
+            return SortLoHang(SearchLoHang(tuKhoa), kieuSapXep, ascending);
         }
 
         public double GetTongTien()
         {
-            if (Model.Instance.SanPhams.Where(sp => sp.Temp > 0).Count() > 0)
-                return Model.Instance.SanPhams.Where(sp => sp.Temp > 0).Sum(sp => sp.GiaMua * sp.Temp);
+            var x = Model.Instance.SanPhams.Where(sp => sp.Temp > 0);
+            if (x.Count() > 0)
+                return x.Sum(sp => sp.GiaMua * sp.Temp);
             else return 0;
         }
 
         public void UpdateSoLuongSanPham(string maSanPham, int soLuong)
         {
-            Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault().SoLuongNhap += soLuong;
-            Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault().SoLuongHienTai += soLuong;
+            var x = Model.Instance.SanPhams.Where(sp => sp.MaSanPham == maSanPham).FirstOrDefault();
+            x.SoLuongNhap += soLuong;
+            x.SoLuongHienTai += soLuong;
             Model.Instance.SaveChanges();
         }
 
@@ -70,7 +81,7 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewSanPham_QuanTriVien_LoHang> list = Model.Instance.SanPhams.Where(sp => sp.DaXoa == false && (sp.MaSanPham.ToLower().Contains(temp) || sp.LoaiSanPham.ToLower().Contains(temp) || sp.TenSanPham.ToLower().Contains(temp) || sp.TenHang.ToLower().Contains(temp)))
+            List<ViewSanPham_QuanTriVien_LoHang> list = Model.Instance.SanPhams.AsEnumerable().Where(sp => sp.DaXoa == false && (sp.MaSanPham.ToLower().Contains(temp) || sp.LoaiSanPham.ToLower().Contains(temp) || sp.TenSanPham.ToLower().Contains(temp) || sp.TenHang.ToLower().Contains(temp)))
                 .Select(sp => new ViewSanPham_QuanTriVien_LoHang { MaSanPham = sp.MaSanPham, TenSanPham = sp.TenSanPham, TenHang = sp.TenHang, LoaiSanPham = sp.LoaiSanPham, GiaMua = sp.GiaMua, GiaBan = sp.GiaBan, SoLuongNhap = sp.SoLuongNhap, SoLuongHienTai = sp.SoLuongHienTai, ThoiGianBaoHanh = sp.ThoiGianBaoHanh, SoLuongNhapThem = sp.Temp })
                 .ToList();
             foreach (string s in cacTuKhoa)
@@ -83,14 +94,21 @@ namespace PBL3
             return list;
         }
 
-        public List<ViewSanPham_QuanTriVien_LoHang> SortSanPham(List<ViewSanPham_QuanTriVien_LoHang> sanPhams, string kieuSapXep)
+        public List<ViewSanPham_QuanTriVien_LoHang> SortSanPham(List<ViewSanPham_QuanTriVien_LoHang> sanPhams, string kieuSapXep, bool ascending)
         {
-            return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            if (ascending == true)
+            {
+                return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
+            else
+            {
+                return sanPhams.OrderByDescending(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
         }
 
-        public List<ViewSanPham_QuanTriVien_LoHang> GetSanPhams(string kieuSapXep, string tuKhoa)
+        public List<ViewSanPham_QuanTriVien_LoHang> GetSanPhams(string kieuSapXep, string tuKhoa, bool ascending)
         {
-            return SortSanPham(SearchSanPham(tuKhoa), kieuSapXep);
+            return SortSanPham(SearchSanPham(tuKhoa), kieuSapXep, ascending);
         }
 
 
@@ -101,29 +119,38 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewVatPham_QuanTriVien> list = Model.Instance.VatPhams.AsEnumerable().Where(vp => vp.MaLoHang.Equals(maLoHang) && (vp.SoSeri.ToLower().Contains(temp) || vp.MaSanPham.ToLower().Contains(temp) || vp.SanPham.TenSanPham.Contains(temp) || vp.SanPham.TenHang.ToLower().Contains(temp) || vp.SanPham.LoaiSanPham.ToLower().Contains(temp)))
+            List<ViewVatPham_QuanTriVien> list = Model.Instance.VatPhams.AsEnumerable().Where(vp => vp.MaLoHang.Equals(maLoHang) && (vp.SoSeri.Contains(temp) || vp.MaSanPham.ToLower().Contains(temp) || vp.SanPham.TenSanPham.ToLower().Contains(temp) || vp.SanPham.TenHang.ToLower().Contains(temp) || vp.SanPham.LoaiSanPham.ToLower().Contains(temp)))
                 .Select(vp => new ViewVatPham_QuanTriVien { SoSeri = vp.SoSeri, MaSanPham = vp.MaSanPham, TenSanPham = vp.SanPham.TenSanPham, TenHang = vp.SanPham.TenHang, LoaiSanPham = vp.SanPham.LoaiSanPham, GiaMua = vp.GiaMua })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
                 if (s != temp)
                 {
-                    list = list.Where(vp => (vp.SoSeri.ToLower().Contains(temp) || vp.MaSanPham.ToLower().Contains(temp) || vp.TenSanPham.Contains(temp) || vp.TenHang.ToLower().Contains(temp) || vp.LoaiSanPham.ToLower().Contains(temp))).ToList();
+                    list = list.Where(vp => (vp.SoSeri.Contains(s) || vp.MaSanPham.ToLower().Contains(s) || vp.TenSanPham.ToLower().Contains(s) || vp.TenHang.ToLower().Contains(s) || vp.LoaiSanPham.ToLower().Contains(s))).ToList();
                 }
             }
             return list;
         }
 
-        public List<ViewVatPham_QuanTriVien> SortVatPham(List<ViewVatPham_QuanTriVien> vatPhams, string kieuSapXep)
+        public List<ViewVatPham_QuanTriVien> SortVatPham(List<ViewVatPham_QuanTriVien> vatPhams, string kieuSapXep, bool ascending)
         {
-            if (kieuSapXep == "SoSeri")
-                return vatPhams.OrderBy(vp => Convert.ToDouble(vp.SoSeri)).ToList();
-            return vatPhams.OrderBy(vp => vp.GetType().GetProperty(kieuSapXep).GetValue(vp, null)).ToList();
+            if (ascending == true)
+            {
+                if (kieuSapXep == "SoSeri")
+                    return vatPhams.OrderBy(vp => Convert.ToDouble(vp.SoSeri)).ToList();
+                return vatPhams.OrderBy(vp => vp.GetType().GetProperty(kieuSapXep).GetValue(vp, null)).ToList();
+            }
+            else
+            {
+                if (kieuSapXep == "SoSeri")
+                    return vatPhams.OrderByDescending(vp => Convert.ToDouble(vp.SoSeri)).ToList();
+                return vatPhams.OrderByDescending(vp => vp.GetType().GetProperty(kieuSapXep).GetValue(vp, null)).ToList();
+            }
         }
 
-        public List<ViewVatPham_QuanTriVien> GetVatPhams(string kieuSapXep, string tuKhoa, string maLoHang)
+        public List<ViewVatPham_QuanTriVien> GetVatPhams(string kieuSapXep, string tuKhoa, string maLoHang, bool ascending)
         {
-            return SortVatPham(SearchVatPham(tuKhoa, maLoHang), kieuSapXep);
+            return SortVatPham(SearchVatPham(tuKhoa, maLoHang), kieuSapXep, ascending);
         }
     }
 }

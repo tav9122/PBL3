@@ -23,29 +23,38 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewKhachHang> list = Model.Instance.KhachHangs.Where(kh => kh.DiaChi.ToLower().Contains(temp) || kh.SoDienThoai.ToLower().Contains(temp) || kh.TenKhachHang.ToLower().Contains(temp) || kh.MaKhachHang.ToLower().Contains(temp))
+            List<ViewKhachHang> list = Model.Instance.KhachHangs.AsEnumerable().Where(kh => kh.DiaChi.ToLower().Contains(temp) || kh.SoDienThoai.Contains(temp) || kh.TenKhachHang.ToLower().Contains(temp) || kh.MaKhachHang.ToLower().Contains(temp))
                 .Select(kh => new ViewKhachHang { DiaChi = kh.DiaChi, TenKhachHang = kh.TenKhachHang, MaKhachHang = kh.MaKhachHang, SoDienThoai = kh.SoDienThoai })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
                 if (s != temp)
                 {
-                    list = list.Where(kh => kh.DiaChi.ToLower().Contains(s) || kh.SoDienThoai.ToLower().Contains(s) || kh.TenKhachHang.ToLower().Contains(s) || kh.MaKhachHang.ToLower().Contains(s)).ToList();
+                    list = list.Where(kh => kh.DiaChi.ToLower().Contains(s) || kh.SoDienThoai.Contains(s) || kh.TenKhachHang.ToLower().Contains(s) || kh.MaKhachHang.ToLower().Contains(s)).ToList();
                 }
             }
             return list;
         }
 
-        public List<ViewKhachHang> SortKhachHang(List<ViewKhachHang> khachHangs, string kieuSapXep)
+        public List<ViewKhachHang> SortKhachHang(List<ViewKhachHang> khachHangs, string kieuSapXep, bool ascending)
         {
-            if (kieuSapXep == "MaKhachHang")
-                return khachHangs.OrderBy(kh => Convert.ToInt32(kh.MaKhachHang.Substring(2))).ToList();
-            return khachHangs.OrderBy(kh => kh.GetType().GetProperty(kieuSapXep).GetValue(kh, null)).ToList();
+            if (ascending == true)
+            {
+                if (kieuSapXep == "MaKhachHang")
+                    return khachHangs.OrderBy(kh => Convert.ToInt32(kh.MaKhachHang.Substring(2))).ToList();
+                return khachHangs.OrderBy(kh => kh.GetType().GetProperty(kieuSapXep).GetValue(kh, null)).ToList();
+            }
+            else
+            {
+                if (kieuSapXep == "MaKhachHang")
+                    return khachHangs.OrderByDescending(kh => Convert.ToInt32(kh.MaKhachHang.Substring(2))).ToList();
+                return khachHangs.OrderByDescending(kh => kh.GetType().GetProperty(kieuSapXep).GetValue(kh, null)).ToList();
+            }
         }
 
-        public List<ViewKhachHang> GetKhachHangs(string kieuSapXep, string tuKhoa)
+        public List<ViewKhachHang> GetKhachHangs(string kieuSapXep, string tuKhoa, bool ascending)
         {
-            return SortKhachHang(SearchKhachHang(tuKhoa), kieuSapXep);
+            return SortKhachHang(SearchKhachHang(tuKhoa), kieuSapXep, ascending);
         }
     }
 }

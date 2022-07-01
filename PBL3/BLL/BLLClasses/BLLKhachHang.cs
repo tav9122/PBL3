@@ -36,23 +36,27 @@ namespace PBL3
 
         public KhachHang GetKhachHang(string maKhachHangHoacSoDienThoai)
         {
-            if (Model.Instance.KhachHangs.Where(kh => kh.MaKhachHang == maKhachHangHoacSoDienThoai).FirstOrDefault() != null)
+            var x = Model.Instance.KhachHangs.Where(kh => kh.MaKhachHang == maKhachHangHoacSoDienThoai).FirstOrDefault();
+            if (x != null)
             {
-                return Model.Instance.KhachHangs.Where(kh => kh.MaKhachHang == maKhachHangHoacSoDienThoai).FirstOrDefault();
+                return x;
             }
-            else if ((Model.Instance.KhachHangs.Where(kh => kh.SoDienThoai == maKhachHangHoacSoDienThoai).FirstOrDefault() != null))
+            else
             {
-                return Model.Instance.KhachHangs.Where(kh => kh.SoDienThoai == maKhachHangHoacSoDienThoai).FirstOrDefault();
+                var y = Model.Instance.KhachHangs.Where(kh => kh.SoDienThoai == maKhachHangHoacSoDienThoai).FirstOrDefault();
+                if (y != null)
+                    return y;
+                else return null;
             }
-            else return null;
         }
 
         public List<string> GetMaKhachHangs()
         {
-            if (Model.Instance.KhachHangs.Select(x => x.MaKhachHang).ToList() == null)
+            var x = Model.Instance.KhachHangs.Select(kh => kh.MaKhachHang).ToList();
+            if (!x.Any())
                 return new List<string> { "KH0" };
             else
-                return Model.Instance.KhachHangs.Select(x => x.MaKhachHang).ToList();
+                return x;
         }
     }
 }

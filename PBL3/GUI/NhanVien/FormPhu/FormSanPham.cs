@@ -12,6 +12,7 @@ namespace PBL3
         string maNhanVien;
 
         Dictionary<string, string> dictionary = TypeDescriptor.GetProperties(typeof(ViewSanPham_NhanVien)).Cast<PropertyDescriptor>().ToDictionary(p => p.Name, p => p.DisplayName);
+        bool ascendingSort = true;
 
         public FormSanPham(string maNhanVien)
         {
@@ -34,7 +35,7 @@ namespace PBL3
 
         private void ReloadDataGridView(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BLLButtonSanPham.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
+            dataGridView1.DataSource = BLLButtonSanPham.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, ascendingSort);
         }
 
         private void buttonXoaTuiHang_Click(object sender, EventArgs e)
@@ -102,6 +103,22 @@ namespace PBL3
             foreach (SanPham sanPham in BLLSanPham.Instance.GetSanPhamWithTempValueGreaterThanZero())
             {
                 textBoxTuiHang.Text += sanPham.TenSanPham + " x " + sanPham.Temp + ",    ";
+            }
+        }
+
+        private void buttonAscendingDescending_Click(object sender, EventArgs e)
+        {
+            if (ascendingSort == true)
+            {
+                ascendingSort = false;
+                buttonAscendingDescending.Image = Properties.Resources.downarrow20;
+                ReloadDataGridView(null, null);
+            }
+            else
+            {
+                ascendingSort = true;
+                buttonAscendingDescending.Image = Properties.Resources.uparrow20;
+                ReloadDataGridView(null, null);
             }
         }
     }

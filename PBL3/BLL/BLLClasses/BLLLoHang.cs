@@ -30,10 +30,11 @@ namespace PBL3
 
         public List<string> GetMaLoHangs()
         {
-            if (Model.Instance.LoHangs.Select(x => x.MaLoHang).ToList() == null)
+            var x = Model.Instance.LoHangs.Select(lh => lh.MaLoHang).ToList();
+            if (!x.Any())
                 return new List<string> { "LH0" };
             else
-                return Model.Instance.LoHangs.Select(x => x.MaLoHang).ToList();
+                return x;
         }
     }
 }

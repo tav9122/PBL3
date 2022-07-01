@@ -21,14 +21,6 @@ namespace PBL3
             return Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham);
         }
 
-        public List<string> GetMaSanPhams()
-        {
-            if (Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList() == null)
-                return new List<string> { "SP0" };
-            else
-                return Model.Instance.SanPhams.Select(sp => sp.MaSanPham).ToList();
-        }
-
         public void AddSanPham(string maSanPham, string tenSanPham, string tenHang, string loaiSanPham, double giaMua, double giaBan, int soLuongNhap, int soLuongHienTai, string thoiGianBaoHanh)
         {
             Model.Instance.SanPhams.Add(new SanPham { MaSanPham = maSanPham, TenSanPham = tenSanPham, TenHang = tenHang, LoaiSanPham = loaiSanPham, GiaMua = giaMua, GiaBan = giaBan, SoLuongNhap = soLuongNhap, SoLuongHienTai = soLuongHienTai, ThoiGianBaoHanh = thoiGianBaoHanh });

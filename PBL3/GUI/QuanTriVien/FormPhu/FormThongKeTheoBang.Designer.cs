@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.textBoxTimKiem = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonAscendingDescending = new System.Windows.Forms.Button();
             this.comboBoxKieuSapXep = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -48,7 +49,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(46, 56);
+            this.dateTimePicker1.Location = new System.Drawing.Point(49, 71);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
             this.dateTimePicker1.TabIndex = 1;
@@ -63,22 +64,22 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 87);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 101);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(686, 237);
+            this.dataGridView1.Size = new System.Drawing.Size(686, 223);
             this.dataGridView1.TabIndex = 5;
             // 
             // label3
@@ -88,7 +89,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label3.Location = new System.Drawing.Point(181, 60);
+            this.label3.Location = new System.Drawing.Point(187, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 47;
@@ -99,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 21);
+            this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 18);
             this.label1.TabIndex = 48;
@@ -115,10 +116,10 @@
             this.comboBoxKieuThongKe.Items.AddRange(new object[] {
             "Tổng tiền nhập hàng và doanh thu",
             "Số lượng nhập và bán"});
-            this.comboBoxKieuThongKe.Location = new System.Drawing.Point(123, 18);
+            this.comboBoxKieuThongKe.Location = new System.Drawing.Point(123, 21);
             this.comboBoxKieuThongKe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxKieuThongKe.Name = "comboBoxKieuThongKe";
-            this.comboBoxKieuThongKe.Size = new System.Drawing.Size(227, 24);
+            this.comboBoxKieuThongKe.Size = new System.Drawing.Size(236, 24);
             this.comboBoxKieuThongKe.TabIndex = 0;
             this.comboBoxKieuThongKe.DropDownClosed += new System.EventHandler(this.ReloadDataGridView);
             // 
@@ -152,10 +153,10 @@
             this.textBoxTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBoxTimKiem.Location = new System.Drawing.Point(458, 52);
+            this.textBoxTimKiem.Location = new System.Drawing.Point(372, 69);
             this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTimKiem.Name = "textBoxTimKiem";
-            this.textBoxTimKiem.Size = new System.Drawing.Size(246, 24);
+            this.textBoxTimKiem.Size = new System.Drawing.Size(332, 24);
             this.textBoxTimKiem.TabIndex = 3;
             this.textBoxTimKiem.Text = "Nhập để tìm kiếm...";
             this.textBoxTimKiem.TextChanged += new System.EventHandler(this.ReloadDataGridView);
@@ -166,7 +167,7 @@
             // 
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(221, 56);
+            this.dateTimePicker2.Location = new System.Drawing.Point(230, 71);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(129, 20);
             this.dateTimePicker2.TabIndex = 2;
@@ -179,11 +180,26 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label2.Location = new System.Drawing.Point(15, 60);
+            this.label2.Location = new System.Drawing.Point(15, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 16);
             this.label2.TabIndex = 80;
             this.label2.Text = "Từ";
+            // 
+            // buttonAscendingDescending
+            // 
+            this.buttonAscendingDescending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAscendingDescending.FlatAppearance.BorderSize = 0;
+            this.buttonAscendingDescending.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAscendingDescending.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonAscendingDescending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAscendingDescending.Image = global::PBL3.Properties.Resources.uparrow20;
+            this.buttonAscendingDescending.Location = new System.Drawing.Point(686, 18);
+            this.buttonAscendingDescending.Name = "buttonAscendingDescending";
+            this.buttonAscendingDescending.Size = new System.Drawing.Size(20, 26);
+            this.buttonAscendingDescending.TabIndex = 93;
+            this.buttonAscendingDescending.UseVisualStyleBackColor = true;
+            this.buttonAscendingDescending.Click += new System.EventHandler(this.buttonAscendingDescending_Click);
             // 
             // comboBoxKieuSapXep
             // 
@@ -193,11 +209,11 @@
             this.comboBoxKieuSapXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKieuSapXep.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBoxKieuSapXep.FormattingEnabled = true;
-            this.comboBoxKieuSapXep.Location = new System.Drawing.Point(552, 20);
+            this.comboBoxKieuSapXep.Location = new System.Drawing.Point(473, 21);
             this.comboBoxKieuSapXep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxKieuSapXep.Name = "comboBoxKieuSapXep";
-            this.comboBoxKieuSapXep.Size = new System.Drawing.Size(152, 24);
-            this.comboBoxKieuSapXep.TabIndex = 4;
+            this.comboBoxKieuSapXep.Size = new System.Drawing.Size(207, 24);
+            this.comboBoxKieuSapXep.TabIndex = 91;
             this.comboBoxKieuSapXep.DropDownClosed += new System.EventHandler(this.ReloadDataGridView);
             // 
             // label4
@@ -206,10 +222,10 @@
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(455, 23);
+            this.label4.Location = new System.Drawing.Point(369, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 18);
-            this.label4.TabIndex = 82;
+            this.label4.TabIndex = 92;
             this.label4.Text = "Sắp xếp theo:";
             // 
             // FormThongKeTheoBang
@@ -218,6 +234,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(716, 419);
+            this.Controls.Add(this.buttonAscendingDescending);
             this.Controls.Add(this.comboBoxKieuSapXep);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -250,6 +267,7 @@
         private System.Windows.Forms.TextBox textBoxTimKiem;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonAscendingDescending;
         private System.Windows.Forms.ComboBox comboBoxKieuSapXep;
         private System.Windows.Forms.Label label4;
     }

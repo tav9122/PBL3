@@ -36,16 +36,26 @@ namespace PBL3
             return list;
         }
 
-        public List<ViewLichLamViec> SortLichLamViec(List<ViewLichLamViec> lichLamViecs, string kieuSapXep)
+        public List<ViewLichLamViec> SortLichLamViec(List<ViewLichLamViec> lichLamViecs, string kieuSapXep, bool ascending)
         {
-            if (kieuSapXep == "MaLichLamViec")
-                return lichLamViecs.OrderBy(llv => Convert.ToInt32(llv.MaLichLamViec.Substring(3))).ToList();
-            return lichLamViecs.OrderBy(llv => llv.GetType().GetProperty(kieuSapXep).GetValue(llv, null)).ToList();
+            if (ascending == true)
+            {
+                if (kieuSapXep == "MaLichLamViec")
+                    return lichLamViecs.OrderBy(llv => Convert.ToInt32(llv.MaLichLamViec.Substring(3))).ToList();
+                return lichLamViecs.OrderBy(llv => llv.GetType().GetProperty(kieuSapXep).GetValue(llv, null)).ToList();
+            }
+            else
+            {
+                if (kieuSapXep == "MaLichLamViec")
+                    return lichLamViecs.OrderByDescending(llv => Convert.ToInt32(llv.MaLichLamViec.Substring(3))).ToList();
+                return lichLamViecs.OrderByDescending(llv => llv.GetType().GetProperty(kieuSapXep).GetValue(llv, null)).ToList();
+
+            }
         }
 
-        public List<ViewLichLamViec> GetLichLamViecs(string kieuSapXep, string tuKhoa)
+        public List<ViewLichLamViec> GetLichLamViecs(string kieuSapXep, string tuKhoa, bool ascending)
         {
-            return SortLichLamViec(SearchLichLamViec(tuKhoa), kieuSapXep);
+            return SortLichLamViec(SearchLichLamViec(tuKhoa), kieuSapXep, ascending);
         }
     }
 }

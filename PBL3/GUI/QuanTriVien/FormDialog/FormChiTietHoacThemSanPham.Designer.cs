@@ -63,7 +63,7 @@
             this.textBoxGiaBan.Location = new System.Drawing.Point(584, 86);
             this.textBoxGiaBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGiaBan.Name = "textBoxGiaBan";
-            this.textBoxGiaBan.Size = new System.Drawing.Size(143, 22);
+            this.textBoxGiaBan.Size = new System.Drawing.Size(182, 22);
             this.textBoxGiaBan.TabIndex = 4;
             this.textBoxGiaBan.Enter += new System.EventHandler(this.textBoxGiaBan_Enter);
             this.textBoxGiaBan.Leave += new System.EventHandler(this.textBoxGiaBan_Leave);
@@ -83,7 +83,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(272, 317);
+            this.buttonXacNhan.Location = new System.Drawing.Point(289, 345);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -97,7 +97,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(399, 317);
+            this.buttonHuyBo.Location = new System.Drawing.Point(416, 345);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -113,7 +113,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 29);
+            this.panel1.Size = new System.Drawing.Size(792, 29);
             this.panel1.TabIndex = 119;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -124,7 +124,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(731, 7);
+            this.button1.Location = new System.Drawing.Point(748, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(15, 18);
             this.button1.TabIndex = 26;
@@ -139,7 +139,7 @@
             this.textBoxTenHang.Location = new System.Drawing.Point(136, 216);
             this.textBoxTenHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenHang.Name = "textBoxTenHang";
-            this.textBoxTenHang.Size = new System.Drawing.Size(228, 22);
+            this.textBoxTenHang.Size = new System.Drawing.Size(258, 22);
             this.textBoxTenHang.TabIndex = 3;
             // 
             // label5
@@ -180,7 +180,7 @@
             this.textBoxTenSanPham.Location = new System.Drawing.Point(136, 172);
             this.textBoxTenSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenSanPham.Name = "textBoxTenSanPham";
-            this.textBoxTenSanPham.Size = new System.Drawing.Size(228, 22);
+            this.textBoxTenSanPham.Size = new System.Drawing.Size(258, 22);
             this.textBoxTenSanPham.TabIndex = 2;
             // 
             // label3
@@ -202,7 +202,7 @@
             this.textBoxMaSanPham.Location = new System.Drawing.Point(136, 86);
             this.textBoxMaSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMaSanPham.Name = "textBoxMaSanPham";
-            this.textBoxMaSanPham.Size = new System.Drawing.Size(228, 22);
+            this.textBoxMaSanPham.Size = new System.Drawing.Size(258, 22);
             this.textBoxMaSanPham.TabIndex = 0;
             // 
             // labelTieuDe
@@ -224,7 +224,7 @@
             this.textBoxSoLuongHienTai.Location = new System.Drawing.Point(584, 216);
             this.textBoxSoLuongHienTai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoLuongHienTai.Name = "textBoxSoLuongHienTai";
-            this.textBoxSoLuongHienTai.Size = new System.Drawing.Size(143, 22);
+            this.textBoxSoLuongHienTai.Size = new System.Drawing.Size(182, 22);
             this.textBoxSoLuongHienTai.TabIndex = 7;
             this.textBoxSoLuongHienTai.Text = "0";
             // 
@@ -246,7 +246,7 @@
             this.textBoxGiaMua.Location = new System.Drawing.Point(584, 130);
             this.textBoxGiaMua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGiaMua.Name = "textBoxGiaMua";
-            this.textBoxGiaMua.Size = new System.Drawing.Size(143, 22);
+            this.textBoxGiaMua.Size = new System.Drawing.Size(182, 22);
             this.textBoxGiaMua.TabIndex = 5;
             this.textBoxGiaMua.Enter += new System.EventHandler(this.textBoxGiaBan_Enter);
             this.textBoxGiaMua.Leave += new System.EventHandler(this.textBoxGiaBan_Leave);
@@ -270,7 +270,7 @@
             this.textBoxSoLuongNhap.Location = new System.Drawing.Point(584, 172);
             this.textBoxSoLuongNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoLuongNhap.Name = "textBoxSoLuongNhap";
-            this.textBoxSoLuongNhap.Size = new System.Drawing.Size(143, 22);
+            this.textBoxSoLuongNhap.Size = new System.Drawing.Size(182, 22);
             this.textBoxSoLuongNhap.TabIndex = 6;
             this.textBoxSoLuongNhap.Text = "0";
             // 
@@ -292,7 +292,7 @@
             this.textBoxThoiGianBaoHanh.Location = new System.Drawing.Point(584, 260);
             this.textBoxThoiGianBaoHanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxThoiGianBaoHanh.Name = "textBoxThoiGianBaoHanh";
-            this.textBoxThoiGianBaoHanh.Size = new System.Drawing.Size(143, 22);
+            this.textBoxThoiGianBaoHanh.Size = new System.Drawing.Size(182, 22);
             this.textBoxThoiGianBaoHanh.TabIndex = 8;
             // 
             // label1
@@ -312,7 +312,7 @@
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
             this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(136, 130);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
-            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(228, 24);
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(258, 24);
             this.comboBoxLoaiSanPham.TabIndex = 1;
             this.comboBoxLoaiSanPham.TextChanged += new System.EventHandler(this.comboBoxLoaiSanPham_TextChanged);
             // 
@@ -321,7 +321,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(759, 358);
+            this.ClientSize = new System.Drawing.Size(792, 386);
             this.ControlBox = false;
             this.Controls.Add(this.comboBoxLoaiSanPham);
             this.Controls.Add(this.textBoxThoiGianBaoHanh);

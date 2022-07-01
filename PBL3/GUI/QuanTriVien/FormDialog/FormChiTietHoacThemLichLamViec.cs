@@ -26,6 +26,7 @@ namespace PBL3
             dataGridView1.Columns["NgaySinh"].Visible = false;
             dataGridView1.Columns["TenDangNhap"].Visible = false;
             dataGridView1.Columns["MucLuong"].Visible = false;
+            dataGridView1.Columns["NgayBatDauLamViec"].Visible = false;
         }
 
         public FormChiTietHoacThemLichLamViec(string maLichLamViec)
@@ -43,12 +44,13 @@ namespace PBL3
             textBoxThoiGianKetThuc.Text = lichLamViec.ThoiGianKetThuc;
             textBoxNgayLamViecTrongTuan.Text = lichLamViec.NgayLamViec;
 
-            dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetNhanViensOfLichLamViec(lichLamViec.MaLichLamViec);
+            dataGridView1.DataSource = listNhanVienTamThoi;
             dataGridView1.Columns["HoVaTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns["LichLamViecs"].Visible = false;
             dataGridView1.Columns["NgaySinh"].Visible = false;
             dataGridView1.Columns["TenDangNhap"].Visible = false;
             dataGridView1.Columns["MucLuong"].Visible = false;
+            dataGridView1.Columns["NgayBatDauLamViec"].Visible = false;
         }
 
         #region Các hàm chức năng cơ bản, hạn chế sửa.

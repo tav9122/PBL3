@@ -252,9 +252,10 @@ namespace PBL3
 
         public string LoginChecker(string tenDangNhap, string matKhau)
         {
-            if (Model.Instance.TaiKhoans.AsEnumerable().Where(tk => tk.TenDangNhap.ToLower() == tenDangNhap.ToLower() && tk.MatKhau == matKhau).Count() > 0)
+            var x = Model.Instance.TaiKhoans.AsEnumerable().Where(tk => tk.TenDangNhap.ToLower() == tenDangNhap.ToLower() && tk.MatKhau == matKhau);
+            if (x.Any())
             {
-                return Model.Instance.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap.ToLower() == tenDangNhap.ToLower()).MaNhanVien;
+                return x.FirstOrDefault().MaNhanVien;
             }
             return null;
         }

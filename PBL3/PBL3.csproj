@@ -481,5 +481,11 @@
   <ItemGroup>
     <None Include="Resources\quantrivien.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downarrow20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uparrow20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

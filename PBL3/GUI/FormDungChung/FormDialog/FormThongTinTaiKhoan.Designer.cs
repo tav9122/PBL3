@@ -65,7 +65,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(12, 97);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(414, 274);
+            this.groupBox2.Size = new System.Drawing.Size(480, 274);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tài khoản cá nhân";
@@ -79,7 +79,7 @@
             this.textBoxMatKhauMoi.Location = new System.Drawing.Point(186, 141);
             this.textBoxMatKhauMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMatKhauMoi.Name = "textBoxMatKhauMoi";
-            this.textBoxMatKhauMoi.Size = new System.Drawing.Size(148, 22);
+            this.textBoxMatKhauMoi.Size = new System.Drawing.Size(203, 22);
             this.textBoxMatKhauMoi.TabIndex = 3;
             this.textBoxMatKhauMoi.UseSystemPasswordChar = true;
             this.textBoxMatKhauMoi.TextChanged += new System.EventHandler(this.textBoxMatKhau_TextChanged);
@@ -104,7 +104,7 @@
             this.textBoxCanhBao.Location = new System.Drawing.Point(186, 245);
             this.textBoxCanhBao.Multiline = true;
             this.textBoxCanhBao.Name = "textBoxCanhBao";
-            this.textBoxCanhBao.Size = new System.Drawing.Size(148, 17);
+            this.textBoxCanhBao.Size = new System.Drawing.Size(203, 17);
             this.textBoxCanhBao.TabIndex = 38;
             // 
             // textBoxNhapLaiMatKhauMoi
@@ -116,7 +116,7 @@
             this.textBoxNhapLaiMatKhauMoi.Location = new System.Drawing.Point(186, 216);
             this.textBoxNhapLaiMatKhauMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNhapLaiMatKhauMoi.Name = "textBoxNhapLaiMatKhauMoi";
-            this.textBoxNhapLaiMatKhauMoi.Size = new System.Drawing.Size(148, 22);
+            this.textBoxNhapLaiMatKhauMoi.Size = new System.Drawing.Size(203, 22);
             this.textBoxNhapLaiMatKhauMoi.TabIndex = 4;
             this.textBoxNhapLaiMatKhauMoi.UseSystemPasswordChar = true;
             this.textBoxNhapLaiMatKhauMoi.TextChanged += new System.EventHandler(this.textBoxMatKhau_TextChanged);
@@ -138,7 +138,7 @@
             this.buttonAnHienMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonAnHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnHienMatKhau.Image = global::PBL3.Properties.Resources.openedeye20;
-            this.buttonAnHienMatKhau.Location = new System.Drawing.Point(314, 115);
+            this.buttonAnHienMatKhau.Location = new System.Drawing.Point(369, 114);
             this.buttonAnHienMatKhau.Name = "buttonAnHienMatKhau";
             this.buttonAnHienMatKhau.Size = new System.Drawing.Size(20, 20);
             this.buttonAnHienMatKhau.TabIndex = 2;
@@ -153,7 +153,7 @@
             this.textBoxMatKhauCu.Location = new System.Drawing.Point(186, 86);
             this.textBoxMatKhauCu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMatKhauCu.Name = "textBoxMatKhauCu";
-            this.textBoxMatKhauCu.Size = new System.Drawing.Size(148, 22);
+            this.textBoxMatKhauCu.Size = new System.Drawing.Size(203, 22);
             this.textBoxMatKhauCu.TabIndex = 1;
             this.textBoxMatKhauCu.UseSystemPasswordChar = true;
             this.textBoxMatKhauCu.Leave += new System.EventHandler(this.textBoxMatKhauCu_Leave);
@@ -167,7 +167,7 @@
             this.textBoxTenDangNhap.Location = new System.Drawing.Point(186, 40);
             this.textBoxTenDangNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenDangNhap.Name = "textBoxTenDangNhap";
-            this.textBoxTenDangNhap.Size = new System.Drawing.Size(148, 22);
+            this.textBoxTenDangNhap.Size = new System.Drawing.Size(203, 22);
             this.textBoxTenDangNhap.TabIndex = 0;
             // 
             // label6
@@ -207,7 +207,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(438, 29);
+            this.panel1.Size = new System.Drawing.Size(504, 29);
             this.panel1.TabIndex = 39;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -218,7 +218,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(416, 7);
+            this.button1.Location = new System.Drawing.Point(482, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(15, 18);
             this.button1.TabIndex = 26;
@@ -230,7 +230,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(117, 410);
+            this.buttonXacNhan.Location = new System.Drawing.Point(147, 410);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -244,7 +244,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(244, 410);
+            this.buttonHuyBo.Location = new System.Drawing.Point(274, 410);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -258,7 +258,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(438, 451);
+            this.ClientSize = new System.Drawing.Size(504, 451);
             this.ControlBox = false;
             this.Controls.Add(this.buttonXacNhan);
             this.Controls.Add(this.buttonHuyBo);

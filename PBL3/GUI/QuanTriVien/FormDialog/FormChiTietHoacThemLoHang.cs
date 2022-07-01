@@ -13,7 +13,9 @@ namespace PBL3
     {
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
-        public bool typeView = false;
+        bool typeView = false;
+
+        bool ascendingSort = true;
 
         public FormChiTietHoacThemLoHang()
         {
@@ -79,10 +81,10 @@ namespace PBL3
         private void ReloadDataGridView(object sender, EventArgs e)
         {
             if (typeView == false)
-                dataGridView1.DataSource = BLLButtonQuanLiLoHang.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text);
+                dataGridView1.DataSource = BLLButtonQuanLiLoHang.Instance.GetSanPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, ascendingSort);
             else
             {
-                dataGridView1.DataSource = BLLButtonQuanLiLoHang.Instance.GetVatPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, textBoxMaLoHang.Text);
+                dataGridView1.DataSource = BLLButtonQuanLiLoHang.Instance.GetVatPhams(dictionary.FirstOrDefault(d => d.Value == comboBoxKieuSapXep.Text).Key, textBoxTimKiem.Text, textBoxMaLoHang.Text, ascendingSort);
                 labelSoLuongCacVatPhamDangHienThi.Text = "Số lượng các vật phẩm đang hiển thị: " + dataGridView1.RowCount.ToString();
 
                 double tongTien = 0;
@@ -181,6 +183,22 @@ namespace PBL3
             {
                 textBoxTimKiem.ForeColor = Color.FromArgb(200, 200, 200);
                 textBoxTimKiem.Text = "Nhập để tìm kiếm...";
+            }
+        }
+
+        private void buttonAscendingDescending_Click(object sender, EventArgs e)
+        {
+            if (ascendingSort == true)
+            {
+                ascendingSort = false;
+                buttonAscendingDescending.Image = Properties.Resources.downarrow20;
+                ReloadDataGridView(null, null);
+            }
+            else
+            {
+                ascendingSort = true;
+                buttonAscendingDescending.Image = Properties.Resources.uparrow20;
+                ReloadDataGridView(null, null);
             }
         }
     }

@@ -20,8 +20,9 @@ namespace PBL3
         public void InitializeNewVatPhams(int soLuongNhapThem, string maSanPham, string maLoHang)
         {
             int count = Model.Instance.VatPhams.Count();
-            Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).SoLuongHienTai += soLuongNhapThem;
-            Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).SoLuongNhap += soLuongNhapThem;
+            var x = Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham);
+            x.SoLuongHienTai += soLuongNhapThem;
+            x.SoLuongNhap += soLuongNhapThem;
             for (int i = 0; i < soLuongNhapThem; i++)
             {
                 Model.Instance.VatPhams.Add(new VatPham { SoSeri = DateTime.Now.ToString("yyyyMMdd") + count.ToString().PadLeft(6, '0'), MaSanPham = maSanPham, MaLoHang = maLoHang, GiaMua = Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).GiaMua, GiaBan = Model.Instance.SanPhams.FirstOrDefault(sp => sp.MaSanPham == maSanPham).GiaBan });
@@ -32,8 +33,9 @@ namespace PBL3
 
         public VatPham GetVatPham(string soSeri)
         {
-            if (Model.Instance.VatPhams.Where(vp => vp.SoSeri == soSeri).Count() > 0)
-                return Model.Instance.VatPhams.Where(vp => vp.SoSeri == soSeri).FirstOrDefault();
+            var x = Model.Instance.VatPhams.Where(vp => vp.SoSeri == soSeri);
+            if (!x.Any())
+                return x.FirstOrDefault();
             else
                 return null;
         }

@@ -21,7 +21,7 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewSanPham_QuanTriVien> list = Model.Instance.SanPhams.Where(sp => sp.DaXoa == false && (sp.MaSanPham.ToLower().Contains(temp) || sp.LoaiSanPham.ToLower().Contains(temp) || sp.TenSanPham.ToLower().Contains(temp) || sp.TenHang.ToLower().Contains(temp)))
+            List<ViewSanPham_QuanTriVien> list = Model.Instance.SanPhams.AsEnumerable().Where(sp => sp.DaXoa == false && (sp.MaSanPham.ToLower().Contains(temp) || sp.LoaiSanPham.ToLower().Contains(temp) || sp.TenSanPham.ToLower().Contains(temp) || sp.TenHang.ToLower().Contains(temp)))
                 .Select(sp => new ViewSanPham_QuanTriVien { MaSanPham = sp.MaSanPham, TenSanPham = sp.TenSanPham, TenHang = sp.TenHang, LoaiSanPham = sp.LoaiSanPham, GiaMua = sp.GiaMua, GiaBan = sp.GiaBan, SoLuongNhap = sp.SoLuongNhap, SoLuongHienTai = sp.SoLuongHienTai, ThoiGianBaoHanh = sp.ThoiGianBaoHanh })
                 .ToList();
             foreach (string s in cacTuKhoa)
@@ -34,14 +34,21 @@ namespace PBL3
             return list;
         }
 
-        public List<ViewSanPham_QuanTriVien> SortSanPham(List<ViewSanPham_QuanTriVien> sanPhams, string kieuSapXep)
+        public List<ViewSanPham_QuanTriVien> SortSanPham(List<ViewSanPham_QuanTriVien> sanPhams, string kieuSapXep, bool ascending)
         {
-            return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            if (ascending == true)
+            {
+                return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
+            else
+            {
+                return sanPhams.OrderByDescending(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
         }
 
-        public List<ViewSanPham_QuanTriVien> GetSanPhams(string kieuSapXep, string tuKhoa)
+        public List<ViewSanPham_QuanTriVien> GetSanPhams(string kieuSapXep, string tuKhoa, bool ascending)
         {
-            return SortSanPham(SearchSanPham(tuKhoa), kieuSapXep);
+            return SortSanPham(SearchSanPham(tuKhoa), kieuSapXep, ascending);
         }
     }
 }

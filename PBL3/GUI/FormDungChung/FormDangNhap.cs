@@ -6,6 +6,8 @@ namespace PBL3
 {
     public partial class FormDangNhap : Form
     {
+        bool ShowPassword = false;
+
         public FormDangNhap()
         {
             InitializeComponent();
@@ -80,7 +82,7 @@ namespace PBL3
                         this.Hide();
                         formLuaChonVaiTroDangNhap.ShowDialog();
                         this.Show();
-                        count = 1;
+                        ShowPassword = true;
                         buttonAnHienMatKhau.PerformClick();
                     }
                     else
@@ -89,7 +91,7 @@ namespace PBL3
                         this.Hide();
                         formNhanVien.ShowDialog();
                         this.Show();
-                        count = 1;
+                        ShowPassword = true;
                         buttonAnHienMatKhau.PerformClick();
                     }
                 }
@@ -107,17 +109,17 @@ namespace PBL3
             formResetMatKhau.ShowDialog();
         }
 
-        int count = 0;
         private void buttonAnHienMatKhau_Click(object sender, EventArgs e)
         {
-            count++;
-            if (count % 2 == 0)
+            if (ShowPassword == true)
             {
+                ShowPassword = false;
                 textBoxMatKhau.Multiline = false;
                 buttonAnHienMatKhau.Image = Properties.Resources.openedeye20;
             }
             else
             {
+                ShowPassword = true;
                 textBoxMatKhau.Multiline = true;
                 buttonAnHienMatKhau.Image = Properties.Resources.closedeye20;
             }

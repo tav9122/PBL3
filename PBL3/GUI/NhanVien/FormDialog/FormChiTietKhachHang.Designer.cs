@@ -52,7 +52,7 @@
             this.buttonXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonXacNhan.Location = new System.Drawing.Point(274, 324);
+            this.buttonXacNhan.Location = new System.Drawing.Point(155, 475);
             this.buttonXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonXacNhan.Name = "buttonXacNhan";
             this.buttonXacNhan.Size = new System.Drawing.Size(88, 28);
@@ -66,7 +66,7 @@
             this.buttonHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHuyBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.buttonHuyBo.Location = new System.Drawing.Point(401, 324);
+            this.buttonHuyBo.Location = new System.Drawing.Point(282, 475);
             this.buttonHuyBo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonHuyBo.Name = "buttonHuyBo";
             this.buttonHuyBo.Size = new System.Drawing.Size(88, 28);
@@ -82,7 +82,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(761, 29);
+            this.panel1.Size = new System.Drawing.Size(522, 29);
             this.panel1.TabIndex = 77;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -93,7 +93,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(739, 7);
+            this.button1.Location = new System.Drawing.Point(500, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(15, 18);
             this.button1.TabIndex = 26;
@@ -109,7 +109,7 @@
             this.textBoxMaKhachHang.Location = new System.Drawing.Point(144, 88);
             this.textBoxMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMaKhachHang.Name = "textBoxMaKhachHang";
-            this.textBoxMaKhachHang.Size = new System.Drawing.Size(159, 22);
+            this.textBoxMaKhachHang.Size = new System.Drawing.Size(344, 22);
             this.textBoxMaKhachHang.TabIndex = 1;
             // 
             // label2
@@ -140,7 +140,7 @@
             this.textBoxTenKhachHang.Location = new System.Drawing.Point(144, 127);
             this.textBoxTenKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxTenKhachHang.Name = "textBoxTenKhachHang";
-            this.textBoxTenKhachHang.Size = new System.Drawing.Size(159, 22);
+            this.textBoxTenKhachHang.Size = new System.Drawing.Size(344, 22);
             this.textBoxTenKhachHang.TabIndex = 2;
             // 
             // label3
@@ -161,7 +161,7 @@
             this.textBoxDiaChi.Location = new System.Drawing.Point(144, 205);
             this.textBoxDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxDiaChi.Name = "textBoxDiaChi";
-            this.textBoxDiaChi.Size = new System.Drawing.Size(159, 22);
+            this.textBoxDiaChi.Size = new System.Drawing.Size(344, 22);
             this.textBoxDiaChi.TabIndex = 4;
             // 
             // label4
@@ -182,7 +182,7 @@
             this.textBoxSoDienThoai.Location = new System.Drawing.Point(144, 166);
             this.textBoxSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSoDienThoai.Name = "textBoxSoDienThoai";
-            this.textBoxSoDienThoai.Size = new System.Drawing.Size(159, 22);
+            this.textBoxSoDienThoai.Size = new System.Drawing.Size(344, 22);
             this.textBoxSoDienThoai.TabIndex = 3;
             // 
             // label5
@@ -200,18 +200,18 @@
             this.textBoxGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGhiChu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxGhiChu.Location = new System.Drawing.Point(375, 109);
+            this.textBoxGhiChu.Location = new System.Drawing.Point(28, 266);
             this.textBoxGhiChu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGhiChu.Multiline = true;
             this.textBoxGhiChu.Name = "textBoxGhiChu";
-            this.textBoxGhiChu.Size = new System.Drawing.Size(374, 164);
+            this.textBoxGhiChu.Size = new System.Drawing.Size(460, 164);
             this.textBoxGhiChu.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(372, 87);
+            this.label6.Location = new System.Drawing.Point(25, 244);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 18);
             this.label6.TabIndex = 92;
@@ -222,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(761, 365);
+            this.ClientSize = new System.Drawing.Size(522, 516);
             this.ControlBox = false;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxGhiChu);

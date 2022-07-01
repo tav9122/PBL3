@@ -60,7 +60,7 @@
             this.panelDesktopPane.Location = new System.Drawing.Point(200, 18);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(848, 580);
+            this.panelDesktopPane.Size = new System.Drawing.Size(868, 580);
             this.panelDesktopPane.TabIndex = 6;
             // 
             // panelMenu
@@ -256,7 +256,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(848, 18);
+            this.panel2.Size = new System.Drawing.Size(868, 18);
             this.panel2.TabIndex = 7;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -267,7 +267,7 @@
             this.buttonMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMaximize.FlatAppearance.BorderSize = 0;
             this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMaximize.Location = new System.Drawing.Point(826, 0);
+            this.buttonMaximize.Location = new System.Drawing.Point(846, 0);
             this.buttonMaximize.Name = "buttonMaximize";
             this.buttonMaximize.Size = new System.Drawing.Size(19, 18);
             this.buttonMaximize.TabIndex = 1;
@@ -281,7 +281,7 @@
             this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMinimize.FlatAppearance.BorderSize = 0;
             this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(805, 0);
+            this.buttonMinimize.Location = new System.Drawing.Point(825, 0);
             this.buttonMinimize.Name = "buttonMinimize";
             this.buttonMinimize.Size = new System.Drawing.Size(15, 18);
             this.buttonMinimize.TabIndex = 0;
@@ -293,7 +293,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1048, 598);
+            this.ClientSize = new System.Drawing.Size(1068, 598);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panel2);

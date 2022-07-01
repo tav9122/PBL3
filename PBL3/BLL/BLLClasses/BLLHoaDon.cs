@@ -30,10 +30,11 @@ namespace PBL3
 
         public List<String> GetMaHoaDons()
         {
-            if (Model.Instance.HoaDons.Select(x => x.MaHoaDon).ToList() == null)
+            var x = Model.Instance.HoaDons.Select(hd => hd.MaHoaDon).ToList();
+            if (!x.Any())
                 return new List<string> { "HD0" };
             else
-                return Model.Instance.HoaDons.Select(x => x.MaHoaDon).ToList();
+                return x;
         }
     }
 }

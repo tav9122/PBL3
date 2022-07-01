@@ -32,10 +32,11 @@ namespace PBL3
 
         public List<string> GetMaTaiKhoans()
         {
-            if (Model.Instance.TaiKhoans.Select(sp => sp.MaTaiKhoan).ToList() == null)
+            var x = Model.Instance.TaiKhoans.Select(tk => tk.MaTaiKhoan).ToList();
+            if (!x.Any())
                 return new List<string> { "TK0" };
             else
-                return Model.Instance.TaiKhoans.Select(sp => sp.MaTaiKhoan).ToList();
+                return x;
         }
 
         public void UpdateTaiKhoanNhanVien(string maTaiKhoan, string tenDangNhap, string matKhau)

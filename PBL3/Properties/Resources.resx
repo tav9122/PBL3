@@ -127,6 +127,9 @@
   <data name="closedeye20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\closedeye20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="downarrow20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downarrow20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lichsuhoadon26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lichsuhoadon26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -204,5 +207,8 @@
   </data>
   <data name="thongke32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thongke32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uparrow20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uparrow20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

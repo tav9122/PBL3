@@ -36,14 +36,21 @@ namespace PBL3
             return list;
         }
 
-        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> SortTongTienSanPham(List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> sanPhams, string kieuSapXep)
+        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> SortTongTienSanPham(List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> sanPhams, string kieuSapXep, bool ascending)
         {
-            return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            if (ascending == true)
+            {
+                return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
+            else
+            {
+                return sanPhams.OrderByDescending(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
         }
 
-        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> GetTongTienSanPhams(string kieuSapXep, string tuKhoa, DateTime date1, DateTime date2)
+        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_TongTien> GetTongTienSanPhams(string kieuSapXep, string tuKhoa, bool ascending, DateTime date1, DateTime date2)
         {
-            return SortTongTienSanPham(SearchTongTienSanPham(tuKhoa, date1, date2), kieuSapXep);
+            return SortTongTienSanPham(SearchTongTienSanPham(tuKhoa, date1, date2), kieuSapXep, ascending);
         }
 
         public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> SearchSoLuongSanPham(string tuKhoa, DateTime date1, DateTime date2)
@@ -65,14 +72,21 @@ namespace PBL3
             return list;
         }
 
-        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> SortSoLuongSanPham(List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> sanPhams, string kieuSapXep)
+        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> SortSoLuongSanPham(List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> sanPhams, string kieuSapXep, bool ascending)
         {
-            return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            if (ascending == true)
+            {
+                return sanPhams.OrderBy(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
+            else
+            {
+                return sanPhams.OrderByDescending(sp => sp.GetType().GetProperty(kieuSapXep).GetValue(sp, null)).ToList();
+            }
         }
 
-        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> GetSoLuongSanPhams(string kieuSapXep, string tuKhoa, DateTime date1, DateTime date2)
+        public List<ViewSanPham_QuanTriVien_ThongKeTheoBang_SoLuong> GetSoLuongSanPhams(string kieuSapXep, string tuKhoa, bool ascending, DateTime date1, DateTime date2)
         {
-            return SortSoLuongSanPham(SearchSoLuongSanPham(tuKhoa, date1, date2), kieuSapXep);
+            return SortSoLuongSanPham(SearchSoLuongSanPham(tuKhoa, date1, date2), kieuSapXep, ascending);
         }
 
         public double GetTongTienNhap(string maSanPham, DateTime date1, DateTime date2)

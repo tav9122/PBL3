@@ -42,7 +42,8 @@ namespace PBL3
             listLichLamViecTamThoi = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(maNhanVien);
 
             var nhanVien = BLLNhanVien.Instance.GetNhanVien(maNhanVien);
-            newMatKhau = BLLTaiKhoan.Instance.GetTaiKhoan(nhanVien.MaNhanVien).MatKhau;
+            var x = BLLTaiKhoan.Instance.GetTaiKhoan(maNhanVien);
+            newMatKhau = x.MatKhau;
             textBoxMaNhanVien.Text = nhanVien.MaNhanVien;
             textBoxTenNhanVien.Text = nhanVien.HoVaTen;
             textBoxDiaChi.Text = nhanVien.DiaChi;
@@ -52,7 +53,7 @@ namespace PBL3
             radioButtonNam.Checked = nhanVien.GioiTinh;
             dateTimePickerNgaySinh.Value = nhanVien.NgaySinh;
             dateTimePickerNgayBatDauLamViec.Value = nhanVien.NgayBatDauLamViec;
-            textBoxTenDangNhap.Text = BLLTaiKhoan.Instance.GetTaiKhoan(nhanVien.MaNhanVien).TenDangNhap;
+            textBoxTenDangNhap.Text = x.TenDangNhap;
 
             textBoxTenDangNhap.Enabled = true;
             dataGridView1.DataSource = BLLNhanVienLichLamViec.Instance.GetLichLamViecsOfNhanVien(nhanVien.MaNhanVien);

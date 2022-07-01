@@ -25,8 +25,9 @@ namespace PBL3
 
         public void UpdateBaoHanh(string maBaoHanh, bool trangThai, string ghiChu)
         {
-            Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh).TrangThai = trangThai;
-            Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh).GhiChu = ghiChu;
+            var x = Model.Instance.BaoHanhs.FirstOrDefault(bh => bh.MaBaoHanh == maBaoHanh);
+            x.TrangThai = trangThai;
+            x.GhiChu = ghiChu;
             Model.Instance.SaveChanges();
         }
 
@@ -37,10 +38,11 @@ namespace PBL3
 
         public List<string> GetMaBaoHanhs()
         {
-            if (Model.Instance.BaoHanhs.Select(x => x.MaBaoHanh).ToList() == null)
+            var x = Model.Instance.BaoHanhs.Select(bh => bh.MaBaoHanh).ToList();
+            if (!x.Any())
                 return new List<string> { "BH0" };
             else
-                return Model.Instance.BaoHanhs.Select(x => x.MaBaoHanh).ToList();
+                return x;
         }
     }
 }
