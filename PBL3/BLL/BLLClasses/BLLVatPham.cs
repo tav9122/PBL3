@@ -34,7 +34,7 @@ namespace PBL3
         public VatPham GetVatPham(string soSeri)
         {
             var x = Model.Instance.VatPhams.Where(vp => vp.SoSeri == soSeri);
-            if (!x.Any())
+            if (x.Any())
                 return x.FirstOrDefault();
             else
                 return null;
