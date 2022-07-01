@@ -110,7 +110,7 @@
             // 
             // dateTimePickerThoiGianGiaoTaoPhieuBaoHanh
             // 
-            this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.CustomFormat = "dd/MM/yyyy hh:mm:tt";
             this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Enabled = false;
             this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dateTimePickerThoiGianGiaoTaoPhieuBaoHanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
