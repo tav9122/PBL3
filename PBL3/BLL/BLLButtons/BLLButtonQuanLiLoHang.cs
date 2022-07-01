@@ -23,14 +23,14 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewLoHang> list = Model.Instance.LoHangs.AsEnumerable().Where(lh => lh.MaLoHang.ToLower().Contains(temp) || lh.TongTien.ToString().Contains(temp) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(temp))
+            List<ViewLoHang> list = Model.Instance.LoHangs.AsEnumerable().Where(lh => lh.MaLoHang.ToLower().Contains(temp) || lh.TongTien.ToString().Contains(temp) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy hh:mm tt").ToLower().Contains(temp))
                 .Select(lh => new ViewLoHang { MaLoHang = lh.MaLoHang, ThoiGianNhapHang = lh.ThoiGianNhapHang, TongTien = lh.TongTien })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
                 if (s != temp)
                 {
-                    list = list.Where(lh => lh.MaLoHang.ToLower().Contains(s) || lh.TongTien.ToString().Contains(s) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(s)).ToList();
+                    list = list.Where(lh => lh.MaLoHang.ToLower().Contains(s) || lh.TongTien.ToString().Contains(s) || lh.ThoiGianNhapHang.ToString("dd/MM/yyyy hh:mm tt").ToLower().Contains(s)).ToList();
                 }
             }
             return list;

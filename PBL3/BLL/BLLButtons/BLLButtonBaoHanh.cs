@@ -22,14 +22,14 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewBaoHanh> list = Model.Instance.BaoHanhs.AsEnumerable().Where(bh => bh.MaBaoHanh.ToLower().Contains(temp) || bh.SoSeri.Contains(temp) || bh.VatPham.HoaDon.KhachHang.TenKhachHang.ToLower().Contains(temp) || bh.VatPham.SanPham.TenSanPham.ToLower().Contains(temp) || bh.VatPham.HoaDon.KhachHang.SoDienThoai.Contains(temp) || bh.TrangThai.ToString().ToLower().Contains(temp) || bh.GhiChu.ToLower().Contains(temp) || bh.ThoiGianTaoPhieuBaoHanh.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(temp))
+            List<ViewBaoHanh> list = Model.Instance.BaoHanhs.AsEnumerable().Where(bh => bh.MaBaoHanh.ToLower().Contains(temp) || bh.SoSeri.Contains(temp) || bh.VatPham.HoaDon.KhachHang.TenKhachHang.ToLower().Contains(temp) || bh.VatPham.SanPham.TenSanPham.ToLower().Contains(temp) || bh.VatPham.HoaDon.KhachHang.SoDienThoai.Contains(temp) || bh.TrangThai.ToString().ToLower().Contains(temp) || bh.GhiChu.ToLower().Contains(temp) || bh.ThoiGianTaoPhieuBaoHanh.ToString("dd/MM/yyyy hh:mm tt").ToLower().Contains(temp))
                 .Select(bh => new ViewBaoHanh { MaBaoHanh = bh.MaBaoHanh, SoSeri = bh.SoSeri, TenKhachHang = bh.VatPham.HoaDon.KhachHang.TenKhachHang, TenSanPham = bh.VatPham.SanPham.TenSanPham, SoDienThoai = bh.VatPham.HoaDon.KhachHang.SoDienThoai, TrangThai = bh.TrangThai, GhiChu = bh.GhiChu, ThoiGianTaoPhieuBaoHanh = bh.ThoiGianTaoPhieuBaoHanh })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
                 if (s != temp)
                 {
-                    list = list.Where(bh => bh.MaBaoHanh.ToLower().Contains(s) || bh.SoSeri.Contains(s) || bh.SoDienThoai.Contains(s) || bh.TenSanPham.ToLower().Contains(s) || bh.TenKhachHang.ToLower().Contains(s) || bh.TrangThai.ToString().ToLower().Contains(s) || bh.GhiChu.ToLower().Contains(s) || bh.ThoiGianTaoPhieuBaoHanh.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(s)).ToList();
+                    list = list.Where(bh => bh.MaBaoHanh.ToLower().Contains(s) || bh.SoSeri.Contains(s) || bh.SoDienThoai.Contains(s) || bh.TenSanPham.ToLower().Contains(s) || bh.TenKhachHang.ToLower().Contains(s) || bh.TrangThai.ToString().ToLower().Contains(s) || bh.GhiChu.ToLower().Contains(s) || bh.ThoiGianTaoPhieuBaoHanh.ToString("dd/MM/yyyy hh:mm tt").ToLower().Contains(s)).ToList();
                 }
             }
             return list;

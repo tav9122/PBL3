@@ -23,14 +23,14 @@ namespace PBL3
                 tuKhoa = "";
             string[] cacTuKhoa = tuKhoa.ToLower().Split(new string[] { ", ", "," }, System.StringSplitOptions.None);
             string temp = cacTuKhoa[0];
-            List<ViewHoaDon> list = Model.Instance.HoaDons.AsEnumerable().Where(hd => hd.MaHoaDon.ToLower().Contains(temp) || hd.MaKhachHang.ToLower().Contains(temp) || hd.MaNhanVien.ToLower().Contains(temp) || hd.NhanVien.HoVaTen.ToLower().Contains(temp) || hd.KhachHang.SoDienThoai.Contains(temp) || hd.ThoiGianGiaoDich.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(temp))
+            List<ViewHoaDon> list = Model.Instance.HoaDons.AsEnumerable().Where(hd => hd.MaHoaDon.ToLower().Contains(temp) || hd.MaKhachHang.ToLower().Contains(temp) || hd.MaNhanVien.ToLower().Contains(temp) || hd.NhanVien.HoVaTen.ToLower().Contains(temp) || hd.KhachHang.SoDienThoai.Contains(temp) || hd.ThoiGianGiaoDich.ToString("dd/MM/yyyy hh:mm tt").ToLower().Contains(temp))
                 .Select(hd => new ViewHoaDon { MaHoaDon = hd.MaHoaDon, MaNhanVien = hd.MaNhanVien, TenNhanVien = hd.NhanVien.HoVaTen, MaKhachHang = hd.MaKhachHang, SoDienThoai = hd.KhachHang.SoDienThoai, ThoiGianGiaoDich = hd.ThoiGianGiaoDich, ThanhTien = hd.ThanhTien })
                 .ToList();
             foreach (string s in cacTuKhoa)
             {
                 if (s != temp)
                 {
-                    list = list.Where(hd => hd.MaHoaDon.ToLower().Contains(s) || hd.MaKhachHang.ToLower().Contains(s) || hd.MaNhanVien.ToLower().Contains(s) || hd.SoDienThoai.Contains(s) || hd.ThoiGianGiaoDich.ToString("dd/MM/yyyy h:m tt").ToLower().Contains(s)).ToList();
+                    list = list.Where(hd => hd.MaHoaDon.ToLower().Contains(s) || hd.MaKhachHang.ToLower().Contains(s) || hd.MaNhanVien.ToLower().Contains(s) || hd.SoDienThoai.Contains(s) || hd.ThoiGianGiaoDich.ToString("dd/MM/yyyy hh:mm tt").ToLower().Contains(s)).ToList();
                 }
             }
             return list;
